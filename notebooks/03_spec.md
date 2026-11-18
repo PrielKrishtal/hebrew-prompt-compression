@@ -15,9 +15,9 @@ Compressed text = history + doc. Questions are never compressed.
 ## Methods (keep rates 0.7 and 0.5 where marked *)
 Hebrew:  original | rules | llmlingua2_large* | llmlingua2_small* |
          translate_only (NLLB he→en) | translate+llmlingua2_large* |
-         teacher_sol* | teacher_sonnet*
+         teacher_sol* | teacher_opus*
 English: original | rules | llmlingua2_large* | llmlingua2_small* |
-         teacher_sol* | teacher_sonnet*
+         teacher_sol* | teacher_opus*
 
 ## Tools
 - LLMLingua-2 large: microsoft/llmlingua-2-xlm-roberta-large-meetingbank
@@ -32,15 +32,19 @@ data/03/protected_<lang>.txt (Hebrew: also after stripping leading prefixes
 ו ה ש ב ל כ מ, except listed exceptions), or anything containing a digit.
 
 ## Models and roles
-| Role | Model | Reasoning |
-|---|---|---|
-| Teacher 1 | GPT-6.1 Sol | high |
-| Teacher 2 | Claude Sonnet 5.5 | high |
-| Chatbot | GPT-6.1 Terra | low / default |
-| Judge | Claude Sonnet 5.5 | medium |
-| Debug only | Gemini (free keys) | any |
+| Role | Model | Reasoning | Why |
+|---|---|---|---|
+| Teacher 1 | GPT-6.1 Sol | high | Strong teacher at mid price |
+| Teacher 2 | Claude Opus 5.5 | high | Strongest affordable teacher; defines the ceiling |
+| Chatbot | GPT-6.1 Terra | low / default | Realistic cost-conscious production bot |
+| Judge | Claude Sonnet 5.5 | medium | Simple grading task; different family than chatbot |
+| Debug only | Gemini (free keys) | any | Pipeline debugging at $0 |
 Same chatbot, settings and prompt for every method; lowest-randomness
-setting each model supports.
+setting each model supports. Exact API model ids are set in the notebook config.
+
+## Budget
+Cap $50 ($30 Anthropic + $20 OpenAI prepaid). Estimate one full run ≈ $32.
+Run the 3-case paid dry run first and extrapolate before the full run.
 
 ## Prompts (use verbatim; {x} = filled by code)
 
@@ -108,6 +112,7 @@ ratio of the originals.
   ≥10 points larger than the Hebrew gap.
 
 ## Known limitations
-Synthetic data from one model family (Claude), which is also Teacher 2 and the
-judge. English is adapted from Hebrew, not native. Latency is measured on a
-laptop CPU (upper bound). 48 cases: about ±7 points of noise on accuracy.
+Synthetic data from one model family (Claude), which also provides Teacher 2
+(Opus) and the judge (Sonnet). English is adapted from Hebrew, not native.
+Latency is measured on a laptop CPU (upper bound). 48 cases: about ±7 points
+of noise on accuracy.
