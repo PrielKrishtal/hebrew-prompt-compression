@@ -1,0 +1,263 @@
+[
+  {
+    "id": "shop_01",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, I ordered a robot vacuum on November 9 and paid NIS 35 for express shipping, I was promised delivery within 2 business days. It still hasn't arrived. Could you check?\nAgent: Hello, this is Elad from ClickMart. Happy to. What's the order number?\nCustomer: 660417. My name is Moran Adler. I ordered in the morning, around ten, if that matters.\nAgent: Thanks, Moran. I can see the order only left the warehouse on November 12, because one of the items was out of stock. It's with the courier and should arrive tomorrow.\nCustomer: Okay, nobody updated me at all. And if it went out late anyway, do I get the express fee back? Because that's exactly what I paid for.\nAgent: Fair question. I'm checking the shipping terms and I'll update you.",
+    "doc": "Express Shipping – ClickMart. Express shipping at a price of NIS 35 guarantees delivery within 2 business days of the order date, for orders placed by 13:00. If the order was not delivered on time, the shipping fee will be refunded to the customer in full, automatically, within 7 business days. However, the refund will not be given if the delay was caused by an incorrect address or customer unavailability at the time of delivery. If an item is out of stock, the customer will be notified within 24 hours and may cancel the order at no cost. Refunding the shipping fee does not cancel the order. Express shipping does not cover remote areas, where the delivery time is up to 5 business days. The customer can track the shipment status in the personal area and receive updates by text message. A customer who was not notified about an out-of-stock item is entitled, in addition to the shipping fee refund, to a NIS 20 coupon for the next order. Changing the delivery address after the order has left the warehouse is not possible, but delivery to a nearby pickup point can be requested at no extra charge.",
+    "questions": [
+      "Within how long will the shipping fee be refunded?",
+      "In which cases will the shipping fee not be refunded?",
+      "What is Moran's order number?"
+    ],
+    "correct_answers": [
+      "within 7 business days",
+      "an incorrect address or customer unavailability",
+      "660417"
+    ],
+    "critical_facts": [
+      "Moran Adler",
+      "Elad",
+      "ClickMart",
+      "November 9",
+      "NIS 35",
+      "2 business days",
+      "660417",
+      "November 12",
+      "13:00",
+      "within 7 business days",
+      "the refund will not be given",
+      "an incorrect address or customer unavailability",
+      "24 hours",
+      "does not cancel the order",
+      "NIS 20"
+    ]
+  },
+  {
+    "id": "shop_02",
+    "domain": "online_shopping",
+    "history": "Customer: I returned a coat to you 3 weeks ago and I still haven't seen the money!! NIS 480, that's not small change\nAgent: Hello, this is Shani from Trendy-Box. I'm sorry. Could I have your name, and how did you return the coat?\nCustomer: Sahar Gabay. I returned it through a pickup point near my home, on October 24. I have the receipt from the point with a tracking number, so don't tell me it didn't arrive\nAgent: Okay. Returns take time, it depends, it depends when it reached the warehouse and when it was checked, there are all kinds of stages along the way. First the warehouse, then the inspection, then the credit, and it doesn't always move at the same pace.\nCustomer: Stages? You took my money in a second! And now I also see on the website that it says you'll deduct a NIS 25 return fee. I'm a Trendy Club member, I was told returns are free for us\nAgent: There are cases where there's a return fee and cases where there isn't. It depends on the type of return, and on which point you returned it to.\nCustomer: What do you mean it depends?! And the coat still had the tags on, I didn't wear it even once, it was just too small for me. I want the full 480 back, and I want to know exactly when, not roughly. I've already written to you twice in the chat and nobody answered\nAgent: I'm checking the returns policy now and I'll get right back to you with an answer.",
+    "doc": "Returns and Credits Policy – Trendy-Box. An item may be returned within 14 days of its receipt, provided that it has not been used and the tags are still attached. A return via a pickup point involves a return fee of NIS 25, which is deducted from the credit amount. Trendy Club members are exempt from return fees, provided that the item is returned via a chain pickup point. A return via a courier from home costs NIS 39 for all customers. The credit will be made to the original payment method within 14 business days of the item arriving at the warehouse, and not from the date it was dropped off at the pickup point. If the credit has not been made within 30 days of the drop-off at the pickup point, the customer is entitled to compensation of 10% of the credit amount, subject to presenting a drop-off confirmation. Underwear and swimwear cannot be returned. The return status can be tracked in the personal area using the tracking number. A customer who prefers store credit instead of a cash refund will receive an extra 5% on the credit amount. The chain's pickup points are marked on the map on the website. A customer who returned an item bought on sale will be credited the amount actually paid and not the full price. An inquiry about a return that has not been credited can be submitted in the personal area, and a response will be given within 3 business days.",
+    "questions": [
+      "What is the compensation if the credit has not been made within 30 days?",
+      "Under what condition are Trendy Club members exempt from return fees?",
+      "When did Sahar return the coat?"
+    ],
+    "correct_answers": [
+      "10% of the credit amount",
+      "returned via a chain pickup point",
+      "on October 24"
+    ],
+    "critical_facts": [
+      "Sahar Gabay",
+      "Shani",
+      "Trendy-Box",
+      "Trendy Club",
+      "NIS 480",
+      "October 24",
+      "NIS 25",
+      "14 days",
+      "are exempt from return fees",
+      "returned via a chain pickup point",
+      "NIS 39",
+      "within 14 business days of the item arriving at the warehouse",
+      "and not from the date it was dropped off at the pickup point",
+      "10% of the credit amount",
+      "cannot be returned"
+    ]
+  },
+  {
+    "id": "shop_03",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, I hope you're patient, because I have a whole story. I'm Tzipora Dahari, and ten days ago, on November 5, I ordered a gray corner sofa from your website, the Luna model, for NIS 6,490, plus a coffee table, and I also paid for the Assembly Plus service, NIS 290, because I live alone and I have no one to put it together for me. Yesterday the movers came, two young guys, very nice, but they were in a rush, they said they had eight more deliveries. They brought in the boxes, assembled the sofa in a hurry, and disappeared. Only in the evening, when I sat down, did I see there's a tear about ten centimeters long in the fabric on the inner side, and one of the legs wobbles, as if they didn't screw it in all the way. And the table, they didn't assemble it at all, they left it in the box and said it's not included.\nAgent: Hello Tzipora, this is Nissim from Bayit VaNoi Online. I understand, I'm sorry to hear that. So there are a few things here. There's the sofa, and there's the table, and there's the assembly.\nCustomer: Yes, exactly, three things. And I want to know what's done about each one. The sofa, I'm not sure whether I want the tear repaired or the whole section replaced, because a tear is a tear, even if you sew it you can see it. A friend of mine says I'm entitled to a brand-new sofa. And about the table, I paid for Assembly Plus, so I didn't understand why it's not included. It doesn't say anywhere on the website that it only covers some things, and nobody explained it to me when I ordered.\nAgent: So about the sofa, there's an option to repair and an option to replace. And about the table, the assembly, there's what's included and what's not included. I need to see exactly. So there's repair, replacement and assembly here, three topics.\nCustomer: Okay. Another question: I didn't take photos while they were here, because I didn't see the tear. I only took photos in the evening, with my phone. Is that okay? Because I'm afraid you'll say I did it. And I also signed some form for them, I didn't read what it said, they were in a hurry, so I signed. What does that mean now? Did I give something up?\nAgent: I see. The photos are important, yes. And the form, that's a delivery form. I want to check what the procedure says about that. There's a procedure, yes. And about the photos, if you took them the same day, that already counts for something.\nCustomer: And tell me also, if a technician needs to come or something needs replacing, how long does it take? Because I have a family Friday dinner in two weeks, the grandchildren are coming, and I don't want them to see a torn sofa and a table in a box. And I don't want to pay for another delivery, I've already paid enough for this whole saga.\nAgent: Of course, I understand. I'm opening the Bayit VaNoi Online delivery and assembly policy now and we'll go over the sofa, the table, the form you signed and the timelines.",
+    "doc": "Delivery, Assembly and Reporting Defects – Bayit VaNoi Online. A defect or damage caused to a product during delivery or assembly must be reported within 48 hours of delivery, with photos attached; photos may also be taken after the movers have left. Signing the delivery form does not constitute a waiver of claims regarding a hidden defect that could not have been noticed at the time of delivery. For a defect reported on time, the company will send a technician to inspect it within 7 business days. If the technician determines that the defect cannot be fully repaired, the defective part will be replaced, and if that is not possible, the entire product will be replaced. Return delivery and replacement due to a defect caused by the company do not involve any payment. The Assembly Plus service includes assembly of sofas, beds and wardrobes only, and does not include assembly of tables, chairs and shelves, which is available for an additional NIS 120 per item. A customer who did not receive a clear explanation of the scope of the service at the time of purchase may request cancellation of the Assembly Plus fee and a full refund. The delivery time for a replacement part is up to 21 days. A customer may request a preferred date for the technician's visit, subject to availability. A customer who will not be home at the scheduled technician visit may arrange a new date at no cost, provided that they gave notice at least 24 hours in advance. If the entire product is replaced, the defective product will be dismantled and removed by the company. Compensation for a delay in supplying a replacement part beyond 21 days will be given at a rate of 5% of the product price.",
+    "questions": [
+      "Within how long after delivery must a defect be reported?",
+      "Does signing the delivery form waive the claim about the tear?",
+      "How much did Tzipora pay for the sofa?"
+    ],
+    "correct_answers": [
+      "within 48 hours",
+      "does not constitute a waiver of claims",
+      "NIS 6,490"
+    ],
+    "critical_facts": [
+      "Tzipora Dahari",
+      "Nissim",
+      "Bayit VaNoi Online",
+      "Assembly Plus",
+      "November 5",
+      "Luna",
+      "NIS 6,490",
+      "NIS 290",
+      "within 48 hours",
+      "does not constitute a waiver of claims",
+      "7 business days",
+      "do not involve any payment",
+      "and does not include assembly of tables",
+      "NIS 120 per item",
+      "up to 21 days"
+    ]
+  },
+  {
+    "id": "shop_04",
+    "domain": "online_shopping",
+    "history": "Customer: do u have free shipping?\nAgent: Hi, this is Hodaya from Salsala Online. Depends on the order and the membership. Are you a member?\nCustomer: yes. Salsala VIP\nAgent: Great. And what's the order amount, and where's it going?\nCustomer: 160 shekels. to Eilat\nAgent: One sec, checking for you.\nCustomer: ok. Gal here, if u need a name. and it needs to get here today, i have guests tonight. ordered 15 min ago\nAgent: Thanks Gal, I can see your membership. Checking the terms, including about today.",
+    "doc": "Free Shipping – Salsala VIP Membership. Salsala VIP members, for a membership fee of NIS 19 per month, are entitled to free shipping on every order of NIS 150 or more. An order of a lower amount will be charged a reduced shipping fee of NIS 14. The benefit does not apply to deliveries to Eilat, the Arava and the Golan Heights, where a shipping fee of NIS 29 per order will be charged, regardless of its amount. Same-day delivery is available for orders placed by 11:00, and is not available in the remote areas listed. A membership that was not renewed by the monthly billing date will be cancelled, and the benefit will not apply to orders placed after that date. The benefit can be used once per day. Refrigerated products will be shipped only to areas with a cold chain. A membership can be cancelled at any time in the personal area, with no cancellation fee. Shipping fees to remote areas are not included in weekend promotion benefits. An order to Eilat will be delivered within 3 business days of being placed. A customer may pick up the order themselves from one of the chain's distribution points with no shipping fee.",
+    "questions": [
+      "How much will Gal pay for shipping to Eilat?",
+      "Does the free shipping benefit apply to deliveries to Eilat?",
+      "What is the amount of Gal's order?"
+    ],
+    "correct_answers": [
+      "NIS 29 per order",
+      "does not apply to deliveries to Eilat",
+      "160 shekels"
+    ],
+    "critical_facts": [
+      "Gal",
+      "Hodaya",
+      "Salsala Online",
+      "Salsala VIP",
+      "160 shekels",
+      "to Eilat",
+      "NIS 19",
+      "NIS 150 or more",
+      "NIS 14",
+      "does not apply to deliveries to Eilat",
+      "NIS 29 per order",
+      "regardless of its amount",
+      "11:00",
+      "and is not available in the remote areas"
+    ]
+  },
+  {
+    "id": "shop_05",
+    "domain": "online_shopping",
+    "history": "Customer: Cancel my order. I found the same laptop for 700 shekels less somewhere else, exact same model, same memory\nAgent: Hello, this is Orit from Gadgetopia. Happy to help. What's the order number, and whose name is it under?\nCustomer: Amir Stern. Order 88213. Quickly please, and don't try to sell me something else\nAgent: Thanks Amir. The order for NIS 4,890 was placed on November 13, and you paid in 3 installments by credit card. It was already handed to the shipping company last night, and it's expected to reach you tomorrow.\nCustomer: Not interested, I don't want it. Stop the delivery. And I'm not paying any cancellation fee, I haven't even received the laptop. And don't tell me it's written in fine print on the website, nobody reads that\nAgent: I understand. Since the package is already on its way, I can't stop it from here, but there are two options, and I'll tell you exactly what each one costs.\nCustomer: Come on, just quickly. And let's be clear, if I receive the package, I'm not opening it at all. And tell me also when the money goes back to the card, because the first installment already came out and I don't want to see another one next month\nAgent: Great, that's actually important. I'm opening the cancellation policy and I'll answer briefly, including what happens with the installments, and whether it's better for you to refuse it or accept it and return it.",
+    "doc": "Transaction Cancellation – Gadgetopia. A customer may cancel a transaction within 14 days of receiving the product. Cancellation before the order has been handed to the shipping company does not involve any payment. After the order has been handed over for shipping, one of two options may be chosen: refusing to accept the package upon delivery, in which case a cancellation fee of 5% of the transaction price or NIS 100, whichever is lower, will be charged; or accepting the package and returning it at a service point, under the same terms. A product returned in its original sealed packaging will be credited in full, less the cancellation fee only. A product whose packaging has been opened will be inspected, and if it is found to have been used, full credit will not be given. The credit will be made to the credit card used for payment within 14 days of the product being received at the warehouse; in an installment transaction, future installments will be cancelled and the installment already collected will be refunded. Gadgetopia does not undertake to match the price of another store. Refusal to accept a package will be recorded by the courier, and the customer will receive a text message confirming it. Laptops purchased in a launch promotion are subject to the same cancellation terms. A customer who will not be home at the time of delivery may give advance notice of refusal, and the package will be returned to the warehouse without another delivery attempt.",
+    "questions": [
+      "What cancellation fee will Amir be charged if he refuses to accept the package?",
+      "What will happen if the laptop's packaging is opened and it is found to have been used?",
+      "In how many installments did Amir pay?"
+    ],
+    "correct_answers": [
+      "NIS 100",
+      "full credit will not be given",
+      "in 3 installments"
+    ],
+    "critical_facts": [
+      "Amir Stern",
+      "Orit",
+      "Gadgetopia",
+      "88213",
+      "700 shekels",
+      "NIS 4,890",
+      "November 13",
+      "in 3 installments",
+      "14 days",
+      "does not involve any payment",
+      "5% of the transaction price or NIS 100",
+      "whichever is lower",
+      "full credit will not be given",
+      "within 14 days of the product being received",
+      "does not undertake to match the price"
+    ]
+  },
+  {
+    "id": "shop_06",
+    "domain": "online_shopping",
+    "history": "Customer: yo the coupon i got by email doesnt work, it says invalid code. FRESH30. whats the problem\nAgent: Hey, this is Tal from Fresh-Li. Let's check. What's your name?\nCustomer: Coral Abutbul. im a Fresh-Li Subscription member, and i have 180 shek in my cart. the coupon's supposed to give 30 shek off right?\nAgent: I can see the coupon. It was sent to you on November 1. I can see your cart also has dairy products from the 1+1 deal.\nCustomer: yeah it does. so whats the problem? say it fast i want to order before todays slot closes, and i dont want to lose the coupon, its the only one i got this month\nAgent: One sec, checking the coupon terms",
+    "doc": "Coupon Terms of Use – Fresh-Li. A NIS 30 discount coupon is valid for an order of at least NIS 200, excluding delivery fees. The minimum amount is calculated after deducting products sold on promotion. The coupon is not valid with 1+1 deal products in the cart, unless they are removed from the cart or the order amount without the promotion products exceeds NIS 200. Each coupon is valid for a single use only, for 21 days from the date it was sent. Fresh-Li Subscription members can accumulate up to 2 coupons per month. A coupon that has expired will not be renewed. A coupon cannot be exchanged for cash or combined with another coupon in the same order. Technical problems entering a coupon can be reported to customer service, which will apply the discount manually if the coupon is valid. A coupon entered in an order that was cancelled will be returned to the customer's account and will remain valid until the end of its original validity period. A coupon sent as part of a sign-up promotion cannot be transferred to another user. The coupon balance and expiry dates can be checked in the personal area in the app.",
+    "questions": [
+      "What is the minimum order amount for using the coupon?",
+      "Is the coupon valid when the cart contains 1+1 deal products?",
+      "What is the amount in Coral's cart?"
+    ],
+    "correct_answers": [
+      "at least NIS 200",
+      "is not valid with 1+1 deal products",
+      "180 shek"
+    ],
+    "critical_facts": [
+      "Coral Abutbul",
+      "Tal",
+      "Fresh-Li",
+      "Fresh-Li Subscription",
+      "FRESH30",
+      "180 shek",
+      "30 shek",
+      "November 1",
+      "at least NIS 200",
+      "excluding delivery fees",
+      "is not valid with 1+1 deal products",
+      "21 days",
+      "will not be renewed"
+    ]
+  },
+  {
+    "id": "shop_07",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, my name is Osnat Revivo. I see a NIS 199 charge from Hadar Store on my credit card from November 3, labeled Hadar Prime renewal. I don't remember agreeing to an automatic renewal at all, and I'd like to understand.\nAgent: Hello Osnat, this is Amit from Hadar Store. I'm checking. Yes, I can see the membership was renewed. The membership was renewed automatically, yes.\nCustomer: I can see that. But I joined a year ago in a promotion, NIS 49 for the first year, and I never got any reminder that it was about to renew. And this year I hardly bought anything, maybe three orders.\nAgent: I see. So the membership renews automatically. It's an automatic renewal, and that's what happened here.\nCustomer: Okay, I understood that's what happened. My question is whether I can cancel and get the money back. And if so, whether you get the full amount. And I haven't ordered anything since the renewal, if that matters.\nAgent: You can cancel, yes. There's cancellation. As for the money, I need to check how much comes back. It depends on a few things, both the timing and the usage.\nCustomer: I appreciate it. And another thing, the email address you have on file, maybe it's the old one? I changed my email in the summer and I'm not sure I updated it with you. If the reminder went there, I want to know. I'm not looking to blame anyone, I just want to understand what I'm entitled to.\nAgent: I'm checking that too. I'm opening the Hadar Prime membership terms now and I'll explain what applies to you.",
+    "doc": "Hadar Prime Membership – Renewal and Cancellation. The membership renews automatically at the end of each year, at the list price of NIS 199 per year, unless it was cancelled before the renewal date. A promotional price given in the first year does not apply to renewal years. The company will send the customer a renewal reminder 14 days before the billing date, to the email address registered on the account. A customer who cancels the membership within 30 days of the renewal date, and has not placed an order using membership benefits since the renewal, will receive a full refund. Cancellation after 30 days or after using benefits entitles the customer to a pro-rata refund only, less a handling fee of NIS 20. If the reminder was not sent at all, the customer is entitled to a full refund at any time during the first 60 days after the renewal. The refund will be made to the credit card within 7 business days. The email address can be updated and the membership cancelled in the personal area. Membership benefits will end immediately upon cancellation, and orders placed before the cancellation will be delivered as usual. A customer may disable automatic renewal in advance in the personal area, and the membership will end at the end of the year with no further charge. A cancelled membership can be renewed at any time at the list price.",
+    "questions": [
+      "What is the annual list price of the Hadar Prime membership?",
+      "Under what condition will Osnat receive a full refund if she cancels now?",
+      "How much did Osnat pay for the first year?"
+    ],
+    "correct_answers": [
+      "NIS 199 per year",
+      "has not placed an order using membership benefits",
+      "NIS 49"
+    ],
+    "critical_facts": [
+      "Osnat Revivo",
+      "Amit",
+      "Hadar Store",
+      "Hadar Prime",
+      "NIS 199",
+      "November 3",
+      "NIS 49",
+      "does not apply to renewal years",
+      "14 days",
+      "within 30 days",
+      "has not placed an order using membership benefits",
+      "a pro-rata refund only",
+      "NIS 20",
+      "the first 60 days",
+      "7 business days"
+    ]
+  },
+  {
+    "id": "shop_08",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, I'm calling because I don't know who else to turn to. I ordered a gift for my wife's birthday, a smartwatch for NIS 1,350, from an online store that works with you, and according to the tracking on your website the package was delivered on Thursday, November 12, at 14:37. But I was home all day, I was working from home, and nobody knocked on the door or called. I checked with the neighbors, I checked the lobby, I even checked the recycling bin by the entrance, in case someone threw a box in there. Nothing. The store tells me to contact you, because as far as they're concerned the package was delivered, and you'll probably tell me to contact the store. I don't want to be a ping-pong ball. My name is Shlomo Biton.\nAgent: Hello Shlomo, this is Rinat from Mahir-Ship, delivery investigations department. I understand, and I'm not going to transfer you to anyone. I'm handling this from here. I can see the courier marked it delivered at 14:37, with the note left at the door, and without a signature.\nCustomer: At the door? I live in an eight-story building with a coded entrance door. How did he even get in? And why did he leave it at the door without asking me? In the order itself I explicitly selected hand delivery only. It also appears in the order confirmation I got by email, I can send you a screenshot. And anyway, I've never had problems like this, I order online every month.\nAgent: I can see the hand delivery only note in the shipment details. That means the courier was not supposed to leave the package without a signature. I'm opening a delivery investigation, and the investigation number is 4471.\nCustomer: Okay, at least someone admits it. So what now? How long does the investigation take, and what happens if the package isn't found? Because the birthday is next Tuesday, and I need to know whether to order something else. And if I order again, who pays? I'm not willing to pay twice for the same gift. And besides, I have a camera at my apartment entrance, and there's no courier on it at that time.\nAgent: That's very important information, and I'd ask you to keep the clip from the camera. I'll explain exactly what the procedure is, how long it takes and who is responsible for compensation. I can also see that this courier reported two more deliveries without a signature in your area that same day, and I'm checking those too.\nCustomer: Fine. And tell me also whether I need to file a police complaint, because a friend told me that without a police complaint you get nothing. I don't want to waste a whole day at the station if it's not necessary, I have work and a gift to sort out, and my wife doesn't know anything yet and I want it to stay that way.\nAgent: I'll answer that too. I'm opening the procedure for a package marked as delivered but not received now, and we'll go over the timelines, the compensation and the documents you'll need to send. I can already tell you that your case is well documented.",
+    "doc": "Package Marked as Delivered but Not Received – Mahir-Ship. A customer whose package was marked as delivered but was not received may open a delivery investigation within 7 days of the reported delivery date. The investigation will be completed within 5 business days, during which the courier's location data and the delivery records will be examined. Where hand delivery only was selected in the order, and the shipment was marked as delivered without the recipient's signature, responsibility for the loss lies with Mahir-Ship, and the customer will be compensated for the full value of the product, up to NIS 2,000, without needing to wait for the investigation to end. The compensation will be transferred within 10 business days of the investigation being opened. To receive the compensation, no police complaint is required, unless the value of the product exceeds NIS 2,000. The customer must provide a purchase invoice and an order confirmation that includes the delivery instruction. Security camera footage is not mandatory, but it will help the investigation. If the package is found after the compensation has been paid, the customer may choose whether to return the compensation or the package. Re-shipping of a replacement product by the merchant does not involve additional shipping fees. Mahir-Ship will inform the merchant of the investigation's results. A customer who received compensation for a lost package will not be charged shipping fees on the replacement order, even if it was placed on another website of the same merchant. Investigation inquiries can be tracked in the personal area by investigation number.",
+    "questions": [
+      "What is the maximum compensation for a lost package?",
+      "Does Shlomo need to file a police complaint to receive compensation?",
+      "What is the investigation number that was opened?"
+    ],
+    "correct_answers": [
+      "up to NIS 2,000",
+      "no police complaint is required",
+      "4471"
+    ],
+    "critical_facts": [
+      "Shlomo Biton",
+      "Rinat",
+      "Mahir-Ship",
+      "NIS 1,350",
+      "November 12",
+      "14:37",
+      "without a signature",
+      "hand delivery only",
+      "4471",
+      "7 days",
+      "5 business days",
+      "up to NIS 2,000",
+      "without needing to wait for the investigation to end",
+      "10 business days",
+      "no police complaint is required"
+    ]
+  }
+]

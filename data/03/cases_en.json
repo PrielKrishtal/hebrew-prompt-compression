@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "ins_01",
+    "domain": "insurance",
+    "history": "Customer: Hi, I filed a claim for a car accident three weeks ago and still haven't heard back. Could you check on it?\nAgent: Hi, this is Michal from the claims center, happy to help. Could I have the claim number?\nCustomer: Sure, 48213. The assessor came out on November 2.\nAgent: Thanks. I can see the assessor's report only reached us yesterday. Under your policy, the Nativ Plus plan, processing takes up to 21 business days from receipt of the report.\nCustomer: I see, thanks a lot. And what about a replacement car? The car's been off the road for two weeks and I'm taking taxis everywhere. Every ride to work costs me about 60 shekels, and it adds up.\nAgent: I'm checking that now in the plan terms and I'll update you. Just to confirm, is the car at a network garage or a private one?\nCustomer: At my brother's private garage, Galil Garage. Is that okay?",
+    "doc": "Nativ Plus Plan – Claims Handling and Replacement Vehicles. Ofek Insurance will complete its review of a claim and notify the policyholder of its decision within 21 business days of receiving the assessor's report. A replacement vehicle will be provided to the policyholder for a period of up to 12 days, provided that the insured vehicle is off the road due to covered damage and is located at a network garage. A replacement vehicle will not be provided when the vehicle is being repaired at a garage outside the network; in such a case, the policyholder will receive NIS 90 per day, up to 7 days. The deductible for own-damage claims under this plan is NIS 1,450 and does not apply to windshield claims. Coverage does not include damage caused while the vehicle was driven by a driver not listed on the policy. The policyholder may request a written update on the status of the claim at any time, and the company will respond within 3 business days. A request for a replacement vehicle must be submitted to the service center before the vehicle is collected from the garage, and the replacement vehicle will be delivered within 24 hours of the request. A replacement vehicle is not provided for windshield-only claims or for third-party claims.",
+    "questions": [
+      "For how many days at most is a replacement vehicle provided under the Nativ Plus plan?",
+      "What does the policyholder receive if the car is being repaired at a garage outside the network?",
+      "When did the assessor visit the customer?"
+    ],
+    "correct_answers": [
+      "up to 12 days",
+      "NIS 90 per day, up to 7 days",
+      "on November 2"
+    ],
+    "critical_facts": [
+      "48213",
+      "November 2",
+      "Michal",
+      "Nativ Plus",
+      "Ofek Insurance",
+      "21 business days",
+      "up to 12 days",
+      "will not be provided",
+      "outside the network",
+      "NIS 90 per day",
+      "up to 7 days",
+      "NIS 1,450",
+      "Galil Garage",
+      "24 hours",
+      "does not include"
+    ]
+  },
+  {
+    "id": "ins_02",
+    "domain": "insurance",
+    "history": "Customer: This is the third time I'm calling you this week!! I sent in physio receipts and nobody gets back to me\nAgent: Hello, this is Avi. I'm sorry to hear that. Could I have your full name, please?\nCustomer: Ronit Sagi. I've been insured with you under Briut Zahav for 4 years and I always pay on time, so don't tell me to wait. I paid the physiotherapist, Dr. Merav Alon, all by bank transfer, and I sent you photos of the receipts from my phone.\nAgent: Thank you, Ronit. I see you submitted 6 receipts of NIS 280 each. The request is being processed.\nCustomer: Being processed?? I submitted them on October 1! It's been 'being processed' for a month and a half. And then I got a message saying only part of the amount will be refunded, what's going on? I'm not rich, I'm a kindergarten teacher, and for me that's a lot of money sitting with you.\nAgent: Yes, there are all kinds of limits in the policy, it depends on all sorts of things. I see a note here in the system about something with the documents, but it's not clear to me exactly what. The referral from the orthopedist is in your file, so that's not the problem.\nCustomer: What limits? Nobody told me anything when I joined. I want to know exactly how much money I get per treatment and when, no stories. And last time the call center told me everything was fine and it would arrive by the end of October. So what, they lied to me? And if this isn't sorted out today, I'm filing a complaint.\nAgent: I completely understand. I really do, and I don't want you to have to call a fourth time. I'm opening the terms of the treatments section now and I'll get back to you with a proper answer.",
+    "doc": "Complementary Treatment Reimbursement Section – Briut Zahav Policy. The policyholder is entitled to reimbursement for physiotherapy treatments, up to 12 treatments per calendar year, at a rate of 70% of the treatment cost and no more than NIS 150 per treatment. A condition for reimbursement is a written referral from a specialist physician, issued before the first treatment began. Treatments performed before the referral date are not eligible for reimbursement. No reimbursement will be given for treatments performed by a therapist who does not hold a valid license. In addition, reimbursement does not include registration fees, assistive equipment or hydrotherapy treatments. A reimbursement request must be submitted within 90 days of the treatment date, and the company will transfer the reimbursement to the policyholder's account within 30 days of receiving all required documents. If a document is missing, a notice will be sent to the policyholder, and the count of days will restart once the document is provided. A policyholder who does not agree with the company's decision may file an appeal with the Ombudsman of Shaked Insurance within 60 days of receiving the decision. A policyholder who has used up the annual treatment quota may purchase a top-up package of 6 additional treatments for NIS 220, provided that the purchase is made before the end of the calendar year. Reimbursement is calculated on the basis of the original receipt only; a photo of a receipt or a bank transfer confirmation does not constitute sufficient proof. Reimbursements are transferred only to a bank account registered in the policyholder's name, and not to a third party's account. The status of the request can be tracked in the personal area, which also shows the approved amount for each treatment separately and the list of missing documents, if any.",
+    "questions": [
+      "What is the maximum amount refunded for a single physiotherapy treatment?",
+      "Are treatments performed before the referral date eligible for reimbursement?",
+      "How much did each treatment cost according to the receipts Ronit submitted?"
+    ],
+    "correct_answers": [
+      "NIS 150 per treatment",
+      "not eligible for reimbursement",
+      "NIS 280"
+    ],
+    "critical_facts": [
+      "Ronit Sagi",
+      "Briut Zahav",
+      "Shaked Insurance",
+      "6 receipts",
+      "NIS 280",
+      "October 1",
+      "12 treatments",
+      "70%",
+      "NIS 150 per treatment",
+      "not eligible for reimbursement",
+      "No reimbursement will be given",
+      "90 days",
+      "30 days",
+      "does not constitute sufficient proof"
+    ]
+  },
+  {
+    "id": "ins_03",
+    "domain": "insurance",
+    "history": "Customer: Hi, listen, I don't really know where to start, so I'll tell you from the beginning. I live in an apartment on HaDekalim Street, third floor, for 11 years now, and about ten days ago, on Tuesday night, my wife woke up because she heard dripping. We went to the living room and saw the whole ceiling by the kitchen was wet, and the parquet was already starting to swell. Turns out a pipe burst at the upstairs neighbor's. The neighbor, Moshe, nice guy, said he has insurance but doesn't remember with whom. Long story short, we called a plumber that same night and paid him NIS 1,200 just for coming out and finding the leak, and now the contractor says replacing the parquet will cost about NIS 18,000. I'm insured with you under Bayit Batuach Murhav, so I wanted to know what's covered here. We have two small kids, so I need this fast.\nAgent: Hi Shimon, this is Dana. I understand, it sounds really unpleasant. So, broadly speaking, water damage is covered under the policy, but we need to check the details.\nCustomer: Okay, but what does 'check the details' mean? I've had a fan running in the living room for a week and a half and my wife keeps asking when the repairs start. Another thing, I'm not sure whether I should claim from you or from the neighbor's insurance. Someone at work told me that if it came from the neighbor, it's not your business at all. And another thing, the contractor wants a NIS 5,000 deposit this week, so I need to know if I get that back. One more thing, we rented a drying machine from a private company called Yavesh-Tech, NIS 250 per day, for eight days already. Will you cover that too?\nAgent: Yes, so like I said, water damage is broadly covered. As for the neighbor, it depends. There are a few options here, and I need to see exactly what your policy says. About the drying machine, I also need to check, that's not something I can just tell you off the top of my head. And generally, in most cases, we try to cover as much as possible, so don't worry too much.\nCustomer: Okay. Another question: I called the plumber myself, not through your service, because it was two in the morning and it didn't even occur to me to call. Is that a problem? And what about the deductible, how much do I pay out of pocket? And something else I don't get, is there a deductible on both the structure and the contents? Because a wooden bookcase that stood by the wall got ruined too, and I'm not sure it can be saved. I saw a number on the policy page but I didn't understand whether it's per damage or per year.\nAgent: Good question. There is a deductible, yes. And about the plumber, that depends too. I want to give you an accurate answer, so I'm opening the water damage section now.\nCustomer: Fine, just please tell me something clear this time, because I already spoke with an agent on Thursday and he told me exactly the same thing, that it depends, and he didn't get back to me. I don't want to wait another week. And understand, I'm not trying to profit from this, I just want my home to be a home again.\nAgent: Of course, I completely understand. I'm looking at it now and in a moment we'll go through everything, clause by clause: first the neighbor, then the deductible, the plumber, the drying and the deposit.",
+    "doc": "Section 4 – Water and Liquid Damage, Bayit Batuach Murhav Policy. The policy covers direct damage to the structure of the apartment and its contents caused by a sudden burst or leak of pipes, including pipes of an adjacent apartment. Where the source of the damage is in another apartment, the policyholder may file the claim with Hof Mivtachim Insurance, and the company will act to recover the amount from the responsible party or its insurer; the policyholder is under no obligation to first contact a third party's insurer. The deductible under this section is NIS 950 per damage event and is not calculated on an annual basis. Locating and repairing the source of the damage will be carried out by a plumber on behalf of the company, available 24 hours a day. If the policyholder hired a private professional without prior coordination, they will be reimbursed up to NIS 600 only for locating and repairing the damage, provided that a tax invoice and the professional's report are presented. Coverage does not include replacing pipes that have deteriorated due to age or rust, and does not include gradual damage caused by continuous dripping. A deposit paid to a contractor is not refunded in advance, but will be factored into the insurance benefits after the claim is approved by an assessor. The company will send an assessor to the apartment within 5 business days of the claim being opened. Damage must be reported within 14 days of its discovery; late reporting does not void coverage, but may reduce benefits if additional damage was caused by the delay. Where temporary evacuation of the apartment is required due to the damage, the company will pay alternative accommodation costs of up to NIS 400 per night and no more than 10 nights. Reimbursement for drying the apartment with dedicated equipment will be made only if the drying was carried out by a supplier approved in advance by the company.",
+    "questions": [
+      "What is the most Shimon will be reimbursed for the plumber he hired himself?",
+      "Does Shimon have to contact the neighbor's insurer first?",
+      "How large a deposit is the contractor asking Shimon for?"
+    ],
+    "correct_answers": [
+      "up to NIS 600 only",
+      "the policyholder is under no obligation",
+      "NIS 5,000"
+    ],
+    "critical_facts": [
+      "Shimon",
+      "Bayit Batuach Murhav",
+      "Hof Mivtachim Insurance",
+      "ten days",
+      "NIS 1,200",
+      "NIS 5,000",
+      "NIS 250 per day",
+      "the policyholder is under no obligation",
+      "NIS 950 per damage event",
+      "is not calculated on an annual basis",
+      "without prior coordination",
+      "up to NIS 600 only",
+      "is not refunded in advance",
+      "14 days",
+      "only if the drying was carried out by a supplier approved in advance"
+    ]
+  },
+  {
+    "id": "ins_04",
+    "domain": "insurance",
+    "history": "Customer: hi\nAgent: Hi, this is Adi from Knafayim Travel Insurance. How can I help?\nCustomer: I have Globus Basic. flying to Austria\nAgent: Great! For how long?\nCustomer: 9 days, from December 20. is skiing covered? me and my wife, we both ski\nAgent: One sec, checking for you.\nCustomer: ok. quick pls\nAgent: So, I can see your policy was issued 3 days ago, and you haven't added any extensions yet. I'm sending you the winter sports terms now.",
+    "doc": "Globus Basic Policy – Winter Sports. The basic policy does not include coverage for injuries or damage sustained while skiing, snowboarding or engaging in any other winter sport. A policyholder wishing to obtain such coverage must purchase the Snow Add-on at a price of $11 per day, for all days of the trip and not only for skiing days. The add-on may be purchased up to 48 hours before departure from Israel only; after that time, including during the stay abroad, the coverage cannot be added. The add-on covers medical expenses, helicopter rescue from the slopes up to $50,000, and a refund for a ski-lift pass paid in advance and not used due to injury, up to $300. Coverage does not apply to skiing outside marked slopes and does not apply to policyholders over the age of 70. Private ski equipment is insured separately under the baggage coverage and is not included in the Snow Add-on. Policyholders traveling together must purchase the add-on for each of them separately. The Snow Add-on can be purchased via the app or the service center, with advance payment for the entire trip period. Cancelling the add-on after departure from Israel will not entitle the policyholder to a refund.",
+    "questions": [
+      "How much does the Snow Add-on cost per day?",
+      "Can the coverage be added once you are already in Austria?",
+      "From what date does the customer's trip start?"
+    ],
+    "correct_answers": [
+      "$11 per day",
+      "the coverage cannot be added",
+      "December 20"
+    ],
+    "critical_facts": [
+      "Knafayim Travel Insurance",
+      "Globus Basic",
+      "9 days",
+      "December 20",
+      "does not include coverage",
+      "Snow Add-on",
+      "$11 per day",
+      "48 hours",
+      "the coverage cannot be added",
+      "for each of them separately",
+      "does not apply to skiing outside marked slopes",
+      "will not entitle the policyholder to a refund"
+    ]
+  },
+  {
+    "id": "ins_05",
+    "domain": "insurance",
+    "history": "Customer: I want to cancel my life insurance. Now.\nAgent: Hello, this is Liat from Ogen Life. I can help with that. Whose name is the policy under?\nCustomer: Gilad Peretz. Ogen Family policy. And no retention pitch please, I don't have time for that.\nAgent: No problem, no retention. Just so you know: your policy has been active since March 2019, and the monthly premium is NIS 186. The coverage amount is NIS 1,200,000, and the sole beneficiary is Shira Peretz.\nCustomer: I know. I've switched to insurance through work, a group policy, so I have no reason to pay twice. What do I need to do to end this today? Also, I want this month's money back, it was already charged on the 10th of the month, and I'm not going to fund a whole month for nothing. And if I need to sign anything, email it to me, not by mail, I have no patience for branches.\nAgent: There are several ways to submit a cancellation request, and I'll tell you exactly when it takes effect and what happens with this month's charge. It's just important you know: a verbal request in this call isn't enough unless it's recorded as a declaration, so let's do it properly. I can record you now, it'll take about 2 minutes.\nCustomer: One more thing. A friend told me policies like this have a surrender value, like savings. After almost 8 years of payments it makes no sense that it all just vanishes, I'm owed something, right? Come on, just keep it short.\nAgent: I'll check that too in the policy terms and answer everything together, briefly, like you asked. One moment.",
+    "doc": "Cancellation at the Policyholder's Initiative – Ogen Family Policy. The policyholder may cancel the policy at any time by written notice sent by registered mail, through the personal area on the company's website, or by a recorded declaration at the service center. The cancellation will take effect 3 business days after the notice is received by the company, or on a later date specified by the policyholder. Premium paid for the month in which the cancellation takes effect will be refunded to the policyholder on a pro-rata basis, according to the number of days remaining in the month, within 14 days of the cancellation date. The Ogen Family policy is a pure risk policy, and therefore it has no surrender value and there is no refund of premiums paid in previous periods. Cancellation of the policy does not cancel coverage for an insured event that occurred before the cancellation took effect. A policyholder who cancelled the policy and wishes to renew it within 60 days may do so without new medical underwriting, provided that there has been no change in their health; after 60 days, rejoining under current terms will be required. The policyholder will receive written confirmation of cancellation within 7 days of the cancellation taking effect. A cancellation request made in a call that is not recorded as a formal declaration will not be considered a cancellation notice. If the policyholder holds an additional policy with the company, the cancellation will apply only to the policy specified in the notice and not to other policies. The pro-rata refund will be transferred to the payment method from which the last premium was collected.",
+    "questions": [
+      "How long after the notice is received will the cancellation take effect?",
+      "Will Gilad receive a surrender value for the years he paid?",
+      "What is Gilad's monthly premium?"
+    ],
+    "correct_answers": [
+      "3 business days",
+      "it has no surrender value",
+      "NIS 186"
+    ],
+    "critical_facts": [
+      "Gilad Peretz",
+      "Ogen Life",
+      "Ogen Family",
+      "March 2019",
+      "NIS 186",
+      "10th of the month",
+      "3 business days",
+      "14 days",
+      "it has no surrender value",
+      "there is no refund of premiums paid in previous periods",
+      "60 days",
+      "provided that there has been no change in their health",
+      "will not be considered a cancellation notice"
+    ]
+  },
+  {
+    "id": "ins_06",
+    "domain": "insurance",
+    "history": "Customer: bro whats going on with u, got charged twice 89 shek this month for the dog insurance\nAgent: Hey, this is Tomer from Parvati Insurance. Let's check. What's your pet's name?\nCustomer: Shoko. Kelavlav Mugan. check it cuz this is so not ok, two charges on nov 4\nAgent: I see it, there really are two charges on the same day. Looks like a payment processing glitch. Your regular payment is on the 4th of every month, and last month everything was fine, only one charge.\nCustomer: lol ok cool so when do i get the money back? and dont tell me another month cuz that happened to me once with another insurance and i waited forever, and meanwile im out those 89\nAgent: Checking it for you now according to the procedure.",
+    "doc": "Double Charges and Refunds – Kelavlav Mugan Policy. Where a policyholder has been charged more than once for the same insurance month, the excess charge will be cancelled and refunded to the original payment method within 10 business days of the inquiry. The refund will be made in full and is not subject to handling fees. If the double charge continues for two consecutive months or more, the policyholder will additionally receive a 15% discount on the following month's premium. The refund will not be made in cash or by transfer to an account other than the one from which the payment was collected. It should be emphasized that refunding the excess charge does not affect the continuity of coverage, and coverage for the pet continues without interruption. An inquiry regarding a double charge must be submitted within 6 months of the charge date; an inquiry submitted after that will be reviewed at the company's sole discretion. In the event of a general payment processing malfunction, the company will send a notice to all affected policyholders within 3 business days, and there is no need to contact the service center to receive the refund. Confirmation of the refund will be sent to the email address registered on the policy.",
+    "questions": [
+      "Within how long will the excess charge be refunded?",
+      "Will handling fees be deducted from the refund?",
+      "On what date were the two charges made?"
+    ],
+    "correct_answers": [
+      "10 business days",
+      "not subject to handling fees",
+      "nov 4"
+    ],
+    "critical_facts": [
+      "89 shek",
+      "Shoko",
+      "Kelavlav Mugan",
+      "Parvati Insurance",
+      "on nov 4",
+      "only one charge",
+      "10 business days",
+      "not subject to handling fees",
+      "two consecutive months",
+      "15%",
+      "will not be made in cash",
+      "6 months"
+    ]
+  },
+  {
+    "id": "ins_07",
+    "domain": "insurance",
+    "history": "Customer: Good evening, my son Noam got his license two weeks ago, and he's 18. I'd like him to be able to drive my car. What do I need to do? I don't really understand these things, my husband always handled the insurance, so sorry in advance if I ask simple questions.\nAgent: Good evening Hana, this is Roi from Derech HaMelech Insurance. Congratulations to Noam! For Noam to be able to drive, the policy needs to be updated. Right now you're on the Mekif Mishpachti plan, which is for drivers aged 24 and over only.\nCustomer: I see. And how do I update it? And how much will it cost me? Right now I pay NIS 3,840 per year. And last year I had one small claim for a headlight, if that matters.\nAgent: The policy needs to be updated. I mean, switching to a plan suited to a young driver. It's a policy update, yes. So basically it needs updating, and after the update everything's sorted.\nCustomer: Yes, I already understood that. My question is how much it costs, and whether he can drive as soon as tomorrow, because he has to get to work at seven in the morning, at a bakery on the edge of town, and there's no bus at that hour.\nAgent: It'll take effect after the update. Once the policy is updated, he's covered. So once it's updated, it's updated. I'll check the price for the Mekif Nahag Tzair plan.\nCustomer: Just one last question. He's a new driver, so at first he has to have an accompanying driver with him. Does that change anything for the insurance? I don't want surprises if, God forbid, something happens. My husband says that on our previous insurance it came at no extra charge, but I'm not sure that's right.\nAgent: I'll check all the details and get back to you with everything, don't worry, everything will be updated.",
+    "doc": "Mekif Nahag Tzair Plan – Policy Extension for a Driver Under 24. A policyholder on the Mekif Mishpachti plan may add a driver aged between 17 and 23 to the policy by switching to the Mekif Nahag Tzair plan. The switch involves an additional premium of 62% of the existing annual premium, calculated pro rata for the period remaining until the end of the insurance year. A driver with less than one year of driving experience will be considered a new driver, and an increased deductible of NIS 3,500 will apply to them on every own-damage claim. Coverage for the additional driver will take effect only after written confirmation is received from the company and the additional premium is paid, and not from the date of the telephone inquiry. Driving by a new driver without an accompanying driver during the accompaniment period required by law is not covered, and in such a case the company will not pay insurance benefits for damage to the insured vehicle. Third-party coverage is not affected by this restriction. The young driver extension may be cancelled at any time, and the excess premium will be refunded pro rata. An extension request may be submitted on the company's website or at the service center, and the company will send written confirmation within one business day. The policyholder must present a copy of the additional driver's license; confirmation of completed driving lessons is not required. A young driver cannot be added to a policy on which more than 2 claims were filed in the last three years, without special underwriting approval.",
+    "questions": [
+      "What deductible will apply to Noam on an own-damage claim?",
+      "Will damage to the car be covered if Noam drives without an accompanying driver during the accompaniment period?",
+      "How much does Hana currently pay per year for the insurance?"
+    ],
+    "correct_answers": [
+      "NIS 3,500",
+      "is not covered",
+      "NIS 3,840 per year"
+    ],
+    "critical_facts": [
+      "Noam",
+      "he's 18",
+      "Hana",
+      "Derech HaMelech Insurance",
+      "Mekif Mishpachti",
+      "Mekif Nahag Tzair",
+      "NIS 3,840 per year",
+      "62%",
+      "NIS 3,500",
+      "and not from the date of the telephone inquiry",
+      "without an accompanying driver",
+      "is not covered",
+      "more than 2 claims",
+      "without special underwriting approval"
+    ]
+  },
+  {
+    "id": "ins_08",
+    "domain": "insurance",
+    "history": "Customer: Hi, I've been trying for two days to file a claim through your app for my phone's cracked screen, and every time I get to the photo upload step it freezes at 99% and then an 'unsupported file' error pops up. I restarted the phone, deleted the app and reinstalled it, I also tried from my sister's computer and from the computer at work, and nothing works. By the way, I'm taking the photos with my sister's phone, because mine, with the broken screen, barely responds to touch. It's really frustrating, because I pay you every month for a digital service and in practice I can't submit anything.\nAgent: Hi Ori, this is Shiran from Rakia Digital Insurance. I'm sorry about the frustration, and I understand how annoying it is when you pay for a service that's supposed to be simple. I can see your device is insured under the Gadget Pro plan. So I can help, could you tell me what format the photos are saved in and how big they are?\nCustomer: No idea what format, my sister shoots in high-quality mode. Each photo comes out at about 14 MB. I uploaded 5 photos, from every angle, including one of the frame, which also has a small scratch from half a year ago. Some of the photos she sent me and then I moved them to the computer, and there they were saved with a HEIC extension, if that means anything to you.\nAgent: Thanks, that helps a lot. The problem may be the file size or the format. A HEIC extension is exactly what I suspected, but let's check before I say anything final. I'm checking the exact guidelines.\nCustomer: Fine. And while you're checking, I have a few more questions. The phone fell on November 6 on the bus, and I bought it a year and three months ago for NIS 4,290. How much will I pay as a deductible? And what about a replacement device during the repair, because I work with the phone all day? And another thing, I already went to a private repair lab near home and they gave me a quote of NIS 1,100. Can I just get it fixed there and send you the receipt? And also, what's the deadline to file this, because it's been more than a week already and I don't want to miss it. I work shifts as a courier, the phone is my work tool, without navigation I simply can't go out on deliveries.\nAgent: Those are important questions. We'll go through everything according to the terms: uploading the files, the deductible, and the repair at the lab. As for the filing deadline, you still have time, but it's better not to put it off.\nCustomer: And one last thing, and I'm saying this as a formal complaint: on Sunday I tried calling the call center and waited 40 minutes on the line until the call dropped. Nobody got back to me. And it's not the first time, last month I tried to update my address in the app and it crashed. I want this on record.\nAgent: I've logged your complaint in the file, and the reference number is 77340. Now let's sort out the claim itself. Just before we start, let me confirm: the device was purchased in Israel, right? And you have the original invoice? If so, you can email the photos today, and I'll add my note about the app malfunction to the file.",
+    "doc": "Digital Claim Submission and Repair Terms – Gadget Pro Plan. A claim for damage to a device must be submitted through the app or the personal area, together with at least 3 photos of the damaged device. The system supports JPG or PNG files only, up to 8 MB per file; files in other formats or exceeding the limit will not be accepted. A policyholder who is unable to upload the files may send them to the claims department's email address, and the claim will be deemed submitted on the date the email was sent. The claim must be submitted within 30 days of the incident. The deductible for screen damage is 15% of the device's purchase price, and no less than NIS 350. The device will be repaired at an authorized lab on behalf of the company only, within 4 business days of the device being handed over. A repair carried out at a private lab that is not authorized will not be reimbursed, and the policyholder may even lose coverage for that device going forward. During the repair, a replacement device will be made available to the policyholder, provided that the insured device was purchased less than 24 months ago. Coverage does not include cosmetic damage that does not affect the device's functionality, such as scratches on the frame. Complaints about service quality are handled by the Public Inquiries Department, which will respond in writing within 21 days. The policyholder may choose to hand over the device at one of the service centers or to have it picked up from home at no cost. If repair is not possible, the device will be replaced with an equivalent device, less depreciation of 1.5% per month from the purchase date. Coverage does not apply to devices purchased outside Israel, unless an original purchase invoice is attached.",
+    "questions": [
+      "What is the maximum file size the system accepts?",
+      "Will a repair at the private lab Ori went to be reimbursed?",
+      "What is the reference number of Ori's complaint?"
+    ],
+    "correct_answers": [
+      "up to 8 MB per file",
+      "will not be reimbursed",
+      "77340"
+    ],
+    "critical_facts": [
+      "Ori",
+      "Rakia Digital Insurance",
+      "Gadget Pro",
+      "14 MB",
+      "November 6",
+      "NIS 4,290",
+      "NIS 1,100",
+      "77340",
+      "JPG or PNG files only",
+      "up to 8 MB per file",
+      "30 days",
+      "15%",
+      "no less than NIS 350",
+      "that is not authorized",
+      "will not be reimbursed"
+    ]
+  },
+  {
+    "id": "tel_01",
+    "domain": "telecom",
+    "history": "Customer: Hi, this is Assaf Barak. I got this month's bill with a NIS 310 charge for data abroad, and I don't understand why. I bought the Masa Plus package before my flight.\nAgent: Hi Assaf, this is Noy from Gali Communications. Happy to check. Where did you travel, and when?\nCustomer: I was in Georgia, from October 3 to 10. The package was activated, I got a message saying it was active.\nAgent: I can see the package was indeed activated on October 3. The extra charge was for 3.1GB of data beyond your allowance. Georgia is on the package's destination list, so the package itself worked as it should. You were also sent a message on October 6 that you'd used up your allowance.\nCustomer: But the rep who sold it to me said it was unlimited. Can you check what exactly the package includes? Because I'm not going to pay for something nobody explained to me.\nAgent: Of course, I'm opening the package terms now and we'll go through them together.",
+    "doc": "Masa Plus Package – Data and Calls Abroad. The package includes 5GB of data and 60 call minutes for 30 days from activation, at a price of NIS 59, in 45 destinations listed on the Gali Communications website. The package does not include unlimited browsing. Once the allowance has been used up, a notice will be sent to the customer, and browsing will continue at a rate of NIS 10 per 100MB, up to a billing cap of NIS 400 per month. The customer may block browsing after the allowance has been used up via the app or the service center. A charge for data beyond the allowance will not be cancelled if a usage notice as described was sent to the customer. Incoming calls abroad are not included in the package minutes and will be charged separately. An additional package may be purchased at any time during the stay, and it will be activated immediately upon purchase. The package is valid only in the destinations on the list; data used in a destination not on the list will be charged at the standard roaming rate even if the package is active. The usage notice is sent by SMS to the line's number only, and not to the email address. A customer who disputes a charge may submit a written objection, and the company will respond within 14 days of receiving it.",
+    "questions": [
+      "What is the monthly billing cap for data beyond the allowance?",
+      "Will the charge be cancelled if a usage notice was sent to the customer?",
+      "On what dates was Assaf in Georgia?"
+    ],
+    "correct_answers": [
+      "NIS 400 per month",
+      "will not be cancelled",
+      "from October 3 to 10"
+    ],
+    "critical_facts": [
+      "Assaf Barak",
+      "Gali Communications",
+      "Masa Plus",
+      "NIS 310",
+      "from October 3 to 10",
+      "3.1GB",
+      "October 6",
+      "5GB",
+      "NIS 59",
+      "does not include unlimited browsing",
+      "NIS 10 per 100MB",
+      "NIS 400 per month",
+      "will not be cancelled",
+      "are not included in the package minutes"
+    ]
+  },
+  {
+    "id": "tel_02",
+    "domain": "telecom",
+    "history": "Customer: I'm paying you for Sib 1000 and getting 90 Mbps!!! It's been like this for two weeks, I work from home and I literally can't work\nAgent: Hello, this is Yaron from Sib-Net. Sorry to hear that. Could I have your name? And did you test the speed with a cable or over Wi-Fi?\nCustomer: Ido Shemesh. Wi-Fi obviously, who plugs in a cable these days? And don't tell me to restart the router, I've done that ten times.\nAgent: I understand. Look, the speed over Wi-Fi can be lower, it depends on a lot of things, distance, walls, all kinds of stuff like that. It depends.\nCustomer: I'm sitting two meters from the router! And last week it worked perfectly. I want a technician, and I'm not paying a cent for it, just so we're clear. And I also can't wait at home all day, I have meetings. I already called you on November 4 and they told me it would sort itself out.\nAgent: We can schedule a technician, yes. As for paying for the visit, it depends whether the fault is on our side or yours. There are all kinds of situations. It also depends on the router, whether it's ours or not.\nCustomer: What do you mean on my side? It's your router! I got it from you when I joined in March, and I pay NIS 15 a month for it. And if you don't fix this this week, I want a credit for the whole period, and maybe I'll just leave. And if you replace the router, bring a new one that actually works, not another used one.\nAgent: Let me check this against the technician and credit procedure and I'll get right back to you with an answer.",
+    "doc": "Technician Visits and Compensation for Reduced Speed – Sib-Net Plans. A customer on the Sib 1000 plan is entitled to a maximum browsing speed of 1,000 Mbps over a wired connection. Speed achieved over a wireless network is not guaranteed, and a speed test will be considered valid only when performed on a computer connected to the router by cable. A technician visit will be scheduled within 3 business days of the inquiry. A technician visit will not be charged when the fault is found in the company's infrastructure or in a router supplied by the company. When the fault is found in the customer's private equipment or home network, the customer will be charged a visit fee of NIS 149. If, for more than 7 consecutive days, a wired connection measures a speed lower than 40% of the plan speed, the customer will be credited pro rata for the days of the fault, provided that they reported it to the service center. No credit will be given for days preceding the date of the first report. A customer whose fault has not been fixed within 30 days of the report may disconnect from the service without exit fees. The router remains the property of the company and must be returned within 14 days of disconnection; a router that is not returned will be charged at NIS 350. Technician visits can be scheduled Sunday to Thursday between 08:00 and 20:00, and on Fridays until 13:00. A customer who is not present at the scheduled time and did not cancel the visit at least 4 hours in advance will be charged the visit fee, even if the fault is in the company's infrastructure. A technician may replace a faulty router on the spot at no additional cost to the customer.",
+    "questions": [
+      "How much will the customer pay for a technician visit if the fault is in their home network?",
+      "Under what condition is a speed test considered valid?",
+      "How much does Ido pay each month for the router?"
+    ],
+    "correct_answers": [
+      "NIS 149",
+      "a computer connected to the router by cable",
+      "NIS 15 a month"
+    ],
+    "critical_facts": [
+      "Ido Shemesh",
+      "Sib-Net",
+      "Sib 1000",
+      "90 Mbps",
+      "November 4",
+      "NIS 15 a month",
+      "is not guaranteed",
+      "on a computer connected to the router by cable",
+      "3 business days",
+      "will not be charged",
+      "NIS 149",
+      "more than 7 consecutive days",
+      "40%",
+      "No credit will be given for days preceding the date of the first report",
+      "NIS 350"
+    ]
+  },
+  {
+    "id": "tel_03",
+    "domain": "telecom",
+    "history": "Customer: Hello, good thing you answered, I waited almost a quarter of an hour. Listen, I want to understand something before I make a move, because I've been burned before with another company. We have the Family 4 Lines package with you, me, my husband and our two kids, for something like three years now. Now my daughter, Yael, is moving to Haifa with a friend, my son is enlisting next month, and my husband says his new job is giving him a company line. So basically only my line is left, and there's no point paying NIS 219 a month for four lines. On the other hand, a year ago I bought a phone for my son from you in installments, and I don't remember how much is left. So my question is what happens if I cancel everything and move to another company.\nAgent: Hello Margalit, this is Kobi from Orbit Cellular. I understand. So if you cancel, there are a few things to consider. There are the payments on the device, and there's the package itself. And there are also the kids' lines, and there's your line.\nCustomer: Yes, I understand that, that's why I'm asking. I don't want to suddenly get a bill for thousands of shekels. Another thing, when we joined, the rep told me there's no commitment at all, but a friend of mine says family packages always have some kind of penalty. So which is it? And tell me also, if I don't cancel everything, just the other three lines and keep mine, do I still pay the family package price?\nAgent: So like I said, there are the payments on the device and there's the package. I can see there are 8 payments of NIS 74 left on the device. As for the commitment, I need to check. It depends on the package.\nCustomer: 8 payments, okay. And if I cancel, do I have to pay all of it at once? Because that's a sum. And something else that matters to me: my son, when he enlists, I understand soldiers have special plans. If he moves to a soldiers' plan with you, is that still part of the package or does it come out of it? I want to know all the options before I decide, I don't like doing things under pressure.\nAgent: I see, good questions. So about the device, there's an option to keep paying in installments or to pay it off. And about soldiers, there's a plan, yes. So there are a few options. I want to check this properly in the terms.\nCustomer: And please, if you can, tell me also by when I need to decide. Because Yael is already starting a contract with another company on December 1, and she asked me whether she needs to do anything on her end, or whether she just ports the number and that's it. I don't want her to fall between the cracks and be left without a phone for a day or two, especially when she's on her own in a new city. And my husband asked something else: if we cancel, will our son's phone be locked to you? Because he wants to keep using it in the army.\nAgent: Sure. I'm opening the cancellation terms for Family 4 Lines now and I'll go through everything with you, the device, the lines and Yael's porting.",
+    "doc": "Cancelling and Reducing Lines – Family 4 Lines Package. The package does not include a commitment period, and a customer may cancel it or reduce the number of lines at any time without exit fees. The package price, NIS 219 per month, applies only when at least 3 lines are active in it. If fewer than 3 lines remain in the package, the remaining lines will be automatically moved to a single-line plan at the regular price list, starting from the next billing cycle. Porting a number to another company is carried out at the initiative of the receiving company, and does not require the customer to contact Orbit Cellular; the line will be disconnected on our side only once the porting is completed, so there will be no interruption in service. Cancelling the package does not cancel the device purchase agreement. The remaining installments on a device will continue to be collected on their original dates, and immediate repayment will not be required, unless the customer requests it. A customer who asks to settle the balance in a single payment will receive a discount of 5% of the balance. A line moved to a soldiers' plan is considered a separate line and is not counted toward the number of lines in the family package, even if it is registered under the same account holder. A soldiers' plan requires presenting a military ID within 30 days of the switch. A request to cancel or reduce lines will take effect at the end of the billing cycle in which it was submitted, and the final bill will be sent within 10 days of closure. A customer who wishes to keep the device of a cancelled line may do so, and the device is not locked to the Orbit Cellular network. When moving to a single-line plan, the phone number and voicemail will be kept, and no additional payment will be required. A request to reduce lines can be submitted in the personal area, without needing to speak to an agent.",
+    "questions": [
+      "What discount does a customer get for settling the device balance in a single payment?",
+      "Does Margalit have to pay the device balance immediately upon cancellation?",
+      "When does Yael start a contract with another company?"
+    ],
+    "correct_answers": [
+      "5% of the balance",
+      "immediate repayment will not be required",
+      "on December 1"
+    ],
+    "critical_facts": [
+      "Margalit",
+      "Yael",
+      "Kobi",
+      "Orbit Cellular",
+      "Family 4 Lines",
+      "NIS 219",
+      "8 payments of NIS 74",
+      "December 1",
+      "does not include a commitment period",
+      "at least 3 lines",
+      "does not require the customer to contact",
+      "immediate repayment will not be required",
+      "5% of the balance",
+      "is not counted toward the number of lines",
+      "30 days"
+    ]
+  },
+  {
+    "id": "tel_04",
+    "domain": "telecom",
+    "history": "Customer: hi. do i get a student discount?\nAgent: Hi, this is Maya from Keshet Mobile. How old are you and where do you study?\nCustomer: 27. college, bachelor's in engineering, second year\nAgent: Great. And which plan are you on now?\nCustomer: Free 59\nAgent: I can see you don't currently have any active discount on the line. One sec, checking eligibility.\nCustomer: ok. need anything? i have a letter from the registrar from september, is that good?\nAgent: Yes, proof of enrollment for the current year, so a letter from September should be fine. One moment, I'm confirming the other conditions and I'll explain how to upload it.",
+    "doc": "Student 39 Plan – Eligibility Conditions. The plan is intended for students studying for a degree at a recognized institution of higher education, and its price is NIS 39 per month, compared with NIS 59 on the Free 59 plan. A condition for joining is presenting valid proof of enrollment for the current academic year. The plan is not available to customers over 30 at the time of joining. The plan includes 100GB of data and unlimited calls within Israel, and does not include calls abroad. Proof of enrollment must be renewed every year by October 31; a customer who does not renew the proof will be automatically moved to the Free 59 plan. Switching to the Student 39 plan involves no switching fee and does not require replacing the SIM card. Students in certificate programs or short courses are not eligible for the plan. The discount cannot be combined with another discount on the same line, and it will take effect at the start of the next billing cycle after the documents are approved. A customer aged up to 30 on another plan can switch to the Student 39 plan at any time via the app, by uploading a photo of the proof of enrollment. The proof will be reviewed within 2 business days, and the customer will receive a notice of approval or rejection. The plan is limited to one line per student and cannot be transferred to a family member.",
+    "questions": [
+      "By what date must proof of enrollment be renewed?",
+      "What happens to a customer who did not renew their proof of enrollment?",
+      "How old is the customer?"
+    ],
+    "correct_answers": [
+      "by October 31",
+      "automatically moved to the Free 59 plan",
+      "27"
+    ],
+    "critical_facts": [
+      "Maya",
+      "Keshet Mobile",
+      "27",
+      "Free 59",
+      "you don't currently have any active discount",
+      "Student 39",
+      "NIS 39 per month",
+      "NIS 59",
+      "is not available to customers over 30",
+      "100GB",
+      "and does not include calls abroad",
+      "by October 31",
+      "will be automatically moved to the Free 59 plan",
+      "are not eligible for the plan",
+      "cannot be combined with another discount"
+    ]
+  },
+  {
+    "id": "tel_05",
+    "domain": "telecom",
+    "history": "Customer: Move me to Basic 29. Now. I'm paying 129 for Ultra 5G and I barely use it. For half a year now I've been seeing on my bill that I don't even come close to the allowance\nAgent: Hello, this is Alon from Nativ Telecom. Sure, just a few quick questions. Whose name is the line under? I need to make sure I'm speaking with the line owner.\nCustomer: Roni Dahan. And hurry up please, I'm in the middle of work\nAgent: Thanks Roni. I can see you used 6GB last month, and your billing cycle starts on the 15th of every month, which is today. It's also important you know that the NIS 129 you're paying is a promotional price you got when you joined.\nCustomer: Great, so start it from today. And I don't want to pay the 129 for this month, only 29. Because I heard that people who switch plans mid-month get charged double, and that's not happening to me.\nAgent: I understand. You also have the Tzfiya+ service that comes with Ultra, and I want you to know what happens to it when you switch before I approve.\nCustomer: Don't need it, never even opened it. What else? And if I change my mind in a month, can I go back to Ultra at the same price? Because I don't want to get stuck. And anyway, why did no one at your company offer me this before?\nAgent: I'm checking both of those in the switching terms right now, and we'll wrap this up fast. It's 15:30 now, so we're in time. Meanwhile I'm verifying your identity against the details on the account.",
+    "doc": "Switching Between Plans – Nativ Telecom. A customer may switch between plans at any time via the app, the website or the service center. A switch to a cheaper plan will take effect at the start of the next billing cycle, while a switch to a more expensive plan will take effect immediately. A switch request received on the first day of the billing cycle, by 20:00, will take effect in that same cycle. When switching between plans there is no double charge, and the bill will be calculated according to the plan in effect in each cycle. The Tzfiya+ service is included in the Ultra 5G plan only, and is not included in the Basic 29 plan; upon switching, the service will be discontinued, and content purchased through it will no longer be viewable. A promotional price given at the time of joining is not retained after a plan change: a customer who returns to the Ultra 5G plan will be charged according to the standard price list, NIS 169 per month. The Basic 29 plan includes 10GB of data; once the allowance is used up, the speed will be reduced to 1 Mbps, at no additional charge. A plan change does not change the phone number and does not require replacing the SIM. The customer will receive an SMS confirming the switch and its effective date within 24 hours. A customer who switched to a cheaper plan and asks to return to the previous plan within 30 days will not be charged a switching fee, but the price will be set according to the standard price list. A switch request via the service center requires identity verification of the line owner, and will not be carried out for anyone who is not registered as the line owner.",
+    "questions": [
+      "How much will Roni pay per month if he goes back to Ultra 5G?",
+      "Is the Tzfiya+ service included in the Basic 29 plan?",
+      "How much data did Roni use last month?"
+    ],
+    "correct_answers": [
+      "NIS 169 per month",
+      "is not included in the Basic 29 plan",
+      "6GB"
+    ],
+    "critical_facts": [
+      "Roni Dahan",
+      "Nativ Telecom",
+      "Ultra 5G",
+      "Basic 29",
+      "NIS 129",
+      "6GB",
+      "15th of every month",
+      "15:30",
+      "by 20:00",
+      "there is no double charge",
+      "is not included in the Basic 29 plan",
+      "is not retained after a plan change",
+      "NIS 169 per month",
+      "10GB",
+      "at no additional charge"
+    ]
+  },
+  {
+    "id": "tel_06",
+    "domain": "telecom",
+    "history": "Customer: yo i lost my phone yesterday at a party, need to block the line asap\nAgent: Hey, this is Guy from Zerem Cellular. Good thing you called quickly, I'm blocking it for you now. Can I have your full name?\nCustomer: Dor Almog. just block it already pls, i have bank apps and everything on there\nAgent: The line is blocked as of now, 14:10. You're on the Zerem Free plan, so no usage will be charged from now on. Want to get a new SIM?\nCustomer: yeah but im buying a new phone tmrw that has eSIM, how much is it and when does it work? cant be bothered going to a branch and dont feel like waiting days for the mail either. and wait, do i keep paying for the month while the line is blocked? cuz that makes no sense\nAgent: One sec, checking both of those in the terms for you",
+    "doc": "Line Blocking and Replacement SIM Issuance – Zerem Free Plan. A customer who has reported the loss or theft of a device may block the line immediately, free of charge. During the blocking period the customer will continue to pay the monthly subscription fee, and no credit is given for blocked days. Issuing a replacement physical SIM card costs NIS 25, and the card will be sent by mail within 3 business days or handed over at a branch. Issuing a replacement eSIM does not involve any payment, and it is activated via the app within 15 minutes, provided that the customer verifies their identity using a code sent to the email address registered on the account. An eSIM cannot be activated while the line is blocked; a release of the block must be requested before activation. A block that has not been released within 90 days will lead to disconnection of the line. The phone number is fully retained throughout the blocking period. A customer who finds the original device may release the block themselves in the personal area. When a replacement card is issued, the previous card is permanently deactivated and cannot be reactivated. An eSIM can be issued only on a device that supports the technology, and the customer is responsible for checking this before making the request. Contacts and photos stored on the device are not restored by the company.",
+    "questions": [
+      "Within how long is a replacement eSIM activated?",
+      "Will Dor receive a credit for the days the line is blocked?",
+      "At what time was Dor's line blocked?"
+    ],
+    "correct_answers": [
+      "within 15 minutes",
+      "no credit is given for blocked days",
+      "14:10"
+    ],
+    "critical_facts": [
+      "Dor Almog",
+      "Guy",
+      "Zerem Cellular",
+      "Zerem Free",
+      "14:10",
+      "free of charge",
+      "no credit is given for blocked days",
+      "NIS 25",
+      "3 business days",
+      "does not involve any payment",
+      "within 15 minutes",
+      "provided that the customer verifies their identity",
+      "An eSIM cannot be activated while the line is blocked",
+      "90 days"
+    ]
+  },
+  {
+    "id": "tel_07",
+    "domain": "telecom",
+    "history": "Customer: Good afternoon. I can see on my November bill that the price of Triple Tedder jumped from NIS 149 to NIS 239. I'd like to understand why, because I didn't receive any advance notice. I'm a reliable customer, I always pay by direct debit and I've never missed a payment.\nAgent: Good afternoon Orna, this is Sagi from Tedder Communications. I can see you joined on November 1, 2025 at a promotional price for one year, and the promotion ended at the end of October.\nCustomer: I understand it was a promotion, but as far as I know you're required to give notice before raising a price. I checked both my email and my messages, and there's nothing.\nAgent: I'm checking the system. I can see a notice was sent on October 12, but it was sent to an old email address that appears on your account. I also checked your payment history, and there are no arrears in the past year.\nCustomer: An old address? I updated it with you in August by phone. So basically I didn't get any notice, and that's not my fault. I'm not asking for favors, just that you do what the terms say.\nAgent: I completely understand. I'm finding a record of your update from August, so the notice didn't reach your current address. Let's see what the terms say in a case like this.\nCustomer: Fine. And if after all this the new price stays, I'm considering leaving. Does that mean I have to return the set-top box and the router? I work late and I have no time to go to a service center, and I'd rather not pay for a courier unless I have to.\nAgent: I'll answer that too. I'm opening the section on promotion end and price changes now, and then the section on returning equipment.",
+    "doc": "End of Promotional Period and Price Changes – Triple Tedder Package. A promotional price is given for a fixed period of 12 months from the date of joining. At the end of the period, the price will be updated to the list price, which is NIS 239 per month. The company will send the customer notice of the end of the promotion and of the new price at least 21 days before the change, according to the up-to-date contact details on the account. If the notice was not sent as required, the new price will not apply until 21 days have passed from the date a proper notice is sent, and the customer will be credited with the difference for the period in which they were charged improperly. A customer may choose a retention price of NIS 189 per month for an additional 12 months, provided that they have had no payment arrears in the past year. Ending the service does not involve exit fees. Upon ending the service, the set-top box and the router must be returned to one of the company's service centers within 14 days; equipment that is not returned will be charged at NIS 290 for the set-top box and NIS 350 for the router. Returning equipment via a courier on behalf of the company costs NIS 39. An objection to a charge may be filed within 6 months of the bill date. A credit for an improper charge will be given on the next bill, and not as a refund to the bank account. A customer who asks to end the service will receive written confirmation of the disconnection date, and the final charge will be calculated pro rata up to the disconnection date.",
+    "questions": [
+      "What monthly retention price can Orna choose?",
+      "What happens to the new price if the notice was not sent as required?",
+      "When did Orna update her email address?"
+    ],
+    "correct_answers": [
+      "NIS 189 per month",
+      "the new price will not apply",
+      "in August"
+    ],
+    "critical_facts": [
+      "Orna",
+      "Sagi",
+      "Tedder Communications",
+      "Triple Tedder",
+      "from NIS 149 to NIS 239",
+      "November 1, 2025",
+      "October 12",
+      "in August",
+      "at least 21 days",
+      "the new price will not apply",
+      "NIS 189 per month",
+      "provided that they have had no payment arrears",
+      "does not involve exit fees",
+      "14 days",
+      "NIS 39"
+    ]
+  },
+  {
+    "id": "tel_08",
+    "domain": "telecom",
+    "history": "Customer: Hello, I'm calling for the last time before I switch companies, so listen carefully. I have a dental clinic on HaRimonim Street, and we have the Business Pro package with you with 5 lines: two landlines, a reception phone and two more mobiles for the dentists. From Sunday morning until Tuesday evening, so almost three full days, the landlines didn't work at all. Patients couldn't call to book or cancel appointments, and some just didn't show up because they thought the clinic was closed. My secretary, Tova, spent three days on her personal cell phone calling patients one by one. By my estimate we lost at least 12 appointments, and each appointment with us is NIS 450 on average. So I want real compensation, not a ten-shekel credit.\nAgent: Hello, this is Lia from Migdal Kesher, business customer center. I'm very sorry about what happened. I can see in the system there was a regional infrastructure fault, which opened on November 8 and was closed on November 10. Could I have your full name?\nCustomer: Benny Rosenthal. And I don't understand why I had to find out about it myself. Nobody sent us any notice, not an SMS and not an email. At any normal business, if there was a fault like that, they'd call the customer and apologize. And besides, I want to know how the compensation is calculated, based on what I actually lost or on some table of yours. And by the way, Tova tried calling your call center on Monday and waited on the line with no answer.\nAgent: I understand. The compensation is calculated according to the Business Pro service agreement, and I'll go through it with you clause by clause. I can see you pay NIS 640 a month for the package, and that you're not registered for our alerts service.\nCustomer: 640, right. And nobody ever told me about any alerts service. Now the second part: I've already spoken with another company, and they're ready to port all five numbers. But they told me that with you there's a commitment until March 2027, and that if I leave before then I pay a penalty. I want to hear it from you: if I'm leaving because of your fault, do I still pay a penalty? Because that's really not fair. And another thing, the reception number is on the sign, on the business cards and on the clinic's website, I can't lose it even for a single day.\nAgent: Excellent questions. I want to make sure I give you an accurate answer from the service agreement and not from memory, so I'll check the commitment clause and the porting clause. I can also see that the router and the PBX are registered in the clinic's name.\nCustomer: Fine. And please also check what happens with the router and the PBX we got from you, because I was told that if I don't return them on time I get charged thousands of shekels. I don't want another surprise at the end, after everything we went through this month. And tell me also whether the compensation comes as a check or as a credit, because it matters for my accountant.\nAgent: Noted. I'm opening the Business Pro service agreement now and we'll go over four topics: compensation for the fault, the commitment, porting and returning the equipment.",
+    "doc": "Business Pro Service Agreement – Availability, Compensation and Exit. The company guarantees 99.5% availability of landline telephony services. A fault lasting more than 24 consecutive hours entitles the customer to compensation at a rate of 1/30 of the monthly subscription fee for each day of the fault, plus fixed compensation of NIS 200 per incident. The compensation does not include loss of income, loss of profits or any other indirect damage caused to the business. A business customer registered for the alerts service will receive notice of a regional fault within two hours of its opening; a customer who is not registered for the service will not receive proactive notice. The commitment period for the package is 24 months. Leaving before the end of the period involves an exit fee of NIS 150 per line; however, no exit fees will be charged if, during the 90 days preceding the request, a fault of more than 48 consecutive hours was recorded. Number porting is carried out at the initiative of the receiving company, and the numbers continue to operate with Migdal Kesher until porting is completed. The router and the PBX must be returned within 21 days of disconnection; equipment that is not returned will be charged at NIS 1,800. A compensation request must be submitted in writing within 60 days of the fault being closed. Compensation for a fault will be given as a credit on the bill, and not as a cash payment or a check. A customer who wishes to register for the alerts service can do so in the business area at no cost. During business number porting, the company will allow temporary call forwarding to a mobile number of the customer's choice, free of charge, for up to 7 days.",
+    "questions": [
+      "What is the fixed compensation per fault incident?",
+      "Does the compensation include the appointments Benny lost?",
+      "When was the fault closed according to the system?"
+    ],
+    "correct_answers": [
+      "NIS 200 per incident",
+      "does not include loss of income",
+      "on November 10"
+    ],
+    "critical_facts": [
+      "Benny Rosenthal",
+      "Lia",
+      "Migdal Kesher",
+      "Business Pro",
+      "5 lines",
+      "12 appointments",
+      "NIS 450",
+      "November 8",
+      "November 10",
+      "NIS 640",
+      "March 2027",
+      "NIS 200 per incident",
+      "does not include loss of income",
+      "no exit fees will be charged",
+      "more than 48 consecutive hours"
+    ]
+  },
+  {
+    "id": "bank_01",
+    "domain": "banking",
+    "history": "Customer: Hello, I'm looking at my Gefen Gold card statement and there's a NIS 1,240 charge from an online electronics store that I didn't make. What do I do in a case like this?\nAgent: Hello, this is Nadav from Gefen Bank. Sorry to hear that. Could I have your full name, and when was the charge made?\nCustomer: Hadas Koren. The charge is from October 28. The card is always in my wallet, and I haven't given it to anyone, not even my partner.\nAgent: Thank you, Hadas. I'm blocking the card right now and ordering you a new one. I can see there's another small charge from the same site, NIS 9.90, the day before.\nCustomer: I didn't make that one either. Will I get the money back? And how long does it take? Because the charge has already gone through on this month's statement.\nAgent: I'm checking the transaction dispute procedure for you now, and I'll walk you through every step.",
+    "doc": "Disputing a Credit Card Transaction – Gefen Bank Cards. A customer who disputes a transaction they did not make may submit a dispute notice in writing, via the app or through the service center, within 30 days of receiving the statement in which the transaction appeared. Upon receipt of the notice, the card will be blocked, and the bank will temporarily credit the customer with the transaction amount within 5 business days. The bank will investigate the dispute with the merchant within 45 days, and the credit will become final if it is not proven that the transaction was made by the customer. No credit will be given for a transaction made by a family member or another person to whom the customer gave the card or its details. Charges of up to NIS 10 from the same merchant will be reviewed as part of the same dispute, and there is no need for a separate notice. Issuing a replacement card following a dispute does not involve a fee, and the card will be sent within 7 business days to the address registered with the bank.",
+    "questions": [
+      "Within how long will the customer be temporarily credited?",
+      "Does Hadas need to submit a separate notice for the NIS 9.90 charge?",
+      "What is the date of the charge Hadas is disputing?"
+    ],
+    "correct_answers": [
+      "within 5 business days",
+      "there is no need for a separate notice",
+      "October 28"
+    ],
+    "critical_facts": [
+      "Hadas Koren",
+      "Nadav",
+      "Gefen Bank",
+      "Gefen Gold card",
+      "NIS 1,240",
+      "October 28",
+      "NIS 9.90",
+      "30 days",
+      "within 5 business days",
+      "45 days",
+      "No credit will be given",
+      "up to NIS 10",
+      "there is no need for a separate notice",
+      "does not involve a fee"
+    ]
+  },
+  {
+    "id": "bank_02",
+    "domain": "banking",
+    "history": "Customer: I want to pay off my mortgage early and you want to take an NIS 18,000 fee from me?! That's daylight robbery\nAgent: Hello, this is Inbal from Maalot Bank. I understand you're upset. Could I have your name and the loan number?\nCustomer: Yossi Malka. I don't know the number by heart. I took the mortgage in 2021, NIS 600,000, and now I've sold an apartment I inherited and I have the money to pay off the entire balance. So why punish me for paying it back?\nAgent: I can see the loan. You have two tracks, Maalot Fixed Mortgage and a prime track. The fee is something that's calculated, it depends on a lot of parameters, the interest rate, the term and everything.\nCustomer: I don't need a lecture on parameters. I want to know if there's a way to pay less. A friend of mine said that if you give notice in advance there's a discount. And anyway, is there a fee on the prime track or not?\nAgent: There are all kinds of options, yes. Both regarding advance notice and regarding the tracks, it depends. Every case is different. And the discounts too, there are discounts in certain situations, but not always.\nCustomer: It depends, it depends, all you people know how to say is it depends. I want to close this by the end of December, because that's when I start building and I don't want the money sitting around. And if the fee is crazy, I'm filing a complaint with the Banking Supervision Department.\nAgent: I understand. I'm opening the early repayment terms now and I'll tell you exactly what applies to each track.",
+    "doc": "Early Repayment of a Mortgage Loan – Maalot Bank. A borrower may repay the loan, in full or in part, before its due date. An early repayment request must be submitted in writing at least 10 days before the requested repayment date. On the prime track, no early repayment fee will be charged, other than an operational fee of NIS 60. On the Maalot Fixed Mortgage track, a capitalization fee will be charged, calculated according to the difference between the loan's interest rate and the average interest rate known on the repayment date. A borrower who gave notice of the repayment at least 30 days in advance will receive a 10% discount on the capitalization fee. A borrower who repays the loan after at least 5 years have passed since it was taken out will receive an additional 20% discount on the capitalization fee. The capitalization fee is not charged when the average interest rate on the repayment date is higher than the loan's interest rate. The exact fee amount will be provided to the borrower in writing within 3 business days of the request, and it is valid for 14 days. Early repayment does not cancel the building insurance, which must be cancelled separately with the insurance company. A borrower who repays part of the loan may choose between shortening the loan term and reducing the monthly payment. An early repayment request may be submitted at a branch, on the bank's website or using a dedicated form that will be sent by mail, and there is no need to come in person to sign. The repayment amount will be collected from the borrower's account at the bank only, and not from a third party's account.",
+    "questions": [
+      "How far in advance must notice be given to receive a 10% discount on the capitalization fee?",
+      "Will an early repayment fee be charged on the prime track?",
+      "What was the amount of the mortgage Yossi took?"
+    ],
+    "correct_answers": [
+      "at least 30 days in advance",
+      "no early repayment fee will be charged",
+      "NIS 600,000"
+    ],
+    "critical_facts": [
+      "Yossi Malka",
+      "Inbal",
+      "Maalot Bank",
+      "Maalot Fixed Mortgage",
+      "NIS 18,000",
+      "2021",
+      "NIS 600,000",
+      "the end of December",
+      "at least 10 days",
+      "no early repayment fee will be charged",
+      "NIS 60",
+      "at least 30 days in advance",
+      "10%",
+      "20%",
+      "is not charged"
+    ]
+  },
+  {
+    "id": "bank_03",
+    "domain": "banking",
+    "history": "Customer: Hello, listen, I really don't know what to do anymore. I'm Bracha Ohayon, I've had an account with you at the branch on HaNevi'im Street for more than 30 years, since my late husband was still alive. A week ago my son, who lives in Canada, transferred me money, NIS 85,000, because I need to renovate the bathroom and install a stairlift, the stairs are getting hard for me. And since then, yesterday morning, I go into the app and I see that everything is blocked. I can't transfer money to the contractor, the card doesn't work at the supermarket, and it says something about a restriction. I didn't do anything wrong, it's my son's money, he's been working there in high-tech for ten years, and I even explained it to the clerk at the branch before he sent it.\nAgent: Hello Bracha, this is Eliezer from Karmim Bank. I understand this is stressful. I can see the account has indeed been restricted, and it's related to the transfer from abroad. It's a check the bank carries out.\nCustomer: But what do you mean, a check? Nobody called me, nobody sent a letter, nothing. And I have to pay the contractor a NIS 12,000 deposit by Thursday, otherwise he takes another job and I'm left with a wrecked bathroom. And I have standing orders, the electricity, the municipal tax, the car insurance, what will happen with them? I don't want them cutting off my electricity because of this. And another thing, my pension comes in on the 1st of the month, will that be blocked too?\nAgent: Yes, so like I said, it's a check the bank carries out when a transfer like this comes in. There's a check, and at the end of the check the account is released. I need to check what exactly is needed from you. And regarding the standing orders and the pension, I need to check that too, there's a procedure for it.\nCustomer: So check, please. And I also want to know how long this takes, because at the branch, when I went yesterday, they told me it could take a month. A month! I can't wait a month. And my son says he can send any document you need, pay slips, a letter from his bank in Canada, whatever you want. Just tell us what. And I also have a small deposit with you, I saved it for my granddaughter's wedding, I hope nothing happened to it.\nAgent: Okay. So there's a check, and there are documents that need to be sent. The faster you send the documents, the faster the check will be completed. I want to see exactly which documents.\nCustomer: And tell me something else, I hear all kinds of stories about scams, people calling older folks and saying they're from the bank. How do I know you're really from the bank? And how do I send the documents, I'm not very good with the computer, my granddaughter, Avigail, helps me sometimes, but she's in the army and only comes home on weekends.\nAgent: That's a very important question, and you're right to ask. I won't ask you for any password or code. I'm opening the procedure for checking transfers from abroad now and we'll go through everything together, the documents, the standing orders and the pension.",
+    "doc": "Procedure for Reviewing Incoming Transfers from Abroad – Karmim Bank. An incoming transfer from abroad exceeding NIS 50,000 may result in a temporary restriction on outgoing activity in the account, until the review of the source of funds has been completed. The bank will send the customer notice of the restriction within one business day, by mail and by text message. During the restriction, standing orders will continue to be executed, as will fixed charges set up before the transfer date, and incoming credits, including pensions and salaries, will be received in the account. Cash withdrawals, outgoing transfers and use of a debit card will not be permitted until the review is completed. To complete the review, the customer must provide a confirmation from the sending institution attesting to the identity of the sender, and a document explaining the purpose of the transfer. The review will be completed within 7 business days of receipt of all documents. Documents may be submitted at a branch, through the website, or through an attorney-in-fact authorized by the customer in writing. A customer may request an exceptional release of a limited amount for an urgent payment, up to NIS 15,000, subject to the branch manager's approval. Bank representatives do not ask the customer for a password, verification code or card details in a phone call. A customer who has not provided the documents within 30 days of the notice may be required to return the funds to the sender. The restriction does not affect existing deposits and savings, which will continue to earn interest as usual. A customer may file a complaint about the handling of the matter with the bank's Public Inquiries Officer.",
+    "questions": [
+      "Up to what amount can an exceptional release be requested for an urgent payment?",
+      "Will Bracha's standing orders continue to be executed during the restriction?",
+      "How much money did Bracha's son transfer?"
+    ],
+    "correct_answers": [
+      "up to NIS 15,000",
+      "standing orders will continue to be executed",
+      "NIS 85,000"
+    ],
+    "critical_facts": [
+      "Bracha Ohayon",
+      "Eliezer",
+      "Karmim Bank",
+      "NIS 85,000",
+      "NIS 12,000",
+      "Thursday",
+      "1st of the month",
+      "NIS 50,000",
+      "one business day",
+      "standing orders will continue to be executed",
+      "will not be permitted",
+      "7 business days",
+      "up to NIS 15,000",
+      "subject to the branch manager's approval",
+      "do not ask the customer for a password"
+    ]
+  },
+  {
+    "id": "bank_04",
+    "domain": "banking",
+    "history": "Customer: how much is a transfer abroad?\nAgent: Hello, this is Sapir from Eshkol Bank. To which country and for what amount?\nCustomer: Germany. 2,000 euros. to my brother's account, first time i'm sending him\nAgent: And through which channel? App or branch?\nCustomer: app. today\nAgent: You're on the Eshkol Basic track, right? One moment, checking the rate.\nCustomer: yes. and when does it arrive?\nAgent: One more moment, I'm checking that too. It's 15:20 now, which matters here.",
+    "doc": "Transfers Abroad – Eshkol Basic Track. A transfer abroad via the app or the website involves a fee of 0.2% of the transfer amount, no less than NIS 45 and no more than NIS 250. A transfer through a teller at a branch involves a double fee. Transfers to eurozone countries reach the beneficiary's account within one business day, and to other countries within 3 business days. The bank's fee does not include fees of intermediary banks abroad, which may be deducted from the amount reaching the beneficiary. A transfer exceeding NIS 50,000 in a single day via the app is not possible, and must be carried out at a branch. Currency conversion is made at the bank's transfer rate at the time of execution. A transfer made after 14:00 will be treated as if it was made on the next business day. A transfer may be cancelled only as long as it has not been sent to the beneficiary's bank. Confirmation of execution will be sent to the customer in the app as soon as the transfer is sent. A customer may set up regular beneficiaries abroad in the app, and transfers to them will not require additional verification. A transfer to a new beneficiary exceeding NIS 10,000 will require identity verification with a one-time code.",
+    "questions": [
+      "What is the minimum fee for a transfer abroad via the app?",
+      "Does the bank's fee include fees of intermediary banks?",
+      "What amount does the customer want to transfer?"
+    ],
+    "correct_answers": [
+      "NIS 45",
+      "does not include fees of intermediary banks",
+      "2,000 euros"
+    ],
+    "critical_facts": [
+      "Sapir",
+      "Eshkol Bank",
+      "Eshkol Basic",
+      "Germany",
+      "2,000 euros",
+      "15:20",
+      "0.2%",
+      "NIS 45",
+      "NIS 250",
+      "double fee",
+      "one business day",
+      "does not include fees of intermediary banks",
+      "14:00",
+      "is not possible"
+    ]
+  },
+  {
+    "id": "bank_05",
+    "domain": "banking",
+    "history": "Customer: I want to close my account. I'm moving to another bank, and I have no patience for runarounds.\nAgent: Hello, this is Hila from Rimon Bank. I'll help you with that. Whose name is the account under?\nCustomer: Nir Avraham. And just tell me straight what's needed, I'm not interested in retention offers.\nAgent: Fine. I can see the account has a balance of NIS 23,400, a NIS 40,000 deposit maturing on January 20, 4 active standing orders and a Rimon Business card.\nCustomer: I want to break the deposit now and transfer everything. And the standing orders, I don't want them coming out of here anymore, as of today. And I also have a checkbook, there are 10 checks left in it, what about those? And don't tell me to come to the branch, I don't have time for that, I work until seven in the evening.\nAgent: I understand. Just so you know, a few things happen with the deposit if it's closed before maturity, and the standing orders are transferred in a certain way, depending on how you close. If you choose the switching service at the new bank, some things happen automatically, and if you use the form with us, some of it is on you.\nCustomer: Come on, tell me what. And on what date is everything done? I want to have nothing to do with you by the end of the month. And my salary comes in here on the 10th of the month, what happens to it if the account is already closed?\nAgent: I'm opening the account closure procedure and I'll go through all the steps with you, briefly.",
+    "doc": "Closing an Account and Moving It to Another Bank – Rimon Bank. A customer may close their account at any time using a signed closure form or through the online switching service at the receiving bank. The account will be closed within 7 business days of receipt of the request, provided that it has no outstanding debts. Closing the account does not involve a fee. A deposit broken before its maturity date will be refunded in the principal amount only, without the accrued interest, and no early-withdrawal fee will be charged. Standing orders will be transferred to the receiving bank only if the customer chose the online switching service; when closing via a form, the customer is responsible for updating each beneficiary themselves. Unused checks must be returned to the bank or destroyed, and a check presented after the account is closed will not be honored. Credit cards linked to the account will be cancelled on the closing date, and future charges already approved will be collected from the balance before it is transferred. The credit balance will be transferred to the account at the receiving bank within one business day of the closing date. Written confirmation of closure will be sent to the customer within 10 days. A customer will not be able to continue receiving credits to the account number after it is closed. Credits arriving in the account within 90 days of its closure will be forwarded to the receiving bank, and later credits will be returned to the sender. Account documents and transaction statements will be available to the customer in the personal area for 12 months after the account is closed.",
+    "questions": [
+      "Within how long will the account be closed?",
+      "What will Nir receive if he breaks the deposit now?",
+      "How many checks are left in Nir's checkbook?"
+    ],
+    "correct_answers": [
+      "within 7 business days",
+      "the principal amount only, without the accrued interest",
+      "10 checks"
+    ],
+    "critical_facts": [
+      "Nir Avraham",
+      "Hila",
+      "Rimon Bank",
+      "NIS 23,400",
+      "NIS 40,000",
+      "January 20",
+      "4 active standing orders",
+      "10 checks",
+      "within 7 business days",
+      "provided that it has no outstanding debts",
+      "the principal amount only",
+      "without the accrued interest",
+      "and no early-withdrawal fee will be charged",
+      "only if the customer chose the online switching service",
+      "will not be honored"
+    ]
+  },
+  {
+    "id": "bank_06",
+    "domain": "banking",
+    "history": "Customer: hey the app locked me out after i got the password wrong 3 times and now it says blocked for 24 hours?? i need to pay my rent today\nAgent: Hey, this is Ofir from Arazim Bank. Let's check. Can I have your full name?\nCustomer: Bar Yosef. Arazim Young Account. help me out bro its urgent, my landlord is waiting till 18:00 and after that he starts making trouble\nAgent: I can see the lock, it kicked in at 11:40. What's the rent amount, and have you transferred to him before?\nCustomer: 3,900. yeah i pay him every month. and i cant come to the branch im at work all day. and is my card working right now or is that blocked too?\nAgent: One sec, checking what we can do according to the procedure",
+    "doc": "App Access Lock – Arazim Bank Customers. After 3 failed login attempts, access to the app and the website will be locked for a period of 24 hours. The lock does not block the account itself: debit cards and standing orders continue to operate as usual. The lock may be released before the end of the period by calling the service center and verifying identity with a one-time code sent to the phone number registered on the account. Release through the service center is not possible if the phone number was changed during the last 30 days. After the release, the customer will be required to choose a new password. During the lock, a transfer of up to NIS 5,000 per day can be made through an agent at the service center, without a fee, provided that the payee is already on the approved payees list. Issuing a new password does not involve any payment. A customer who has locked their access 3 times in one month will be asked to verify their identity at a branch. Releasing the lock through the service center does not involve a fee, and it is carried out during the service center's operating hours, until 22:00.",
+    "questions": [
+      "What is the maximum amount that can be transferred through an agent during the lock?",
+      "Has Bar's card been blocked because of the lock?",
+      "Until what time is the landlord waiting for Bar?"
+    ],
+    "correct_answers": [
+      "up to NIS 5,000 per day",
+      "does not block the account itself",
+      "till 18:00"
+    ],
+    "critical_facts": [
+      "Bar Yosef",
+      "Ofir",
+      "Arazim Bank",
+      "Arazim Young Account",
+      "3 times",
+      "24 hours",
+      "18:00",
+      "11:40",
+      "3,900",
+      "does not block the account itself",
+      "is not possible",
+      "the last 30 days",
+      "up to NIS 5,000 per day",
+      "provided that the payee is already on the approved payees list"
+    ]
+  },
+  {
+    "id": "bank_07",
+    "domain": "banking",
+    "history": "Customer: Hello and good day, my name is Tzvia Nahum. I'm 71, and every month I pay NIS 29 on the Tamar Plus track. My grandson told me there might be a cheaper track for me, because I hardly make any transactions. I'd be grateful if you could help me.\nAgent: Hello Tzvia, this is Shmuel from Tamar Bank. Gladly. Yes, there are different tracks, and there's a Basic track. There are several tracks, yes.\nCustomer: I see. And which track suits me? I do about 5 transactions a month with a teller, mostly withdrawals at the branch, because I don't use the internet. And I also get my account statements by mail, I like to see everything on paper.\nAgent: So there's the Basic track, which is a basic track. And there are also benefits for senior citizens, there are benefits like that, yes.\nCustomer: Oh, good. And what's the difference in practice? And from what date would it take effect if I switch? I don't want to pay twice in the same month.\nAgent: If you switch, it switches. The switch takes effect. I'm checking the exact date. There's a date when it takes effect, yes.\nCustomer: Thank you very much, you're very patient. Just one more small question: on Tamar Plus I have card insurance and I can withdraw cash from any ATM without a fee. If I switch, do I lose that?\nAgent: Good question. I'm opening the terms of the tracks now and I'll tell you everything in order.",
+    "doc": "Fee Tracks for Private Accounts – Tamar Bank. On the Tamar Plus track, with a management fee of NIS 29 per month, unlimited transactions in all channels, withdrawals from any ATM without a fee, and debit card insurance are included. On the Basic track, with a management fee of NIS 10 per month, 10 transactions in direct channels and 2 transactions through a teller are included; each additional transaction through a teller will be charged NIS 6. The Basic track does not include debit card insurance, and a withdrawal from another bank's ATM will be charged NIS 5. A customer aged 67 or over is eligible for the Vatik Tamar track, with a management fee of NIS 5 per month, which includes 6 transactions through a teller without a fee; eligibility requires presenting an identity document only. A switch between tracks will take effect on the 1st of the month following the request, and there will be no double charge for that month. A switch may be requested at a branch, through the service center or in writing. A customer may return to their previous track at any time, at no cost. A customer who does not use the direct channels may request to receive account statements by mail, at a cost of NIS 4 per month, except on the Vatik Tamar track, where mailing of account statements is included free of charge. The fees are shown in detail on the monthly account statement.",
+    "questions": [
+      "What is the management fee on the Vatik Tamar track?",
+      "Does the Basic track include debit card insurance?",
+      "How many transactions with a teller does Tzvia make per month?"
+    ],
+    "correct_answers": [
+      "NIS 5 per month",
+      "does not include debit card insurance",
+      "5 transactions a month"
+    ],
+    "critical_facts": [
+      "Tzvia Nahum",
+      "Shmuel",
+      "Tamar Bank",
+      "I'm 71",
+      "NIS 29",
+      "Tamar Plus",
+      "5 transactions a month",
+      "Basic track",
+      "NIS 10 per month",
+      "does not include debit card insurance",
+      "NIS 6",
+      "67",
+      "Vatik Tamar",
+      "NIS 5 per month",
+      "and there will be no double charge"
+    ]
+  },
+  {
+    "id": "bank_08",
+    "domain": "banking",
+    "history": "Customer: Good evening. I want to file a complaint, and I'm asking you to hear me out to the end, because this is already my third story with the bank this month. Two and a half weeks ago I was approved for a Green Car Loan, NIS 95,000, for an electric car I'm buying from a dealership in Ramat Gan. I signed all the documents at the branch on November 2, and the clerk told me the money would go to the dealership within a few days. Today is already the 15th, the money hasn't gone through, and the dealership is telling me that if they don't get the payment by Wednesday, they're releasing the car to another customer, and I lose the price I locked in, because since then the price has gone up by NIS 6,000. On top of that, someone from your side called me on Thursday and said a document was missing, but didn't say which one, and nobody has gotten back to me since.\nAgent: Good evening, this is Keren from Tzukim Bank, consumer credit department. I'm listening, and I'm sorry about this experience. Could I have your full name so I can open the file?\nCustomer: Avner Shalom. And please tell me what exactly is missing, because I sent everything: pay slips, a copy of my ID, the car order from the dealership. I emailed everything to the clerk, and I even got a read receipt. And at the branch they told me the file was complete and I just had to wait.\nAgent: I'm looking at the file. What's missing is an official sales invoice from the dealership, with the car's chassis number. The car order that was sent isn't enough, because it doesn't have a chassis number. I can also see you should have been notified about this on November 5, and I found no record that the notice was sent. That's a failure on our side, and I'm recording it as such in the file.\nCustomer: So basically the bank sat on the file for two weeks without telling me what was missing. I want to know how long it'll take from the moment I send the invoice, and whether it can be sped up somehow. Another question: if in the end, because of the delay, I lose the car and cancel the loan, do I pay a fee? Because I don't intend to pay for your delay. And also, from what day does the interest start running, from the signing date or from the day the money goes through?\nAgent: Those are important questions, and I'll answer each one according to the loan terms. I'm also recording your complaint about the lack of updates, and I'll forward it to the Public Inquiries Officer.\nCustomer: Thank you. And please also record that I'm demanding compensation for the price difference, the NIS 6,000, if it happens. I'm not saying it will happen, but if it does, I want it documented that I warned you. And the dealership said they can send the invoice directly to you as early as tomorrow morning, if you give them an address. And I also want to know if the first payment can be postponed, because with all this mess my cash flow got thrown off this month.\nAgent: I've recorded the demand in the file, and the complaint number is 20931. Now I'm opening the loan terms and we'll go over the timelines, the interest and cancellation, and I'll give you an address for sending the invoice.",
+    "doc": "Green Car Loan – Loan Disbursement, Interest and Cancellation. The loan is intended for the purchase of a new electric or hybrid vehicle, in an amount of up to NIS 150,000. Disbursement of the loan is conditional on providing an official sales invoice from the dealer that includes the vehicle's chassis number; a car order or price quote are not sufficient. The funds will be transferred directly to the dealer within 2 business days of receipt of all documents. An invoice sent directly by the dealer to the consumer credit department's email address will be handled with priority. Interest on the loan will begin to accrue only from the date the funds are transferred to the dealer, and not from the signing date. The bank will notify the borrower of a missing document within 3 business days of the signing date. A borrower may cancel the loan within 14 days of its disbursement without a fee; cancellation before the loan is disbursed does not involve any payment. The bank is not responsible for price changes at the dealer and does not compensate for price differences, unless it is clearly determined that the delay was caused by the bank's negligence. Complaints will be handled by the Public Inquiries Officer, who will respond in writing within 30 days. A borrower may request a one-month postponement of the first payment date, without a fee. A loan that has not been disbursed within 60 days of the signing date will be cancelled automatically, and all fees paid in respect of it will be refunded. The bank will provide the borrower with an updated repayment schedule within 5 business days of the loan's disbursement.",
+    "questions": [
+      "Within how long will the funds be transferred to the dealership after all documents are received?",
+      "Will Avner pay a fee if he cancels the loan before it is disbursed?",
+      "What is Avner's complaint number?"
+    ],
+    "correct_answers": [
+      "within 2 business days",
+      "does not involve any payment",
+      "20931"
+    ],
+    "critical_facts": [
+      "Avner Shalom",
+      "Keren",
+      "Tzukim Bank",
+      "Green Car Loan",
+      "NIS 95,000",
+      "November 2",
+      "NIS 6,000",
+      "November 5",
+      "20931",
+      "chassis number",
+      "are not sufficient",
+      "within 2 business days",
+      "and not from the signing date",
+      "does not involve any payment",
+      "unless it is clearly determined that the delay was caused by the bank's negligence"
+    ]
+  },
+  {
+    "id": "health_01",
+    "domain": "health_fund",
+    "history": "Customer: Hello, my name is Rivka, I'm Itai's mom. I wanted to ask about something. Itai is 7, and I'd like to book him a dental checkup and a scaling. Is that covered with you?\nAgent: Hello Rivka, this is Liron from Noga Health Services. Happy to help. Which supplementary plan are you on?\nCustomer: Noga Plus. I think we joined about a year ago, last September.\nAgent: That's right, I can see you've been members of Noga Plus since September 1, 2025. Has Itai already had a checkup like this this year?\nCustomer: Yes, in March, at your clinic in Kiryat Bialik. But the dentist said he should come in every six months, because he tends to build up tartar.\nAgent: I see. I'm checking his eligibility under the terms and I'll update you. Just a second, I can see the exact date of the previous checkup here.",
+    "doc": "Children's Dentistry – Noga Plus Plan. Children up to age 18 who are members of the plan are entitled to a periodic checkup and scaling once per calendar year, with no co-payment, at Noga dental clinics. An additional checkup in the same calendar year will be provided with a co-payment of NIS 45, provided that at least 6 months have passed since the previous checkup. Treatments under general anesthesia are not included in the plan. Fissure sealing is provided to children aged 6 to 14 with no co-payment. Treatment performed by a private dentist outside the network is not eligible for reimbursement. Eligibility for dental services begins after a qualifying period of 3 months from the date of joining the plan. Appointments can be booked via the app or the call center, and an appointment will be scheduled within 21 days at most. A child who did not attend a scheduled appointment and did not cancel it in advance will be charged a no-show fee of NIS 25. Children's checkups and treatments are recorded in the digital medical file, and the parent can view them in the personal area. Appointments for children are also available in the afternoon, until 19:00.",
+    "questions": [
+      "What is the co-payment for an additional checkup in the same calendar year?",
+      "Under what condition will Itai get an additional checkup this year?",
+      "When did Itai have his previous checkup?"
+    ],
+    "correct_answers": [
+      "NIS 45",
+      "at least 6 months have passed",
+      "in March"
+    ],
+    "critical_facts": [
+      "Rivka",
+      "Itai",
+      "Itai is 7",
+      "Liron",
+      "Noga Health Services",
+      "Noga Plus",
+      "September 1, 2025",
+      "in March",
+      "once per calendar year",
+      "with no co-payment",
+      "NIS 45",
+      "at least 6 months have passed",
+      "are not included",
+      "is not eligible for reimbursement",
+      "3 months"
+    ]
+  },
+  {
+    "id": "health_02",
+    "domain": "health_fund",
+    "history": "Customer: I've been waiting 9 days for a Form 17 for a CT and nobody's answering me!! The doctor said it's urgent\nAgent: Hello, this is Sigal from Merhav Health Fund. I'm sorry. Could I have your name?\nCustomer: Eli Ben Haim. The request was submitted on November 6, your doctor submitted it, not me. And the imaging institute told me that if there's no approval by Tuesday, my appointment on November 19 gets cancelled and I go back to the end of the line, which is at least another two months. And I can't sleep at night from the worry\nAgent: I can see the request. It's being processed. Some requests take longer, it depends on all kinds of things, the committee, the institute, the workload.\nCustomer: Depends? The doctor marked it urgent! And I also don't understand why I have to pay the institute NIS 350, I was told that with Merhav Yahalom it's free\nAgent: There's a co-payment in some cases, and in other cases there isn't. It depends on which institute and on what exactly. There are all kinds of institutes. And there are institutes that are in the network and some that aren't.\nCustomer: I don't want to hear 'it depends' one more time. I want to know when I get the form, and how much I pay. And if it doesn't come by tomorrow, I'm going to do the test privately and you're going to pay me back every shekel\nAgent: I'm checking the approvals procedure and the Merhav Yahalom terms and I'll get right back to you, give me two minutes.",
+    "doc": "Approvals for Imaging Tests (Form 17) – Merhav Health Fund. A request for approval of a CT or MRI test is submitted by the treating physician, and the fund will respond within 7 business days. A request marked as urgent by the physician will be handled within 2 business days. An approval will be issued only to an institute that has an agreement with the fund, and it is valid for 90 days from its issue date. A test at an institute with an agreement involves a co-payment of NIS 150. Members of the Merhav Yahalom plan are exempt from this co-payment, provided that the test is done at a preferred-network institute. A member who had a test done privately, without an approval, will not receive a refund from the basic coverage; Merhav Yahalom members will receive a refund of up to 50% of the cost of the test, and no more than NIS 600, subject to presenting a referral and an invoice. The status of the request is shown in the personal area and is updated once a day. If the fund did not respond to the request on time, the member may contact the inquiries center, which will forward the request for immediate handling by a fund physician. An appeal against the rejection of a request must be filed within 30 days with the Exceptions Committee, and its decision will be provided in writing. A member whose appointment at an institute may be cancelled due to a delay in issuing the approval may ask the call center for a temporary approval, which will be sent directly to the institute. A temporary approval is not given for tests that have not yet been approved by a fund physician.",
+    "questions": [
+      "Within how long is a request marked as urgent handled?",
+      "Under what condition are Merhav Yahalom members exempt from the co-payment?",
+      "When is Eli's CT appointment scheduled?"
+    ],
+    "correct_answers": [
+      "within 2 business days",
+      "the test is done at a preferred-network institute",
+      "November 19"
+    ],
+    "critical_facts": [
+      "Eli Ben Haim",
+      "Sigal",
+      "Merhav Health Fund",
+      "Merhav Yahalom",
+      "9 days",
+      "November 6",
+      "November 19",
+      "NIS 350",
+      "within 7 business days",
+      "within 2 business days",
+      "only to an institute that has an agreement",
+      "NIS 150",
+      "the test is done at a preferred-network institute",
+      "will not receive a refund",
+      "and no more than NIS 600"
+    ]
+  },
+  {
+    "id": "health_03",
+    "domain": "health_fund",
+    "history": "Customer: Hello, I hope I've reached the right place, because I've already been transferred twice. I'm Shoshana Friedman, and my husband and I switched to your fund about a month ago, on October 12, from another fund we'd been with for twenty years. We switched because we moved to Kfar Vradim and your clinic is really close, a five-minute walk, and there's a pharmacy there too, and with the previous fund we had to drive to Nahariya for everything. With the previous fund we also had supplementary insurance, the highest level there was, and now I want to join Rikma Mushlam with you. But my neighbor told me that when you join there are waiting periods, and that I won't get anything in the first year. Is that true? Because my husband just happens to need some tests with a private specialist, and we wanted to do it through the insurance.\nAgent: Hello Shoshana, this is Aviv from Rikma Health Fund. Welcome. Yes, there are waiting periods in the plan. There are periods like that, that's true.\nCustomer: Okay, but how long? And for what? Because I understand there's a difference if you move from another fund where you had supplementary insurance. With the previous fund we were on the highest level, we paid every month, never missed. And do I need to bring anything, some certificate, or can you see it on the computer? I don't really understand these things, usually my daughter handles them, but she's abroad right now, on vacation with the kids, and she's only back in three weeks.\nAgent: So like I said, there are waiting periods. And if you're moving from another fund, that can make a difference. It depends on a few things. I want to see what the terms say, and what exactly the previous fund sends us.\nCustomer: Okay. And another thing, how much does it cost per month? I'm 66 and my husband, he's 69, and I understand the price depends on age. With the previous fund we paid about NIS 310 a month together, and that was fine for us. If it's a lot more, I need to think about it. And if I join today, from what date does it start? Because I don't want to pay for a whole month if it only starts at the end of it.\nAgent: The price depends on age, yes. And there's also a joining date, from which it starts. I'm checking all of this in the Rikma Mushlam terms.\nCustomer: One more question, and then I'll stop, I promise. Our son, Elchanan, lives with his wife in Be'er Sheva, and they're also with your fund. Can we add them to the same membership, or is it each one separately? Because I thought there might be a family discount, and if so, it could be worthwhile for all of us. And if it's complicated, then at least I'll know what to tell them.\nAgent: Good question. I'm opening the Rikma Mushlam joining terms now and we'll go over everything: the waiting periods, the move from your previous fund, the price, and what about Elchanan.",
+    "doc": "Joining the Rikma Mushlam Plan – Qualifying Periods and Transfer from Another Fund. A member joining the plan will be entitled to services after a qualifying period: 3 months for private specialist consultations, 6 months for tests and diagnosis, and 12 months for surgery. A member who transferred from another health fund and joined the plan within 90 days of the transfer, and who was a member of a supplementary plan at the previous fund continuously for at least 12 months, will be exempt from the qualifying periods, provided that they submit a continuity certificate from the previous fund. The exemption does not apply to services that were not included in the previous plan. The monthly membership fee for a member aged 60 to 69 is NIS 168, and NIS 168 more for a spouse of the same age. Eligibility begins on the 1st of the month following joining. Adult children over age 18 are not included in their parents' membership and must join separately; a family discount of 5% is given for three or more memberships at the same address. A continuity certificate can be submitted via the personal area, by email or at a branch. The fund will confirm receipt of the document within 5 business days. A member joining the plan may submit claims only for services provided after eligibility begins. A private specialist consultation involves a co-payment of NIS 120 per visit and is limited to 6 visits per year. Joining the plan can be done via the personal area, the call center or a branch, and no medical examination is required.",
+    "questions": [
+      "What is the monthly membership fee for a member aged 60 to 69?",
+      "What must Shoshana submit to be exempt from the qualifying periods?",
+      "On what date did Shoshana and her husband switch to the fund?"
+    ],
+    "correct_answers": [
+      "NIS 168",
+      "a continuity certificate from the previous fund",
+      "on October 12"
+    ],
+    "critical_facts": [
+      "Shoshana Friedman",
+      "Aviv",
+      "Rikma Health Fund",
+      "Rikma Mushlam",
+      "October 12",
+      "I'm 66",
+      "he's 69",
+      "NIS 310",
+      "Elchanan",
+      "3 months",
+      "within 90 days",
+      "at least 12 months",
+      "a continuity certificate from the previous fund",
+      "does not apply to services that were not included in the previous plan",
+      "NIS 168"
+    ]
+  },
+  {
+    "id": "health_04",
+    "domain": "health_fund",
+    "history": "Customer: how much does a prescription drug cost me?\nAgent: Hello, this is Rotem from Dror Health Fund. Which medication, and is it in the health basket?\nCustomer: Yoav here. antibiotics. in the basket. prescription from my doctor yesterday\nAgent: Thanks Yoav. Which coverage are you on? Dror Basic?\nCustomer: yeah just basic. me and my wife both\nAgent: Okay. I can see you've already picked up 2 medications this month. One sec, checking.\nCustomer: ok. and im buying at a regular pharmacy near work, not yours\nAgent: Got it, I'm checking that too, and whether that pharmacy has an agreement with us.",
+    "doc": "Co-payments for Medications – Dror Basic Members. When purchasing a medication included in the health basket, by prescription, the member will pay a co-payment of NIS 17 per prescription at Dror pharmacies or at pharmacies with an agreement, or 10% of the medication price, whichever is higher. When purchasing at a pharmacy that has no agreement with the fund, no discount will be given, and the member will pay the full price of the medication. The quarterly co-payment cap for medications is NIS 340 per member; once the cap is reached, no further co-payment will be charged until the end of the quarter. Medications not in the basket are not included in the cap. A prescription is valid for 30 days from its issue date. Senior citizens are entitled to a 50% discount on the co-payment, subject to an income test. The list of pharmacies with an agreement appears on the website and in the app. Medications can be ordered for pickup at the pharmacy through the app. A prescription for a chronic medication can be renewed in the app without visiting the doctor. A spouse registered on the same account is not included in the member's cap, and each of them has a separate cap.",
+    "questions": [
+      "What is the minimum co-payment per prescription?",
+      "Will Yoav get a discount if he buys at a pharmacy with no agreement?",
+      "How many medications has Yoav already picked up this month?"
+    ],
+    "correct_answers": [
+      "NIS 17 per prescription",
+      "no discount will be given",
+      "2 medications"
+    ],
+    "critical_facts": [
+      "Yoav",
+      "Rotem",
+      "Dror Health Fund",
+      "Dror Basic",
+      "2 medications",
+      "NIS 17 per prescription",
+      "10%",
+      "no discount will be given",
+      "NIS 340",
+      "no further co-payment will be charged",
+      "are not included in the cap",
+      "30 days",
+      "50%"
+    ]
+  },
+  {
+    "id": "health_05",
+    "domain": "health_fund",
+    "history": "Customer: Cancel my Inbar Kesef. As of today. I don't use it at all. Three years I've been paying and I haven't been to a private doctor through you even once\nAgent: Hello, this is Naama from Inbar Health Fund. You can cancel. Whose name is the membership under?\nCustomer: Ariel Katz. And I also want a refund for what I paid this month, NIS 74, because I didn't use it. And don't charge me again, because then I'm really going to make a fuss\nAgent: Thank you Ariel. I can see you've been an Inbar Kesef member since January 2023, and that your two children, Elia and Yonatan, are also registered on the membership.\nCustomer: Yeah, cancel them too. Are they even on it? My wife handled this, I don't remember. If they're on it, cancel them too, no point in them staying without me. And that's it, I don't have time for a persuasion talk\nAgent: No problem, no persuasion. Your basic coverage isn't affected, only the supplementary plan. I can also see the monthly charge goes out on the 1st of the month from your credit card. And there's one thing you should know before I go ahead: if you want to rejoin in the future, that has consequences.\nCustomer: What consequences? Say it fast, I'm between meetings. And anyway, why do I have to call to cancel? Joining takes one click\nAgent: I'm opening the cancellation terms and I'll tell you exactly, in three lines: when it takes effect, what about this month's payment, and what happens if you come back.",
+    "doc": "Cancelling Membership in the Inbar Kesef Plan. A member may cancel their membership in the plan at any time, by written notice, via the personal area, or in a recorded call with the call center. The cancellation will take effect on the 1st of the following month, and membership fees for the month in which the request was submitted will not be refunded. Cancelling the plan does not affect eligibility for basic health basket services. Cancelling a parent's membership does not automatically cancel the membership of children registered on the membership; the names of the children whose membership is being cancelled must be stated explicitly. A member who cancelled their membership and wishes to rejoin within 24 months will be required to complete full qualifying periods again, and their previous seniority will not be recognized. A member who cancelled the plan while undergoing a pre-approved treatment that has not yet been completed will continue to receive the treatment until it ends, provided that the treatment is completed within 60 days. Confirmation of cancellation will be sent within 7 days. A cancellation made in a call with the call center will take effect only after identity verification of the member registered as the payer. A member who wishes to cancel only their children's membership, while keeping their own, may do so in the same way. The monthly membership fees will be updated accordingly from the date the cancellation takes effect.",
+    "questions": [
+      "When will the cancellation take effect?",
+      "Will Ariel get a refund for this month's membership fees?",
+      "What are the names of the children registered on the membership?"
+    ],
+    "correct_answers": [
+      "on the 1st of the following month",
+      "will not be refunded",
+      "Elia and Yonatan"
+    ],
+    "critical_facts": [
+      "Ariel Katz",
+      "Naama",
+      "Inbar Health Fund",
+      "Inbar Kesef",
+      "NIS 74",
+      "January 2023",
+      "Elia and Yonatan",
+      "on the 1st of the following month",
+      "will not be refunded",
+      "does not affect eligibility",
+      "does not automatically cancel the membership of children",
+      "24 months",
+      "and their previous seniority will not be recognized",
+      "60 days"
+    ]
+  },
+  {
+    "id": "health_06",
+    "domain": "health_fund",
+    "history": "Customer: hey ur app wont let me book a GP appointment, every time i get error 502 and it goes back to the start. been trying for an hour\nAgent: Hi, this is Eden from Yuval Health Fund. Sorry about that. What's your full name?\nCustomer: Lior Hadad. i need an appointment with Dr. Wallach before thursday, i need a letter from her for work\nAgent: I can see there's been a general fault in the app since 08:30 this morning. I can book it for you.\nCustomer: ok cool, but only after 16:00 cuz im at work. and tell me when ur finally fixing the app, its something every week. and dont just book me some other doctor, i only want her\nAgent: One sec, checking the procedure to see what we can do, both for the appointment and for the letter",
+    "doc": "Booking Appointments Through Digital Channels – Yuval Health Fund. Appointments with a family doctor can be booked via the app, the website or the telephone call center. During a general fault in the digital systems, booking through the call center involves no additional waiting time, and the call center will operate extended hours, until 22:00. An appointment with a family doctor will be scheduled within 3 working days at most. An appointment with a specific doctor of the patient's choice is not guaranteed within this time frame, and will be given according to the doctor's availability. A patient who did not attend an appointment and did not cancel it up to two hours before its time will be charged a no-show fee of NIS 30. Confirmation of the appointment will be sent by message to the registered phone number. Notice of the repair of a general fault will be published on the fund's website. Medical letters and certificates that do not require an examination can also be requested by sending an online request to the doctor, and they will be issued within 2 working days. A patient may ask to join a waiting list for an earlier appointment with the doctor they chose, and a notice will be sent to them if an appointment becomes available.",
+    "questions": [
+      "Until what time does the call center operate during a general fault?",
+      "Is an appointment with Dr. Wallach guaranteed within 3 working days?",
+      "Since when has there been a general fault in the app?"
+    ],
+    "correct_answers": [
+      "until 22:00",
+      "is not guaranteed within this time frame",
+      "since 08:30"
+    ],
+    "critical_facts": [
+      "Lior Hadad",
+      "Eden",
+      "Yuval Health Fund",
+      "Dr. Wallach",
+      "502",
+      "thursday",
+      "08:30",
+      "16:00",
+      "until 22:00",
+      "3 working days",
+      "is not guaranteed within this time frame",
+      "up to two hours",
+      "NIS 30",
+      "that do not require an examination"
+    ]
+  },
+  {
+    "id": "health_07",
+    "domain": "health_fund",
+    "history": "Customer: Good evening, my name is Pnina Golan. I can see on the November charge that the Shahar Mishpachti plan went up from NIS 196 to NIS 251, and I didn't understand why. I'd appreciate an explanation, please.\nAgent: Good evening Pnina, this is Matan from Shahar Health Fund. I'm checking. I can see that registered on the membership are you, your husband and three children. There's a change here, yes, there's a change in the charge.\nCustomer: Yes, I can see that myself. The question is what changed. Nobody told us about a price increase, at least not that I saw. And I check my email every day, also because of work.\nAgent: So the change has to do with one of the children. One of the children, yes. He moved to a different category.\nCustomer: Oh, maybe it's Raphael. He turned 18 at the beginning of October. But he still lives with us and he's a soldier in regular service, he earns almost nothing. Does it make sense to pay for him as an adult?\nAgent: Yes, it has to do with age, there's an age category. A category by age. I'm checking whether there's something special for soldiers.\nCustomer: Thank you, I appreciate it. And if there's a discount, I'd also like to know whether it's retroactive for this month, and what I need to bring. I don't want to run to the branch twice, I work shifts. And Raphael himself is at a base in the south and only comes home once every two weeks, so it's all on me.\nAgent: Of course. I'm opening the Shahar Mishpachti rate terms and I'll tell you everything.",
+    "doc": "Membership Fees in the Shahar Mishpachti Plan – Change of Age Category. Membership fees are calculated according to the age of each person registered on the membership. Children up to age 18 pay the child rate, NIS 22 per month, and three or more children together pay for only two. When a child reaches age 18, they will be charged the young adult rate, NIS 55 per month, starting from the month following their birthday. A soldier in regular service is entitled to continue paying the child rate until the end of their service, provided that a military service certificate is presented. The discount will apply from the month in which the certificate was submitted and is not retroactive, except if the certificate is submitted within 60 days of the rate change. Notice of a change of age category is sent to the payer by email only, 30 days before the change. The service certificate can be submitted via the personal area, and there is no need to come to a branch. The discount for soldiers does not apply to career soldiers. At the end of regular service, the member will automatically be charged the young adult rate, without any further notice. A member who disputes a charge may file an objection via the personal area within 6 months of the charge date, and a response will be given within 14 days. A credit for an overcharge will be given on the following month's bill.",
+    "questions": [
+      "What is the monthly young adult rate?",
+      "Under what condition will the soldier discount also apply retroactively?",
+      "When did Raphael turn 18?"
+    ],
+    "correct_answers": [
+      "NIS 55 per month",
+      "if the certificate is submitted within 60 days",
+      "at the beginning of October"
+    ],
+    "critical_facts": [
+      "Pnina Golan",
+      "Matan",
+      "Shahar Health Fund",
+      "Shahar Mishpachti",
+      "from NIS 196 to NIS 251",
+      "Raphael",
+      "at the beginning of October",
+      "NIS 22",
+      "for only two",
+      "NIS 55 per month",
+      "provided that a military service certificate is presented",
+      "and is not retroactive",
+      "if the certificate is submitted within 60 days",
+      "30 days",
+      "does not apply to career soldiers"
+    ]
+  },
+  {
+    "id": "health_08",
+    "domain": "health_fund",
+    "history": "Customer: Hello, this is the fourth time I'm calling about this, and I hope this time someone will take responsibility. My name is Yehuda Mor, I've been a Nitzan Ilit member for eight years. In July I had knee surgery at a private hospital in Vienna, after they offered me an appointment here only in eight months. Before the surgery I got prior approval from you, I have it right here in front of me, dated June 20. After I got back, on August 4, I submitted all the documents: the hospital invoice, 21,000 euros, the surgery summary, receipts for the hotel and flights. More than three months have passed since then, and I haven't received a single shekel. Every time I call they tell me something different: once that a translation is missing, once that the file is under medical review, and once the agent simply couldn't find the file. And I'm already 64, I don't have the energy to chase clerks.\nAgent: Hello Yehuda, this is Tehila from the refunds department of Nitzan Health Fund. I apologize for this experience. I'm opening your file now and I won't end this call until you know exactly where it stands.\nCustomer: Thank you, that's already more than I've heard so far. So tell me: what's the status? And is a translation really missing? Because the invoice is in English, and I don't understand why English needs translating. And another thing, I was once told you only refund up to a certain amount, but they didn't say how much. I want to know how much I'm actually supposed to get, not roughly.\nAgent: I can see the file was completed on October 29, after the translated surgery summary was received, and it was approved in the medical review two days ago. The reason for the delay was that the surgery summary was in German, not the invoice. The refund itself is calculated according to the terms, and I'll go through them with you. And I want to be honest with you: according to the records, the notice about the missing translation should have been sent to you earlier.\nCustomer: Okay, that explains something. But nobody told me the summary needed a translation, I found that out myself in September. And now, what about the hotel and flights? I paid almost 2,500 euros for them, including for my wife, who accompanied me. And also, how long from approval until the money is in my account? Because I was told once two weeks and once a month.\nAgent: I understand. I'm checking the terms for exactly what's covered regarding travel expenses and the escort, and the timeline for transferring the money. I can also see the operating surgeon's form in the file, I'll check whether it says anything about an escort.\nCustomer: And please record that I want compensation for the delay, or at least interest, because we paid for the surgery out of our savings. I'm not someone who complains for nothing, but three months is a long time, especially when nobody explains to you what's going on.\nAgent: I've recorded the request in the file, reference number 58402, and it will be forwarded to the Public Complaints Commissioner. Now let's go over the terms: the refund cap, travel expenses and the escort, and the transfer timeline.",
+    "doc": "Surgery Abroad – Reimbursement of Expenses Under the Nitzan Ilit Plan. A member who underwent surgery abroad after receiving prior approval from the fund is entitled to reimbursement of surgery and hospitalization expenses up to a cap of NIS 70,000 per surgery, provided that the surgery was performed within 120 days of the approval date. Medical documents in a language other than Hebrew, English, Arabic or Russian must be submitted with a translation; invoices in English do not require translation. The reimbursement will be calculated in shekels according to the representative exchange rate on the date of payment to the hospital. Flight and accommodation expenses of the patient will be reimbursed up to NIS 6,000. Expenses of an escort will be reimbursed only if the doctor required an escort in writing, up to NIS 3,000. The reimbursement will be transferred to the member's account within 14 business days of the file being approved in the medical review. The fund will notify the member of a missing document within 10 business days of receiving the file. No interest or linkage differentials will be paid for the period until the file is completed; however, a delay in transferring the money beyond the stated timeline will entitle the member to linkage differentials. Complaints will be handled by the Public Complaints Commissioner within 30 days. A member may request an advance on account of the reimbursement of up to 30% of the expected reimbursement amount, after the file is approved. A request to reconsider the reimbursement amount must be submitted within 60 days of receiving notice of the amount. The reimbursement will be transferred only to the bank account registered with the fund.",
+    "questions": [
+      "Within how long after the file is approved will the reimbursement be transferred?",
+      "Under what condition will the expenses of the wife who accompanied Yehuda be reimbursed?",
+      "What is Yehuda's reference number?"
+    ],
+    "correct_answers": [
+      "within 14 business days",
+      "if the doctor required an escort in writing",
+      "58402"
+    ],
+    "critical_facts": [
+      "Yehuda Mor",
+      "Tehila",
+      "Nitzan Health Fund",
+      "Nitzan Ilit",
+      "June 20",
+      "August 4",
+      "21,000 euros",
+      "October 29",
+      "2,500 euros",
+      "58402",
+      "NIS 70,000",
+      "120 days",
+      "invoices in English do not require translation",
+      "only if the doctor required an escort in writing",
+      "within 14 business days"
+    ]
+  },
+  {
+    "id": "shop_01",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, I ordered a robot vacuum on November 9 and paid NIS 35 for express shipping, I was promised delivery within 2 business days. It still hasn't arrived. Could you check?\nAgent: Hello, this is Elad from ClickMart. Happy to. What's the order number?\nCustomer: 660417. My name is Moran Adler. I ordered in the morning, around ten, if that matters.\nAgent: Thanks, Moran. I can see the order only left the warehouse on November 12, because one of the items was out of stock. It's with the courier and should arrive tomorrow.\nCustomer: Okay, nobody updated me at all. And if it went out late anyway, do I get the express fee back? Because that's exactly what I paid for.\nAgent: Fair question. I'm checking the shipping terms and I'll update you.",
+    "doc": "Express Shipping – ClickMart. Express shipping at a price of NIS 35 guarantees delivery within 2 business days of the order date, for orders placed by 13:00. If the order was not delivered on time, the shipping fee will be refunded to the customer in full, automatically, within 7 business days. However, the refund will not be given if the delay was caused by an incorrect address or customer unavailability at the time of delivery. If an item is out of stock, the customer will be notified within 24 hours and may cancel the order at no cost. Refunding the shipping fee does not cancel the order. Express shipping does not cover remote areas, where the delivery time is up to 5 business days. The customer can track the shipment status in the personal area and receive updates by text message. A customer who was not notified about an out-of-stock item is entitled, in addition to the shipping fee refund, to a NIS 20 coupon for the next order. Changing the delivery address after the order has left the warehouse is not possible, but delivery to a nearby pickup point can be requested at no extra charge.",
+    "questions": [
+      "Within how long will the shipping fee be refunded?",
+      "In which cases will the shipping fee not be refunded?",
+      "What is Moran's order number?"
+    ],
+    "correct_answers": [
+      "within 7 business days",
+      "an incorrect address or customer unavailability",
+      "660417"
+    ],
+    "critical_facts": [
+      "Moran Adler",
+      "Elad",
+      "ClickMart",
+      "November 9",
+      "NIS 35",
+      "2 business days",
+      "660417",
+      "November 12",
+      "13:00",
+      "within 7 business days",
+      "the refund will not be given",
+      "an incorrect address or customer unavailability",
+      "24 hours",
+      "does not cancel the order",
+      "NIS 20"
+    ]
+  },
+  {
+    "id": "shop_02",
+    "domain": "online_shopping",
+    "history": "Customer: I returned a coat to you 3 weeks ago and I still haven't seen the money!! NIS 480, that's not small change\nAgent: Hello, this is Shani from Trendy-Box. I'm sorry. Could I have your name, and how did you return the coat?\nCustomer: Sahar Gabay. I returned it through a pickup point near my home, on October 24. I have the receipt from the point with a tracking number, so don't tell me it didn't arrive\nAgent: Okay. Returns take time, it depends, it depends when it reached the warehouse and when it was checked, there are all kinds of stages along the way. First the warehouse, then the inspection, then the credit, and it doesn't always move at the same pace.\nCustomer: Stages? You took my money in a second! And now I also see on the website that it says you'll deduct a NIS 25 return fee. I'm a Trendy Club member, I was told returns are free for us\nAgent: There are cases where there's a return fee and cases where there isn't. It depends on the type of return, and on which point you returned it to.\nCustomer: What do you mean it depends?! And the coat still had the tags on, I didn't wear it even once, it was just too small for me. I want the full 480 back, and I want to know exactly when, not roughly. I've already written to you twice in the chat and nobody answered\nAgent: I'm checking the returns policy now and I'll get right back to you with an answer.",
+    "doc": "Returns and Credits Policy – Trendy-Box. An item may be returned within 14 days of its receipt, provided that it has not been used and the tags are still attached. A return via a pickup point involves a return fee of NIS 25, which is deducted from the credit amount. Trendy Club members are exempt from return fees, provided that the item is returned via a chain pickup point. A return via a courier from home costs NIS 39 for all customers. The credit will be made to the original payment method within 14 business days of the item arriving at the warehouse, and not from the date it was dropped off at the pickup point. If the credit has not been made within 30 days of the drop-off at the pickup point, the customer is entitled to compensation of 10% of the credit amount, subject to presenting a drop-off confirmation. Underwear and swimwear cannot be returned. The return status can be tracked in the personal area using the tracking number. A customer who prefers store credit instead of a cash refund will receive an extra 5% on the credit amount. The chain's pickup points are marked on the map on the website. A customer who returned an item bought on sale will be credited the amount actually paid and not the full price. An inquiry about a return that has not been credited can be submitted in the personal area, and a response will be given within 3 business days.",
+    "questions": [
+      "What is the compensation if the credit has not been made within 30 days?",
+      "Under what condition are Trendy Club members exempt from return fees?",
+      "When did Sahar return the coat?"
+    ],
+    "correct_answers": [
+      "10% of the credit amount",
+      "returned via a chain pickup point",
+      "on October 24"
+    ],
+    "critical_facts": [
+      "Sahar Gabay",
+      "Shani",
+      "Trendy-Box",
+      "Trendy Club",
+      "NIS 480",
+      "October 24",
+      "NIS 25",
+      "14 days",
+      "are exempt from return fees",
+      "returned via a chain pickup point",
+      "NIS 39",
+      "within 14 business days of the item arriving at the warehouse",
+      "and not from the date it was dropped off at the pickup point",
+      "10% of the credit amount",
+      "cannot be returned"
+    ]
+  },
+  {
+    "id": "shop_03",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, I hope you're patient, because I have a whole story. I'm Tzipora Dahari, and ten days ago, on November 5, I ordered a gray corner sofa from your website, the Luna model, for NIS 6,490, plus a coffee table, and I also paid for the Assembly Plus service, NIS 290, because I live alone and I have no one to put it together for me. Yesterday the movers came, two young guys, very nice, but they were in a rush, they said they had eight more deliveries. They brought in the boxes, assembled the sofa in a hurry, and disappeared. Only in the evening, when I sat down, did I see there's a tear about ten centimeters long in the fabric on the inner side, and one of the legs wobbles, as if they didn't screw it in all the way. And the table, they didn't assemble it at all, they left it in the box and said it's not included.\nAgent: Hello Tzipora, this is Nissim from Bayit VaNoi Online. I understand, I'm sorry to hear that. So there are a few things here. There's the sofa, and there's the table, and there's the assembly.\nCustomer: Yes, exactly, three things. And I want to know what's done about each one. The sofa, I'm not sure whether I want the tear repaired or the whole section replaced, because a tear is a tear, even if you sew it you can see it. A friend of mine says I'm entitled to a brand-new sofa. And about the table, I paid for Assembly Plus, so I didn't understand why it's not included. It doesn't say anywhere on the website that it only covers some things, and nobody explained it to me when I ordered.\nAgent: So about the sofa, there's an option to repair and an option to replace. And about the table, the assembly, there's what's included and what's not included. I need to see exactly. So there's repair, replacement and assembly here, three topics.\nCustomer: Okay. Another question: I didn't take photos while they were here, because I didn't see the tear. I only took photos in the evening, with my phone. Is that okay? Because I'm afraid you'll say I did it. And I also signed some form for them, I didn't read what it said, they were in a hurry, so I signed. What does that mean now? Did I give something up?\nAgent: I see. The photos are important, yes. And the form, that's a delivery form. I want to check what the procedure says about that. There's a procedure, yes. And about the photos, if you took them the same day, that already counts for something.\nCustomer: And tell me also, if a technician needs to come or something needs replacing, how long does it take? Because I have a family Friday dinner in two weeks, the grandchildren are coming, and I don't want them to see a torn sofa and a table in a box. And I don't want to pay for another delivery, I've already paid enough for this whole saga.\nAgent: Of course, I understand. I'm opening the Bayit VaNoi Online delivery and assembly policy now and we'll go over the sofa, the table, the form you signed and the timelines.",
+    "doc": "Delivery, Assembly and Reporting Defects – Bayit VaNoi Online. A defect or damage caused to a product during delivery or assembly must be reported within 48 hours of delivery, with photos attached; photos may also be taken after the movers have left. Signing the delivery form does not constitute a waiver of claims regarding a hidden defect that could not have been noticed at the time of delivery. For a defect reported on time, the company will send a technician to inspect it within 7 business days. If the technician determines that the defect cannot be fully repaired, the defective part will be replaced, and if that is not possible, the entire product will be replaced. Return delivery and replacement due to a defect caused by the company do not involve any payment. The Assembly Plus service includes assembly of sofas, beds and wardrobes only, and does not include assembly of tables, chairs and shelves, which is available for an additional NIS 120 per item. A customer who did not receive a clear explanation of the scope of the service at the time of purchase may request cancellation of the Assembly Plus fee and a full refund. The delivery time for a replacement part is up to 21 days. A customer may request a preferred date for the technician's visit, subject to availability. A customer who will not be home at the scheduled technician visit may arrange a new date at no cost, provided that they gave notice at least 24 hours in advance. If the entire product is replaced, the defective product will be dismantled and removed by the company. Compensation for a delay in supplying a replacement part beyond 21 days will be given at a rate of 5% of the product price.",
+    "questions": [
+      "Within how long after delivery must a defect be reported?",
+      "Does signing the delivery form waive the claim about the tear?",
+      "How much did Tzipora pay for the sofa?"
+    ],
+    "correct_answers": [
+      "within 48 hours",
+      "does not constitute a waiver of claims",
+      "NIS 6,490"
+    ],
+    "critical_facts": [
+      "Tzipora Dahari",
+      "Nissim",
+      "Bayit VaNoi Online",
+      "Assembly Plus",
+      "November 5",
+      "Luna",
+      "NIS 6,490",
+      "NIS 290",
+      "within 48 hours",
+      "does not constitute a waiver of claims",
+      "7 business days",
+      "do not involve any payment",
+      "and does not include assembly of tables",
+      "NIS 120 per item",
+      "up to 21 days"
+    ]
+  },
+  {
+    "id": "shop_04",
+    "domain": "online_shopping",
+    "history": "Customer: do u have free shipping?\nAgent: Hi, this is Hodaya from Salsala Online. Depends on the order and the membership. Are you a member?\nCustomer: yes. Salsala VIP\nAgent: Great. And what's the order amount, and where's it going?\nCustomer: 160 shekels. to Eilat\nAgent: One sec, checking for you.\nCustomer: ok. Gal here, if u need a name. and it needs to get here today, i have guests tonight. ordered 15 min ago\nAgent: Thanks Gal, I can see your membership. Checking the terms, including about today.",
+    "doc": "Free Shipping – Salsala VIP Membership. Salsala VIP members, for a membership fee of NIS 19 per month, are entitled to free shipping on every order of NIS 150 or more. An order of a lower amount will be charged a reduced shipping fee of NIS 14. The benefit does not apply to deliveries to Eilat, the Arava and the Golan Heights, where a shipping fee of NIS 29 per order will be charged, regardless of its amount. Same-day delivery is available for orders placed by 11:00, and is not available in the remote areas listed. A membership that was not renewed by the monthly billing date will be cancelled, and the benefit will not apply to orders placed after that date. The benefit can be used once per day. Refrigerated products will be shipped only to areas with a cold chain. A membership can be cancelled at any time in the personal area, with no cancellation fee. Shipping fees to remote areas are not included in weekend promotion benefits. An order to Eilat will be delivered within 3 business days of being placed. A customer may pick up the order themselves from one of the chain's distribution points with no shipping fee.",
+    "questions": [
+      "How much will Gal pay for shipping to Eilat?",
+      "Does the free shipping benefit apply to deliveries to Eilat?",
+      "What is the amount of Gal's order?"
+    ],
+    "correct_answers": [
+      "NIS 29 per order",
+      "does not apply to deliveries to Eilat",
+      "160 shekels"
+    ],
+    "critical_facts": [
+      "Gal",
+      "Hodaya",
+      "Salsala Online",
+      "Salsala VIP",
+      "160 shekels",
+      "to Eilat",
+      "NIS 19",
+      "NIS 150 or more",
+      "NIS 14",
+      "does not apply to deliveries to Eilat",
+      "NIS 29 per order",
+      "regardless of its amount",
+      "11:00",
+      "and is not available in the remote areas"
+    ]
+  },
+  {
+    "id": "shop_05",
+    "domain": "online_shopping",
+    "history": "Customer: Cancel my order. I found the same laptop for 700 shekels less somewhere else, exact same model, same memory\nAgent: Hello, this is Orit from Gadgetopia. Happy to help. What's the order number, and whose name is it under?\nCustomer: Amir Stern. Order 88213. Quickly please, and don't try to sell me something else\nAgent: Thanks Amir. The order for NIS 4,890 was placed on November 13, and you paid in 3 installments by credit card. It was already handed to the shipping company last night, and it's expected to reach you tomorrow.\nCustomer: Not interested, I don't want it. Stop the delivery. And I'm not paying any cancellation fee, I haven't even received the laptop. And don't tell me it's written in fine print on the website, nobody reads that\nAgent: I understand. Since the package is already on its way, I can't stop it from here, but there are two options, and I'll tell you exactly what each one costs.\nCustomer: Come on, just quickly. And let's be clear, if I receive the package, I'm not opening it at all. And tell me also when the money goes back to the card, because the first installment already came out and I don't want to see another one next month\nAgent: Great, that's actually important. I'm opening the cancellation policy and I'll answer briefly, including what happens with the installments, and whether it's better for you to refuse it or accept it and return it.",
+    "doc": "Transaction Cancellation – Gadgetopia. A customer may cancel a transaction within 14 days of receiving the product. Cancellation before the order has been handed to the shipping company does not involve any payment. After the order has been handed over for shipping, one of two options may be chosen: refusing to accept the package upon delivery, in which case a cancellation fee of 5% of the transaction price or NIS 100, whichever is lower, will be charged; or accepting the package and returning it at a service point, under the same terms. A product returned in its original sealed packaging will be credited in full, less the cancellation fee only. A product whose packaging has been opened will be inspected, and if it is found to have been used, full credit will not be given. The credit will be made to the credit card used for payment within 14 days of the product being received at the warehouse; in an installment transaction, future installments will be cancelled and the installment already collected will be refunded. Gadgetopia does not undertake to match the price of another store. Refusal to accept a package will be recorded by the courier, and the customer will receive a text message confirming it. Laptops purchased in a launch promotion are subject to the same cancellation terms. A customer who will not be home at the time of delivery may give advance notice of refusal, and the package will be returned to the warehouse without another delivery attempt.",
+    "questions": [
+      "What cancellation fee will Amir be charged if he refuses to accept the package?",
+      "What will happen if the laptop's packaging is opened and it is found to have been used?",
+      "In how many installments did Amir pay?"
+    ],
+    "correct_answers": [
+      "NIS 100",
+      "full credit will not be given",
+      "in 3 installments"
+    ],
+    "critical_facts": [
+      "Amir Stern",
+      "Orit",
+      "Gadgetopia",
+      "88213",
+      "700 shekels",
+      "NIS 4,890",
+      "November 13",
+      "in 3 installments",
+      "14 days",
+      "does not involve any payment",
+      "5% of the transaction price or NIS 100",
+      "whichever is lower",
+      "full credit will not be given",
+      "within 14 days of the product being received",
+      "does not undertake to match the price"
+    ]
+  },
+  {
+    "id": "shop_06",
+    "domain": "online_shopping",
+    "history": "Customer: yo the coupon i got by email doesnt work, it says invalid code. FRESH30. whats the problem\nAgent: Hey, this is Tal from Fresh-Li. Let's check. What's your name?\nCustomer: Coral Abutbul. im a Fresh-Li Subscription member, and i have 180 shek in my cart. the coupon's supposed to give 30 shek off right?\nAgent: I can see the coupon. It was sent to you on November 1. I can see your cart also has dairy products from the 1+1 deal.\nCustomer: yeah it does. so whats the problem? say it fast i want to order before todays slot closes, and i dont want to lose the coupon, its the only one i got this month\nAgent: One sec, checking the coupon terms",
+    "doc": "Coupon Terms of Use – Fresh-Li. A NIS 30 discount coupon is valid for an order of at least NIS 200, excluding delivery fees. The minimum amount is calculated after deducting products sold on promotion. The coupon is not valid with 1+1 deal products in the cart, unless they are removed from the cart or the order amount without the promotion products exceeds NIS 200. Each coupon is valid for a single use only, for 21 days from the date it was sent. Fresh-Li Subscription members can accumulate up to 2 coupons per month. A coupon that has expired will not be renewed. A coupon cannot be exchanged for cash or combined with another coupon in the same order. Technical problems entering a coupon can be reported to customer service, which will apply the discount manually if the coupon is valid. A coupon entered in an order that was cancelled will be returned to the customer's account and will remain valid until the end of its original validity period. A coupon sent as part of a sign-up promotion cannot be transferred to another user. The coupon balance and expiry dates can be checked in the personal area in the app.",
+    "questions": [
+      "What is the minimum order amount for using the coupon?",
+      "Is the coupon valid when the cart contains 1+1 deal products?",
+      "What is the amount in Coral's cart?"
+    ],
+    "correct_answers": [
+      "at least NIS 200",
+      "is not valid with 1+1 deal products",
+      "180 shek"
+    ],
+    "critical_facts": [
+      "Coral Abutbul",
+      "Tal",
+      "Fresh-Li",
+      "Fresh-Li Subscription",
+      "FRESH30",
+      "180 shek",
+      "30 shek",
+      "November 1",
+      "at least NIS 200",
+      "excluding delivery fees",
+      "is not valid with 1+1 deal products",
+      "21 days",
+      "will not be renewed"
+    ]
+  },
+  {
+    "id": "shop_07",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, my name is Osnat Revivo. I see a NIS 199 charge from Hadar Store on my credit card from November 3, labeled Hadar Prime renewal. I don't remember agreeing to an automatic renewal at all, and I'd like to understand.\nAgent: Hello Osnat, this is Amit from Hadar Store. I'm checking. Yes, I can see the membership was renewed. The membership was renewed automatically, yes.\nCustomer: I can see that. But I joined a year ago in a promotion, NIS 49 for the first year, and I never got any reminder that it was about to renew. And this year I hardly bought anything, maybe three orders.\nAgent: I see. So the membership renews automatically. It's an automatic renewal, and that's what happened here.\nCustomer: Okay, I understood that's what happened. My question is whether I can cancel and get the money back. And if so, whether you get the full amount. And I haven't ordered anything since the renewal, if that matters.\nAgent: You can cancel, yes. There's cancellation. As for the money, I need to check how much comes back. It depends on a few things, both the timing and the usage.\nCustomer: I appreciate it. And another thing, the email address you have on file, maybe it's the old one? I changed my email in the summer and I'm not sure I updated it with you. If the reminder went there, I want to know. I'm not looking to blame anyone, I just want to understand what I'm entitled to.\nAgent: I'm checking that too. I'm opening the Hadar Prime membership terms now and I'll explain what applies to you.",
+    "doc": "Hadar Prime Membership – Renewal and Cancellation. The membership renews automatically at the end of each year, at the list price of NIS 199 per year, unless it was cancelled before the renewal date. A promotional price given in the first year does not apply to renewal years. The company will send the customer a renewal reminder 14 days before the billing date, to the email address registered on the account. A customer who cancels the membership within 30 days of the renewal date, and has not placed an order using membership benefits since the renewal, will receive a full refund. Cancellation after 30 days or after using benefits entitles the customer to a pro-rata refund only, less a handling fee of NIS 20. If the reminder was not sent at all, the customer is entitled to a full refund at any time during the first 60 days after the renewal. The refund will be made to the credit card within 7 business days. The email address can be updated and the membership cancelled in the personal area. Membership benefits will end immediately upon cancellation, and orders placed before the cancellation will be delivered as usual. A customer may disable automatic renewal in advance in the personal area, and the membership will end at the end of the year with no further charge. A cancelled membership can be renewed at any time at the list price.",
+    "questions": [
+      "What is the annual list price of the Hadar Prime membership?",
+      "Under what condition will Osnat receive a full refund if she cancels now?",
+      "How much did Osnat pay for the first year?"
+    ],
+    "correct_answers": [
+      "NIS 199 per year",
+      "has not placed an order using membership benefits",
+      "NIS 49"
+    ],
+    "critical_facts": [
+      "Osnat Revivo",
+      "Amit",
+      "Hadar Store",
+      "Hadar Prime",
+      "NIS 199",
+      "November 3",
+      "NIS 49",
+      "does not apply to renewal years",
+      "14 days",
+      "within 30 days",
+      "has not placed an order using membership benefits",
+      "a pro-rata refund only",
+      "NIS 20",
+      "the first 60 days",
+      "7 business days"
+    ]
+  },
+  {
+    "id": "shop_08",
+    "domain": "online_shopping",
+    "history": "Customer: Hello, I'm calling because I don't know who else to turn to. I ordered a gift for my wife's birthday, a smartwatch for NIS 1,350, from an online store that works with you, and according to the tracking on your website the package was delivered on Thursday, November 12, at 14:37. But I was home all day, I was working from home, and nobody knocked on the door or called. I checked with the neighbors, I checked the lobby, I even checked the recycling bin by the entrance, in case someone threw a box in there. Nothing. The store tells me to contact you, because as far as they're concerned the package was delivered, and you'll probably tell me to contact the store. I don't want to be a ping-pong ball. My name is Shlomo Biton.\nAgent: Hello Shlomo, this is Rinat from Mahir-Ship, delivery investigations department. I understand, and I'm not going to transfer you to anyone. I'm handling this from here. I can see the courier marked it delivered at 14:37, with the note left at the door, and without a signature.\nCustomer: At the door? I live in an eight-story building with a coded entrance door. How did he even get in? And why did he leave it at the door without asking me? In the order itself I explicitly selected hand delivery only. It also appears in the order confirmation I got by email, I can send you a screenshot. And anyway, I've never had problems like this, I order online every month.\nAgent: I can see the hand delivery only note in the shipment details. That means the courier was not supposed to leave the package without a signature. I'm opening a delivery investigation, and the investigation number is 4471.\nCustomer: Okay, at least someone admits it. So what now? How long does the investigation take, and what happens if the package isn't found? Because the birthday is next Tuesday, and I need to know whether to order something else. And if I order again, who pays? I'm not willing to pay twice for the same gift. And besides, I have a camera at my apartment entrance, and there's no courier on it at that time.\nAgent: That's very important information, and I'd ask you to keep the clip from the camera. I'll explain exactly what the procedure is, how long it takes and who is responsible for compensation. I can also see that this courier reported two more deliveries without a signature in your area that same day, and I'm checking those too.\nCustomer: Fine. And tell me also whether I need to file a police complaint, because a friend told me that without a police complaint you get nothing. I don't want to waste a whole day at the station if it's not necessary, I have work and a gift to sort out, and my wife doesn't know anything yet and I want it to stay that way.\nAgent: I'll answer that too. I'm opening the procedure for a package marked as delivered but not received now, and we'll go over the timelines, the compensation and the documents you'll need to send. I can already tell you that your case is well documented.",
+    "doc": "Package Marked as Delivered but Not Received – Mahir-Ship. A customer whose package was marked as delivered but was not received may open a delivery investigation within 7 days of the reported delivery date. The investigation will be completed within 5 business days, during which the courier's location data and the delivery records will be examined. Where hand delivery only was selected in the order, and the shipment was marked as delivered without the recipient's signature, responsibility for the loss lies with Mahir-Ship, and the customer will be compensated for the full value of the product, up to NIS 2,000, without needing to wait for the investigation to end. The compensation will be transferred within 10 business days of the investigation being opened. To receive the compensation, no police complaint is required, unless the value of the product exceeds NIS 2,000. The customer must provide a purchase invoice and an order confirmation that includes the delivery instruction. Security camera footage is not mandatory, but it will help the investigation. If the package is found after the compensation has been paid, the customer may choose whether to return the compensation or the package. Re-shipping of a replacement product by the merchant does not involve additional shipping fees. Mahir-Ship will inform the merchant of the investigation's results. A customer who received compensation for a lost package will not be charged shipping fees on the replacement order, even if it was placed on another website of the same merchant. Investigation inquiries can be tracked in the personal area by investigation number.",
+    "questions": [
+      "What is the maximum compensation for a lost package?",
+      "Does Shlomo need to file a police complaint to receive compensation?",
+      "What is the investigation number that was opened?"
+    ],
+    "correct_answers": [
+      "up to NIS 2,000",
+      "no police complaint is required",
+      "4471"
+    ],
+    "critical_facts": [
+      "Shlomo Biton",
+      "Rinat",
+      "Mahir-Ship",
+      "NIS 1,350",
+      "November 12",
+      "14:37",
+      "without a signature",
+      "hand delivery only",
+      "4471",
+      "7 days",
+      "5 business days",
+      "up to NIS 2,000",
+      "without needing to wait for the investigation to end",
+      "10 business days",
+      "no police complaint is required"
+    ]
+  },
+  {
+    "id": "util_01",
+    "domain": "utilities",
+    "history": "Customer: Hello, my name is Nechama Shapira. I got an electricity bill for September–October of NIS 1,180, and I usually pay about 450. Something doesn't look right to me.\nAgent: Hello Nechama, this is Ilan from Nitzotz Electric. I'm checking. I can see that the reading on this bill was an estimate, not an actual reading, because the meter reader couldn't get to the meter.\nCustomer: That's right, the meter is in the yard behind a locked gate, and I was abroad at the beginning of October. I can take a photo of it for you right now, would that help?\nAgent: Yes, that could help a lot. I can see you're on the Nitzotz Fixed plan. I'm checking the procedure.\nCustomer: Thank you. And if it turns out I really used less, will I get the money back to my bank account? Because I already paid by direct debit on November 10.\nAgent: I'm checking that too and I'll update you right away.",
+    "doc": "Bills Based on Estimated Consumption – Nitzotz Electric. When the meter cannot be read, a bill will be issued based on estimated consumption derived from consumption in the same period of the previous year. The customer may send a photo of the meter, showing the meter number and the reading, within 14 days of the bill being issued, and the bill will be corrected accordingly within 5 business days. No interest or late fees will be charged on a bill under review. If a bill has been issued based on an estimate for 3 consecutive periods, the customer will be required to allow access to the meter or to schedule a reading; otherwise a visit fee of NIS 85 will be charged. On the Nitzotz Fixed plan, a 7% discount applies to all consumption and is not affected by a bill correction. A refund for an overcharge will be given as a credit on the next bill, and not as a cash refund, unless the customer explicitly requests otherwise. The meter photo can be sent via the app or the website, and the customer will receive confirmation of its receipt.",
+    "questions": [
+      "Within how long must a photo of the meter be sent?",
+      "How will Nechama receive the refund if she does not request otherwise?",
+      "How much does Nechama usually pay?"
+    ],
+    "correct_answers": [
+      "within 14 days",
+      "as a credit on the next bill",
+      "about 450"
+    ],
+    "critical_facts": [
+      "Nechama Shapira",
+      "Ilan",
+      "Nitzotz Electric",
+      "Nitzotz Fixed",
+      "NIS 1,180",
+      "about 450",
+      "November 10",
+      "within 14 days",
+      "5 business days",
+      "No interest or late fees will be charged",
+      "NIS 85",
+      "7%",
+      "as a credit on the next bill",
+      "and not as a cash refund",
+      "unless the customer explicitly requests otherwise"
+    ]
+  },
+  {
+    "id": "util_02",
+    "domain": "utilities",
+    "history": "Customer: You cut off my electricity this morning!!! I have little kids at home, how can you do something like this without notice\nAgent: Hello, this is Reut from Or-Li Energy. I understand this is hard. Could I have your name?\nCustomer: Haim Saada. And yes, I know there's a debt, NIS 870, but nobody sent me anything. No letter, no message, nothing. I want electricity now\nAgent: I can see the disconnection, it was carried out today at 09:15. The debt is for two bills. Usually notices are sent, there are several notices that go out before a disconnection.\nCustomer: I didn't get anything! And don't tell me usually. And now it also says on the website there's a NIS 250 reconnection fee? I'm not paying that, it's your mistake\nAgent: The reconnection fee, it depends. There are cases where it's charged and cases where it isn't. It depends on a lot of things, both the notices and the debt. I can see here the notices were sent to an address on HaNarkis Street.\nCustomer: A lot of things, a lot of things. I can pay the debt right now by card, but I want to know when the electricity comes back, and I don't want to wait until tomorrow with the fridge off. And I've been on the Or-Li Basic plan for six years, I've never had a debt, these two months were just tough. And HaNarkis Street? I moved out of there a year ago and I updated you\nAgent: I'm checking the disconnection and reconnection procedure and I'll get right back to you with a proper answer.",
+    "doc": "Disconnection Due to Debt and Reconnection – Or-Li Energy. Before supply is disconnected due to debt, the customer will be sent a first warning notice at least 21 days before the disconnection date, and a second notice at least 3 days before the disconnection date, by mail and by text message. No disconnection will be carried out if both notices were not sent as required. Disconnections will not be carried out on Fridays, on holiday eves or after 14:00. After the full debt is paid, supply will be restored within 4 hours, provided that payment was made by 18:00; payment made after that time will result in supply being restored by 10:00 the next day. A reconnection fee of NIS 250 will be charged to the customer; however, it will not be charged if it is found that the warnings were not sent properly. In such a case, the customer will also be credited with compensation of NIS 100. A customer who cannot pay the debt in full may request a payment arrangement of up to 6 installments, and supply will be restored upon payment of the first installment. Households where a person dependent on electrical medical equipment lives will not be disconnected due to debt, provided that this has been registered with the company in advance. An inquiry into the sending of warning notices will be completed within 2 business days. A customer may ask to receive warning notices by email as well, in addition to mail and text message. The address and phone number for updates can be changed in the personal area.",
+    "questions": [
+      "Within how long will supply be restored after the debt is paid by 18:00?",
+      "When will the reconnection fee not be charged?",
+      "What is the amount of Haim's debt?"
+    ],
+    "correct_answers": [
+      "within 4 hours",
+      "the warnings were not sent properly",
+      "NIS 870"
+    ],
+    "critical_facts": [
+      "Haim Saada",
+      "Reut",
+      "Or-Li Energy",
+      "Or-Li Basic",
+      "NIS 870",
+      "09:15",
+      "NIS 250",
+      "at least 21 days",
+      "at least 3 days",
+      "No disconnection will be carried out",
+      "within 4 hours",
+      "by 18:00",
+      "the warnings were not sent properly",
+      "NIS 100",
+      "up to 6 installments"
+    ]
+  },
+  {
+    "id": "util_03",
+    "domain": "utilities",
+    "history": "Customer: Hello, I hope I'm not bothering you, I have a few questions and I'm getting a bit confused. My name is Esther Buzaglo, and I'm moving. I've been living for nine years now at 14 HaTe'ena Street in Afula, renting, and now we've finally bought a place of our own, on HaZayit Street in a nearby town, and we get the keys on December 1. The problem is that at the old apartment the lease only ends on December 31, and the landlord wants me to keep paying for water until the end, but we'll already have moved out before then. And at the new apartment, the sellers said they're closing their account, but I don't know if I need to open a new account or if it transfers automatically. And also, my son said that at the old apartment we've had a reduced rate until now because we're five people, and I don't want to lose that at the new apartment. Sorry for talking so much, there's just so much on my mind with the move.\nAgent: Hello Esther, this is Yigal from Maayanot HaEmek. Congratulations on the apartment. Yes, there are a few things here. There's the old apartment, and there's the new apartment.\nCustomer: Yes, exactly. So let's start with the old one. What do I need to do there? Because if I stay registered until December 31, and I'm no longer living there, and someone new moves in, I don't want to pay for somebody else's water. On the other hand, I don't want to fight with the landlord, he's been good to us all these years. And there's also the deposit, when we moved in we paid you a deposit, I think NIS 400, and I don't know if it comes back.\nAgent: So for the old apartment, there's a final meter reading. And the final reading is what closes the account. And about the deposit, there's a deposit, yes, I need to check.\nCustomer: Okay. And at the new apartment, what do I need to bring? I have the purchase contract, but we haven't registered it at the Land Registry yet, the lawyer said that'll take a few months. Is that a problem? And if the sellers didn't close their account, I don't want their debts to pass to me. I've heard stories about people who got a bill for thousands of shekels for the previous tenants' debt.\nAgent: I understand. So there are documents that are needed, and there's the matter of the sellers. That's important too, yes. I want to check that in the procedure.\nCustomer: And about the rate, we really are five people, me, my husband and our three kids. At the old apartment it was already registered, and I don't remember what we did for it. Do we need to do it again, or does it move with us? And how long does it take to kick in? Because in winter we don't use much, but in summer, with three kids, that's a lot of showers and a lot of laundry.\nAgent: I completely understand. I'm opening the procedure for moving and updating the property occupant now, and we'll go over everything: the old apartment, the deposit, the new apartment, the sellers' debts and the rate.",
+    "doc": "Moving and Updating the Property Occupant – Maayanot HaEmek. A customer leaving a property must give notice at least 7 days in advance, and a final meter reading will be taken on the actual move-out date. From the date of the final reading, the customer will not be charged for water consumption at the property, even if the lease has not yet ended, provided that the details of the next occupant or of the property owner have been provided. A deposit paid when the account was opened will be refunded within 30 days of the account being closed, less any outstanding debts. A new occupant of a property will open an account in their name by presenting a purchase contract or a lease; there is no need for registration in the Land Registry. Debts of a previous occupant will not be transferred to the new occupant, provided that the new occupant reported moving into the property within 30 days of receiving possession. Under the Tiered Household Rate, the reduced-price water quantity is determined according to the number of people registered at the property. Registration of the number of people is not transferred automatically to the new property, and a new request must be submitted together with the ID card appendix. The update will take effect from the start of the billing period in which the request was submitted, and does not apply to previous periods. All requests can be submitted on the website, through the call center or at the company's offices, and no appointment is needed. The final meter reading does not involve any payment. A customer who did not give notice of leaving the property will continue to be charged until the date of notice. A landlord who rents out a property may ask for the account to be transferred to their name between tenants.",
+    "questions": [
+      "Within how long will the deposit be refunded after the account is closed?",
+      "Is the registration of five people transferred automatically to the new apartment?",
+      "When does Esther get the keys to the new apartment?"
+    ],
+    "correct_answers": [
+      "within 30 days of the account being closed",
+      "is not transferred automatically to the new property",
+      "on December 1"
+    ],
+    "critical_facts": [
+      "Esther Buzaglo",
+      "Yigal",
+      "Maayanot HaEmek",
+      "Tiered Household Rate",
+      "14 HaTe'ena Street",
+      "December 1",
+      "December 31",
+      "five people",
+      "NIS 400",
+      "at least 7 days",
+      "the customer will not be charged",
+      "within 30 days of the account being closed",
+      "there is no need for registration in the Land Registry",
+      "Debts of a previous occupant will not be transferred",
+      "is not transferred automatically to the new property"
+    ]
+  },
+  {
+    "id": "util_04",
+    "domain": "utilities",
+    "history": "Customer: is there a senior discount on water?\nAgent: Hello, this is Morag from Mei HaGiva. Yes, under certain conditions. How old are you?\nCustomer: 68. Shaul here. live in an apartment on HaShikma Street\nAgent: Thank you Shaul. Do you receive an old-age pension?\nCustomer: yes. since age 67\nAgent: And are you the registered account holder for the property?\nCustomer: no. my daughter. the account is in her name, but i've been living in the apartment alone for two years\nAgent: I see. One moment, I'm checking the conditions and I'll explain what can be done.",
+    "doc": "Senior Citizen Discount – Mei HaGiva. A senior citizen receiving an old-age pension is entitled to a 30% discount on the water rate, for a quantity of up to 3.5 cubic meters per month. The discount is given only when the account is registered in the name of the eligible person or their spouse. If the account is registered in another person's name, it can be transferred to the eligible person's name, provided that the eligible person lives there permanently. The discount will apply from the start of the billing period in which the request was submitted, and is not given retroactively. The request must be submitted with confirmation of receiving a pension, and it will be processed within 10 business days. A person eligible for more than one statutory discount will receive only the highest of them, and discounts cannot be combined. The discount does not apply to a business property. Renewal of the discount is not required as long as eligibility remains valid. Transferring the account to the eligible person's name does not involve any payment, and it requires the written consent of the registered account holder. A customer living in the property with a family member who is not eligible will receive the discount only on the quantity allocated to the eligible person. The request can be submitted at the company's offices, on the website or by mail.",
+    "questions": [
+      "What is the discount rate on the water rate?",
+      "Under what condition will Shaul get the discount when the account is in his daughter's name?",
+      "From what age has Shaul been receiving an old-age pension?"
+    ],
+    "correct_answers": [
+      "30%",
+      "the eligible person lives there permanently",
+      "since age 67"
+    ],
+    "critical_facts": [
+      "Shaul",
+      "Morag",
+      "Mei HaGiva",
+      "68",
+      "since age 67",
+      "30%",
+      "3.5 cubic meters per month",
+      "only when the account is registered in the name of the eligible person",
+      "the eligible person lives there permanently",
+      "and is not given retroactively",
+      "10 business days",
+      "and discounts cannot be combined",
+      "does not apply to a business property",
+      "written consent of the registered account holder"
+    ]
+  },
+  {
+    "id": "util_05",
+    "domain": "utilities",
+    "history": "Customer: Switch me to the night plan. I work shifts and most of my usage is at night. Washing machine, dryer, AC, all after eleven\nAgent: Hello, this is Dafna from Kochav Energy. Sure. Whose name is the account under?\nCustomer: Omri Leibovitz. And make it quick, I'm on a ten-minute break and I don't have the energy to hear about all your plans\nAgent: Thanks Omri. Right now you're on the Kochav Day plan, with a 15% discount from 07:00 to 17:00. I can see you have a smart meter, so you can switch.\nCustomer: Great. And I want it to start today. And how much do I save? And I don't have time for technicians, I don't want anyone coming to the house\nAgent: The switch doesn't require a technician visit, it's all done remotely. I can also see you switched plans two months ago, in September. That matters for the cost, because there's a limit on the number of switches.\nCustomer: What does it matter when I switched? Just tell me when it starts, that's it. And if it's not worth it, I want to go back without a penalty, I'm not getting stuck on a plan that doesn't suit me. And tell me what it'll cost, if anything, as a number, not roughly\nAgent: I'm opening the switching terms and I'll answer briefly, on the timing, the cost and switching back. Three answers, and you're back to your break.",
+    "doc": "Switching Between Time-Based Discount Plans – Kochav Energy. The Kochav Night plan gives a 20% discount on consumption from 23:00 to 07:00, and does not give a discount at other hours. The Kochav Day plan gives a 15% discount from 07:00 to 17:00. Switching between the plans requires a smart meter and does not require a technician visit. A switch request will take effect at the start of the next billing period, and not immediately. A customer may switch plans once every 6 months at no cost; an additional switch within that period involves a change fee of NIS 30. There is no exit penalty for the discount plans, and a customer may move to the general plan at any time. Once a month, the company will send the customer a comparison between the actual cost of consumption and the estimated cost under the other plan. The discount is calculated on the energy component only and does not apply to fixed charges. The customer will receive a text message confirming the switch and its effective date. The switch can also be made via the app, without talking to an agent. A customer who switched to the Kochav Night plan and whose consumption during discount hours is less than 30% of total consumption will receive a recommendation to return to the suitable plan. A switch request submitted in the last three days of a billing period will take effect only in the period after the next one.",
+    "questions": [
+      "What is the discount on the Kochav Night plan?",
+      "When will Omri's switch take effect?",
+      "When did Omri last switch plans?"
+    ],
+    "correct_answers": [
+      "20%",
+      "at the start of the next billing period",
+      "in September"
+    ],
+    "critical_facts": [
+      "Omri Leibovitz",
+      "Dafna",
+      "Kochav Energy",
+      "Kochav Day",
+      "Kochav Night",
+      "15%",
+      "07:00 to 17:00",
+      "in September",
+      "20%",
+      "23:00 to 07:00",
+      "and does not give a discount at other hours",
+      "and does not require a technician visit",
+      "at the start of the next billing period",
+      "once every 6 months",
+      "NIS 30"
+    ]
+  },
+  {
+    "id": "util_06",
+    "domain": "utilities",
+    "history": "Customer: bro the smart meter app hasnt shown my usage for 4 days, it just says no data. whats going on\nAgent: Hey, this is Oz from Hashmal-Plus Direct. Let's check. What's your name?\nCustomer: Orel Nagar. Smart 24 plan. i wanna see how much the AC is eating, thats the whole reason i got this plan\nAgent: I can see your meter hasn't sent data since November 11. Probably a communication problem in the meter itself.\nCustomer: wow. and what about the bill? are they gonna charge me for some made up number? and dont send a technician when im not home, i only get back at 7 in the evening, and on weekends im at my parents\nAgent: One sec, checking the procedure for what happens with the bill and the technician",
+    "doc": "Smart Meter Communication Fault – Smart 24 Plan. Consumption data from the smart meter is displayed in the app with a delay of up to 24 hours. If no data has been received for more than 72 hours, a service call will be opened automatically, and the fault will be handled remotely within 5 business days. If it cannot be fixed remotely, a technician visit will be scheduled in advance with the customer, and no entry into the property will be made without their presence. During the fault, the bill will be calculated based on data pulled from the meter's memory once communication is restored, and not according to an estimate. A technician visit for a communication fault does not involve any payment. Technician visits take place Sunday to Thursday until 20:00. If the memory data has been lost, the charge will be determined according to average consumption in the 30 days preceding the fault. The customer will receive a notification in the app once data display is restored. The customer may request a visit in the evening hours, between 17:00 and 20:00, at no extra cost. A recurring fault in the same meter within 90 days will be handled by replacing the meter.",
+    "questions": [
+      "Within how long will the fault be handled remotely?",
+      "On what basis will Orel's bill be calculated during the fault?",
+      "Since when has Orel's meter not been sending data?"
+    ],
+    "correct_answers": [
+      "within 5 business days",
+      "based on data pulled from the meter's memory",
+      "since November 11"
+    ],
+    "critical_facts": [
+      "Orel Nagar",
+      "Oz",
+      "Hashmal-Plus Direct",
+      "Smart 24",
+      "4 days",
+      "November 11",
+      "7 in the evening",
+      "up to 24 hours",
+      "more than 72 hours",
+      "within 5 business days",
+      "and no entry into the property will be made without their presence",
+      "based on data pulled from the meter's memory",
+      "and not according to an estimate",
+      "does not involve any payment",
+      "20:00"
+    ]
+  },
+  {
+    "id": "util_07",
+    "domain": "utilities",
+    "history": "Customer: Hello, this is Jacqueline Houri. I received a gas supply bill for October, and there are two charges on it that aren't clear to me: a NIS 45 delivery fee and a NIS 120 safety inspection fee. I'd appreciate it if you could explain, because until now I've never paid for things like that.\nAgent: Hello Jacqueline, this is Ziv from Gaz HaBayit Tzafon. I'm checking. Yes, I can see both charges. There's a delivery fee and there's a safety inspection, yes, two charges.\nCustomer: Yes, I saw that. I've had the Gaz Shaket subscription for four years now, and when I signed up I was told delivery is included. Has something changed in the terms?\nAgent: So delivery is included in the subscription, usually. Usually it's included. I can see here that the last order was an urgent order.\nCustomer: Oh, right, on October 18 the gas ran out in the middle of cooking and I called to ask for someone quickly, they came two hours later. So that's why? And the safety inspection, I didn't ask for it at all, the technician just said he was checking, and he didn't say anything about payment or about a problem.\nAgent: Yes, a safety inspection, there's an inspection like that. It's according to the regulations. I'm checking whether it should have been charged or not.\nCustomer: Thank you. And I'd also like to know if I can split this into two payments, because this month is a bit tight. And if there's a mistake, I'd rather it be offset against the next bill, there's no need to refund it to my bank.\nAgent: Absolutely. I'm opening the Gaz Shaket subscription terms now and I'll explain each of the charges.",
+    "doc": "Additional Charges on the Gaz Shaket Subscription – Gaz HaBayit Tzafon. The Gaz Shaket subscription includes delivery of gas cylinders for a regular order, supplied within 2 business days, at no charge. An urgent order, supplied within 4 hours, involves a delivery fee of NIS 45, even for subscribers. A periodic safety inspection of the gas installation is carried out once every 5 years, and it does not involve any payment for subscribers. An additional safety inspection, outside the periodic schedule, will be charged NIS 120 only if it was done at the customer's request or due to a defect found in the installation. A technician-initiated check with no request and no defect will not be charged. A customer who was charged improperly will be credited on the next bill. Additional charges of more than NIS 100 can be split into up to 3 installments without interest, by contacting the call center. Backup cylinders are available to subscribers for NIS 9 per month, to avoid urgent orders. The technician must give the customer a written inspection report at the end of every safety inspection, detailing any defects found. A customer who disputes a charge may request the inspection report, and the company will provide it within 5 business days. A cancelled charge will appear on the next bill as a separate credit.",
+    "questions": [
+      "How much does delivery cost for an urgent order?",
+      "In which case will an additional safety inspection not be charged?",
+      "When did Jacqueline place an urgent order?"
+    ],
+    "correct_answers": [
+      "NIS 45",
+      "technician-initiated check with no request and no defect",
+      "on October 18"
+    ],
+    "critical_facts": [
+      "Jacqueline Houri",
+      "Ziv",
+      "Gaz HaBayit Tzafon",
+      "Gaz Shaket subscription",
+      "NIS 45",
+      "NIS 120",
+      "October 18",
+      "2 business days",
+      "even for subscribers",
+      "does not involve any payment for subscribers",
+      "only if it was done at the customer's request or due to a defect",
+      "technician-initiated check with no request and no defect",
+      "up to 3 installments without interest",
+      "NIS 9 per month"
+    ]
+  },
+  {
+    "id": "util_08",
+    "domain": "utilities",
+    "history": "Customer: Hello, I want to file a complaint about a delay, and I'm asking you to listen to the whole story, because it's been a long time already. My name is Aharon Vaknin, I have a private house in a moshav, and we installed a 10 kW solar system on the roof through your company, Solarit Ltd., on the Net Meter plan. The installation was completed on June 15, and the system has been producing electricity for five months now, I see it in the inverter app every day. But on my bills, four bills already, there's no credit at all. I keep paying as if I don't have a system at all. According to what the rep who sold it to me promised, I was supposed to see the credit from the very first bill. I invested NIS 42,000 in this, and I took out a loan for it, and the whole calculation was that the credit would cover the monthly repayment.\nAgent: Hello Aharon, this is Yifat from the home producers department at Solarit Ltd. I'm listening, and I'm sorry about the delay. I'm opening your file. I can see the system was connected to the grid on June 15, but a bidirectional meter was only installed on September 3.\nCustomer: A bidirectional meter? Nobody told me a special meter was needed. I thought everything was done together, the installation and the meter. So what, all the electricity I produced in July and August went down the drain? Because I saw the system produced the most in those months, because of the sun. And what about September and October? The meter is already installed, and there's still no credit on the bill. My neighbor installed a similar system through another company, and for him everything worked from the first month.\nAgent: I understand the frustration. I can see the meter was installed on September 3, and its readings are already being saved, but the credit hasn't appeared on the bills yet. I'll check in the plan terms what happens with the period before the meter, and when the credit is supposed to appear.\nCustomer: And please also check what about compensation. Because if it's your delay, I don't just want the credit, I want compensation for the time I've been waiting, and for the fact that I'm paying off a loan without the income I was promised. And another question: if I produce more than I use, do you pay me the difference in cash, or does it just stay as a credit? Because the rep told me it's cash, and I'm not sure about anything he said anymore.\nAgent: Important questions. I'll answer each one according to the Net Meter terms, and I'm recording your complaint about the delay. I can see in the file that the meter request was only sent from our side in August, meaning the delay was on our side and not yours.\nCustomer: Thank you. And please also record that the rep who sold it to me, his name was Tzachi, promised a credit from the first bill. I don't want anyone telling me later that I never said so. I even have his message on my phone, if needed.\nAgent: I've recorded that, and please send us the message in writing. The complaint number is 63118, and it will be forwarded to the Public Inquiries Officer. Now let's go over the terms: the period before the meter, when the credit appears, compensation and payment for surplus production.",
+    "doc": "Net Meter Plan – Credit for Home Production. Under the Net Meter plan, the amount of electricity the home system feeds into the grid is offset against the amount of electricity the customer consumes. Offsetting is possible only from the date a bidirectional meter is installed, and production prior to that date is not measured and does not entitle the customer to a credit. The company will install a bidirectional meter within 30 days of the system being connected to the grid. If the meter was installed after that period for reasons attributable to the company, the customer will be credited with compensation based on an estimated production of 140 kWh per installed kilowatt for each month of delay. The credit for production will appear on the second bill after the meter is installed, including a retroactive credit for readings measured since installation. Production surpluses are not paid in cash, but are accumulated as a credit toward future bills, for a period of up to 24 months. At the end of that period, any unused credit balance will be paid to the customer at a reduced rate. The company is not responsible for promises made by anyone not acting on its behalf, but will review any claim submitted in writing. A complaint will be handled within 30 days, and the response will be given in writing. The customer may view monthly offset data in the personal area. A customer wishing to expand the system must submit a new application, and the plan will apply to the total capacity after the expansion. Once a quarter, the company will send the customer a summary report on production and offsetting.",
+    "questions": [
+      "What estimated production is used to calculate compensation for a delay in installing the meter?",
+      "Will Aharon be paid in cash for surplus production?",
+      "When was the bidirectional meter installed?"
+    ],
+    "correct_answers": [
+      "140 kWh per installed kilowatt",
+      "are not paid in cash",
+      "on September 3"
+    ],
+    "critical_facts": [
+      "Aharon Vaknin",
+      "Yifat",
+      "Solarit Ltd.",
+      "Net Meter",
+      "10 kW",
+      "June 15",
+      "NIS 42,000",
+      "September 3",
+      "63118",
+      "Tzachi",
+      "and does not entitle the customer to a credit",
+      "within 30 days",
+      "140 kWh per installed kilowatt",
+      "on the second bill after the meter is installed",
+      "are not paid in cash"
+    ]
+  }
+]

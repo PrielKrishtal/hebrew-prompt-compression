@@ -1,0 +1,264 @@
+[
+  {
+    "id": "util_01",
+    "domain": "utilities",
+    "history": "Customer: Hello, my name is Nechama Shapira. I got an electricity bill for September–October of NIS 1,180, and I usually pay about 450. Something doesn't look right to me.\nAgent: Hello Nechama, this is Ilan from Nitzotz Electric. I'm checking. I can see that the reading on this bill was an estimate, not an actual reading, because the meter reader couldn't get to the meter.\nCustomer: That's right, the meter is in the yard behind a locked gate, and I was abroad at the beginning of October. I can take a photo of it for you right now, would that help?\nAgent: Yes, that could help a lot. I can see you're on the Nitzotz Fixed plan. I'm checking the procedure.\nCustomer: Thank you. And if it turns out I really used less, will I get the money back to my bank account? Because I already paid by direct debit on November 10.\nAgent: I'm checking that too and I'll update you right away.",
+    "doc": "Bills Based on Estimated Consumption – Nitzotz Electric. When the meter cannot be read, a bill will be issued based on estimated consumption derived from consumption in the same period of the previous year. The customer may send a photo of the meter, showing the meter number and the reading, within 14 days of the bill being issued, and the bill will be corrected accordingly within 5 business days. No interest or late fees will be charged on a bill under review. If a bill has been issued based on an estimate for 3 consecutive periods, the customer will be required to allow access to the meter or to schedule a reading; otherwise a visit fee of NIS 85 will be charged. On the Nitzotz Fixed plan, a 7% discount applies to all consumption and is not affected by a bill correction. A refund for an overcharge will be given as a credit on the next bill, and not as a cash refund, unless the customer explicitly requests otherwise. The meter photo can be sent via the app or the website, and the customer will receive confirmation of its receipt.",
+    "questions": [
+      "Within how long must a photo of the meter be sent?",
+      "How will Nechama receive the refund if she does not request otherwise?",
+      "How much does Nechama usually pay?"
+    ],
+    "correct_answers": [
+      "within 14 days",
+      "as a credit on the next bill",
+      "about 450"
+    ],
+    "critical_facts": [
+      "Nechama Shapira",
+      "Ilan",
+      "Nitzotz Electric",
+      "Nitzotz Fixed",
+      "NIS 1,180",
+      "about 450",
+      "November 10",
+      "within 14 days",
+      "5 business days",
+      "No interest or late fees will be charged",
+      "NIS 85",
+      "7%",
+      "as a credit on the next bill",
+      "and not as a cash refund",
+      "unless the customer explicitly requests otherwise"
+    ]
+  },
+  {
+    "id": "util_02",
+    "domain": "utilities",
+    "history": "Customer: You cut off my electricity this morning!!! I have little kids at home, how can you do something like this without notice\nAgent: Hello, this is Reut from Or-Li Energy. I understand this is hard. Could I have your name?\nCustomer: Haim Saada. And yes, I know there's a debt, NIS 870, but nobody sent me anything. No letter, no message, nothing. I want electricity now\nAgent: I can see the disconnection, it was carried out today at 09:15. The debt is for two bills. Usually notices are sent, there are several notices that go out before a disconnection.\nCustomer: I didn't get anything! And don't tell me usually. And now it also says on the website there's a NIS 250 reconnection fee? I'm not paying that, it's your mistake\nAgent: The reconnection fee, it depends. There are cases where it's charged and cases where it isn't. It depends on a lot of things, both the notices and the debt. I can see here the notices were sent to an address on HaNarkis Street.\nCustomer: A lot of things, a lot of things. I can pay the debt right now by card, but I want to know when the electricity comes back, and I don't want to wait until tomorrow with the fridge off. And I've been on the Or-Li Basic plan for six years, I've never had a debt, these two months were just tough. And HaNarkis Street? I moved out of there a year ago and I updated you\nAgent: I'm checking the disconnection and reconnection procedure and I'll get right back to you with a proper answer.",
+    "doc": "Disconnection Due to Debt and Reconnection – Or-Li Energy. Before supply is disconnected due to debt, the customer will be sent a first warning notice at least 21 days before the disconnection date, and a second notice at least 3 days before the disconnection date, by mail and by text message. No disconnection will be carried out if both notices were not sent as required. Disconnections will not be carried out on Fridays, on holiday eves or after 14:00. After the full debt is paid, supply will be restored within 4 hours, provided that payment was made by 18:00; payment made after that time will result in supply being restored by 10:00 the next day. A reconnection fee of NIS 250 will be charged to the customer; however, it will not be charged if it is found that the warnings were not sent properly. In such a case, the customer will also be credited with compensation of NIS 100. A customer who cannot pay the debt in full may request a payment arrangement of up to 6 installments, and supply will be restored upon payment of the first installment. Households where a person dependent on electrical medical equipment lives will not be disconnected due to debt, provided that this has been registered with the company in advance. An inquiry into the sending of warning notices will be completed within 2 business days. A customer may ask to receive warning notices by email as well, in addition to mail and text message. The address and phone number for updates can be changed in the personal area.",
+    "questions": [
+      "Within how long will supply be restored after the debt is paid by 18:00?",
+      "When will the reconnection fee not be charged?",
+      "What is the amount of Haim's debt?"
+    ],
+    "correct_answers": [
+      "within 4 hours",
+      "the warnings were not sent properly",
+      "NIS 870"
+    ],
+    "critical_facts": [
+      "Haim Saada",
+      "Reut",
+      "Or-Li Energy",
+      "Or-Li Basic",
+      "NIS 870",
+      "09:15",
+      "NIS 250",
+      "at least 21 days",
+      "at least 3 days",
+      "No disconnection will be carried out",
+      "within 4 hours",
+      "by 18:00",
+      "the warnings were not sent properly",
+      "NIS 100",
+      "up to 6 installments"
+    ]
+  },
+  {
+    "id": "util_03",
+    "domain": "utilities",
+    "history": "Customer: Hello, I hope I'm not bothering you, I have a few questions and I'm getting a bit confused. My name is Esther Buzaglo, and I'm moving. I've been living for nine years now at 14 HaTe'ena Street in Afula, renting, and now we've finally bought a place of our own, on HaZayit Street in a nearby town, and we get the keys on December 1. The problem is that at the old apartment the lease only ends on December 31, and the landlord wants me to keep paying for water until the end, but we'll already have moved out before then. And at the new apartment, the sellers said they're closing their account, but I don't know if I need to open a new account or if it transfers automatically. And also, my son said that at the old apartment we've had a reduced rate until now because we're five people, and I don't want to lose that at the new apartment. Sorry for talking so much, there's just so much on my mind with the move.\nAgent: Hello Esther, this is Yigal from Maayanot HaEmek. Congratulations on the apartment. Yes, there are a few things here. There's the old apartment, and there's the new apartment.\nCustomer: Yes, exactly. So let's start with the old one. What do I need to do there? Because if I stay registered until December 31, and I'm no longer living there, and someone new moves in, I don't want to pay for somebody else's water. On the other hand, I don't want to fight with the landlord, he's been good to us all these years. And there's also the deposit, when we moved in we paid you a deposit, I think NIS 400, and I don't know if it comes back.\nAgent: So for the old apartment, there's a final meter reading. And the final reading is what closes the account. And about the deposit, there's a deposit, yes, I need to check.\nCustomer: Okay. And at the new apartment, what do I need to bring? I have the purchase contract, but we haven't registered it at the Land Registry yet, the lawyer said that'll take a few months. Is that a problem? And if the sellers didn't close their account, I don't want their debts to pass to me. I've heard stories about people who got a bill for thousands of shekels for the previous tenants' debt.\nAgent: I understand. So there are documents that are needed, and there's the matter of the sellers. That's important too, yes. I want to check that in the procedure.\nCustomer: And about the rate, we really are five people, me, my husband and our three kids. At the old apartment it was already registered, and I don't remember what we did for it. Do we need to do it again, or does it move with us? And how long does it take to kick in? Because in winter we don't use much, but in summer, with three kids, that's a lot of showers and a lot of laundry.\nAgent: I completely understand. I'm opening the procedure for moving and updating the property occupant now, and we'll go over everything: the old apartment, the deposit, the new apartment, the sellers' debts and the rate.",
+    "doc": "Moving and Updating the Property Occupant – Maayanot HaEmek. A customer leaving a property must give notice at least 7 days in advance, and a final meter reading will be taken on the actual move-out date. From the date of the final reading, the customer will not be charged for water consumption at the property, even if the lease has not yet ended, provided that the details of the next occupant or of the property owner have been provided. A deposit paid when the account was opened will be refunded within 30 days of the account being closed, less any outstanding debts. A new occupant of a property will open an account in their name by presenting a purchase contract or a lease; there is no need for registration in the Land Registry. Debts of a previous occupant will not be transferred to the new occupant, provided that the new occupant reported moving into the property within 30 days of receiving possession. Under the Tiered Household Rate, the reduced-price water quantity is determined according to the number of people registered at the property. Registration of the number of people is not transferred automatically to the new property, and a new request must be submitted together with the ID card appendix. The update will take effect from the start of the billing period in which the request was submitted, and does not apply to previous periods. All requests can be submitted on the website, through the call center or at the company's offices, and no appointment is needed. The final meter reading does not involve any payment. A customer who did not give notice of leaving the property will continue to be charged until the date of notice. A landlord who rents out a property may ask for the account to be transferred to their name between tenants.",
+    "questions": [
+      "Within how long will the deposit be refunded after the account is closed?",
+      "Is the registration of five people transferred automatically to the new apartment?",
+      "When does Esther get the keys to the new apartment?"
+    ],
+    "correct_answers": [
+      "within 30 days of the account being closed",
+      "is not transferred automatically to the new property",
+      "on December 1"
+    ],
+    "critical_facts": [
+      "Esther Buzaglo",
+      "Yigal",
+      "Maayanot HaEmek",
+      "Tiered Household Rate",
+      "14 HaTe'ena Street",
+      "December 1",
+      "December 31",
+      "five people",
+      "NIS 400",
+      "at least 7 days",
+      "the customer will not be charged",
+      "within 30 days of the account being closed",
+      "there is no need for registration in the Land Registry",
+      "Debts of a previous occupant will not be transferred",
+      "is not transferred automatically to the new property"
+    ]
+  },
+  {
+    "id": "util_04",
+    "domain": "utilities",
+    "history": "Customer: is there a senior discount on water?\nAgent: Hello, this is Morag from Mei HaGiva. Yes, under certain conditions. How old are you?\nCustomer: 68. Shaul here. live in an apartment on HaShikma Street\nAgent: Thank you Shaul. Do you receive an old-age pension?\nCustomer: yes. since age 67\nAgent: And are you the registered account holder for the property?\nCustomer: no. my daughter. the account is in her name, but i've been living in the apartment alone for two years\nAgent: I see. One moment, I'm checking the conditions and I'll explain what can be done.",
+    "doc": "Senior Citizen Discount – Mei HaGiva. A senior citizen receiving an old-age pension is entitled to a 30% discount on the water rate, for a quantity of up to 3.5 cubic meters per month. The discount is given only when the account is registered in the name of the eligible person or their spouse. If the account is registered in another person's name, it can be transferred to the eligible person's name, provided that the eligible person lives there permanently. The discount will apply from the start of the billing period in which the request was submitted, and is not given retroactively. The request must be submitted with confirmation of receiving a pension, and it will be processed within 10 business days. A person eligible for more than one statutory discount will receive only the highest of them, and discounts cannot be combined. The discount does not apply to a business property. Renewal of the discount is not required as long as eligibility remains valid. Transferring the account to the eligible person's name does not involve any payment, and it requires the written consent of the registered account holder. A customer living in the property with a family member who is not eligible will receive the discount only on the quantity allocated to the eligible person. The request can be submitted at the company's offices, on the website or by mail.",
+    "questions": [
+      "What is the discount rate on the water rate?",
+      "Under what condition will Shaul get the discount when the account is in his daughter's name?",
+      "From what age has Shaul been receiving an old-age pension?"
+    ],
+    "correct_answers": [
+      "30%",
+      "the eligible person lives there permanently",
+      "since age 67"
+    ],
+    "critical_facts": [
+      "Shaul",
+      "Morag",
+      "Mei HaGiva",
+      "68",
+      "since age 67",
+      "30%",
+      "3.5 cubic meters per month",
+      "only when the account is registered in the name of the eligible person",
+      "the eligible person lives there permanently",
+      "and is not given retroactively",
+      "10 business days",
+      "and discounts cannot be combined",
+      "does not apply to a business property",
+      "written consent of the registered account holder"
+    ]
+  },
+  {
+    "id": "util_05",
+    "domain": "utilities",
+    "history": "Customer: Switch me to the night plan. I work shifts and most of my usage is at night. Washing machine, dryer, AC, all after eleven\nAgent: Hello, this is Dafna from Kochav Energy. Sure. Whose name is the account under?\nCustomer: Omri Leibovitz. And make it quick, I'm on a ten-minute break and I don't have the energy to hear about all your plans\nAgent: Thanks Omri. Right now you're on the Kochav Day plan, with a 15% discount from 07:00 to 17:00. I can see you have a smart meter, so you can switch.\nCustomer: Great. And I want it to start today. And how much do I save? And I don't have time for technicians, I don't want anyone coming to the house\nAgent: The switch doesn't require a technician visit, it's all done remotely. I can also see you switched plans two months ago, in September. That matters for the cost, because there's a limit on the number of switches.\nCustomer: What does it matter when I switched? Just tell me when it starts, that's it. And if it's not worth it, I want to go back without a penalty, I'm not getting stuck on a plan that doesn't suit me. And tell me what it'll cost, if anything, as a number, not roughly\nAgent: I'm opening the switching terms and I'll answer briefly, on the timing, the cost and switching back. Three answers, and you're back to your break.",
+    "doc": "Switching Between Time-Based Discount Plans – Kochav Energy. The Kochav Night plan gives a 20% discount on consumption from 23:00 to 07:00, and does not give a discount at other hours. The Kochav Day plan gives a 15% discount from 07:00 to 17:00. Switching between the plans requires a smart meter and does not require a technician visit. A switch request will take effect at the start of the next billing period, and not immediately. A customer may switch plans once every 6 months at no cost; an additional switch within that period involves a change fee of NIS 30. There is no exit penalty for the discount plans, and a customer may move to the general plan at any time. Once a month, the company will send the customer a comparison between the actual cost of consumption and the estimated cost under the other plan. The discount is calculated on the energy component only and does not apply to fixed charges. The customer will receive a text message confirming the switch and its effective date. The switch can also be made via the app, without talking to an agent. A customer who switched to the Kochav Night plan and whose consumption during discount hours is less than 30% of total consumption will receive a recommendation to return to the suitable plan. A switch request submitted in the last three days of a billing period will take effect only in the period after the next one.",
+    "questions": [
+      "What is the discount on the Kochav Night plan?",
+      "When will Omri's switch take effect?",
+      "When did Omri last switch plans?"
+    ],
+    "correct_answers": [
+      "20%",
+      "at the start of the next billing period",
+      "in September"
+    ],
+    "critical_facts": [
+      "Omri Leibovitz",
+      "Dafna",
+      "Kochav Energy",
+      "Kochav Day",
+      "Kochav Night",
+      "15%",
+      "07:00 to 17:00",
+      "in September",
+      "20%",
+      "23:00 to 07:00",
+      "and does not give a discount at other hours",
+      "and does not require a technician visit",
+      "at the start of the next billing period",
+      "once every 6 months",
+      "NIS 30"
+    ]
+  },
+  {
+    "id": "util_06",
+    "domain": "utilities",
+    "history": "Customer: bro the smart meter app hasnt shown my usage for 4 days, it just says no data. whats going on\nAgent: Hey, this is Oz from Hashmal-Plus Direct. Let's check. What's your name?\nCustomer: Orel Nagar. Smart 24 plan. i wanna see how much the AC is eating, thats the whole reason i got this plan\nAgent: I can see your meter hasn't sent data since November 11. Probably a communication problem in the meter itself.\nCustomer: wow. and what about the bill? are they gonna charge me for some made up number? and dont send a technician when im not home, i only get back at 7 in the evening, and on weekends im at my parents\nAgent: One sec, checking the procedure for what happens with the bill and the technician",
+    "doc": "Smart Meter Communication Fault – Smart 24 Plan. Consumption data from the smart meter is displayed in the app with a delay of up to 24 hours. If no data has been received for more than 72 hours, a service call will be opened automatically, and the fault will be handled remotely within 5 business days. If it cannot be fixed remotely, a technician visit will be scheduled in advance with the customer, and no entry into the property will be made without their presence. During the fault, the bill will be calculated based on data pulled from the meter's memory once communication is restored, and not according to an estimate. A technician visit for a communication fault does not involve any payment. Technician visits take place Sunday to Thursday until 20:00. If the memory data has been lost, the charge will be determined according to average consumption in the 30 days preceding the fault. The customer will receive a notification in the app once data display is restored. The customer may request a visit in the evening hours, between 17:00 and 20:00, at no extra cost. A recurring fault in the same meter within 90 days will be handled by replacing the meter.",
+    "questions": [
+      "Within how long will the fault be handled remotely?",
+      "On what basis will Orel's bill be calculated during the fault?",
+      "Since when has Orel's meter not been sending data?"
+    ],
+    "correct_answers": [
+      "within 5 business days",
+      "based on data pulled from the meter's memory",
+      "since November 11"
+    ],
+    "critical_facts": [
+      "Orel Nagar",
+      "Oz",
+      "Hashmal-Plus Direct",
+      "Smart 24",
+      "4 days",
+      "November 11",
+      "7 in the evening",
+      "up to 24 hours",
+      "more than 72 hours",
+      "within 5 business days",
+      "and no entry into the property will be made without their presence",
+      "based on data pulled from the meter's memory",
+      "and not according to an estimate",
+      "does not involve any payment",
+      "20:00"
+    ]
+  },
+  {
+    "id": "util_07",
+    "domain": "utilities",
+    "history": "Customer: Hello, this is Jacqueline Houri. I received a gas supply bill for October, and there are two charges on it that aren't clear to me: a NIS 45 delivery fee and a NIS 120 safety inspection fee. I'd appreciate it if you could explain, because until now I've never paid for things like that.\nAgent: Hello Jacqueline, this is Ziv from Gaz HaBayit Tzafon. I'm checking. Yes, I can see both charges. There's a delivery fee and there's a safety inspection, yes, two charges.\nCustomer: Yes, I saw that. I've had the Gaz Shaket subscription for four years now, and when I signed up I was told delivery is included. Has something changed in the terms?\nAgent: So delivery is included in the subscription, usually. Usually it's included. I can see here that the last order was an urgent order.\nCustomer: Oh, right, on October 18 the gas ran out in the middle of cooking and I called to ask for someone quickly, they came two hours later. So that's why? And the safety inspection, I didn't ask for it at all, the technician just said he was checking, and he didn't say anything about payment or about a problem.\nAgent: Yes, a safety inspection, there's an inspection like that. It's according to the regulations. I'm checking whether it should have been charged or not.\nCustomer: Thank you. And I'd also like to know if I can split this into two payments, because this month is a bit tight. And if there's a mistake, I'd rather it be offset against the next bill, there's no need to refund it to my bank.\nAgent: Absolutely. I'm opening the Gaz Shaket subscription terms now and I'll explain each of the charges.",
+    "doc": "Additional Charges on the Gaz Shaket Subscription – Gaz HaBayit Tzafon. The Gaz Shaket subscription includes delivery of gas cylinders for a regular order, supplied within 2 business days, at no charge. An urgent order, supplied within 4 hours, involves a delivery fee of NIS 45, even for subscribers. A periodic safety inspection of the gas installation is carried out once every 5 years, and it does not involve any payment for subscribers. An additional safety inspection, outside the periodic schedule, will be charged NIS 120 only if it was done at the customer's request or due to a defect found in the installation. A technician-initiated check with no request and no defect will not be charged. A customer who was charged improperly will be credited on the next bill. Additional charges of more than NIS 100 can be split into up to 3 installments without interest, by contacting the call center. Backup cylinders are available to subscribers for NIS 9 per month, to avoid urgent orders. The technician must give the customer a written inspection report at the end of every safety inspection, detailing any defects found. A customer who disputes a charge may request the inspection report, and the company will provide it within 5 business days. A cancelled charge will appear on the next bill as a separate credit.",
+    "questions": [
+      "How much does delivery cost for an urgent order?",
+      "In which case will an additional safety inspection not be charged?",
+      "When did Jacqueline place an urgent order?"
+    ],
+    "correct_answers": [
+      "NIS 45",
+      "technician-initiated check with no request and no defect",
+      "on October 18"
+    ],
+    "critical_facts": [
+      "Jacqueline Houri",
+      "Ziv",
+      "Gaz HaBayit Tzafon",
+      "Gaz Shaket subscription",
+      "NIS 45",
+      "NIS 120",
+      "October 18",
+      "2 business days",
+      "even for subscribers",
+      "does not involve any payment for subscribers",
+      "only if it was done at the customer's request or due to a defect",
+      "technician-initiated check with no request and no defect",
+      "up to 3 installments without interest",
+      "NIS 9 per month"
+    ]
+  },
+  {
+    "id": "util_08",
+    "domain": "utilities",
+    "history": "Customer: Hello, I want to file a complaint about a delay, and I'm asking you to listen to the whole story, because it's been a long time already. My name is Aharon Vaknin, I have a private house in a moshav, and we installed a 10 kW solar system on the roof through your company, Solarit Ltd., on the Net Meter plan. The installation was completed on June 15, and the system has been producing electricity for five months now, I see it in the inverter app every day. But on my bills, four bills already, there's no credit at all. I keep paying as if I don't have a system at all. According to what the rep who sold it to me promised, I was supposed to see the credit from the very first bill. I invested NIS 42,000 in this, and I took out a loan for it, and the whole calculation was that the credit would cover the monthly repayment.\nAgent: Hello Aharon, this is Yifat from the home producers department at Solarit Ltd. I'm listening, and I'm sorry about the delay. I'm opening your file. I can see the system was connected to the grid on June 15, but a bidirectional meter was only installed on September 3.\nCustomer: A bidirectional meter? Nobody told me a special meter was needed. I thought everything was done together, the installation and the meter. So what, all the electricity I produced in July and August went down the drain? Because I saw the system produced the most in those months, because of the sun. And what about September and October? The meter is already installed, and there's still no credit on the bill. My neighbor installed a similar system through another company, and for him everything worked from the first month.\nAgent: I understand the frustration. I can see the meter was installed on September 3, and its readings are already being saved, but the credit hasn't appeared on the bills yet. I'll check in the plan terms what happens with the period before the meter, and when the credit is supposed to appear.\nCustomer: And please also check what about compensation. Because if it's your delay, I don't just want the credit, I want compensation for the time I've been waiting, and for the fact that I'm paying off a loan without the income I was promised. And another question: if I produce more than I use, do you pay me the difference in cash, or does it just stay as a credit? Because the rep told me it's cash, and I'm not sure about anything he said anymore.\nAgent: Important questions. I'll answer each one according to the Net Meter terms, and I'm recording your complaint about the delay. I can see in the file that the meter request was only sent from our side in August, meaning the delay was on our side and not yours.\nCustomer: Thank you. And please also record that the rep who sold it to me, his name was Tzachi, promised a credit from the first bill. I don't want anyone telling me later that I never said so. I even have his message on my phone, if needed.\nAgent: I've recorded that, and please send us the message in writing. The complaint number is 63118, and it will be forwarded to the Public Inquiries Officer. Now let's go over the terms: the period before the meter, when the credit appears, compensation and payment for surplus production.",
+    "doc": "Net Meter Plan – Credit for Home Production. Under the Net Meter plan, the amount of electricity the home system feeds into the grid is offset against the amount of electricity the customer consumes. Offsetting is possible only from the date a bidirectional meter is installed, and production prior to that date is not measured and does not entitle the customer to a credit. The company will install a bidirectional meter within 30 days of the system being connected to the grid. If the meter was installed after that period for reasons attributable to the company, the customer will be credited with compensation based on an estimated production of 140 kWh per installed kilowatt for each month of delay. The credit for production will appear on the second bill after the meter is installed, including a retroactive credit for readings measured since installation. Production surpluses are not paid in cash, but are accumulated as a credit toward future bills, for a period of up to 24 months. At the end of that period, any unused credit balance will be paid to the customer at a reduced rate. The company is not responsible for promises made by anyone not acting on its behalf, but will review any claim submitted in writing. A complaint will be handled within 30 days, and the response will be given in writing. The customer may view monthly offset data in the personal area. A customer wishing to expand the system must submit a new application, and the plan will apply to the total capacity after the expansion. Once a quarter, the company will send the customer a summary report on production and offsetting.",
+    "questions": [
+      "What estimated production is used to calculate compensation for a delay in installing the meter?",
+      "Will Aharon be paid in cash for surplus production?",
+      "When was the bidirectional meter installed?"
+    ],
+    "correct_answers": [
+      "140 kWh per installed kilowatt",
+      "are not paid in cash",
+      "on September 3"
+    ],
+    "critical_facts": [
+      "Aharon Vaknin",
+      "Yifat",
+      "Solarit Ltd.",
+      "Net Meter",
+      "10 kW",
+      "June 15",
+      "NIS 42,000",
+      "September 3",
+      "63118",
+      "Tzachi",
+      "and does not entitle the customer to a credit",
+      "within 30 days",
+      "140 kWh per installed kilowatt",
+      "on the second bill after the meter is installed",
+      "are not paid in cash"
+    ]
+  }
+]

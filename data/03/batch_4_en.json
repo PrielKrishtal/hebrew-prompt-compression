@@ -1,0 +1,262 @@
+[
+  {
+    "id": "health_01",
+    "domain": "health_fund",
+    "history": "Customer: Hello, my name is Rivka, I'm Itai's mom. I wanted to ask about something. Itai is 7, and I'd like to book him a dental checkup and a scaling. Is that covered with you?\nAgent: Hello Rivka, this is Liron from Noga Health Services. Happy to help. Which supplementary plan are you on?\nCustomer: Noga Plus. I think we joined about a year ago, last September.\nAgent: That's right, I can see you've been members of Noga Plus since September 1, 2025. Has Itai already had a checkup like this this year?\nCustomer: Yes, in March, at your clinic in Kiryat Bialik. But the dentist said he should come in every six months, because he tends to build up tartar.\nAgent: I see. I'm checking his eligibility under the terms and I'll update you. Just a second, I can see the exact date of the previous checkup here.",
+    "doc": "Children's Dentistry – Noga Plus Plan. Children up to age 18 who are members of the plan are entitled to a periodic checkup and scaling once per calendar year, with no co-payment, at Noga dental clinics. An additional checkup in the same calendar year will be provided with a co-payment of NIS 45, provided that at least 6 months have passed since the previous checkup. Treatments under general anesthesia are not included in the plan. Fissure sealing is provided to children aged 6 to 14 with no co-payment. Treatment performed by a private dentist outside the network is not eligible for reimbursement. Eligibility for dental services begins after a qualifying period of 3 months from the date of joining the plan. Appointments can be booked via the app or the call center, and an appointment will be scheduled within 21 days at most. A child who did not attend a scheduled appointment and did not cancel it in advance will be charged a no-show fee of NIS 25. Children's checkups and treatments are recorded in the digital medical file, and the parent can view them in the personal area. Appointments for children are also available in the afternoon, until 19:00.",
+    "questions": [
+      "What is the co-payment for an additional checkup in the same calendar year?",
+      "Under what condition will Itai get an additional checkup this year?",
+      "When did Itai have his previous checkup?"
+    ],
+    "correct_answers": [
+      "NIS 45",
+      "at least 6 months have passed",
+      "in March"
+    ],
+    "critical_facts": [
+      "Rivka",
+      "Itai",
+      "Itai is 7",
+      "Liron",
+      "Noga Health Services",
+      "Noga Plus",
+      "September 1, 2025",
+      "in March",
+      "once per calendar year",
+      "with no co-payment",
+      "NIS 45",
+      "at least 6 months have passed",
+      "are not included",
+      "is not eligible for reimbursement",
+      "3 months"
+    ]
+  },
+  {
+    "id": "health_02",
+    "domain": "health_fund",
+    "history": "Customer: I've been waiting 9 days for a Form 17 for a CT and nobody's answering me!! The doctor said it's urgent\nAgent: Hello, this is Sigal from Merhav Health Fund. I'm sorry. Could I have your name?\nCustomer: Eli Ben Haim. The request was submitted on November 6, your doctor submitted it, not me. And the imaging institute told me that if there's no approval by Tuesday, my appointment on November 19 gets cancelled and I go back to the end of the line, which is at least another two months. And I can't sleep at night from the worry\nAgent: I can see the request. It's being processed. Some requests take longer, it depends on all kinds of things, the committee, the institute, the workload.\nCustomer: Depends? The doctor marked it urgent! And I also don't understand why I have to pay the institute NIS 350, I was told that with Merhav Yahalom it's free\nAgent: There's a co-payment in some cases, and in other cases there isn't. It depends on which institute and on what exactly. There are all kinds of institutes. And there are institutes that are in the network and some that aren't.\nCustomer: I don't want to hear 'it depends' one more time. I want to know when I get the form, and how much I pay. And if it doesn't come by tomorrow, I'm going to do the test privately and you're going to pay me back every shekel\nAgent: I'm checking the approvals procedure and the Merhav Yahalom terms and I'll get right back to you, give me two minutes.",
+    "doc": "Approvals for Imaging Tests (Form 17) – Merhav Health Fund. A request for approval of a CT or MRI test is submitted by the treating physician, and the fund will respond within 7 business days. A request marked as urgent by the physician will be handled within 2 business days. An approval will be issued only to an institute that has an agreement with the fund, and it is valid for 90 days from its issue date. A test at an institute with an agreement involves a co-payment of NIS 150. Members of the Merhav Yahalom plan are exempt from this co-payment, provided that the test is done at a preferred-network institute. A member who had a test done privately, without an approval, will not receive a refund from the basic coverage; Merhav Yahalom members will receive a refund of up to 50% of the cost of the test, and no more than NIS 600, subject to presenting a referral and an invoice. The status of the request is shown in the personal area and is updated once a day. If the fund did not respond to the request on time, the member may contact the inquiries center, which will forward the request for immediate handling by a fund physician. An appeal against the rejection of a request must be filed within 30 days with the Exceptions Committee, and its decision will be provided in writing. A member whose appointment at an institute may be cancelled due to a delay in issuing the approval may ask the call center for a temporary approval, which will be sent directly to the institute. A temporary approval is not given for tests that have not yet been approved by a fund physician.",
+    "questions": [
+      "Within how long is a request marked as urgent handled?",
+      "Under what condition are Merhav Yahalom members exempt from the co-payment?",
+      "When is Eli's CT appointment scheduled?"
+    ],
+    "correct_answers": [
+      "within 2 business days",
+      "the test is done at a preferred-network institute",
+      "November 19"
+    ],
+    "critical_facts": [
+      "Eli Ben Haim",
+      "Sigal",
+      "Merhav Health Fund",
+      "Merhav Yahalom",
+      "9 days",
+      "November 6",
+      "November 19",
+      "NIS 350",
+      "within 7 business days",
+      "within 2 business days",
+      "only to an institute that has an agreement",
+      "NIS 150",
+      "the test is done at a preferred-network institute",
+      "will not receive a refund",
+      "and no more than NIS 600"
+    ]
+  },
+  {
+    "id": "health_03",
+    "domain": "health_fund",
+    "history": "Customer: Hello, I hope I've reached the right place, because I've already been transferred twice. I'm Shoshana Friedman, and my husband and I switched to your fund about a month ago, on October 12, from another fund we'd been with for twenty years. We switched because we moved to Kfar Vradim and your clinic is really close, a five-minute walk, and there's a pharmacy there too, and with the previous fund we had to drive to Nahariya for everything. With the previous fund we also had supplementary insurance, the highest level there was, and now I want to join Rikma Mushlam with you. But my neighbor told me that when you join there are waiting periods, and that I won't get anything in the first year. Is that true? Because my husband just happens to need some tests with a private specialist, and we wanted to do it through the insurance.\nAgent: Hello Shoshana, this is Aviv from Rikma Health Fund. Welcome. Yes, there are waiting periods in the plan. There are periods like that, that's true.\nCustomer: Okay, but how long? And for what? Because I understand there's a difference if you move from another fund where you had supplementary insurance. With the previous fund we were on the highest level, we paid every month, never missed. And do I need to bring anything, some certificate, or can you see it on the computer? I don't really understand these things, usually my daughter handles them, but she's abroad right now, on vacation with the kids, and she's only back in three weeks.\nAgent: So like I said, there are waiting periods. And if you're moving from another fund, that can make a difference. It depends on a few things. I want to see what the terms say, and what exactly the previous fund sends us.\nCustomer: Okay. And another thing, how much does it cost per month? I'm 66 and my husband, he's 69, and I understand the price depends on age. With the previous fund we paid about NIS 310 a month together, and that was fine for us. If it's a lot more, I need to think about it. And if I join today, from what date does it start? Because I don't want to pay for a whole month if it only starts at the end of it.\nAgent: The price depends on age, yes. And there's also a joining date, from which it starts. I'm checking all of this in the Rikma Mushlam terms.\nCustomer: One more question, and then I'll stop, I promise. Our son, Elchanan, lives with his wife in Be'er Sheva, and they're also with your fund. Can we add them to the same membership, or is it each one separately? Because I thought there might be a family discount, and if so, it could be worthwhile for all of us. And if it's complicated, then at least I'll know what to tell them.\nAgent: Good question. I'm opening the Rikma Mushlam joining terms now and we'll go over everything: the waiting periods, the move from your previous fund, the price, and what about Elchanan.",
+    "doc": "Joining the Rikma Mushlam Plan – Qualifying Periods and Transfer from Another Fund. A member joining the plan will be entitled to services after a qualifying period: 3 months for private specialist consultations, 6 months for tests and diagnosis, and 12 months for surgery. A member who transferred from another health fund and joined the plan within 90 days of the transfer, and who was a member of a supplementary plan at the previous fund continuously for at least 12 months, will be exempt from the qualifying periods, provided that they submit a continuity certificate from the previous fund. The exemption does not apply to services that were not included in the previous plan. The monthly membership fee for a member aged 60 to 69 is NIS 168, and NIS 168 more for a spouse of the same age. Eligibility begins on the 1st of the month following joining. Adult children over age 18 are not included in their parents' membership and must join separately; a family discount of 5% is given for three or more memberships at the same address. A continuity certificate can be submitted via the personal area, by email or at a branch. The fund will confirm receipt of the document within 5 business days. A member joining the plan may submit claims only for services provided after eligibility begins. A private specialist consultation involves a co-payment of NIS 120 per visit and is limited to 6 visits per year. Joining the plan can be done via the personal area, the call center or a branch, and no medical examination is required.",
+    "questions": [
+      "What is the monthly membership fee for a member aged 60 to 69?",
+      "What must Shoshana submit to be exempt from the qualifying periods?",
+      "On what date did Shoshana and her husband switch to the fund?"
+    ],
+    "correct_answers": [
+      "NIS 168",
+      "a continuity certificate from the previous fund",
+      "on October 12"
+    ],
+    "critical_facts": [
+      "Shoshana Friedman",
+      "Aviv",
+      "Rikma Health Fund",
+      "Rikma Mushlam",
+      "October 12",
+      "I'm 66",
+      "he's 69",
+      "NIS 310",
+      "Elchanan",
+      "3 months",
+      "within 90 days",
+      "at least 12 months",
+      "a continuity certificate from the previous fund",
+      "does not apply to services that were not included in the previous plan",
+      "NIS 168"
+    ]
+  },
+  {
+    "id": "health_04",
+    "domain": "health_fund",
+    "history": "Customer: how much does a prescription drug cost me?\nAgent: Hello, this is Rotem from Dror Health Fund. Which medication, and is it in the health basket?\nCustomer: Yoav here. antibiotics. in the basket. prescription from my doctor yesterday\nAgent: Thanks Yoav. Which coverage are you on? Dror Basic?\nCustomer: yeah just basic. me and my wife both\nAgent: Okay. I can see you've already picked up 2 medications this month. One sec, checking.\nCustomer: ok. and im buying at a regular pharmacy near work, not yours\nAgent: Got it, I'm checking that too, and whether that pharmacy has an agreement with us.",
+    "doc": "Co-payments for Medications – Dror Basic Members. When purchasing a medication included in the health basket, by prescription, the member will pay a co-payment of NIS 17 per prescription at Dror pharmacies or at pharmacies with an agreement, or 10% of the medication price, whichever is higher. When purchasing at a pharmacy that has no agreement with the fund, no discount will be given, and the member will pay the full price of the medication. The quarterly co-payment cap for medications is NIS 340 per member; once the cap is reached, no further co-payment will be charged until the end of the quarter. Medications not in the basket are not included in the cap. A prescription is valid for 30 days from its issue date. Senior citizens are entitled to a 50% discount on the co-payment, subject to an income test. The list of pharmacies with an agreement appears on the website and in the app. Medications can be ordered for pickup at the pharmacy through the app. A prescription for a chronic medication can be renewed in the app without visiting the doctor. A spouse registered on the same account is not included in the member's cap, and each of them has a separate cap.",
+    "questions": [
+      "What is the minimum co-payment per prescription?",
+      "Will Yoav get a discount if he buys at a pharmacy with no agreement?",
+      "How many medications has Yoav already picked up this month?"
+    ],
+    "correct_answers": [
+      "NIS 17 per prescription",
+      "no discount will be given",
+      "2 medications"
+    ],
+    "critical_facts": [
+      "Yoav",
+      "Rotem",
+      "Dror Health Fund",
+      "Dror Basic",
+      "2 medications",
+      "NIS 17 per prescription",
+      "10%",
+      "no discount will be given",
+      "NIS 340",
+      "no further co-payment will be charged",
+      "are not included in the cap",
+      "30 days",
+      "50%"
+    ]
+  },
+  {
+    "id": "health_05",
+    "domain": "health_fund",
+    "history": "Customer: Cancel my Inbar Kesef. As of today. I don't use it at all. Three years I've been paying and I haven't been to a private doctor through you even once\nAgent: Hello, this is Naama from Inbar Health Fund. You can cancel. Whose name is the membership under?\nCustomer: Ariel Katz. And I also want a refund for what I paid this month, NIS 74, because I didn't use it. And don't charge me again, because then I'm really going to make a fuss\nAgent: Thank you Ariel. I can see you've been an Inbar Kesef member since January 2023, and that your two children, Elia and Yonatan, are also registered on the membership.\nCustomer: Yeah, cancel them too. Are they even on it? My wife handled this, I don't remember. If they're on it, cancel them too, no point in them staying without me. And that's it, I don't have time for a persuasion talk\nAgent: No problem, no persuasion. Your basic coverage isn't affected, only the supplementary plan. I can also see the monthly charge goes out on the 1st of the month from your credit card. And there's one thing you should know before I go ahead: if you want to rejoin in the future, that has consequences.\nCustomer: What consequences? Say it fast, I'm between meetings. And anyway, why do I have to call to cancel? Joining takes one click\nAgent: I'm opening the cancellation terms and I'll tell you exactly, in three lines: when it takes effect, what about this month's payment, and what happens if you come back.",
+    "doc": "Cancelling Membership in the Inbar Kesef Plan. A member may cancel their membership in the plan at any time, by written notice, via the personal area, or in a recorded call with the call center. The cancellation will take effect on the 1st of the following month, and membership fees for the month in which the request was submitted will not be refunded. Cancelling the plan does not affect eligibility for basic health basket services. Cancelling a parent's membership does not automatically cancel the membership of children registered on the membership; the names of the children whose membership is being cancelled must be stated explicitly. A member who cancelled their membership and wishes to rejoin within 24 months will be required to complete full qualifying periods again, and their previous seniority will not be recognized. A member who cancelled the plan while undergoing a pre-approved treatment that has not yet been completed will continue to receive the treatment until it ends, provided that the treatment is completed within 60 days. Confirmation of cancellation will be sent within 7 days. A cancellation made in a call with the call center will take effect only after identity verification of the member registered as the payer. A member who wishes to cancel only their children's membership, while keeping their own, may do so in the same way. The monthly membership fees will be updated accordingly from the date the cancellation takes effect.",
+    "questions": [
+      "When will the cancellation take effect?",
+      "Will Ariel get a refund for this month's membership fees?",
+      "What are the names of the children registered on the membership?"
+    ],
+    "correct_answers": [
+      "on the 1st of the following month",
+      "will not be refunded",
+      "Elia and Yonatan"
+    ],
+    "critical_facts": [
+      "Ariel Katz",
+      "Naama",
+      "Inbar Health Fund",
+      "Inbar Kesef",
+      "NIS 74",
+      "January 2023",
+      "Elia and Yonatan",
+      "on the 1st of the following month",
+      "will not be refunded",
+      "does not affect eligibility",
+      "does not automatically cancel the membership of children",
+      "24 months",
+      "and their previous seniority will not be recognized",
+      "60 days"
+    ]
+  },
+  {
+    "id": "health_06",
+    "domain": "health_fund",
+    "history": "Customer: hey ur app wont let me book a GP appointment, every time i get error 502 and it goes back to the start. been trying for an hour\nAgent: Hi, this is Eden from Yuval Health Fund. Sorry about that. What's your full name?\nCustomer: Lior Hadad. i need an appointment with Dr. Wallach before thursday, i need a letter from her for work\nAgent: I can see there's been a general fault in the app since 08:30 this morning. I can book it for you.\nCustomer: ok cool, but only after 16:00 cuz im at work. and tell me when ur finally fixing the app, its something every week. and dont just book me some other doctor, i only want her\nAgent: One sec, checking the procedure to see what we can do, both for the appointment and for the letter",
+    "doc": "Booking Appointments Through Digital Channels – Yuval Health Fund. Appointments with a family doctor can be booked via the app, the website or the telephone call center. During a general fault in the digital systems, booking through the call center involves no additional waiting time, and the call center will operate extended hours, until 22:00. An appointment with a family doctor will be scheduled within 3 working days at most. An appointment with a specific doctor of the patient's choice is not guaranteed within this time frame, and will be given according to the doctor's availability. A patient who did not attend an appointment and did not cancel it up to two hours before its time will be charged a no-show fee of NIS 30. Confirmation of the appointment will be sent by message to the registered phone number. Notice of the repair of a general fault will be published on the fund's website. Medical letters and certificates that do not require an examination can also be requested by sending an online request to the doctor, and they will be issued within 2 working days. A patient may ask to join a waiting list for an earlier appointment with the doctor they chose, and a notice will be sent to them if an appointment becomes available.",
+    "questions": [
+      "Until what time does the call center operate during a general fault?",
+      "Is an appointment with Dr. Wallach guaranteed within 3 working days?",
+      "Since when has there been a general fault in the app?"
+    ],
+    "correct_answers": [
+      "until 22:00",
+      "is not guaranteed within this time frame",
+      "since 08:30"
+    ],
+    "critical_facts": [
+      "Lior Hadad",
+      "Eden",
+      "Yuval Health Fund",
+      "Dr. Wallach",
+      "502",
+      "thursday",
+      "08:30",
+      "16:00",
+      "until 22:00",
+      "3 working days",
+      "is not guaranteed within this time frame",
+      "up to two hours",
+      "NIS 30",
+      "that do not require an examination"
+    ]
+  },
+  {
+    "id": "health_07",
+    "domain": "health_fund",
+    "history": "Customer: Good evening, my name is Pnina Golan. I can see on the November charge that the Shahar Mishpachti plan went up from NIS 196 to NIS 251, and I didn't understand why. I'd appreciate an explanation, please.\nAgent: Good evening Pnina, this is Matan from Shahar Health Fund. I'm checking. I can see that registered on the membership are you, your husband and three children. There's a change here, yes, there's a change in the charge.\nCustomer: Yes, I can see that myself. The question is what changed. Nobody told us about a price increase, at least not that I saw. And I check my email every day, also because of work.\nAgent: So the change has to do with one of the children. One of the children, yes. He moved to a different category.\nCustomer: Oh, maybe it's Raphael. He turned 18 at the beginning of October. But he still lives with us and he's a soldier in regular service, he earns almost nothing. Does it make sense to pay for him as an adult?\nAgent: Yes, it has to do with age, there's an age category. A category by age. I'm checking whether there's something special for soldiers.\nCustomer: Thank you, I appreciate it. And if there's a discount, I'd also like to know whether it's retroactive for this month, and what I need to bring. I don't want to run to the branch twice, I work shifts. And Raphael himself is at a base in the south and only comes home once every two weeks, so it's all on me.\nAgent: Of course. I'm opening the Shahar Mishpachti rate terms and I'll tell you everything.",
+    "doc": "Membership Fees in the Shahar Mishpachti Plan – Change of Age Category. Membership fees are calculated according to the age of each person registered on the membership. Children up to age 18 pay the child rate, NIS 22 per month, and three or more children together pay for only two. When a child reaches age 18, they will be charged the young adult rate, NIS 55 per month, starting from the month following their birthday. A soldier in regular service is entitled to continue paying the child rate until the end of their service, provided that a military service certificate is presented. The discount will apply from the month in which the certificate was submitted and is not retroactive, except if the certificate is submitted within 60 days of the rate change. Notice of a change of age category is sent to the payer by email only, 30 days before the change. The service certificate can be submitted via the personal area, and there is no need to come to a branch. The discount for soldiers does not apply to career soldiers. At the end of regular service, the member will automatically be charged the young adult rate, without any further notice. A member who disputes a charge may file an objection via the personal area within 6 months of the charge date, and a response will be given within 14 days. A credit for an overcharge will be given on the following month's bill.",
+    "questions": [
+      "What is the monthly young adult rate?",
+      "Under what condition will the soldier discount also apply retroactively?",
+      "When did Raphael turn 18?"
+    ],
+    "correct_answers": [
+      "NIS 55 per month",
+      "if the certificate is submitted within 60 days",
+      "at the beginning of October"
+    ],
+    "critical_facts": [
+      "Pnina Golan",
+      "Matan",
+      "Shahar Health Fund",
+      "Shahar Mishpachti",
+      "from NIS 196 to NIS 251",
+      "Raphael",
+      "at the beginning of October",
+      "NIS 22",
+      "for only two",
+      "NIS 55 per month",
+      "provided that a military service certificate is presented",
+      "and is not retroactive",
+      "if the certificate is submitted within 60 days",
+      "30 days",
+      "does not apply to career soldiers"
+    ]
+  },
+  {
+    "id": "health_08",
+    "domain": "health_fund",
+    "history": "Customer: Hello, this is the fourth time I'm calling about this, and I hope this time someone will take responsibility. My name is Yehuda Mor, I've been a Nitzan Ilit member for eight years. In July I had knee surgery at a private hospital in Vienna, after they offered me an appointment here only in eight months. Before the surgery I got prior approval from you, I have it right here in front of me, dated June 20. After I got back, on August 4, I submitted all the documents: the hospital invoice, 21,000 euros, the surgery summary, receipts for the hotel and flights. More than three months have passed since then, and I haven't received a single shekel. Every time I call they tell me something different: once that a translation is missing, once that the file is under medical review, and once the agent simply couldn't find the file. And I'm already 64, I don't have the energy to chase clerks.\nAgent: Hello Yehuda, this is Tehila from the refunds department of Nitzan Health Fund. I apologize for this experience. I'm opening your file now and I won't end this call until you know exactly where it stands.\nCustomer: Thank you, that's already more than I've heard so far. So tell me: what's the status? And is a translation really missing? Because the invoice is in English, and I don't understand why English needs translating. And another thing, I was once told you only refund up to a certain amount, but they didn't say how much. I want to know how much I'm actually supposed to get, not roughly.\nAgent: I can see the file was completed on October 29, after the translated surgery summary was received, and it was approved in the medical review two days ago. The reason for the delay was that the surgery summary was in German, not the invoice. The refund itself is calculated according to the terms, and I'll go through them with you. And I want to be honest with you: according to the records, the notice about the missing translation should have been sent to you earlier.\nCustomer: Okay, that explains something. But nobody told me the summary needed a translation, I found that out myself in September. And now, what about the hotel and flights? I paid almost 2,500 euros for them, including for my wife, who accompanied me. And also, how long from approval until the money is in my account? Because I was told once two weeks and once a month.\nAgent: I understand. I'm checking the terms for exactly what's covered regarding travel expenses and the escort, and the timeline for transferring the money. I can also see the operating surgeon's form in the file, I'll check whether it says anything about an escort.\nCustomer: And please record that I want compensation for the delay, or at least interest, because we paid for the surgery out of our savings. I'm not someone who complains for nothing, but three months is a long time, especially when nobody explains to you what's going on.\nAgent: I've recorded the request in the file, reference number 58402, and it will be forwarded to the Public Complaints Commissioner. Now let's go over the terms: the refund cap, travel expenses and the escort, and the transfer timeline.",
+    "doc": "Surgery Abroad – Reimbursement of Expenses Under the Nitzan Ilit Plan. A member who underwent surgery abroad after receiving prior approval from the fund is entitled to reimbursement of surgery and hospitalization expenses up to a cap of NIS 70,000 per surgery, provided that the surgery was performed within 120 days of the approval date. Medical documents in a language other than Hebrew, English, Arabic or Russian must be submitted with a translation; invoices in English do not require translation. The reimbursement will be calculated in shekels according to the representative exchange rate on the date of payment to the hospital. Flight and accommodation expenses of the patient will be reimbursed up to NIS 6,000. Expenses of an escort will be reimbursed only if the doctor required an escort in writing, up to NIS 3,000. The reimbursement will be transferred to the member's account within 14 business days of the file being approved in the medical review. The fund will notify the member of a missing document within 10 business days of receiving the file. No interest or linkage differentials will be paid for the period until the file is completed; however, a delay in transferring the money beyond the stated timeline will entitle the member to linkage differentials. Complaints will be handled by the Public Complaints Commissioner within 30 days. A member may request an advance on account of the reimbursement of up to 30% of the expected reimbursement amount, after the file is approved. A request to reconsider the reimbursement amount must be submitted within 60 days of receiving notice of the amount. The reimbursement will be transferred only to the bank account registered with the fund.",
+    "questions": [
+      "Within how long after the file is approved will the reimbursement be transferred?",
+      "Under what condition will the expenses of the wife who accompanied Yehuda be reimbursed?",
+      "What is Yehuda's reference number?"
+    ],
+    "correct_answers": [
+      "within 14 business days",
+      "if the doctor required an escort in writing",
+      "58402"
+    ],
+    "critical_facts": [
+      "Yehuda Mor",
+      "Tehila",
+      "Nitzan Health Fund",
+      "Nitzan Ilit",
+      "June 20",
+      "August 4",
+      "21,000 euros",
+      "October 29",
+      "2,500 euros",
+      "58402",
+      "NIS 70,000",
+      "120 days",
+      "invoices in English do not require translation",
+      "only if the doctor required an escort in writing",
+      "within 14 business days"
+    ]
+  }
+]
