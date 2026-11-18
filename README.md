@@ -85,17 +85,6 @@ Raw per-paragraph counts are in [results/01_tokenizer_counts.csv](results/01_tok
 - **Claude:** add its tokenizer when API access is available.
 - **Real-world pairs:** add Hebrew/English pairs from other domains than FLORES+.
 
-## Run it
-
-```
-python -m venv .venv
-.venv\Scripts\activate          # Windows
-source .venv/bin/activate       # macOS / Linux
-pip install -r requirements.txt
-```
-
-Copy `.env.example` to `.env` and fill in `HF_TOKEN` and `GEMINI_API_KEY`. The FLORES+ dataset is gated, so accept its terms on Hugging Face first. Then open the notebook with the `hebrew-token-tax` kernel and run all cells. The first run downloads the reference tokenizer files from Hugging Face (a few MB each).
-
 ## References
 
 - FLORES+ dataset: [openlanguagedata/flores_plus](https://huggingface.co/datasets/openlanguagedata/flores_plus), CC BY-SA 4.0.
