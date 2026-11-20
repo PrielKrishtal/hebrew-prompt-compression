@@ -50,8 +50,8 @@ Run the 3-case paid dry run first and extrapolate before the full run.
 
 ### Teacher (Hebrew)
 Shorten the following Hebrew text to about {pct}% of its length by DELETING
-only. You may delete whole words, or a single-letter prefix (ו ה ש ב ל כ מ)
-from the start of a word. Do not add, reorder, rewrite or translate anything.
+only. You may delete whole words, or one or more leading prefix letters
+(ו ה ש ב ל כ מ, e.g. וה) from the start of a word. Do not add, reorder, rewrite or translate anything.
 Never delete numbers, dates, names, negations or conditions.
 Return only the shortened text.
 
@@ -62,8 +62,9 @@ Never delete numbers, dates, names, negations or conditions.
 Return only the shortened text.
 
 Validator: output must equal the original with only whole words (and, in
-Hebrew, leading prefixes) removed. If invalid: retry up to 2 times, then mark
-the case as failed and report the failure count.
+Hebrew, leading prefixes) removed. A kept word may drop attached punctuation.
+If invalid: retry up to 2 times, then mark the case as failed and report the
+failure count.
 
 ### Chatbot
 You are a customer-service assistant. Answer the 3 questions using ONLY the
@@ -80,12 +81,18 @@ Questions:
 English for English methods)
 
 ### Judge (blind: never sees the method)
-Question: {question}
-Correct answer: {correct_answer}
-Given answer: {given_answer}
-Is the given answer correct, meaning it states the same facts as the correct
-answer, even if worded differently? Return JSON only: {"correct": true} or
-{"correct": false}
+For each numbered item, is the given answer correct, meaning it states the same
+facts as the correct answer, even if worded differently?
+1. Question: {q1}
+   Correct answer: {a1}
+   Given answer: {g1}
+2. Question: {q2}
+   Correct answer: {a2}
+   Given answer: {g2}
+3. Question: {q3}
+   Correct answer: {a3}
+   Given answer: {g3}
+Return JSON only: {"correct": [true/false, true/false, true/false]}
 
 ## Metrics (per case, method, rate, language)
 - savings = 1 − tokens(compressed) / tokens(original), tiktoken o200k_base,
