@@ -45,6 +45,7 @@ from hebrew_token_tax.test3 import (
     Verdicts,
     answer_jobs,
     context,
+    facts_kept,
     fake_reply,
     fill,
     judge_jobs,
@@ -322,7 +323,15 @@ def check_pipeline(tmp: Path, prompts: dict[str, str]) -> None:
     summary = summarize(rows)
     check("pipeline: one row per case/method/rate/language", len(rows) == 20)
     check("pipeline: no text columns in results", not TEXT_COLUMNS & set(rows.columns))
-    check("pipeline: fake judge gives 2/3 correct", (rows["n_correct"] == 2).all())
+    check("pipeline: every row judged, per-question columns filled",
+          rows["n_correct"].notna().all()
+          and (rows[["q1_correct", "q2_correct", "q3_correct"]].sum(axis=1) == rows["n_correct"]).all())
+    check("facts: spaces around punctuation ignored (Hebrew)",
+          facts_kept(["90 ש״ח ליום"], "עד 90 ש ״ח  ליום", "rules") == (1, 1))
+    check("facts: spaces around punctuation ignored (English)",
+          facts_kept(["windshield-only claims"], "for windshield - only claims", "rules") == (1, 1))
+    check("facts: a deleted word still means not kept",
+          facts_kept(["90 ש״ח ליום"], "עד 90 ליום", "rules") == (1, 0))
     check("pipeline: original savings are 0", (rows.loc[rows["method"] == "original",
                                                          "savings_pct"] == 0).all())
     check("pipeline: summary has a row per method/rate/language", len(summary) == 10)

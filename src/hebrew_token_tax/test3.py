@@ -1,8 +1,10 @@
 """Test 3 pipeline (notebooks/03_spec.md): prompts, methods, stages, metrics and reports."""
 
+import hashlib
 import json
 import math
 import re
+import unicodedata
 from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
@@ -63,6 +65,21 @@ TEACHER_MAX_FAILURE_RATE = 0.30
 JSON_MAX_FAILURE_RATE = 0.20
 SMOKE_PROMPT = "Reply with OK"
 O200K = tiktoken.get_encoding("o200k_base")
+SPACES = re.compile(r"\s+")
+LANGUAGE_NAMES = {"he": "Hebrew", "en": "English"}
+QUESTION_TYPES = ("Q1 numbers/dates", "Q2 negations/conditions", "Q3 from history")
+DOMAIN_METHODS = ("llmlingua2_large", "teacher_sol", "teacher_opus")
+RESULT_COLUMNS = {
+    "cases": "cases",
+    "savings_pct": "savings %",
+    "tokens_saved": "tokens saved per case",
+    "accuracy_pct": "accuracy %",
+    "accuracy_drop": "accuracy drop vs original",
+    "facts_kept_pct": "facts kept %",
+    "latency_ms": "latency ms",
+    "teacher_failures": "teacher failures",
+    "json_failures": "JSON failures",
+}
 
 
 class Answers(BaseModel):
@@ -491,14 +508,37 @@ def run_judge(
     return failures
 
 
+def is_punctuation_or_symbol(char: str) -> bool:
+    """True for Unicode punctuation (P*) and symbols (S*), e.g. - ״ % ₪."""
+    return bool(char) and unicodedata.category(char)[0] in "PS"
+
+
+def normalize_for_match(text: str) -> str:
+    """Collapse whitespace to one space and drop spaces next to punctuation or symbols, so
+    "90 ש ״ח  ליום" matches "90 ש״ח ליום" and "windshield - only" matches "windshield-only".
+    Facts and texts are cleaned the same way for every method."""
+    collapsed = SPACES.sub(" ", text).strip()
+    kept = []
+    for index, char in enumerate(collapsed):
+        before = collapsed[index - 1] if index else ""
+        after = collapsed[index + 1] if index + 1 < len(collapsed) else ""
+        if char == " " and (is_punctuation_or_symbol(before) or is_punctuation_or_symbol(after)):
+            continue
+        kept.append(char)
+    return "".join(kept)
+
+
 def facts_kept(facts: list[str], text: str, method_name: str) -> tuple[int, int]:
-    """(facts checked, facts kept). Translation methods: digit-containing facts only, kept
-    when every digit sequence of the fact appears in the text; otherwise exact substring."""
+    """(facts checked, facts kept), after cleaning facts and text with normalize_for_match.
+    Translation methods: digit-containing facts only, kept when every digit sequence of the
+    fact appears in the text; other methods: the cleaned fact is a substring of the text."""
+    clean_text = normalize_for_match(text)
+    clean_facts = [normalize_for_match(fact) for fact in facts]
     if method_name in TRANSLATION_METHODS:
-        text_numbers = set(DIGITS.findall(text))
-        checked = [fact for fact in facts if has_digit(fact)]
+        text_numbers = set(DIGITS.findall(clean_text))
+        checked = [fact for fact in clean_facts if has_digit(fact)]
         return len(checked), sum(set(DIGITS.findall(f)) <= text_numbers for f in checked)
-    return len(facts), sum(fact in text for fact in facts)
+    return len(clean_facts), sum(fact in clean_text for fact in clean_facts)
 
 
 def score_row(
@@ -512,7 +552,8 @@ def score_row(
     tokens_original = count_tokens(context(case))
     tokens_compressed = count_tokens(compression["text"])
     facts_total, facts_ok = facts_kept(case["critical_facts"], compression["text"], method.name)
-    n_correct = sum(judgement["correct"]) if judgement else math.nan
+    correct = judgement["correct"] if judgement else [math.nan] * N_QUESTIONS
+    n_correct = sum(correct) if judgement else math.nan
     return {
         "language": method.language,
         "case_id": case["id"],
@@ -530,6 +571,7 @@ def score_row(
         "teacher_failed": int(compression["teacher_failed"]),
         "answer_json_failed": int(answer["json_failed"]) if answer else math.nan,
         "judge_json_failed": int(judgement["json_failed"]) if judgement else math.nan,
+        **{f"q{i + 1}_correct": float(value) for i, value in enumerate(correct)},
         "n_correct": n_correct,
         "accuracy_pct": 100 * n_correct / N_QUESTIONS,
     }
@@ -561,23 +603,55 @@ def score_rows(
 
 
 def summarize(rows: pd.DataFrame) -> pd.DataFrame:
-    """Means per language/method/rate, plus failure counts."""
-    return (
+    """Means per language/method/rate, standard errors, per-question accuracy and failure
+    counts."""
+    summary = (
         rows.groupby(["language", "method", "rate"], dropna=False, sort=False)
         .agg(
             cases=("case_id", "count"),
             savings_pct=("savings_pct", "mean"),
+            savings_se=("savings_pct", "sem"),
             tokens_saved=("tokens_saved", "mean"),
             accuracy_pct=("accuracy_pct", "mean"),
+            accuracy_se=("accuracy_pct", "sem"),
             accuracy_drop=("accuracy_drop", "mean"),
             facts_kept_pct=("facts_kept_pct", "mean"),
+            facts_kept_se=("facts_kept_pct", "sem"),
             latency_ms=("latency_ms", "mean"),
             teacher_failures=("teacher_failed", "sum"),
             answer_json_failures=("answer_json_failed", "sum"),
             judge_json_failures=("judge_json_failed", "sum"),
+            **{f"q{i + 1}_accuracy_pct": (f"q{i + 1}_correct", "mean") for i in range(N_QUESTIONS)},
         )
         .reset_index()
     )
+    for i in range(N_QUESTIONS):
+        summary[f"q{i + 1}_accuracy_pct"] *= 100
+    summary["json_failures"] = summary["answer_json_failures"] + summary["judge_json_failures"]
+    return summary
+
+
+def results_table(summary: pd.DataFrame) -> pd.DataFrame:
+    """(a) The summary table with readable column names."""
+    return summary[["language", "method", "rate", *RESULT_COLUMNS]].rename(columns=RESULT_COLUMNS)
+
+
+def question_type_table(summary: pd.DataFrame) -> pd.DataFrame:
+    """(b) Accuracy % per question type, one row per language/method/rate."""
+    columns = {f"q{i + 1}_accuracy_pct": name for i, name in enumerate(QUESTION_TYPES)}
+    return summary[["language", "method", "rate", *columns]].rename(columns=columns)
+
+
+def domain_drop_table(rows: pd.DataFrame, methods: Sequence[str] = DOMAIN_METHODS) -> pd.DataFrame:
+    """(d) Mean accuracy drop vs. the original per domain, for the selected methods."""
+    selected = rows[rows["method"].isin(methods)]
+    return selected.pivot_table(
+        index=["language", "method", "rate"],
+        columns="domain",
+        values="accuracy_drop",
+        aggfunc="mean",
+        dropna=False,
+    ).reset_index()
 
 
 def token_ratio(cases: dict[str, list[dict[str, Any]]]) -> dict[str, float]:
@@ -598,24 +672,60 @@ def method_label(method: str, rate: float) -> str:
 
 
 def plot_savings_vs_accuracy(summary: pd.DataFrame, path: Path) -> plt.Figure:
-    """One panel per language: mean token savings vs. accuracy, one point per method/rate."""
-    fig, axes = plt.subplots(1, len(LANGUAGES), figsize=(14, 6), sharey=True)
+    """One panel per language: mean token savings vs. accuracy, one numbered point per
+    method/rate (legend maps numbers to labels) with ±1 standard-error bars; the original is
+    marked with a star."""
+    fig, axes = plt.subplots(1, len(LANGUAGES), figsize=(15, 8.5), sharey=True)
     for ax, language in zip(axes, LANGUAGES, strict=True):
         panel = summary[summary["language"] == language]
-        ax.scatter(panel["savings_pct"], panel["accuracy_pct"], s=60)
-        for _, row in panel.iterrows():
+        for number, (_, row) in enumerate(panel.iterrows(), start=1):
+            is_original = row["method"] == "original"
+            ax.errorbar(
+                row["savings_pct"],
+                row["accuracy_pct"],
+                xerr=0 if pd.isna(row["savings_se"]) else row["savings_se"],
+                yerr=0 if pd.isna(row["accuracy_se"]) else row["accuracy_se"],
+                fmt="*" if is_original else "o",
+                markersize=14 if is_original else 7,
+                color="tab:red" if is_original else "tab:blue",
+                ecolor="gray",
+                capsize=3,
+                label=f"{number}. {method_label(row['method'], row['rate'])}",
+            )
             ax.annotate(
-                method_label(row["method"], row["rate"]),
+                str(number),
                 (row["savings_pct"], row["accuracy_pct"]),
-                xytext=(5, 5),
+                xytext=(4, 4),
                 textcoords="offset points",
                 fontsize=8,
             )
-        ax.set_title({"he": "Hebrew", "en": "English"}[language])
+        ax.legend(
+            fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=2, handlelength=1
+        )
+        ax.set_title(LANGUAGE_NAMES[language])
         ax.set_xlabel("Mean token savings (%, o200k_base)")
         ax.set_xlim(-5, 100)
         ax.set_ylim(0, 105)
-    axes[0].set_ylabel("Answers judged correct (%)")
+    axes[0].set_ylabel("Answers judged correct (%), ±1 SE")
+    fig.tight_layout()
+    fig.savefig(path, dpi=200)
+    return fig
+
+
+def plot_metric_bars(
+    summary: pd.DataFrame, column: str, se_column: str, ylabel: str, path: Path
+) -> plt.Figure:
+    """One bar per method/rate, one panel per language, with ±1 standard-error bars."""
+    fig, axes = plt.subplots(len(LANGUAGES), 1, figsize=(13, 9))
+    for ax, language in zip(axes, LANGUAGES, strict=True):
+        panel = summary[summary["language"] == language]
+        labels = [method_label(m, r) for m, r in zip(panel["method"], panel["rate"], strict=True)]
+        colors = ["tab:red" if m == "original" else "tab:blue" for m in panel["method"]]
+        ax.bar(labels, panel[column], yerr=panel[se_column].fillna(0), color=colors, capsize=3)
+        ax.set_title(LANGUAGE_NAMES[language])
+        ax.set_ylabel(ylabel)
+        ax.set_ylim(0, 105)
+        ax.tick_params(axis="x", labelrotation=30, labelsize=8)
     fig.tight_layout()
     fig.savefig(path, dpi=200)
     return fig
@@ -628,7 +738,7 @@ def markdown_table(frame: pd.DataFrame, digits: int = 1) -> str:
             return "" if math.isnan(value) else f"{value:.{digits}f}"
         return str(value)
 
-    header = "| " + " | ".join(frame.columns) + " |"
+    header = "| " + " | ".join(str(column) for column in frame.columns) + " |"
     divider = "|" + "---|" * len(frame.columns)
     body = ["| " + " | ".join(cell(v) for v in row) + " |" for row in frame.itertuples(False)]
     return "\n".join([header, divider, *body])
@@ -636,17 +746,17 @@ def markdown_table(frame: pd.DataFrame, digits: int = 1) -> str:
 
 def write_summary_md(
     path: Path,
-    summary: pd.DataFrame,
     ratio: dict[str, float],
-    chart_name: str,
     n_cases: dict[str, int],
+    tables: Sequence[tuple[str, pd.DataFrame]],
+    charts: Sequence[tuple[str, str]],
 ) -> None:
-    """Tables and chart only; no go/no-go verdict."""
+    """All result tables and charts; no go/no-go verdict and no thresholds."""
     lines = [
         "# 03 — Baselines and teachers (Test 3)",
         "",
         f"Cases: {n_cases['he']} Hebrew, {n_cases['en']} English. Spec: `notebooks/03_spec.md`. "
-        + "Savings use tiktoken `o200k_base`.",
+        + "Savings use tiktoken `o200k_base`; error bars are ±1 standard error over cases.",
         "",
         "## Hebrew/English token ratio of the originals",
         "",
@@ -654,16 +764,16 @@ def write_summary_md(
         f"- Mean per case: {ratio['mean_per_case']:.2f}",
         "",
     ]
-    for language, title in (("he", "Hebrew"), ("en", "English")):
-        table = summary[summary["language"] == language].drop(columns="language")
-        lines += [f"## {title}", "", markdown_table(table), ""]
-    lines += ["## Chart", "", f"![savings vs accuracy]({chart_name})", ""]
+    for title, table in tables:
+        lines += [f"## {title}", "", markdown_table(table, digits=3 if "$" in title else 1), ""]
+    for title, filename in charts:
+        lines += [f"## {title}", "", f"![{title}]({filename})", ""]
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def fake_reply(request: LLMRequest) -> str:
-    """Offline replies for dry runs: teachers delete every third word, the chatbot and judge
-    return valid JSON."""
+    """Offline replies for dry runs: teachers delete every third word, the chatbot returns
+    valid JSON, the judge returns verdicts that vary with the prompt (so charts have spread)."""
     if request.role in TEACHER_METHODS:
         text = request.prompt.split("\n\n", 1)[1]
         return "\n".join(
@@ -673,5 +783,6 @@ def fake_reply(request: LLMRequest) -> str:
     if request.role == "chatbot":
         return json.dumps({"answers": ["(fake answer)"] * N_QUESTIONS})
     if request.role == "judge":
-        return json.dumps({"correct": [True, False, True]})
+        digest = hashlib.sha256(request.prompt.encode("utf-8")).digest()
+        return json.dumps({"correct": [digest[i] % 3 != 0 for i in range(N_QUESTIONS)]})
     return "OK"
