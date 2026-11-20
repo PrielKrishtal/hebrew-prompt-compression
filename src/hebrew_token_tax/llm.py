@@ -33,6 +33,8 @@ from tqdm.auto import tqdm
 
 REASONING_LEVELS = ("low", "medium", "high")
 MAX_CONCURRENCY = 4
+ANTHROPIC_MAX_CONCURRENCY = 2
+CUT_OFF_MARKERS = ("max_tokens", "incomplete")
 MAX_RETRIES = 5
 INITIAL_BACKOFF_SECONDS = 2.0
 BACKOFF_JITTER = 0.25
@@ -99,17 +101,15 @@ class LLMRequest:
     attempt: int = 0
 
     def cache_key(self) -> str:
-        """Hash of provider, model, prompt and params (reasoning, output limit, attempt)."""
+        """Hash of provider, model, prompt and params (reasoning, attempt). The output limit is
+        left out: it does not change a reply that fits, so raising it never re-pays finished
+        calls; a cached reply that was cut off at a lower limit is re-requested instead."""
         payload = json.dumps(
             {
                 "provider": self.provider,
                 "model": self.model,
                 "prompt": self.prompt,
-                "params": {
-                    "reasoning": self.reasoning,
-                    "max_output_tokens": self.max_output_tokens,
-                    "attempt": self.attempt,
-                },
+                "params": {"reasoning": self.reasoning, "attempt": self.attempt},
             },
             ensure_ascii=False,
             sort_keys=True,
@@ -230,10 +230,12 @@ class OpenAIProvider:
 
 
 class AnthropicProvider:
-    """Anthropic Messages API; spec reasoning level -> output_config.effort."""
+    """Anthropic Messages API; spec reasoning level -> output_config.effort. Streamed (the
+    SDK's get_final_message), so large output limits do not hit the request timeout. At most
+    2 calls at a time, which limits what calls still in flight can cost after a stage stops."""
 
     name = "anthropic"
-    max_workers = MAX_CONCURRENCY
+    max_workers = ANTHROPIC_MAX_CONCURRENCY
     pause_seconds = 0.0
 
     def __init__(self) -> None:
@@ -251,12 +253,13 @@ class AnthropicProvider:
         return self._client
 
     def generate(self, request: LLMRequest) -> Reply:
-        response = self._get_client().messages.create(
+        with self._get_client().messages.stream(
             model=request.model,
             max_tokens=request.max_output_tokens,
             output_config={"effort": request.reasoning},
             messages=[{"role": "user", "content": request.prompt}],
-        )
+        ) as stream:
+            response = stream.get_final_message()
         text = "".join(block.text for block in response.content if block.type == "text")
         stop = response.stop_reason
         error = f"stop_reason {stop}" if stop in ("refusal", "max_tokens") else ""
@@ -445,6 +448,11 @@ def parse_json_reply[Schema: BaseModel](text: str, schema: type[Schema]) -> Sche
         return None
 
 
+def record_cost(record: dict[str, Any]) -> float:
+    """Everything paid for a cached reply, including a cut-off reply it replaced."""
+    return record["cost_usd"] + record.get("earlier_cost_usd", 0.0)
+
+
 @dataclass
 class SpendLedger:
     """Cost and number of API calls made in this session, per provider."""
@@ -623,13 +631,23 @@ class LLMClient:
                 f"{where}: {reason}: {type(error).__name__}: {error}; stage stopped"
             ) from error
 
+    def _stale_cut_off(self, record: dict[str, Any], request: LLMRequest) -> bool:
+        """True if a cached reply was cut off at a lower output limit than the request's."""
+        cut_off = any(marker in record["error"] for marker in CUT_OFF_MARKERS)
+        return cut_off and record["request"]["max_output_tokens"] < request.max_output_tokens
+
     def call(self, request: LLMRequest) -> LLMResult:
         """Return the cached reply, or check the budget, call the provider (with backoff),
-        cache the reply and pay once."""
+        cache the reply and pay once. A reply cut off at a lower limit is requested again; its
+        earlier cost stays counted in the new record."""
         path = self.cache_path(request)
+        earlier_cost = 0.0
         if path.exists():
-            self.ledger.add_cache_hit(request)
-            return self._cached_result(request, path)
+            record = json.loads(path.read_text(encoding="utf-8"))
+            if not self._stale_cut_off(record, request):
+                self.ledger.add_cache_hit(request)
+                return self._cached_result(request, path)
+            earlier_cost = record["cost_usd"] + record.get("earlier_cost_usd", 0.0)
         provider = self.providers[request.provider]
         price = self.price(request)
         reservation = self.worst_case_cost(request)
@@ -644,6 +662,7 @@ class LLMClient:
                 "output_tokens": reply.output_tokens,
                 "prompt_o200k_tokens": len(O200K.encode(request.prompt)),
                 "cost_usd": cost,
+                "earlier_cost_usd": earlier_cost,
                 "error": reply.error,
             }
             path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -663,10 +682,11 @@ class LLMClient:
         monitor: StageMonitor | None = None,
         desc: str | None = None,
     ) -> list[LLMResult]:
-        """Call each unique request once (at most 4 at a time per provider); keep input order.
-        `check(result)` says whether a reply is usable (default: no refusal/cut-off); the
-        monitor stops the stage on too many unusable replies. On any error the queued calls are
-        cancelled and the error is raised; finished calls stay cached, so a rerun resumes."""
+        """Call each unique request once (at most 4 at a time per provider, Anthropic 2); keep
+        input order. `check(result)` says whether a reply is usable (default: no refusal or
+        cut-off); the monitor stops the stage on too many unusable replies. On any error the
+        queued calls are cancelled, the calls still in flight finish (their cost is added to
+        the bar and printed) and the error is raised; finished calls stay cached."""
         check = check or (lambda result: not result.failed)
         monitor = monitor or StageMonitor(desc or "calls")
         unique = {request.cache_key(): request for request in requests}
@@ -682,24 +702,43 @@ class LLMClient:
                     futures: dict[Future[LLMResult], LLMRequest] = {
                         pool.submit(self.call, request): request for request in group
                     }
+                    handled: set[Future[LLMResult]] = set()
                     try:
                         for future in as_completed(futures):
                             result = future.result()
+                            handled.add(future)
                             ok = check(result)
                             counts["cached"] += result.cached
                             counts["failed"] += not ok
                             results[futures[future].cache_key()] = result
                             bar.update(1)
-                            bar.set_postfix(
-                                cached=counts["cached"],
-                                failed=counts["failed"],
-                                spend=f"${sum(self.ledger.cost.values()):.3f}",
-                            )
+                            self._show_spend(bar, counts)
                             monitor.observe(result, ok)
                     except BaseException:
+                        spent_at_stop = self.session_spend()
                         pool.shutdown(wait=True, cancel_futures=True)
+                        in_flight = sum(
+                            f not in handled and not f.cancelled() and f.exception() is None
+                            for f in futures
+                        )
+                        self._show_spend(bar, counts)
+                        print(
+                            f"stage stopped: {in_flight} call(s) still in flight finished "
+                            f"(${self.session_spend() - spent_at_stop:.3f}); session spend "
+                            f"${self.session_spend():.3f}"
+                        )
                         raise
         return [results[request.cache_key()] for request in requests]
+
+    def session_spend(self) -> float:
+        """USD paid in this session (all providers)."""
+        return sum(self.ledger.cost.values())
+
+    def _show_spend(self, bar: Any, counts: Counter[str]) -> None:
+        bar.set_postfix(
+            cached=counts["cached"], failed=counts["failed"], spend=f"${self.session_spend():.3f}"
+        )
+        bar.refresh()
 
     def call_json_many[Schema: BaseModel](
         self,
@@ -740,7 +779,7 @@ class LLMClient:
         """Total USD per provider over every cached call, including earlier sessions."""
         spend: dict[str, float] = defaultdict(float)
         for record in self.cached_records():
-            spend[record["request"]["provider"]] += record["cost_usd"]
+            spend[record["request"]["provider"]] += record_cost(record)
         return dict(spend)
 
     def recorded_usage(self) -> dict[tuple[str, str], tuple[float, float]]:
@@ -767,7 +806,7 @@ class LLMClient:
             totals[key].update(
                 calls=1, tokens_in=record["input_tokens"], tokens_out=record["output_tokens"]
             )
-            costs[key] += record["cost_usd"]
+            costs[key] += record_cost(record)
         keys = set(totals) | set(self.ledger.cached_by_stage)
         return [
             {

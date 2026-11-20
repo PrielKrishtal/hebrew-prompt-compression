@@ -4,6 +4,7 @@ no models, no API keys). Writes only to a temporary directory.
 Usage: python scripts/check_llm_fake.py
 """
 
+import json
 import sys
 import tempfile
 from collections.abc import Callable
@@ -123,6 +124,44 @@ def check_cache(tmp: Path) -> None:
     check("cache: provider called once", fake.calls == 1)
     client.call(request("p", attempt=1))
     check("cache: attempt index is part of the key", fake.calls == 2)
+
+
+def check_output_limit(tmp: Path) -> None:
+    """Raising the output limit keeps cached replies; a cut-off reply is requested again."""
+    client, fake = make_client(tmp, "limit", lambda r: "full reply")
+    client.call(request("p", provider="openai", max_output_tokens=16000))
+    again = client.call(request("p", provider="openai", max_output_tokens=32000))
+    check("limit: raising max_output_tokens reuses the cached reply", again.cached and fake.calls == 1)
+
+    path = client.cache_path(request("q", provider="openai"))
+    client.call(request("q", provider="openai", max_output_tokens=100))
+    record = json.loads(path.read_text(encoding="utf-8"))
+    record["error"] = "stop_reason max_tokens"
+    path.write_text(json.dumps(record), encoding="utf-8")
+    first_cost = record["cost_usd"]
+    redo = client.call(request("q", provider="openai", max_output_tokens=32000))
+    new_record = json.loads(path.read_text(encoding="utf-8"))
+    check("limit: reply cut off at a lower limit is requested again",
+          not redo.cached and fake.calls == 3 and not new_record["error"])
+    check("limit: the cut-off reply's cost stays counted",
+          new_record["earlier_cost_usd"] == first_cost
+          and abs(client.all_time_spend()["openai"] - client.session_spend()) < 1e-12)
+    same = client.call(request("q", provider="openai", max_output_tokens=100))
+    check("limit: a lower limit never re-requests", same.cached and fake.calls == 3)
+
+
+def check_in_flight_spend(tmp: Path) -> None:
+    """When a stage stops, calls already running finish and are counted in the spend."""
+    client, fake = make_client(tmp, "in_flight", lambda r: "not json", max_workers=4,
+                               delay_seconds=0.05)
+    requests = [request(f"f{i}", provider="openai") for i in range(12)]
+    stopped = raises(StageAborted, lambda: client.call_json_many(requests, Answers, "answers"))
+    paid = sum(1 for _ in (tmp / "in_flight").glob("*.json"))
+    check("in-flight: stage stops, running calls finish and are all counted in spend",
+          stopped and paid == fake.successes == sum(client.ledger.calls.values()) > 3
+          and abs(client.session_spend() - client.all_time_spend()["openai"]) < 1e-12)
+    check("concurrency: Anthropic runs at most 2 calls at once",
+          AnthropicProvider.max_workers == 2 and OpenAIProvider.max_workers == 4)
 
 
 def check_backoff(tmp: Path) -> None:
@@ -430,6 +469,8 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as tmp_name:
         tmp = Path(tmp_name)
         check_cache(tmp)
+        check_output_limit(tmp)
+        check_in_flight_spend(tmp)
         check_backoff(tmp)
         check_concurrency(tmp)
         check_json(tmp)

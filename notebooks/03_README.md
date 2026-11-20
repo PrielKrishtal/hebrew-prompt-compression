@@ -28,8 +28,8 @@ The go/no-go decision is ours. The code does not write it.
 | `data/03/protected_he.txt`, `protected_en.txt` | Words that must never be dropped (negations, conditions, …) | Used by the rules method and by `build_filler_lists.py` | Local methods |
 | `data/03/filler_he.txt`, `filler_en.txt` | Words the rules method may drop | spaCy stop words minus protected words, number words, anything with a digit and (English) n't forms | Local methods |
 | `src/hebrew_token_tax/test3.py` | The pipeline | Loads prompts and cases, and builds the method grid. Runs each stage and stores its results. Computes the metrics, the chart and `summary.md`. | All |
-| `src/hebrew_token_tax/compressors.py` | Local tools | The rules method, LLMLingua-2 (a small model that deletes the least useful tokens) and NLLB (a translation model). Also the teacher validator (checks the output only deletes words) and timing. | Local methods, teachers |
-| `src/hebrew_token_tax/llm.py` | API layer | One call path for OpenAI, Anthropic, Gemini and a fake provider. It covers caching, retries, max 4 calls at a time, cost tracking, the spend guard and billing errors. | Smoke test, teachers, answers, judge, spend |
+| `src/hebrew_token_tax/compressors.py` | Local tools | The rules method, LLMLingua-2 (a small model that deletes the least useful tokens) and NLLB (a translation model). Also the teacher validator (checks the output only deletes words; attached punctuation, English letter case and Hebrew prefix letters moved from just-deleted words are allowed, see the spec) and timing. | Local methods, teachers |
+| `src/hebrew_token_tax/llm.py` | API layer | One call path for OpenAI, Anthropic, Gemini and a fake provider. It covers caching, retries, max 4 calls at a time (Anthropic 2, streamed), cost tracking, the spend guard and billing errors. | Smoke test, teachers, answers, judge, spend |
 | `src/hebrew_token_tax/wordlists.py` | Word-list helpers | Reads the word lists. Implements the Hebrew prefix rule (strip ו ה ש ב ל כ מ, with exceptions בעד, מבעד). | Local methods, `build_filler_lists.py` |
 | `scripts/validate_cases.py` | Data check and merge | Checks every batch and compares Hebrew with English. If nothing is blocking, it writes `cases_he.json` and `cases_en.json`. | Data preparation |
 | `scripts/build_filler_lists.py` | Word-list builder | Writes `filler_he.txt` and `filler_en.txt` from spaCy stop words | Data preparation |
@@ -86,7 +86,7 @@ Savings are always counted with tiktoken `o200k_base` against the original text 
 | `RUN_TEACHERS` / `RUN_ANSWERS` / `RUN_JUDGE` | Run that paid stage | `True` | `True` |
 | `CONFIRM_SPEND` | Paid stages print an estimate and stop unless `True` | `False` first (read the estimate), then `True` | same |
 | `BUDGET_CAPS` | Maximum all-time spend per provider: `{"anthropic": 25.0, "openai": 15.0}` | unchanged | unchanged |
-| `*_MAX_OUTPUT_TOKENS` | Output limit per role, reasoning tokens included: teachers 16000, chatbot 4000, judge 8000 | unchanged | tighten if the dry run shows much lower use |
+| `*_MAX_OUTPUT_TOKENS` | Output limit per role, reasoning tokens included: teachers 32000, chatbot 4000, judge 8000 | unchanged | tighten if the dry run shows much lower use |
 
 The smoke test checks that the 4 model ids work. The run plan at the top of the notebook lists
 the exact flags for each step. The dry-run cases are the first 3 of each language; the full run
@@ -95,13 +95,16 @@ reuses them from the cache, so they are not paid for again.
 ## 5. Safety notes
 
 - **Caching:** every API reply is saved under `data/cache/03/llm/`, keyed by provider, model,
-  prompt and parameters. A rerun reads the cache and pays nothing twice. Local outputs and stage
-  results are saved too.
+  prompt, reasoning level and attempt. A rerun reads the cache and pays nothing twice. The output
+  limit is not part of the key, so raising it keeps cached replies; only a reply that was cut off
+  at a lower limit is requested again. Local outputs and stage results are saved too.
 - **Spend guard:** before each paid stage, the notebook prints the calls to make, the calls already
   cached and the estimated cost per provider. It stops with `SpendBlocked` if `CONFIRM_SPEND` is
   `False` or a provider would pass its cap. During a stage, each uncached call is checked against
   the cap first (worst case: its full output limit). After the dry run, estimates use real usage.
-- **Fail-fast:** these stop the stage at once, cancel the queued calls and print why:
+- **Fail-fast:** these stop the stage at once, cancel the queued calls and print why. Calls
+  already running still finish; their cost is printed and added to the spend. Anthropic runs at
+  most 2 calls at a time (OpenAI 4) to keep that small.
   - `BillingError`: out of credit or quota (HTTP 402, OpenAI `insufficient_quota`, Anthropic
     `billing_error`, every Gemini key at its daily quota). Nothing is cached or counted as incorrect.
   - `FatalCallError`: a non-retryable error (400 bad request, 401/403 auth, 404 model not found),
