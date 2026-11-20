@@ -115,7 +115,11 @@ facts as the correct answer, even if worded differently?
 3. Question: {q3}
    Correct answer: {a3}
    Given answer: {g3}
+Extra details are fine if they are correct; an answer is incorrect only if
+it is missing the key fact of the correct answer or contradicts it.
 Return JSON only: {"correct": [true/false, true/false, true/false]}
+
+Judge prompt clarified after the dry run: it rejected correct answers that added true details.
 
 ## Metrics (per case, method, rate, language)
 - savings = 1 − tokens(compressed) / tokens(original), tiktoken o200k_base,

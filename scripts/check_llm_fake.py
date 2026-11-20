@@ -45,12 +45,12 @@ from hebrew_token_tax.test3 import (
     Method,
     Role,
     Verdicts,
+    answer_input_sha,
     answer_jobs,
     context,
     facts_kept,
     fake_reply,
     fill,
-    fingerprint,
     judge_jobs,
     load_cases,
     load_prompts,
@@ -305,7 +305,7 @@ def check_fail_fast_rates(tmp: Path, prompts: dict[str, str]) -> None:
     cases = {lang: load_cases(DATA_DIR, lang, limit=3) for lang in ("he", "en")}
     methods = [m for m in method_grid((0.7, 0.5)) if m.name in TEACHER_METHODS]
     store = JsonStore(tmp / "teacher_rate" / "teachers.json")
-    jobs = pending_teacher_jobs(cases, methods, store)
+    jobs = pending_teacher_jobs(cases, methods, store, prompts)
     check("fail-fast: > 30% invalid teacher output in the first 10 calls stops the stage",
           raises(StageAborted, lambda: run_teachers(client, roles, prompts, jobs, store))
           and fake.calls <= 10 + IN_FLIGHT and not store.data)
@@ -341,7 +341,7 @@ def check_pipeline(tmp: Path, prompts: dict[str, str]) -> None:
                                  {"text": context(case), "latency_ms": 0.0,
                                   "teacher_failed": False, "attempts": 0})
     client, fake = make_client(tmp, "pipeline_llm", fake_reply)
-    jobs = pending_teacher_jobs(cases, methods, compressions)
+    jobs = pending_teacher_jobs(cases, methods, compressions, prompts)
     failed = run_teachers(client, roles, prompts, jobs, compressions)
     check("pipeline: fake teachers pass the validator", failed == 0 and len(jobs) == 16)
 
@@ -357,9 +357,9 @@ def check_pipeline(tmp: Path, prompts: dict[str, str]) -> None:
 
     answers = JsonStore(tmp / "pipeline" / "answers.json")
     judgements = JsonStore(tmp / "pipeline" / "judgements.json")
-    run_answers(client, roles, prompts, answer_jobs(cases, methods, compressions, answers),
+    run_answers(client, roles, prompts, answer_jobs(cases, methods, compressions, answers, prompts),
                 compressions, answers)
-    run_judge(client, roles, prompts, judge_jobs(cases, methods, answers, judgements),
+    run_judge(client, roles, prompts, judge_jobs(cases, methods, answers, judgements, prompts),
               answers, judgements)
     rows = score_rows(cases, methods, compressions, answers, judgements)
     summary = summarize(rows)
@@ -378,7 +378,7 @@ def check_pipeline(tmp: Path, prompts: dict[str, str]) -> None:
                                                          "savings_pct"] == 0).all())
     check("pipeline: summary has a row per method/rate/language", len(summary) == 10)
     reruns_before = fake.calls
-    run_answers(client, roles, prompts, answer_jobs(cases, methods, compressions, answers),
+    run_answers(client, roles, prompts, answer_jobs(cases, methods, compressions, answers, prompts),
                 compressions, answers)
     check("pipeline: rerun makes no new calls", fake.calls == reruns_before)
 
@@ -450,9 +450,20 @@ def check_stale_records(tmp: Path, prompts: dict[str, str]) -> None:
     answers = JsonStore(tmp / "stale_stage" / "answers.json")
     teachers = JsonStore(tmp / "stale_stage" / "teachers.json")
     check("stale: old-format teacher record is redone, its answer and judgement follow",
-          "requested_keep" in teachers.get(key)
-          and answers.get(key)["text_sha"] == fingerprint(teachers.get(key)["text"])
+          "prompt_sha" in teachers.get(key)
+          and answers.get(key)["input_sha"] == answer_input_sha(prompts, teachers.get(key)["text"])
           and fake.successes == before)
+
+    changed = {**prompts, "judge": prompts["judge"] + "\nBe strict."}
+    judgements_before = JsonStore(tmp / "stale_stage" / "judgements.json").data
+    before = fake.successes
+    run_stages(tmp / "stale_llm", tmp / "stale_stage", 1, changed, fake)
+    judgements = JsonStore(tmp / "stale_stage" / "judgements.json").data
+    answers_after = JsonStore(tmp / "stale_stage" / "answers.json").data
+    check("stale: a changed judge prompt re-judges every row; answers are reused",
+          all(judgements[k]["input_sha"] != judgements_before[k]["input_sha"] for k in judgements)
+          and 0 < fake.successes - before <= len(judgements)
+          and answers_after == answers.data)
 
 
 def run_stages(
@@ -473,13 +484,13 @@ def run_stages(
     local = JsonStore(stage_dir / "local.json")
     run_local(cases, methods, tools, local)
     teachers = JsonStore(stage_dir / "teachers.json")
-    run_teachers(client, roles, prompts, pending_teacher_jobs(cases, methods, teachers), teachers)
+    run_teachers(client, roles, prompts, pending_teacher_jobs(cases, methods, teachers, prompts), teachers)
     compressions = JsonStore.combined(local, teachers)
     answers = JsonStore(stage_dir / "answers.json")
-    run_answers(client, roles, prompts, answer_jobs(cases, methods, compressions, answers),
+    run_answers(client, roles, prompts, answer_jobs(cases, methods, compressions, answers, prompts),
                 compressions, answers)
     judgements = JsonStore(stage_dir / "judgements.json")
-    run_judge(client, roles, prompts, judge_jobs(cases, methods, answers, judgements),
+    run_judge(client, roles, prompts, judge_jobs(cases, methods, answers, judgements, prompts),
               answers, judgements)
 
 

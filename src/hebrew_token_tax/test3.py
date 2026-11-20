@@ -75,6 +75,12 @@ SPACES = re.compile(r"\s+")
 LANGUAGE_NAMES = {"he": "Hebrew", "en": "English"}
 QUESTION_TYPES = ("Q1 numbers/dates", "Q2 negations/conditions", "Q3 from history")
 DOMAIN_METHODS = ("llmlingua2_large", "teacher_sol", "teacher_opus")
+RESULT_NOTES = (
+    (
+        "facts_kept for translation methods checks digits only and does not detect currency "
+        "errors (e.g. ש״ח -> dollars)."
+    ),
+)
 RESULT_COLUMNS = {
     "cases": "cases",
     "savings_pct": "savings %",
@@ -382,27 +388,42 @@ class TeacherJob:
         }
 
 
+def fingerprint(value: Any) -> str:
+    """Short hash of a JSON-serializable value, to notice when a stage input changed."""
+    payload = json.dumps(value, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
+
+
+def teacher_prompt_sha(prompts: dict[str, str], language: str) -> str:
+    """Fingerprint of the teacher prompts that shape a teacher record."""
+    return fingerprint([prompts[f"teacher_{language}"], prompts["teacher_feedback"]])
+
+
+def answer_input_sha(prompts: dict[str, str], text: str) -> str:
+    """Fingerprint of what an answer set depends on: the chatbot prompt and the text."""
+    return fingerprint([prompts["chatbot"], text])
+
+
+def judge_input_sha(prompts: dict[str, str], answers: list[str] | None) -> str:
+    """Fingerprint of what a judgement depends on: the judge prompt and the answers."""
+    return fingerprint([prompts["judge"], answers])
+
+
 def pending_teacher_jobs(
-    cases: dict[str, list[dict[str, Any]]], methods: Sequence[Method], store: JsonStore
+    cases: dict[str, list[dict[str, Any]]],
+    methods: Sequence[Method],
+    store: JsonStore,
+    prompts: dict[str, str],
 ) -> list[tuple[dict[str, Any], Method]]:
+    """Teacher jobs with no record, or a record made with different teacher prompts."""
     return [
         (case, method)
         for method in methods
         if method.name in TEACHER_METHODS
         for case in cases[method.language]
-        if not is_current_teacher_record(store.get(record_key(case, method)))
+        if (store.get(record_key(case, method)) or {}).get("prompt_sha")
+        != teacher_prompt_sha(prompts, method.language)
     ]
-
-
-def is_current_teacher_record(record: dict[str, Any] | None) -> bool:
-    """True for a record made with the length-aware teacher stage (older records are redone)."""
-    return record is not None and "requested_keep" in record
-
-
-def fingerprint(value: Any) -> str:
-    """Short hash of a JSON-serializable value, to notice when a stage input changed."""
-    payload = json.dumps(value, ensure_ascii=False, sort_keys=True)
-    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
 
 
 def run_teachers(
@@ -421,6 +442,10 @@ def run_teachers(
     monitor = StageMonitor("teachers", TEACHER_MAX_FAILURE_RATE, "invalid teacher output")
     states = [TeacherJob(case, method) for case, method in jobs]
     state_of: dict[str, TeacherJob] = {}
+
+    def save_state(state: TeacherJob) -> None:
+        record = {**state.record(), "prompt_sha": teacher_prompt_sha(prompts, state.method.language)}
+        store.set(record_key(state.case, state.method), record)
 
     def is_valid(result: LLMResult) -> bool:
         state = state_of[result.request.cache_key()]
@@ -443,11 +468,11 @@ def run_teachers(
             if is_valid(result):
                 state.offer(result.text.strip())
             if state.done:
-                store.set(record_key(state.case, state.method), state.record())
+                save_state(state)
         store.save()
     for state in states:
         if not state.done:
-            store.set(record_key(state.case, state.method), state.record())
+            save_state(state)
     store.save()
     return sum(state.best_text is None for state in states)
 
@@ -468,14 +493,17 @@ def answer_jobs(
     methods: Sequence[Method],
     compressions: JsonStore,
     answers: JsonStore,
+    prompts: dict[str, str],
 ) -> list[tuple[str, dict[str, Any], Method]]:
-    """(key, case, method) for every compressed text that has no stored answers yet."""
+    """(key, case, method) for every compressed text with no answers yet, or answers made from
+    a different text or chatbot prompt."""
     return [
         (key, case, method)
         for method in methods
         for case in cases[method.language]
         if (key := record_key(case, method)) in compressions
-        and (answers.get(key) or {}).get("text_sha") != fingerprint(compressions.get(key)["text"])
+        and (answers.get(key) or {}).get("input_sha")
+        != answer_input_sha(prompts, compressions.get(key)["text"])
     ]
 
 
@@ -511,7 +539,7 @@ def run_answers(
             {
                 "answers": parsed.answers if parsed else None,
                 "json_failed": parsed is None,
-                "text_sha": fingerprint(compressions.get(key)["text"]),
+                "input_sha": answer_input_sha(prompts, compressions.get(key)["text"]),
             },
         )
     answers.save()
@@ -535,14 +563,17 @@ def judge_jobs(
     methods: Sequence[Method],
     answers: JsonStore,
     judgements: JsonStore,
+    prompts: dict[str, str],
 ) -> list[tuple[str, dict[str, Any]]]:
-    """(key, case) for every stored answer set that is not judged yet."""
+    """(key, case) for every answer set not judged yet, or judged from different answers or a
+    different judge prompt."""
     return [
         (key, case)
         for method in methods
         for case in cases[method.language]
         if (key := record_key(case, method)) in answers
-        and (judgements.get(key) or {}).get("answers_sha") != fingerprint(answers.get(key)["answers"])
+        and (judgements.get(key) or {}).get("input_sha")
+        != judge_input_sha(prompts, answers.get(key)["answers"])
     ]
 
 
@@ -576,7 +607,11 @@ def run_judge(
         if answers.get(key)["answers"] is None:
             judgements.set(
                 key,
-                {"correct": all_wrong, "json_failed": False, "answers_sha": fingerprint(None)},
+                {
+                    "correct": all_wrong,
+                    "json_failed": False,
+                    "input_sha": judge_input_sha(prompts, None),
+                },
             )
     outcomes = client.call_json_many(
         judge_requests(roles, prompts, jobs, answers), Verdicts, "judge", JSON_MAX_FAILURE_RATE
@@ -589,7 +624,7 @@ def run_judge(
             {
                 "correct": parsed.correct if parsed else all_wrong,
                 "json_failed": parsed is None,
-                "answers_sha": fingerprint(answers.get(key)["answers"]),
+                "input_sha": judge_input_sha(prompts, answers.get(key)["answers"]),
             },
         )
     judgements.save()
@@ -924,6 +959,10 @@ def write_summary_md(
         "",
         f"- Overall: {ratio['overall']:.2f} ({ratio['he_tokens']} / {ratio['en_tokens']} tokens)",
         f"- Mean per case: {ratio['mean_per_case']:.2f}",
+        "",
+        "## Notes",
+        "",
+        *[f"- {note}" for note in RESULT_NOTES],
         "",
     ]
     if main_chart is not None:
