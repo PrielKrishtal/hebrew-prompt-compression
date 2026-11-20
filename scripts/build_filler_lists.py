@@ -4,7 +4,6 @@ Usage: python scripts/build_filler_lists.py
 Writes data/03/filler_he.txt and data/03/filler_en.txt.
 """
 
-import re
 import sys
 from collections.abc import Callable
 from pathlib import Path
@@ -13,11 +12,9 @@ import spacy
 from spacy.lang.en.stop_words import STOP_WORDS as EN_STOP_WORDS
 from spacy.lang.he.stop_words import STOP_WORDS as HE_STOP_WORDS
 
+from hebrew_token_tax.wordlists import has_digit, is_prefixed_protected, load_protected
+
 DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "03"
-HE_PREFIXES = frozenset("והשבלכמ")
-HE_PREFIX_RULE_EXCEPTIONS = frozenset({"בעד", "מבעד"})
-MIN_PART_LENGTH = 2
-ENTRY_SEPARATOR = re.compile(r"[\s\-]+")
 CURLY_APOSTROPHES = str.maketrans({"‘": "'", "’": "'"})
 EN_SPLIT_NEGATIONS = frozenset({
     "didn", "isn", "wasn", "doesn", "hasn", "haven", "weren", "won", "wouldn",
@@ -40,37 +37,6 @@ HE_NUMBER_WORDS = frozenset({
 Rule = tuple[str, Callable[[str], bool]]
 
 
-def read_entries(path: Path) -> list[str]:
-    """Return the non-empty, non-comment lines of a word list."""
-    lines = path.read_text(encoding="utf-8").splitlines()
-    return [line.strip() for line in lines if line.strip() and not line.startswith("#")]
-
-
-def single_word_entries(entries: list[str]) -> set[str]:
-    """Return entries that are one word (a trailing hyphen is dropped); phrases are skipped."""
-    singles = set()
-    for entry in entries:
-        parts = [part for part in ENTRY_SEPARATOR.split(entry) if part]
-        if len(parts) == 1 and len(parts[0]) >= MIN_PART_LENGTH:
-            singles.add(parts[0])
-    return singles
-
-
-def prefix_remainders(word: str) -> list[str]:
-    """Return what is left after stripping 1, 2, ... leading Hebrew prefixes."""
-    remainders = []
-    for index, letter in enumerate(word[:-1]):
-        if letter not in HE_PREFIXES:
-            break
-        remainders.append(word[index + 1:])
-    return remainders
-
-
-def has_digit(word: str) -> bool:
-    """Return True if `word` contains any digit."""
-    return any(char.isdigit() for char in word)
-
-
 def is_contraction(word: str) -> bool:
     """Return True for n't contractions, including curly-apostrophe forms."""
     return word.translate(CURLY_APOSTROPHES).endswith("n't")
@@ -78,14 +44,10 @@ def is_contraction(word: str) -> bool:
 
 def hebrew_rules(protected_path: Path) -> list[Rule]:
     """Return the ordered removal rules for Hebrew."""
-    protected = single_word_entries(read_entries(protected_path))
+    protected = load_protected(protected_path, "he")
     return [
         ("protected", lambda word: word in protected),
-        (
-            "prefix(es) + protected",
-            lambda word: word not in HE_PREFIX_RULE_EXCEPTIONS
-            and any(rest in protected for rest in prefix_remainders(word)),
-        ),
+        ("prefix(es) + protected", lambda word: is_prefixed_protected(word, protected)),
         ("number word", lambda word: word in HE_NUMBER_WORDS),
         ("contains a digit", has_digit),
     ]
@@ -93,7 +55,7 @@ def hebrew_rules(protected_path: Path) -> list[Rule]:
 
 def english_rules(protected_path: Path) -> list[Rule]:
     """Return the ordered removal rules for English."""
-    protected = {entry.lower() for entry in read_entries(protected_path)}
+    protected = load_protected(protected_path, "en")
     return [
         ("protected", lambda word: word in protected),
         ("n't contraction", is_contraction),
