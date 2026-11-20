@@ -49,17 +49,25 @@ Run the 3-case paid dry run first and extrapolate before the full run.
 ## Prompts (use verbatim; {x} = filled by code)
 
 ### Teacher (Hebrew)
-Shorten the following Hebrew text to about {pct}% of its length by DELETING
-only. You may delete whole words, or one or more leading prefix letters
+The text has {n_words} words. Shorten it to about {target_words} words
+(keep rate {pct}%) by DELETING only. You may delete whole words, or one or more leading prefix letters
 (ו ה ש ב ל כ מ, e.g. וה) from the start of a word. Do not add, reorder, rewrite or translate anything.
 Never delete numbers, dates, names, negations or conditions.
 Return only the shortened text.
 
 ### Teacher (English)
-Shorten the following English text to about {pct}% of its length by DELETING
-whole words only. Do not add, reorder, rewrite or translate anything.
+The text has {n_words} words. Shorten it to about {target_words} words
+(keep rate {pct}%) by DELETING whole words only. Do not add, reorder, rewrite or translate anything.
 Never delete numbers, dates, names, negations or conditions.
 Return only the shortened text.
+
+### Teacher length feedback
+Your previous output had {actual_words} words; the target is {target_words}. Delete more.
+
+Teacher prompts are followed by a blank line and the text; on a length retry
+the feedback line is added after the text, separated by a blank line.
+{n_words} = whitespace-separated words of the text;
+{target_words} = round(n_words × keep rate); {pct} = keep rate × 100.
 
 Validator: output must equal the original with only whole words (and, in
 Hebrew, leading prefixes) removed, in the original order. Also allowed:
@@ -71,8 +79,15 @@ deleted words since the previous kept word). Nothing else may be added.
 Validator relaxed after the 3-case dry run, before any full-run results,
 because formatting artifacts and morpheme-level prefix reattachment were
 rejected.
-If invalid: retry up to 2 times, then mark the case as failed and report the
-failure count.
+Retries: at most 2 per case (3 attempts in total). An invalid output is
+retried. A valid output whose keep rate (output words / input words) is more
+than 0.10 above the requested rate is retried with the length feedback line
+added (it is kept on later retries of that case). After the last attempt the
+valid output closest to the requested rate is kept and its real savings are
+recorded; a length miss is not a teacher failure. Only if no attempt was valid
+is the case marked failed (original text kept) and counted in the failure count.
+Teacher prompt and length retry changed after the dry run because teachers
+under-compressed (actual keep 0.6–0.75 at requested 0.5).
 
 ### Chatbot
 You are a customer-service assistant. Answer the 3 questions using ONLY the

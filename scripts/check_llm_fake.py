@@ -42,6 +42,7 @@ from hebrew_token_tax.test3 import (
     Answers,
     JsonStore,
     LocalCompressors,
+    Method,
     Role,
     Verdicts,
     answer_jobs,
@@ -49,6 +50,7 @@ from hebrew_token_tax.test3 import (
     facts_kept,
     fake_reply,
     fill,
+    fingerprint,
     judge_jobs,
     load_cases,
     load_prompts,
@@ -62,6 +64,7 @@ from hebrew_token_tax.test3 import (
     run_teachers,
     score_rows,
     summarize,
+    teacher_request,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -310,8 +313,8 @@ def check_fail_fast_rates(tmp: Path, prompts: dict[str, str]) -> None:
 
 def check_prompts() -> dict[str, str]:
     prompts = load_prompts(SPEC_PATH)
-    check("prompts: 4 prompts loaded", set(prompts) == {"teacher_he", "teacher_en", "chatbot",
-                                                        "judge"})
+    check("prompts: 5 prompts loaded (incl. teacher length feedback)",
+          set(prompts) == {"teacher_he", "teacher_en", "teacher_feedback", "chatbot", "judge"})
     check("prompts: chatbot note excluded", "answer_language =" not in prompts["chatbot"])
     check("prompts: judge returns a 3-item list", '{"correct": [' in prompts["judge"])
     try:
@@ -389,6 +392,67 @@ NOTEBOOK_ROLES = {
 DEBUG_MODELS = {"gemini": "gemini-3.5-flash-lite", "fake": "fake"}
 RESUME_METHODS = TEACHER_METHODS | {"original", "rules"}
 BILLING_AFTER = 7
+
+
+def check_teacher_length(tmp: Path, prompts: dict[str, str]) -> None:
+    """Exact word target in the prompt, length retry with feedback, closest output kept."""
+    roles = resolve_roles(NOTEBOOK_ROLES, "fake", DEBUG_MODELS)
+    case = load_cases(DATA_DIR, "en", limit=1)[0]
+    method = Method("en", "teacher_sol", 0.5)
+    n_words = len(context(case).split())
+    first = teacher_request(roles, prompts, case, method, 0)
+    check("length: prompt states the exact word target",
+          first.prompt.startswith(f"The text has {n_words} words. Shorten it to about "
+                                  f"{round(n_words * 0.5)} words\n(keep rate 50%)"))
+    retry = teacher_request(roles, prompts, case, method, 1, previous_words=200)
+    check("length: feedback line follows the text after a blank line",
+          retry.prompt.endswith(f"\n\nYour previous output had 200 words; the target is "
+                                f"{round(n_words * 0.5)}. Delete more."))
+
+    client, _ = make_client(tmp, "length_ok", fake_reply)
+    store = JsonStore(tmp / "length_ok.json")
+    jobs = [(case, method), (case, Method("en", "teacher_sol", 0.7))]
+    failed = run_teachers(client, roles, prompts, jobs, store)
+    at_half, at_70 = (store.get(record_key(case, m)) for _, m in jobs)
+    check("length: too long at 0.5 -> retried with feedback, then on target (2 attempts)",
+          failed == 0 and at_half["attempts"] == 2 and not at_half["length_miss"]
+          and abs(at_half["actual_keep"] - 0.5) <= 0.10)
+    check("length: on target at 0.7 -> 1 attempt", at_70["attempts"] == 1)
+
+    def never_shorter(r: LLMRequest) -> str:
+        text = r.prompt.split("\n\n", 1)[1].rsplit("\n\nYour previous output had", 1)[0]
+        keep = 3 if "Your previous output had" in r.prompt else 4
+        return "\n".join(" ".join(w for i, w in enumerate(line.split()) if i % keep != keep - 1)
+                         for line in text.split("\n"))
+
+    client, _ = make_client(tmp, "length_miss", never_shorter)
+    store = JsonStore(tmp / "length_miss.json")
+    failed = run_teachers(client, roles, prompts, [(case, method)], store)
+    record = store.get(record_key(case, method))
+    check("length: still too long after retries -> closest valid kept, not a failure",
+          failed == 0 and not record["teacher_failed"] and record["length_miss"]
+          and record["attempts"] == 3 and abs(record["actual_keep"] - 2 / 3) < 0.03)
+
+
+def check_stale_records(tmp: Path, prompts: dict[str, str]) -> None:
+    """A changed teacher text re-runs its answer and judgement; unchanged rows are reused."""
+    fake = FakeProvider(fake_reply)
+    run_stages(tmp / "stale_llm", tmp / "stale_stage", 1, prompts, fake)
+    teachers = JsonStore(tmp / "stale_stage" / "teachers.json")
+    key = next(k for k in teachers.data if "teacher_opus" in k and "|0.5" in k)
+    record = teachers.get(key)
+    old_format = {k: record[k] for k in ("text", "latency_ms", "teacher_failed", "attempts")}
+    old_format["text"] = record["text"] + " extra"
+    teachers.set(key, old_format)
+    teachers.save()
+    before = fake.successes
+    run_stages(tmp / "stale_llm", tmp / "stale_stage", 1, prompts, fake)
+    answers = JsonStore(tmp / "stale_stage" / "answers.json")
+    teachers = JsonStore(tmp / "stale_stage" / "teachers.json")
+    check("stale: old-format teacher record is redone, its answer and judgement follow",
+          "requested_keep" in teachers.get(key)
+          and answers.get(key)["text_sha"] == fingerprint(teachers.get(key)["text"])
+          and fake.successes == before)
 
 
 def run_stages(
@@ -479,6 +543,8 @@ def main() -> int:
         prompts = check_prompts()
         check_pipeline(tmp, prompts)
         check_resume(tmp, prompts)
+        check_teacher_length(tmp, prompts)
+        check_stale_records(tmp, prompts)
         check_classification()
         check_fail_fast_rates(tmp, prompts)
     failed = [name for name, ok in results if not ok]

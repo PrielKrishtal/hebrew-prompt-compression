@@ -32,6 +32,7 @@ N_QUESTIONS = 3
 PROMPT_TITLES = {
     "teacher_he": "Teacher (Hebrew)",
     "teacher_en": "Teacher (English)",
+    "teacher_feedback": "Teacher length feedback",
     "chatbot": "Chatbot",
     "judge": "Judge (blind: never sees the method)",
 }
@@ -61,6 +62,11 @@ SPEC_METHODS: dict[str, tuple[tuple[str, bool], ...]] = {
 TEACHER_METHODS = frozenset({"teacher_sol", "teacher_opus"})
 TRANSLATION_METHODS = frozenset({"translate_only", "translate+llmlingua2_large"})
 TEACHER_MAX_ATTEMPTS = 3
+MAIN_CHART_RED_INDEX = 3
+LABEL_HEIGHT = 4.0
+LABEL_CHAR_WIDTH = 1.05
+LENGTH_TOLERANCE = 0.10
+FEEDBACK_PREFIX = "Your previous output had"
 TEACHER_MAX_FAILURE_RATE = 0.30
 JSON_MAX_FAILURE_RATE = 0.20
 SMOKE_PROMPT = "Reply with OK"
@@ -304,18 +310,76 @@ def run_local(
     return len(jobs)
 
 
+def word_count(text: str) -> int:
+    """Whitespace-separated words (the unit of the teacher's word target)."""
+    return len(text.split())
+
+
 def teacher_request(
     roles: dict[str, Role],
     prompts: dict[str, str],
     case: dict[str, Any],
     method: Method,
     attempt: int,
+    previous_words: int | None = None,
 ) -> LLMRequest:
-    """The verbatim teacher prompt, a blank line, then the text to shorten."""
-    role = roles[method.name]
-    template = prompts[f"teacher_{method.language}"]
-    prompt = f"{fill(template, pct=str(round(method.rate * 100)))}\n\n{context(case)}"
-    return make_request(method.name, role, prompt, attempt)
+    """The verbatim teacher prompt with the exact word target, a blank line and the text; on a
+    length retry, a blank line and the verbatim length feedback follow."""
+    n_words = word_count(context(case))
+    target = round(n_words * method.rate)
+    header = fill(
+        prompts[f"teacher_{method.language}"],
+        n_words=str(n_words),
+        target_words=str(target),
+        pct=str(round(method.rate * 100)),
+    )
+    prompt = f"{header}\n\n{context(case)}"
+    if previous_words is not None:
+        feedback = fill(
+            prompts["teacher_feedback"], actual_words=str(previous_words), target_words=str(target)
+        )
+        prompt = f"{prompt}\n\n{feedback}"
+    return make_request(method.name, roles[method.name], prompt, attempt)
+
+
+@dataclass
+class TeacherJob:
+    """One teacher/case/rate: the closest valid output so far and the length-retry state."""
+
+    case: dict[str, Any]
+    method: Method
+    best_text: str | None = None
+    best_keep: float = math.nan
+    long_words: int | None = None
+    attempts: int = 0
+    done: bool = False
+
+    def keep_of(self, text: str) -> float:
+        return word_count(text) / word_count(context(self.case))
+
+    def offer(self, text: str) -> None:
+        """Record a valid output: keep it if it is the closest so far; finish if on target."""
+        keep = self.keep_of(text)
+        rate = self.method.rate
+        if self.best_text is None or abs(keep - rate) < abs(self.best_keep - rate):
+            self.best_text, self.best_keep = text, keep
+        if keep - rate > LENGTH_TOLERANCE:
+            self.long_words = word_count(text)
+        else:
+            self.done = True
+
+    def record(self) -> dict[str, Any]:
+        """The stored compression; no valid output means failed (original text kept)."""
+        failed = self.best_text is None
+        return {
+            "text": context(self.case) if failed else self.best_text,
+            "latency_ms": None,
+            "teacher_failed": failed,
+            "attempts": self.attempts,
+            "requested_keep": self.method.rate,
+            "actual_keep": 1.0 if failed else self.best_keep,
+            "length_miss": not failed and self.best_keep - self.method.rate > LENGTH_TOLERANCE,
+        }
 
 
 def pending_teacher_jobs(
@@ -326,8 +390,19 @@ def pending_teacher_jobs(
         for method in methods
         if method.name in TEACHER_METHODS
         for case in cases[method.language]
-        if record_key(case, method) not in store
+        if not is_current_teacher_record(store.get(record_key(case, method)))
     ]
+
+
+def is_current_teacher_record(record: dict[str, Any] | None) -> bool:
+    """True for a record made with the length-aware teacher stage (older records are redone)."""
+    return record is not None and "requested_keep" in record
+
+
+def fingerprint(value: Any) -> str:
+    """Short hash of a JSON-serializable value, to notice when a stage input changed."""
+    payload = json.dumps(value, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
 
 
 def run_teachers(
@@ -337,45 +412,44 @@ def run_teachers(
     jobs: list[tuple[dict[str, Any], Method]],
     store: JsonStore,
 ) -> int:
-    """Teacher compression: up to 2 retries for invalid output, then keep the original text
-    and mark the case failed. Each reply is validated as it arrives, so the stage stops early
-    (3 invalid in a row, or > 30% of the first 10). Returns the number of failed cases."""
+    """Teacher compression with up to 2 retries (3 attempts). Invalid output is retried; valid
+    output more than 0.10 above the requested keep rate is retried with the length feedback.
+    The closest valid output is kept (a length miss is not a failure); a case with no valid
+    output keeps the original text and is marked failed. Replies are validated as they arrive,
+    so the stage stops early (3 invalid first attempts in a row, or > 30% of the first 10).
+    Returns the number of failed cases."""
     monitor = StageMonitor("teachers", TEACHER_MAX_FAILURE_RATE, "invalid teacher output")
-    job_of: dict[str, tuple[dict[str, Any], Method]] = {}
+    states = [TeacherJob(case, method) for case, method in jobs]
+    state_of: dict[str, TeacherJob] = {}
 
     def is_valid(result: LLMResult) -> bool:
-        case, method = job_of[result.request.cache_key()]
+        state = state_of[result.request.cache_key()]
         output = result.text.strip()
-        return not result.failed and is_valid_deletion(context(case), output, method.language)
+        language = state.method.language
+        return not result.failed and is_valid_deletion(context(state.case), output, language)
 
-    pending = jobs
     for attempt in range(TEACHER_MAX_ATTEMPTS):
+        pending = [state for state in states if not state.done]
         if not pending:
             break
-        requests = [teacher_request(roles, prompts, c, m, attempt) for c, m in pending]
-        job_of.update({r.cache_key(): job for r, job in zip(requests, pending, strict=True)})
+        requests = [
+            teacher_request(roles, prompts, s.case, s.method, attempt, s.long_words)
+            for s in pending
+        ]
+        state_of.update({r.cache_key(): s for r, s in zip(requests, pending, strict=True)})
         results = client.call_many(requests, is_valid, monitor, f"teachers (attempt {attempt + 1})")
-        still_invalid = []
-        for (case, method), result in zip(pending, results, strict=True):
-            output = result.text.strip()
+        for state, result in zip(pending, results, strict=True):
+            state.attempts = attempt + 1
             if is_valid(result):
-                store.set(
-                    record_key(case, method),
-                    {"text": output, "latency_ms": None, "teacher_failed": False,
-                     "attempts": attempt + 1},
-                )
-            else:
-                still_invalid.append((case, method))
-        pending = still_invalid
+                state.offer(result.text.strip())
+            if state.done:
+                store.set(record_key(state.case, state.method), state.record())
         store.save()
-    for case, method in pending:
-        store.set(
-            record_key(case, method),
-            {"text": context(case), "latency_ms": None, "teacher_failed": True,
-             "attempts": TEACHER_MAX_ATTEMPTS},
-        )
+    for state in states:
+        if not state.done:
+            store.set(record_key(state.case, state.method), state.record())
     store.save()
-    return len(pending)
+    return sum(state.best_text is None for state in states)
 
 
 def chatbot_request(
@@ -400,7 +474,8 @@ def answer_jobs(
         (key, case, method)
         for method in methods
         for case in cases[method.language]
-        if (key := record_key(case, method)) in compressions and key not in answers
+        if (key := record_key(case, method)) in compressions
+        and (answers.get(key) or {}).get("text_sha") != fingerprint(compressions.get(key)["text"])
     ]
 
 
@@ -433,7 +508,11 @@ def run_answers(
         failures += parsed is None
         answers.set(
             key,
-            {"answers": parsed.answers if parsed else None, "json_failed": parsed is None},
+            {
+                "answers": parsed.answers if parsed else None,
+                "json_failed": parsed is None,
+                "text_sha": fingerprint(compressions.get(key)["text"]),
+            },
         )
     answers.save()
     return failures
@@ -462,7 +541,8 @@ def judge_jobs(
         (key, case)
         for method in methods
         for case in cases[method.language]
-        if (key := record_key(case, method)) in answers and key not in judgements
+        if (key := record_key(case, method)) in answers
+        and (judgements.get(key) or {}).get("answers_sha") != fingerprint(answers.get(key)["answers"])
     ]
 
 
@@ -494,7 +574,10 @@ def run_judge(
     judged = [(key, case) for key, case in jobs if answers.get(key)["answers"] is not None]
     for key, _ in jobs:
         if answers.get(key)["answers"] is None:
-            judgements.set(key, {"correct": all_wrong, "json_failed": False})
+            judgements.set(
+                key,
+                {"correct": all_wrong, "json_failed": False, "answers_sha": fingerprint(None)},
+            )
     outcomes = client.call_json_many(
         judge_requests(roles, prompts, jobs, answers), Verdicts, "judge", JSON_MAX_FAILURE_RATE
     )
@@ -502,7 +585,12 @@ def run_judge(
     for (key, _), (parsed, _) in zip(judged, outcomes, strict=True):
         failures += parsed is None
         judgements.set(
-            key, {"correct": parsed.correct if parsed else all_wrong, "json_failed": parsed is None}
+            key,
+            {
+                "correct": parsed.correct if parsed else all_wrong,
+                "json_failed": parsed is None,
+                "answers_sha": fingerprint(answers.get(key)["answers"]),
+            },
         )
     judgements.save()
     return failures
@@ -565,6 +653,10 @@ def score_row(
         "tokens_saved": tokens_original - tokens_compressed,
         "savings_pct": 100 * (1 - tokens_compressed / tokens_original),
         "latency_ms": compression["latency_ms"],
+        "requested_keep": method.rate,
+        "actual_keep": word_count(compression["text"]) / word_count(context(case)),
+        "attempts": compression.get("attempts", 0),
+        "length_miss": int(compression.get("length_miss", False)),
         "facts_total": facts_total,
         "facts_kept": facts_ok,
         "facts_kept_pct": 100 * facts_ok / facts_total if facts_total else math.nan,
@@ -654,6 +746,15 @@ def domain_drop_table(rows: pd.DataFrame, methods: Sequence[str] = DOMAIN_METHOD
     ).reset_index()
 
 
+def teacher_length_table(rows: pd.DataFrame) -> pd.DataFrame:
+    """Per teacher row: requested keep rate, actual keep rate (words), attempts used, and
+    whether the closest valid output still missed the length target."""
+    teachers = rows[rows["method"].isin(TEACHER_METHODS)]
+    columns = ["language", "case_id", "method", "requested_keep", "actual_keep", "attempts",
+               "length_miss", "teacher_failed"]
+    return teachers[columns].reset_index(drop=True)
+
+
 def token_ratio(cases: dict[str, list[dict[str, Any]]]) -> dict[str, float]:
     """Hebrew/English o200k token ratio of the original texts: overall and mean per case."""
     he = [count_tokens(context(case)) for case in cases["he"]]
@@ -669,6 +770,65 @@ def token_ratio(cases: dict[str, list[dict[str, Any]]]) -> dict[str, float]:
 
 def method_label(method: str, rate: float) -> str:
     return method if pd.isna(rate) else f"{method} @{rate:g}"
+
+
+def free_label_y(x: float, y: float, length: int, placed: list[tuple[float, float, int]]) -> float:
+    """Move a label down until it does not overlap labels already placed (data units: a
+    character is about 1 unit wide, a line about 4 units high)."""
+    while any(
+        abs(y - other_y) < LABEL_HEIGHT
+        and x < other_x + other_length * LABEL_CHAR_WIDTH
+        and other_x < x + length * LABEL_CHAR_WIDTH
+        for other_x, other_y, other_length in placed
+    ):
+        y -= LABEL_HEIGHT
+    return y
+
+
+def plot_main_chart(summary: pd.DataFrame, path: Path) -> plt.Figure:
+    """Main chart, one panel per language: x = tokens saved (%), y = answers correct (%).
+    A method with keep rates is one colored line from its 0.7 to its 0.5 point, named next to
+    its 0.5 point; methods without a rate are single named points; the original is a red star.
+    Light ±1 standard-error bars."""
+    names = [name for name in dict.fromkeys(summary["method"]) if name != "original"]
+    palette = [plt.get_cmap("tab10")(i) for i in range(10) if i != MAIN_CHART_RED_INDEX]
+    colors = {name: palette[i % len(palette)] for i, name in enumerate(names)}
+    colors["original"] = plt.get_cmap("tab10")(MAIN_CHART_RED_INDEX)
+    fig, axes = plt.subplots(1, len(LANGUAGES), figsize=(15, 6.5), sharey=True)
+    for ax, language in zip(axes, LANGUAGES, strict=True):
+        panel = summary[summary["language"] == language]
+        placed: list[tuple[float, float, int]] = []
+        for name, group in panel.groupby("method", sort=False):
+            group = group.sort_values("rate", ascending=False, na_position="first")
+            is_original = name == "original"
+            color = colors[name]
+            ax.errorbar(
+                group["savings_pct"],
+                group["accuracy_pct"],
+                xerr=group["savings_se"].fillna(0),
+                yerr=group["accuracy_se"].fillna(0),
+                fmt="*" if is_original else "o-",
+                markersize=16 if is_original else 6,
+                color=color,
+                ecolor=(*color[:3], 0.3),
+                elinewidth=0.8,
+                capsize=2,
+            )
+            last = group.iloc[-1]
+            x, y = last["savings_pct"] + 1.2, last["accuracy_pct"] - 1.0
+            y = free_label_y(x, y, len(name), placed)
+            placed.append((x, y, len(name)))
+            ax.text(x, y, name, fontsize=9, color=color, va="center")
+        ax.set_title(LANGUAGE_NAMES[language])
+        ax.set_xlabel("Tokens saved (%, o200k_base)")
+        ax.set_xlim(-5, 100)
+        ax.set_ylim(0, 105)
+        ax.grid(alpha=0.2)
+    axes[0].set_ylabel("Answers correct (%)")
+    fig.suptitle("Lines run from keep rate 0.7 to 0.5; light bars = ±1 SE", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(path, dpi=200)
+    return fig
 
 
 def plot_savings_vs_accuracy(summary: pd.DataFrame, path: Path) -> plt.Figure:
@@ -750,8 +910,10 @@ def write_summary_md(
     n_cases: dict[str, int],
     tables: Sequence[tuple[str, pd.DataFrame]],
     charts: Sequence[tuple[str, str]],
+    main_chart: tuple[str, str] | None = None,
 ) -> None:
-    """All result tables and charts; no go/no-go verdict and no thresholds."""
+    """All result tables and charts, the main chart first; no go/no-go verdict and no
+    thresholds."""
     lines = [
         "# 03 — Baselines and teachers (Test 3)",
         "",
@@ -764,6 +926,9 @@ def write_summary_md(
         f"- Mean per case: {ratio['mean_per_case']:.2f}",
         "",
     ]
+    if main_chart is not None:
+        title, filename = main_chart
+        lines = lines[:2] + [f"## {title}", "", f"![{title}]({filename})", ""] + lines[2:]
     for title, table in tables:
         lines += [f"## {title}", "", markdown_table(table, digits=3 if "$" in title else 1), ""]
     for title, filename in charts:
@@ -772,12 +937,16 @@ def write_summary_md(
 
 
 def fake_reply(request: LLMRequest) -> str:
-    """Offline replies for dry runs: teachers delete every third word, the chatbot returns
-    valid JSON, the judge returns verdicts that vary with the prompt (so charts have spread)."""
+    """Offline replies for dry runs: teachers delete every third word (every second word after
+    length feedback), the chatbot returns valid JSON, the judge returns verdicts that vary with
+    the prompt (so charts have spread)."""
     if request.role in TEACHER_METHODS:
         text = request.prompt.split("\n\n", 1)[1]
+        step = 3
+        if FEEDBACK_PREFIX in text:
+            text, step = text.rsplit(f"\n\n{FEEDBACK_PREFIX}", 1)[0], 2
         return "\n".join(
-            " ".join(word for i, word in enumerate(line.split()) if i % 3 != 2)
+            " ".join(word for i, word in enumerate(line.split()) if i % step != step - 1)
             for line in text.split("\n")
         )
     if request.role == "chatbot":
