@@ -62,7 +62,15 @@ Never delete numbers, dates, names, negations or conditions.
 Return only the shortened text.
 
 Validator: output must equal the original with only whole words (and, in
-Hebrew, leading prefixes) removed. A kept word may drop attached punctuation.
+Hebrew, leading prefixes) removed, in the original order. Also allowed:
+(A) a kept word may add, drop or change attached punctuation, and
+punctuation-only tokens are ignored; (B) English words are compared
+case-insensitively; (C) in Hebrew, a kept word may begin with prefix letters
+(ו ה ש ב ל כ מ) taken from the deleted word(s) directly before it (the run of
+deleted words since the previous kept word). Nothing else may be added.
+Validator relaxed after the 3-case dry run, before any full-run results,
+because formatting artifacts and morpheme-level prefix reattachment were
+rejected.
 If invalid: retry up to 2 times, then mark the case as failed and report the
 failure count.
 

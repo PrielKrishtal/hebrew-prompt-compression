@@ -3,7 +3,7 @@
 import re
 import time
 import unicodedata
-from collections.abc import Callable
+from collections.abc import Callable, Sequence
 from pathlib import Path
 from typing import Any
 
@@ -151,51 +151,66 @@ class NllbTranslator:
         )
 
 
-def is_subsequence(part: str, whole: str) -> bool:
-    """True if the characters of `part` appear in `whole` in order."""
-    remaining = iter(whole)
-    return all(char in remaining for char in part)
+def word_form(token: str, language: str) -> str:
+    """A token without attached punctuation (rule A); English is lowercased (rule B).
+    Punctuation-only tokens give "" and are ignored."""
+    body = split_punctuation(token)[1]
+    return body.lower() if language == "en" else body
+
+
+def leading_prefixes(word: str) -> set[str]:
+    """The Hebrew prefix-letter strings a word starts with, e.g. ובכלל -> {ו, וב}."""
+    prefixes = set()
+    for index, letter in enumerate(word[:-1]):
+        if letter not in HE_PREFIXES:
+            break
+        prefixes.add(word[: index + 1])
+    return prefixes
 
 
 def body_variants(body: str, language: str) -> set[str]:
     """The body itself plus, in Hebrew, the body with 1, 2, ... leading prefixes stripped."""
     variants = {body}
     if language == "he":
-        for index, letter in enumerate(body[:-1]):
-            if letter not in HE_PREFIXES:
-                break
-            variants.add(body[index + 1:])
+        variants |= {body[len(prefix):] for prefix in leading_prefixes(body)}
     return variants
 
 
-def token_matches(kept: str, original: str, language: str) -> bool:
-    """True if `kept` is `original` with attached punctuation and (Hebrew) prefixes dropped."""
-    kept_lead, kept_body, kept_trail = split_punctuation(kept)
-    lead, body, trail = split_punctuation(original)
-    if not kept_body:
-        return not body and is_subsequence(kept, original)
-    return (
-        kept_body in body_variants(body, language)
-        and is_subsequence(kept_lead, lead)
-        and is_subsequence(kept_trail, trail)
-    )
+def word_matches(kept: str, original: str, deleted: Sequence[str], language: str) -> bool:
+    """True if `kept` is `original` with (Hebrew) leading prefixes dropped, or - rule C - with
+    prefix letters moved onto it from a word in the deleted run directly before it."""
+    variants = body_variants(original, language)
+    if kept in variants:
+        return True
+    if language != "he":
+        return False
+    moved = {prefix for word in deleted for prefix in leading_prefixes(word)}
+    return any(kept.startswith(p) and kept[len(p):] in variants for p in moved)
 
 
 def first_violation(original: str, output: str, language: str) -> str | None:
-    """Return the first output token that breaks the in-order deletion rule, or None if valid."""
-    original_tokens = original.split()
+    """Return the first output word that breaks the in-order deletion rule, or None if valid.
+    Rules: words only deleted, order kept; A) attached punctuation may change and
+    punctuation-only tokens are ignored; B) English is compared case-insensitively;
+    C) Hebrew may move prefix letters from the deleted run directly before a kept word."""
+    original_words = [w for w in (word_form(t, language) for t in original.split()) if w]
     position = 0
     for token in output.split():
-        while position < len(original_tokens) and not token_matches(
-            token, original_tokens[position], language
+        kept = word_form(token, language)
+        if not kept:
+            continue
+        start = position
+        while position < len(original_words) and not word_matches(
+            kept, original_words[position], original_words[start:position], language
         ):
             position += 1
-        if position == len(original_tokens):
+        if position == len(original_words):
             return token
         position += 1
     return None
 
 
 def is_valid_deletion(original: str, output: str, language: str) -> bool:
-    """True if `output` is non-empty and only deletes from `original` (spec validator)."""
-    return bool(output.strip()) and first_violation(original, output, language) is None
+    """True if `output` keeps at least one word and only deletes from `original`."""
+    has_words = any(word_form(token, language) for token in output.split())
+    return has_words and first_violation(original, output, language) is None
