@@ -98,7 +98,8 @@ Return JSON only: {"correct": [true/false, true/false, true/false]}
 - savings = 1 − tokens(compressed) / tokens(original), tiktoken o200k_base,
   always vs. the original in that language
 - accuracy = % of answers judged correct; drop = accuracy(original) − accuracy(method)
-- facts_kept = % of critical_facts still present (exact substring);
+- facts_kept = % of critical_facts still present (exact substring after
+  normalizing whitespace and spaces around punctuation, same for all methods);
   translation methods: digit-containing facts only
 - latency_ms = time of the compression step only, CPU (not for teachers)
 - teacher_failures = cases where the validator failed after retries
