@@ -21,7 +21,7 @@ import threading
 import time
 from collections import Counter, defaultdict
 from collections.abc import Callable, Sequence
-from concurrent.futures import Future, ThreadPoolExecutor, as_completed
+from concurrent.futures import CancelledError, Future, ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 from statistics import mean
@@ -448,6 +448,16 @@ def parse_json_reply[Schema: BaseModel](text: str, schema: type[Schema]) -> Sche
         return None
 
 
+def root_error(futures: dict[Future[Any], Any]) -> BaseException | None:
+    """The error that stopped a stage (not the cancellations it caused), if any."""
+    for future in futures:
+        if future.done() and not future.cancelled():
+            error = future.exception()
+            if error is not None and not isinstance(error, CancelledError):
+                return error
+    return None
+
+
 def record_cost(record: dict[str, Any]) -> float:
     """Everything paid for a cached reply, including a cut-off reply it replaced."""
     return record["cost_usd"] + record.get("earlier_cost_usd", 0.0)
@@ -695,12 +705,24 @@ class LLMClient:
             by_provider[request.provider].append(request)
         results: dict[str, LLMResult] = {}
         counts: Counter[str] = Counter()
+        stop = threading.Event()
+
+        def guarded_call(request: LLMRequest) -> LLMResult:
+            """Skip the call once the stage is stopping; the first failing call stops it."""
+            if stop.is_set():
+                raise CancelledError("stage stopped before this call started")
+            try:
+                return self.call(request)
+            except BaseException:
+                stop.set()
+                raise
+
         with tqdm(total=len(unique), desc=desc, disable=desc is None or not unique) as bar:
             for provider_name, group in by_provider.items():
                 workers = min(MAX_CONCURRENCY, self.providers[provider_name].max_workers)
                 with ThreadPoolExecutor(max_workers=workers) as pool:
                     futures: dict[Future[LLMResult], LLMRequest] = {
-                        pool.submit(self.call, request): request for request in group
+                        pool.submit(guarded_call, request): request for request in group
                     }
                     handled: set[Future[LLMResult]] = set()
                     try:
@@ -714,9 +736,11 @@ class LLMClient:
                             bar.update(1)
                             self._show_spend(bar, counts)
                             monitor.observe(result, ok)
-                    except BaseException:
+                    except BaseException as error:
+                        stop.set()
                         spent_at_stop = self.session_spend()
                         pool.shutdown(wait=True, cancel_futures=True)
+                        root = root_error(futures) if isinstance(error, CancelledError) else None
                         in_flight = sum(
                             f not in handled and not f.cancelled() and f.exception() is None
                             for f in futures
@@ -727,6 +751,8 @@ class LLMClient:
                             f"(${self.session_spend() - spent_at_stop:.3f}); session spend "
                             f"${self.session_spend():.3f}"
                         )
+                        if root is not None:
+                            raise root from None
                         raise
         return [results[request.cache_key()] for request in requests]
 
