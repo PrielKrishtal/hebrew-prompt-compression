@@ -22,6 +22,7 @@ dependencies = [
     "torch==2.15.0",
     "llmlingua==0.2.2",
     "spacy==3.8.18",
+    "tqdm==4.70.1",
 ]
 
 [project.optional-dependencies]
