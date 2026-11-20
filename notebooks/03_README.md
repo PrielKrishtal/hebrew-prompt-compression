@@ -38,9 +38,12 @@ The go/no-go decision is ours. The code does not write it.
 | `.env` / `.env.example` | API keys (`.env` is gitignored) | Names: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `GEMINI_API_KEY_2`, `HF_TOKEN`. The notebook checks only the names its providers need. It does not check `HF_TOKEN`, and the Hugging Face models are public. | Config / environment |
 | `data/cache/03/` | Cache (gitignored, created on first run) | `llm/<role>_<hash>.json` holds one file per API reply, with its usage and cost. `local.json` holds the local-method outputs. `real/`, `gemini/` and `fake/` each hold `teachers.json`, `answers.json` and `judgements.json`, one folder per run mode. | Every stage |
 | `results/03_results{SUFFIX}.csv` | Output | One row per case/method/rate/language, counts and scores only (no text) | Metrics |
-| `results/03_summary{SUFFIX}.csv` | Output | Means per method/rate/language plus failure counts | Metrics |
-| `results/03_savings_vs_accuracy{SUFFIX}.png` | Output | Chart: one panel per language | Chart |
-| `results/03_summary{SUFFIX}.md` | Output | Token ratio, tables and chart; no verdict | Summary |
+| `results/03_summary{SUFFIX}.csv` | Output | Means, standard errors, per-question accuracy and failure counts per method/rate/language | Results (a) |
+| `results/03_question_types{SUFFIX}.csv` | Output | Accuracy per question type (Q1 numbers/dates, Q2 negations/conditions, Q3 from history) | Results (b) |
+| `results/03_savings_vs_accuracy{SUFFIX}.png`, `03_accuracy_bars{SUFFIX}.png`, `03_facts_kept_bars{SUFFIX}.png` | Output | Charts with ±1 standard-error bars, one panel per language | Results (c) |
+| `results/03_domain_drop{SUFFIX}.csv` | Output | Accuracy drop vs. original per domain for llmlingua2_large and both teachers | Results (d) |
+| `results/03_spend{SUFFIX}.csv` | Output | Per stage and provider: calls, new/cached this session, tokens in/out, $ | Results (e) |
+| `results/03_summary{SUFFIX}.md` | Output | Token ratio, all tables and the 3 charts; no verdict | Results (f) |
 
 `SUFFIX` is empty only for the real full run (`PROVIDER_OVERRIDE = None`, `DRY_RUN_N = None`).
 Other runs add a tag such as `_real_n3` or `_fake_n3`, so they never overwrite the real results.
@@ -58,10 +61,15 @@ Other runs add a tag such as `_real_n3` or `_fake_n3`, so they never overwrite t
 | 7 | Teachers | Two LLMs shorten each text by deleting only. Output that fails the validator is retried up to 2 times; after that the original text is kept and the case is marked failed. | cell "7", `run_teachers` | cases, teacher prompts | `<mode>/teachers.json` | paid |
 | 8 | Chatbot answers | Answers the 3 questions from each shortened text, as JSON. Invalid JSON is retried once; if still invalid, the 3 answers count as incorrect. | cell "8", `run_answers` | compressions, chatbot prompt | `<mode>/answers.json` | paid |
 | 9 | Judge | One blind call per answer set (the judge never sees the method). Grades the 3 answers against the correct answers. JSON failures count as incorrect. | cell "9", `run_judge` | answers, correct answers | `<mode>/judgements.json` | paid |
-| 10 | Metrics | Per row: tokens, savings %, tokens saved, accuracy, drop vs. original, facts kept, latency and failure flags. Then the means. | cell "10", `score_rows`, `summarize` | all stores | `03_results*.csv`, `03_summary*.csv` | free |
-| 11 | Chart | Savings vs. accuracy, one panel per language | cell "11", `plot_savings_vs_accuracy` | summary | `03_savings_vs_accuracy*.png` | free |
-| 12 | Summary | Writes the token ratio and tables, with no verdict | cell "12", `write_summary_md` | summary | `03_summary*.md` | free |
-| 13 | Spend and usage | Shows calls and cost this session and the all-time total per provider against its cap. Also shows the output tokens used per role against its output limit. | cell "13", `client.ledger`, `all_time_spend`, `usage_by_role` | the LLM cache | printed totals | free |
+| 10 | (a) Summary table | Per row: tokens, savings %, tokens saved, accuracy, drop vs. original, facts kept, latency and failure flags. Then the means per language × method × rate. | cell "10", `score_rows`, `summarize`, `results_table` | all stores | `03_results*.csv`, `03_summary*.csv` | free |
+| 11 | (b) Question types | Accuracy for Q1 numbers/dates, Q2 negations/conditions and Q3 from history | cell "11", `question_type_table` | summary | `03_question_types*.csv` | free |
+| 12 | (c) Charts | Savings vs. accuracy (±1 SE, original marked), plus accuracy bars and facts-kept bars | cell "12", `plot_savings_vs_accuracy`, `plot_metric_bars` | summary | 3 PNGs | free |
+| 13 | (d) Domains | Accuracy drop per domain for llmlingua2_large and both teachers | cell "13", `domain_drop_table` | rows | `03_domain_drop*.csv` | free |
+| 14 | (e) Spend | Per stage and provider: calls, new/cached this session, tokens in/out and $. Also all-time spend against the caps, and output tokens used per role against its limit. | cell "14", `spend_by_stage`, `usage_by_role` | the LLM cache | `03_spend*.csv` | free |
+| 15 | (f) Summary file | Token ratio, all tables and the charts; no verdict | cell "15", `write_summary_md` | tables, charts | `03_summary*.md` | free |
+
+Facts are matched after cleaning both the fact and the text the same way (`normalize_for_match`):
+runs of spaces collapse to one, and spaces next to punctuation or symbols are dropped.
 
 Every API stage shows a progress bar with ETA, cache hits, failures and spend so far.
 

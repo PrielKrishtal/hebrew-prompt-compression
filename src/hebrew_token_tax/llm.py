@@ -451,12 +451,21 @@ class SpendLedger:
 
     cost: dict[str, float] = field(default_factory=lambda: defaultdict(float))
     calls: Counter[str] = field(default_factory=Counter)
+    new_by_stage: Counter[tuple[str, str]] = field(default_factory=Counter)
+    cached_by_stage: Counter[tuple[str, str]] = field(default_factory=Counter)
     _lock: threading.Lock = field(default_factory=threading.Lock, repr=False)
 
-    def add(self, provider: str, cost: float) -> None:
+    def add(self, request: LLMRequest, cost: float) -> None:
+        """Record one paid (uncached) call."""
         with self._lock:
-            self.cost[provider] += cost
-            self.calls[provider] += 1
+            self.cost[request.provider] += cost
+            self.calls[request.provider] += 1
+            self.new_by_stage[(request.role, request.provider)] += 1
+
+    def add_cache_hit(self, request: LLMRequest) -> None:
+        """Record one reply served from the cache."""
+        with self._lock:
+            self.cached_by_stage[(request.role, request.provider)] += 1
 
 
 @dataclass(frozen=True)
@@ -619,6 +628,7 @@ class LLMClient:
         cache the reply and pay once."""
         path = self.cache_path(request)
         if path.exists():
+            self.ledger.add_cache_hit(request)
             return self._cached_result(request, path)
         provider = self.providers[request.provider]
         price = self.price(request)
@@ -637,7 +647,7 @@ class LLMClient:
                 "error": reply.error,
             }
             path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
-            self.ledger.add(request.provider, cost)
+            self.ledger.add(request, cost)
         finally:
             self._release(request, reservation)
         if provider.pause_seconds:
@@ -746,6 +756,32 @@ class LLMClient:
             )
             for key, records in samples.items()
         }
+
+    def spend_by_stage(self) -> list[dict[str, Any]]:
+        """Per stage (role) and provider: paid calls, tokens and cost over all cached calls
+        (all sessions), plus this session's new calls and cache hits."""
+        totals: dict[tuple[str, str], Counter[str]] = defaultdict(Counter)
+        costs: dict[tuple[str, str], float] = defaultdict(float)
+        for record in self.cached_records():
+            key = (record["request"]["role"], record["request"]["provider"])
+            totals[key].update(
+                calls=1, tokens_in=record["input_tokens"], tokens_out=record["output_tokens"]
+            )
+            costs[key] += record["cost_usd"]
+        keys = set(totals) | set(self.ledger.cached_by_stage)
+        return [
+            {
+                "stage": role,
+                "provider": provider,
+                "calls (all time)": totals[(role, provider)]["calls"],
+                "new this session": self.ledger.new_by_stage[(role, provider)],
+                "cached this session": self.ledger.cached_by_stage[(role, provider)],
+                "tokens in": totals[(role, provider)]["tokens_in"],
+                "tokens out": totals[(role, provider)]["tokens_out"],
+                "cost $": round(costs[(role, provider)], 4),
+            }
+            for role, provider in sorted(keys)
+        ]
 
     def usage_by_role(self) -> list[dict[str, Any]]:
         """Per (role, model) over all cached calls: calls, cost, and mean/max output tokens
