@@ -1,0 +1,13 @@
+language,method,rate,insurance
+en,llmlingua2_large,0.5,0.0
+en,llmlingua2_large,0.7,0.0
+en,teacher_opus,0.5,0.0
+en,teacher_opus,0.7,0.0
+en,teacher_sol,0.5,22.222222222222218
+en,teacher_sol,0.7,0.0
+he,llmlingua2_large,0.5,22.222222222222218
+he,llmlingua2_large,0.7,0.0
+he,teacher_opus,0.5,11.111111111111109
+he,teacher_opus,0.7,0.0
+he,teacher_sol,0.5,0.0
+he,teacher_sol,0.7,0.0
