@@ -1,0 +1,264 @@
+[
+  {
+    "id": "tel_01",
+    "domain": "telecom",
+    "history": "Customer: Hi, this is Assaf Barak. I got this month's bill with a NIS 310 charge for data abroad, and I don't understand why. I bought the Masa Plus package before my flight.\nAgent: Hi Assaf, this is Noy from Gali Communications. Happy to check. Where did you travel, and when?\nCustomer: I was in Georgia, from October 3 to 10. The package was activated, I got a message saying it was active.\nAgent: I can see the package was indeed activated on October 3. The extra charge was for 3.1GB of data beyond your allowance. Georgia is on the package's destination list, so the package itself worked as it should. You were also sent a message on October 6 that you'd used up your allowance.\nCustomer: But the rep who sold it to me said it was unlimited. Can you check what exactly the package includes? Because I'm not going to pay for something nobody explained to me.\nAgent: Of course, I'm opening the package terms now and we'll go through them together.",
+    "doc": "Masa Plus Package – Data and Calls Abroad. The package includes 5GB of data and 60 call minutes for 30 days from activation, at a price of NIS 59, in 45 destinations listed on the Gali Communications website. The package does not include unlimited browsing. Once the allowance has been used up, a notice will be sent to the customer, and browsing will continue at a rate of NIS 10 per 100MB, up to a billing cap of NIS 400 per month. The customer may block browsing after the allowance has been used up via the app or the service center. A charge for data beyond the allowance will not be cancelled if a usage notice as described was sent to the customer. Incoming calls abroad are not included in the package minutes and will be charged separately. An additional package may be purchased at any time during the stay, and it will be activated immediately upon purchase. The package is valid only in the destinations on the list; data used in a destination not on the list will be charged at the standard roaming rate even if the package is active. The usage notice is sent by SMS to the line's number only, and not to the email address. A customer who disputes a charge may submit a written objection, and the company will respond within 14 days of receiving it.",
+    "questions": [
+      "What is the monthly billing cap for data beyond the allowance?",
+      "Will the charge be cancelled if a usage notice was sent to the customer?",
+      "On what dates was Assaf in Georgia?"
+    ],
+    "correct_answers": [
+      "NIS 400 per month",
+      "will not be cancelled",
+      "from October 3 to 10"
+    ],
+    "critical_facts": [
+      "Assaf Barak",
+      "Gali Communications",
+      "Masa Plus",
+      "NIS 310",
+      "from October 3 to 10",
+      "3.1GB",
+      "October 6",
+      "5GB",
+      "NIS 59",
+      "does not include unlimited browsing",
+      "NIS 10 per 100MB",
+      "NIS 400 per month",
+      "will not be cancelled",
+      "are not included in the package minutes"
+    ]
+  },
+  {
+    "id": "tel_02",
+    "domain": "telecom",
+    "history": "Customer: I'm paying you for Sib 1000 and getting 90 Mbps!!! It's been like this for two weeks, I work from home and I literally can't work\nAgent: Hello, this is Yaron from Sib-Net. Sorry to hear that. Could I have your name? And did you test the speed with a cable or over Wi-Fi?\nCustomer: Ido Shemesh. Wi-Fi obviously, who plugs in a cable these days? And don't tell me to restart the router, I've done that ten times.\nAgent: I understand. Look, the speed over Wi-Fi can be lower, it depends on a lot of things, distance, walls, all kinds of stuff like that. It depends.\nCustomer: I'm sitting two meters from the router! And last week it worked perfectly. I want a technician, and I'm not paying a cent for it, just so we're clear. And I also can't wait at home all day, I have meetings. I already called you on November 4 and they told me it would sort itself out.\nAgent: We can schedule a technician, yes. As for paying for the visit, it depends whether the fault is on our side or yours. There are all kinds of situations. It also depends on the router, whether it's ours or not.\nCustomer: What do you mean on my side? It's your router! I got it from you when I joined in March, and I pay NIS 15 a month for it. And if you don't fix this this week, I want a credit for the whole period, and maybe I'll just leave. And if you replace the router, bring a new one that actually works, not another used one.\nAgent: Let me check this against the technician and credit procedure and I'll get right back to you with an answer.",
+    "doc": "Technician Visits and Compensation for Reduced Speed – Sib-Net Plans. A customer on the Sib 1000 plan is entitled to a maximum browsing speed of 1,000 Mbps over a wired connection. Speed achieved over a wireless network is not guaranteed, and a speed test will be considered valid only when performed on a computer connected to the router by cable. A technician visit will be scheduled within 3 business days of the inquiry. A technician visit will not be charged when the fault is found in the company's infrastructure or in a router supplied by the company. When the fault is found in the customer's private equipment or home network, the customer will be charged a visit fee of NIS 149. If, for more than 7 consecutive days, a wired connection measures a speed lower than 40% of the plan speed, the customer will be credited pro rata for the days of the fault, provided that they reported it to the service center. No credit will be given for days preceding the date of the first report. A customer whose fault has not been fixed within 30 days of the report may disconnect from the service without exit fees. The router remains the property of the company and must be returned within 14 days of disconnection; a router that is not returned will be charged at NIS 350. Technician visits can be scheduled Sunday to Thursday between 08:00 and 20:00, and on Fridays until 13:00. A customer who is not present at the scheduled time and did not cancel the visit at least 4 hours in advance will be charged the visit fee, even if the fault is in the company's infrastructure. A technician may replace a faulty router on the spot at no additional cost to the customer.",
+    "questions": [
+      "How much will the customer pay for a technician visit if the fault is in their home network?",
+      "Under what condition is a speed test considered valid?",
+      "How much does Ido pay each month for the router?"
+    ],
+    "correct_answers": [
+      "NIS 149",
+      "a computer connected to the router by cable",
+      "NIS 15 a month"
+    ],
+    "critical_facts": [
+      "Ido Shemesh",
+      "Sib-Net",
+      "Sib 1000",
+      "90 Mbps",
+      "November 4",
+      "NIS 15 a month",
+      "is not guaranteed",
+      "on a computer connected to the router by cable",
+      "3 business days",
+      "will not be charged",
+      "NIS 149",
+      "more than 7 consecutive days",
+      "40%",
+      "No credit will be given for days preceding the date of the first report",
+      "NIS 350"
+    ]
+  },
+  {
+    "id": "tel_03",
+    "domain": "telecom",
+    "history": "Customer: Hello, good thing you answered, I waited almost a quarter of an hour. Listen, I want to understand something before I make a move, because I've been burned before with another company. We have the Family 4 Lines package with you, me, my husband and our two kids, for something like three years now. Now my daughter, Yael, is moving to Haifa with a friend, my son is enlisting next month, and my husband says his new job is giving him a company line. So basically only my line is left, and there's no point paying NIS 219 a month for four lines. On the other hand, a year ago I bought a phone for my son from you in installments, and I don't remember how much is left. So my question is what happens if I cancel everything and move to another company.\nAgent: Hello Margalit, this is Kobi from Orbit Cellular. I understand. So if you cancel, there are a few things to consider. There are the payments on the device, and there's the package itself. And there are also the kids' lines, and there's your line.\nCustomer: Yes, I understand that, that's why I'm asking. I don't want to suddenly get a bill for thousands of shekels. Another thing, when we joined, the rep told me there's no commitment at all, but a friend of mine says family packages always have some kind of penalty. So which is it? And tell me also, if I don't cancel everything, just the other three lines and keep mine, do I still pay the family package price?\nAgent: So like I said, there are the payments on the device and there's the package. I can see there are 8 payments of NIS 74 left on the device. As for the commitment, I need to check. It depends on the package.\nCustomer: 8 payments, okay. And if I cancel, do I have to pay all of it at once? Because that's a sum. And something else that matters to me: my son, when he enlists, I understand soldiers have special plans. If he moves to a soldiers' plan with you, is that still part of the package or does it come out of it? I want to know all the options before I decide, I don't like doing things under pressure.\nAgent: I see, good questions. So about the device, there's an option to keep paying in installments or to pay it off. And about soldiers, there's a plan, yes. So there are a few options. I want to check this properly in the terms.\nCustomer: And please, if you can, tell me also by when I need to decide. Because Yael is already starting a contract with another company on December 1, and she asked me whether she needs to do anything on her end, or whether she just ports the number and that's it. I don't want her to fall between the cracks and be left without a phone for a day or two, especially when she's on her own in a new city. And my husband asked something else: if we cancel, will our son's phone be locked to you? Because he wants to keep using it in the army.\nAgent: Sure. I'm opening the cancellation terms for Family 4 Lines now and I'll go through everything with you, the device, the lines and Yael's porting.",
+    "doc": "Cancelling and Reducing Lines – Family 4 Lines Package. The package does not include a commitment period, and a customer may cancel it or reduce the number of lines at any time without exit fees. The package price, NIS 219 per month, applies only when at least 3 lines are active in it. If fewer than 3 lines remain in the package, the remaining lines will be automatically moved to a single-line plan at the regular price list, starting from the next billing cycle. Porting a number to another company is carried out at the initiative of the receiving company, and does not require the customer to contact Orbit Cellular; the line will be disconnected on our side only once the porting is completed, so there will be no interruption in service. Cancelling the package does not cancel the device purchase agreement. The remaining installments on a device will continue to be collected on their original dates, and immediate repayment will not be required, unless the customer requests it. A customer who asks to settle the balance in a single payment will receive a discount of 5% of the balance. A line moved to a soldiers' plan is considered a separate line and is not counted toward the number of lines in the family package, even if it is registered under the same account holder. A soldiers' plan requires presenting a military ID within 30 days of the switch. A request to cancel or reduce lines will take effect at the end of the billing cycle in which it was submitted, and the final bill will be sent within 10 days of closure. A customer who wishes to keep the device of a cancelled line may do so, and the device is not locked to the Orbit Cellular network. When moving to a single-line plan, the phone number and voicemail will be kept, and no additional payment will be required. A request to reduce lines can be submitted in the personal area, without needing to speak to an agent.",
+    "questions": [
+      "What discount does a customer get for settling the device balance in a single payment?",
+      "Does Margalit have to pay the device balance immediately upon cancellation?",
+      "When does Yael start a contract with another company?"
+    ],
+    "correct_answers": [
+      "5% of the balance",
+      "immediate repayment will not be required",
+      "on December 1"
+    ],
+    "critical_facts": [
+      "Margalit",
+      "Yael",
+      "Kobi",
+      "Orbit Cellular",
+      "Family 4 Lines",
+      "NIS 219",
+      "8 payments of NIS 74",
+      "December 1",
+      "does not include a commitment period",
+      "at least 3 lines",
+      "does not require the customer to contact",
+      "immediate repayment will not be required",
+      "5% of the balance",
+      "is not counted toward the number of lines",
+      "30 days"
+    ]
+  },
+  {
+    "id": "tel_04",
+    "domain": "telecom",
+    "history": "Customer: hi. do i get a student discount?\nAgent: Hi, this is Maya from Keshet Mobile. How old are you and where do you study?\nCustomer: 27. college, bachelor's in engineering, second year\nAgent: Great. And which plan are you on now?\nCustomer: Free 59\nAgent: I can see you don't currently have any active discount on the line. One sec, checking eligibility.\nCustomer: ok. need anything? i have a letter from the registrar from september, is that good?\nAgent: Yes, proof of enrollment for the current year, so a letter from September should be fine. One moment, I'm confirming the other conditions and I'll explain how to upload it.",
+    "doc": "Student 39 Plan – Eligibility Conditions. The plan is intended for students studying for a degree at a recognized institution of higher education, and its price is NIS 39 per month, compared with NIS 59 on the Free 59 plan. A condition for joining is presenting valid proof of enrollment for the current academic year. The plan is not available to customers over 30 at the time of joining. The plan includes 100GB of data and unlimited calls within Israel, and does not include calls abroad. Proof of enrollment must be renewed every year by October 31; a customer who does not renew the proof will be automatically moved to the Free 59 plan. Switching to the Student 39 plan involves no switching fee and does not require replacing the SIM card. Students in certificate programs or short courses are not eligible for the plan. The discount cannot be combined with another discount on the same line, and it will take effect at the start of the next billing cycle after the documents are approved. A customer aged up to 30 on another plan can switch to the Student 39 plan at any time via the app, by uploading a photo of the proof of enrollment. The proof will be reviewed within 2 business days, and the customer will receive a notice of approval or rejection. The plan is limited to one line per student and cannot be transferred to a family member.",
+    "questions": [
+      "By what date must proof of enrollment be renewed?",
+      "What happens to a customer who did not renew their proof of enrollment?",
+      "How old is the customer?"
+    ],
+    "correct_answers": [
+      "by October 31",
+      "automatically moved to the Free 59 plan",
+      "27"
+    ],
+    "critical_facts": [
+      "Maya",
+      "Keshet Mobile",
+      "27",
+      "Free 59",
+      "you don't currently have any active discount",
+      "Student 39",
+      "NIS 39 per month",
+      "NIS 59",
+      "is not available to customers over 30",
+      "100GB",
+      "and does not include calls abroad",
+      "by October 31",
+      "will be automatically moved to the Free 59 plan",
+      "are not eligible for the plan",
+      "cannot be combined with another discount"
+    ]
+  },
+  {
+    "id": "tel_05",
+    "domain": "telecom",
+    "history": "Customer: Move me to Basic 29. Now. I'm paying 129 for Ultra 5G and I barely use it. For half a year now I've been seeing on my bill that I don't even come close to the allowance\nAgent: Hello, this is Alon from Nativ Telecom. Sure, just a few quick questions. Whose name is the line under? I need to make sure I'm speaking with the line owner.\nCustomer: Roni Dahan. And hurry up please, I'm in the middle of work\nAgent: Thanks Roni. I can see you used 6GB last month, and your billing cycle starts on the 15th of every month, which is today. It's also important you know that the NIS 129 you're paying is a promotional price you got when you joined.\nCustomer: Great, so start it from today. And I don't want to pay the 129 for this month, only 29. Because I heard that people who switch plans mid-month get charged double, and that's not happening to me.\nAgent: I understand. You also have the Tzfiya+ service that comes with Ultra, and I want you to know what happens to it when you switch before I approve.\nCustomer: Don't need it, never even opened it. What else? And if I change my mind in a month, can I go back to Ultra at the same price? Because I don't want to get stuck. And anyway, why did no one at your company offer me this before?\nAgent: I'm checking both of those in the switching terms right now, and we'll wrap this up fast. It's 15:30 now, so we're in time. Meanwhile I'm verifying your identity against the details on the account.",
+    "doc": "Switching Between Plans – Nativ Telecom. A customer may switch between plans at any time via the app, the website or the service center. A switch to a cheaper plan will take effect at the start of the next billing cycle, while a switch to a more expensive plan will take effect immediately. A switch request received on the first day of the billing cycle, by 20:00, will take effect in that same cycle. When switching between plans there is no double charge, and the bill will be calculated according to the plan in effect in each cycle. The Tzfiya+ service is included in the Ultra 5G plan only, and is not included in the Basic 29 plan; upon switching, the service will be discontinued, and content purchased through it will no longer be viewable. A promotional price given at the time of joining is not retained after a plan change: a customer who returns to the Ultra 5G plan will be charged according to the standard price list, NIS 169 per month. The Basic 29 plan includes 10GB of data; once the allowance is used up, the speed will be reduced to 1 Mbps, at no additional charge. A plan change does not change the phone number and does not require replacing the SIM. The customer will receive an SMS confirming the switch and its effective date within 24 hours. A customer who switched to a cheaper plan and asks to return to the previous plan within 30 days will not be charged a switching fee, but the price will be set according to the standard price list. A switch request via the service center requires identity verification of the line owner, and will not be carried out for anyone who is not registered as the line owner.",
+    "questions": [
+      "How much will Roni pay per month if he goes back to Ultra 5G?",
+      "Is the Tzfiya+ service included in the Basic 29 plan?",
+      "How much data did Roni use last month?"
+    ],
+    "correct_answers": [
+      "NIS 169 per month",
+      "is not included in the Basic 29 plan",
+      "6GB"
+    ],
+    "critical_facts": [
+      "Roni Dahan",
+      "Nativ Telecom",
+      "Ultra 5G",
+      "Basic 29",
+      "NIS 129",
+      "6GB",
+      "15th of every month",
+      "15:30",
+      "by 20:00",
+      "there is no double charge",
+      "is not included in the Basic 29 plan",
+      "is not retained after a plan change",
+      "NIS 169 per month",
+      "10GB",
+      "at no additional charge"
+    ]
+  },
+  {
+    "id": "tel_06",
+    "domain": "telecom",
+    "history": "Customer: yo i lost my phone yesterday at a party, need to block the line asap\nAgent: Hey, this is Guy from Zerem Cellular. Good thing you called quickly, I'm blocking it for you now. Can I have your full name?\nCustomer: Dor Almog. just block it already pls, i have bank apps and everything on there\nAgent: The line is blocked as of now, 14:10. You're on the Zerem Free plan, so no usage will be charged from now on. Want to get a new SIM?\nCustomer: yeah but im buying a new phone tmrw that has eSIM, how much is it and when does it work? cant be bothered going to a branch and dont feel like waiting days for the mail either. and wait, do i keep paying for the month while the line is blocked? cuz that makes no sense\nAgent: One sec, checking both of those in the terms for you",
+    "doc": "Line Blocking and Replacement SIM Issuance – Zerem Free Plan. A customer who has reported the loss or theft of a device may block the line immediately, free of charge. During the blocking period the customer will continue to pay the monthly subscription fee, and no credit is given for blocked days. Issuing a replacement physical SIM card costs NIS 25, and the card will be sent by mail within 3 business days or handed over at a branch. Issuing a replacement eSIM does not involve any payment, and it is activated via the app within 15 minutes, provided that the customer verifies their identity using a code sent to the email address registered on the account. An eSIM cannot be activated while the line is blocked; a release of the block must be requested before activation. A block that has not been released within 90 days will lead to disconnection of the line. The phone number is fully retained throughout the blocking period. A customer who finds the original device may release the block themselves in the personal area. When a replacement card is issued, the previous card is permanently deactivated and cannot be reactivated. An eSIM can be issued only on a device that supports the technology, and the customer is responsible for checking this before making the request. Contacts and photos stored on the device are not restored by the company.",
+    "questions": [
+      "Within how long is a replacement eSIM activated?",
+      "Will Dor receive a credit for the days the line is blocked?",
+      "At what time was Dor's line blocked?"
+    ],
+    "correct_answers": [
+      "within 15 minutes",
+      "no credit is given for blocked days",
+      "14:10"
+    ],
+    "critical_facts": [
+      "Dor Almog",
+      "Guy",
+      "Zerem Cellular",
+      "Zerem Free",
+      "14:10",
+      "free of charge",
+      "no credit is given for blocked days",
+      "NIS 25",
+      "3 business days",
+      "does not involve any payment",
+      "within 15 minutes",
+      "provided that the customer verifies their identity",
+      "An eSIM cannot be activated while the line is blocked",
+      "90 days"
+    ]
+  },
+  {
+    "id": "tel_07",
+    "domain": "telecom",
+    "history": "Customer: Good afternoon. I can see on my November bill that the price of Triple Tedder jumped from NIS 149 to NIS 239. I'd like to understand why, because I didn't receive any advance notice. I'm a reliable customer, I always pay by direct debit and I've never missed a payment.\nAgent: Good afternoon Orna, this is Sagi from Tedder Communications. I can see you joined on November 1, 2025 at a promotional price for one year, and the promotion ended at the end of October.\nCustomer: I understand it was a promotion, but as far as I know you're required to give notice before raising a price. I checked both my email and my messages, and there's nothing.\nAgent: I'm checking the system. I can see a notice was sent on October 12, but it was sent to an old email address that appears on your account. I also checked your payment history, and there are no arrears in the past year.\nCustomer: An old address? I updated it with you in August by phone. So basically I didn't get any notice, and that's not my fault. I'm not asking for favors, just that you do what the terms say.\nAgent: I completely understand. I'm finding a record of your update from August, so the notice didn't reach your current address. Let's see what the terms say in a case like this.\nCustomer: Fine. And if after all this the new price stays, I'm considering leaving. Does that mean I have to return the set-top box and the router? I work late and I have no time to go to a service center, and I'd rather not pay for a courier unless I have to.\nAgent: I'll answer that too. I'm opening the section on promotion end and price changes now, and then the section on returning equipment.",
+    "doc": "End of Promotional Period and Price Changes – Triple Tedder Package. A promotional price is given for a fixed period of 12 months from the date of joining. At the end of the period, the price will be updated to the list price, which is NIS 239 per month. The company will send the customer notice of the end of the promotion and of the new price at least 21 days before the change, according to the up-to-date contact details on the account. If the notice was not sent as required, the new price will not apply until 21 days have passed from the date a proper notice is sent, and the customer will be credited with the difference for the period in which they were charged improperly. A customer may choose a retention price of NIS 189 per month for an additional 12 months, provided that they have had no payment arrears in the past year. Ending the service does not involve exit fees. Upon ending the service, the set-top box and the router must be returned to one of the company's service centers within 14 days; equipment that is not returned will be charged at NIS 290 for the set-top box and NIS 350 for the router. Returning equipment via a courier on behalf of the company costs NIS 39. An objection to a charge may be filed within 6 months of the bill date. A credit for an improper charge will be given on the next bill, and not as a refund to the bank account. A customer who asks to end the service will receive written confirmation of the disconnection date, and the final charge will be calculated pro rata up to the disconnection date.",
+    "questions": [
+      "What monthly retention price can Orna choose?",
+      "What happens to the new price if the notice was not sent as required?",
+      "When did Orna update her email address?"
+    ],
+    "correct_answers": [
+      "NIS 189 per month",
+      "the new price will not apply",
+      "in August"
+    ],
+    "critical_facts": [
+      "Orna",
+      "Sagi",
+      "Tedder Communications",
+      "Triple Tedder",
+      "from NIS 149 to NIS 239",
+      "November 1, 2025",
+      "October 12",
+      "in August",
+      "at least 21 days",
+      "the new price will not apply",
+      "NIS 189 per month",
+      "provided that they have had no payment arrears",
+      "does not involve exit fees",
+      "14 days",
+      "NIS 39"
+    ]
+  },
+  {
+    "id": "tel_08",
+    "domain": "telecom",
+    "history": "Customer: Hello, I'm calling for the last time before I switch companies, so listen carefully. I have a dental clinic on HaRimonim Street, and we have the Business Pro package with you with 5 lines: two landlines, a reception phone and two more mobiles for the dentists. From Sunday morning until Tuesday evening, so almost three full days, the landlines didn't work at all. Patients couldn't call to book or cancel appointments, and some just didn't show up because they thought the clinic was closed. My secretary, Tova, spent three days on her personal cell phone calling patients one by one. By my estimate we lost at least 12 appointments, and each appointment with us is NIS 450 on average. So I want real compensation, not a ten-shekel credit.\nAgent: Hello, this is Lia from Migdal Kesher, business customer center. I'm very sorry about what happened. I can see in the system there was a regional infrastructure fault, which opened on November 8 and was closed on November 10. Could I have your full name?\nCustomer: Benny Rosenthal. And I don't understand why I had to find out about it myself. Nobody sent us any notice, not an SMS and not an email. At any normal business, if there was a fault like that, they'd call the customer and apologize. And besides, I want to know how the compensation is calculated, based on what I actually lost or on some table of yours. And by the way, Tova tried calling your call center on Monday and waited on the line with no answer.\nAgent: I understand. The compensation is calculated according to the Business Pro service agreement, and I'll go through it with you clause by clause. I can see you pay NIS 640 a month for the package, and that you're not registered for our alerts service.\nCustomer: 640, right. And nobody ever told me about any alerts service. Now the second part: I've already spoken with another company, and they're ready to port all five numbers. But they told me that with you there's a commitment until March 2027, and that if I leave before then I pay a penalty. I want to hear it from you: if I'm leaving because of your fault, do I still pay a penalty? Because that's really not fair. And another thing, the reception number is on the sign, on the business cards and on the clinic's website, I can't lose it even for a single day.\nAgent: Excellent questions. I want to make sure I give you an accurate answer from the service agreement and not from memory, so I'll check the commitment clause and the porting clause. I can also see that the router and the PBX are registered in the clinic's name.\nCustomer: Fine. And please also check what happens with the router and the PBX we got from you, because I was told that if I don't return them on time I get charged thousands of shekels. I don't want another surprise at the end, after everything we went through this month. And tell me also whether the compensation comes as a check or as a credit, because it matters for my accountant.\nAgent: Noted. I'm opening the Business Pro service agreement now and we'll go over four topics: compensation for the fault, the commitment, porting and returning the equipment.",
+    "doc": "Business Pro Service Agreement – Availability, Compensation and Exit. The company guarantees 99.5% availability of landline telephony services. A fault lasting more than 24 consecutive hours entitles the customer to compensation at a rate of 1/30 of the monthly subscription fee for each day of the fault, plus fixed compensation of NIS 200 per incident. The compensation does not include loss of income, loss of profits or any other indirect damage caused to the business. A business customer registered for the alerts service will receive notice of a regional fault within two hours of its opening; a customer who is not registered for the service will not receive proactive notice. The commitment period for the package is 24 months. Leaving before the end of the period involves an exit fee of NIS 150 per line; however, no exit fees will be charged if, during the 90 days preceding the request, a fault of more than 48 consecutive hours was recorded. Number porting is carried out at the initiative of the receiving company, and the numbers continue to operate with Migdal Kesher until porting is completed. The router and the PBX must be returned within 21 days of disconnection; equipment that is not returned will be charged at NIS 1,800. A compensation request must be submitted in writing within 60 days of the fault being closed. Compensation for a fault will be given as a credit on the bill, and not as a cash payment or a check. A customer who wishes to register for the alerts service can do so in the business area at no cost. During business number porting, the company will allow temporary call forwarding to a mobile number of the customer's choice, free of charge, for up to 7 days.",
+    "questions": [
+      "What is the fixed compensation per fault incident?",
+      "Does the compensation include the appointments Benny lost?",
+      "When was the fault closed according to the system?"
+    ],
+    "correct_answers": [
+      "NIS 200 per incident",
+      "does not include loss of income",
+      "on November 10"
+    ],
+    "critical_facts": [
+      "Benny Rosenthal",
+      "Lia",
+      "Migdal Kesher",
+      "Business Pro",
+      "5 lines",
+      "12 appointments",
+      "NIS 450",
+      "November 8",
+      "November 10",
+      "NIS 640",
+      "March 2027",
+      "NIS 200 per incident",
+      "does not include loss of income",
+      "no exit fees will be charged",
+      "more than 48 consecutive hours"
+    ]
+  }
+]

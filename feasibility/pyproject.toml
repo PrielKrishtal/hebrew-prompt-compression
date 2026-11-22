@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hebrew-token-tax"
+version = "0.1.0"
+description = "Shared code for measuring the Hebrew token tax of LLM tokenizers"
+requires-python = ">=3.12"
+dependencies = [
+    "tiktoken==0.14.0",
+    "anthropic==2.3.0",
+    "openai==3.50.0",
+    "google-genai==2.34.0",
+    "datasets==5.1.0",
+    "huggingface_hub==2.3.0",
+    "pandas==3.1.0",
+    "matplotlib==3.11.2",
+    "python-dotenv==1.2.4",
+    "transformers==5.22.1",
+    "sentencepiece==0.2.2",
+    "torch==2.15.0",
+    "llmlingua==0.2.2",
+    "spacy==3.8.18",
+    "tqdm==4.70.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "jupyter==1.1.1",
+    "ipykernel==7.4.0",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

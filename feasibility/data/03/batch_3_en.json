@@ -1,0 +1,263 @@
+[
+  {
+    "id": "bank_01",
+    "domain": "banking",
+    "history": "Customer: Hello, I'm looking at my Gefen Gold card statement and there's a NIS 1,240 charge from an online electronics store that I didn't make. What do I do in a case like this?\nAgent: Hello, this is Nadav from Gefen Bank. Sorry to hear that. Could I have your full name, and when was the charge made?\nCustomer: Hadas Koren. The charge is from October 28. The card is always in my wallet, and I haven't given it to anyone, not even my partner.\nAgent: Thank you, Hadas. I'm blocking the card right now and ordering you a new one. I can see there's another small charge from the same site, NIS 9.90, the day before.\nCustomer: I didn't make that one either. Will I get the money back? And how long does it take? Because the charge has already gone through on this month's statement.\nAgent: I'm checking the transaction dispute procedure for you now, and I'll walk you through every step.",
+    "doc": "Disputing a Credit Card Transaction – Gefen Bank Cards. A customer who disputes a transaction they did not make may submit a dispute notice in writing, via the app or through the service center, within 30 days of receiving the statement in which the transaction appeared. Upon receipt of the notice, the card will be blocked, and the bank will temporarily credit the customer with the transaction amount within 5 business days. The bank will investigate the dispute with the merchant within 45 days, and the credit will become final if it is not proven that the transaction was made by the customer. No credit will be given for a transaction made by a family member or another person to whom the customer gave the card or its details. Charges of up to NIS 10 from the same merchant will be reviewed as part of the same dispute, and there is no need for a separate notice. Issuing a replacement card following a dispute does not involve a fee, and the card will be sent within 7 business days to the address registered with the bank.",
+    "questions": [
+      "Within how long will the customer be temporarily credited?",
+      "Does Hadas need to submit a separate notice for the NIS 9.90 charge?",
+      "What is the date of the charge Hadas is disputing?"
+    ],
+    "correct_answers": [
+      "within 5 business days",
+      "there is no need for a separate notice",
+      "October 28"
+    ],
+    "critical_facts": [
+      "Hadas Koren",
+      "Nadav",
+      "Gefen Bank",
+      "Gefen Gold card",
+      "NIS 1,240",
+      "October 28",
+      "NIS 9.90",
+      "30 days",
+      "within 5 business days",
+      "45 days",
+      "No credit will be given",
+      "up to NIS 10",
+      "there is no need for a separate notice",
+      "does not involve a fee"
+    ]
+  },
+  {
+    "id": "bank_02",
+    "domain": "banking",
+    "history": "Customer: I want to pay off my mortgage early and you want to take an NIS 18,000 fee from me?! That's daylight robbery\nAgent: Hello, this is Inbal from Maalot Bank. I understand you're upset. Could I have your name and the loan number?\nCustomer: Yossi Malka. I don't know the number by heart. I took the mortgage in 2021, NIS 600,000, and now I've sold an apartment I inherited and I have the money to pay off the entire balance. So why punish me for paying it back?\nAgent: I can see the loan. You have two tracks, Maalot Fixed Mortgage and a prime track. The fee is something that's calculated, it depends on a lot of parameters, the interest rate, the term and everything.\nCustomer: I don't need a lecture on parameters. I want to know if there's a way to pay less. A friend of mine said that if you give notice in advance there's a discount. And anyway, is there a fee on the prime track or not?\nAgent: There are all kinds of options, yes. Both regarding advance notice and regarding the tracks, it depends. Every case is different. And the discounts too, there are discounts in certain situations, but not always.\nCustomer: It depends, it depends, all you people know how to say is it depends. I want to close this by the end of December, because that's when I start building and I don't want the money sitting around. And if the fee is crazy, I'm filing a complaint with the Banking Supervision Department.\nAgent: I understand. I'm opening the early repayment terms now and I'll tell you exactly what applies to each track.",
+    "doc": "Early Repayment of a Mortgage Loan – Maalot Bank. A borrower may repay the loan, in full or in part, before its due date. An early repayment request must be submitted in writing at least 10 days before the requested repayment date. On the prime track, no early repayment fee will be charged, other than an operational fee of NIS 60. On the Maalot Fixed Mortgage track, a capitalization fee will be charged, calculated according to the difference between the loan's interest rate and the average interest rate known on the repayment date. A borrower who gave notice of the repayment at least 30 days in advance will receive a 10% discount on the capitalization fee. A borrower who repays the loan after at least 5 years have passed since it was taken out will receive an additional 20% discount on the capitalization fee. The capitalization fee is not charged when the average interest rate on the repayment date is higher than the loan's interest rate. The exact fee amount will be provided to the borrower in writing within 3 business days of the request, and it is valid for 14 days. Early repayment does not cancel the building insurance, which must be cancelled separately with the insurance company. A borrower who repays part of the loan may choose between shortening the loan term and reducing the monthly payment. An early repayment request may be submitted at a branch, on the bank's website or using a dedicated form that will be sent by mail, and there is no need to come in person to sign. The repayment amount will be collected from the borrower's account at the bank only, and not from a third party's account.",
+    "questions": [
+      "How far in advance must notice be given to receive a 10% discount on the capitalization fee?",
+      "Will an early repayment fee be charged on the prime track?",
+      "What was the amount of the mortgage Yossi took?"
+    ],
+    "correct_answers": [
+      "at least 30 days in advance",
+      "no early repayment fee will be charged",
+      "NIS 600,000"
+    ],
+    "critical_facts": [
+      "Yossi Malka",
+      "Inbal",
+      "Maalot Bank",
+      "Maalot Fixed Mortgage",
+      "NIS 18,000",
+      "2021",
+      "NIS 600,000",
+      "the end of December",
+      "at least 10 days",
+      "no early repayment fee will be charged",
+      "NIS 60",
+      "at least 30 days in advance",
+      "10%",
+      "20%",
+      "is not charged"
+    ]
+  },
+  {
+    "id": "bank_03",
+    "domain": "banking",
+    "history": "Customer: Hello, listen, I really don't know what to do anymore. I'm Bracha Ohayon, I've had an account with you at the branch on HaNevi'im Street for more than 30 years, since my late husband was still alive. A week ago my son, who lives in Canada, transferred me money, NIS 85,000, because I need to renovate the bathroom and install a stairlift, the stairs are getting hard for me. And since then, yesterday morning, I go into the app and I see that everything is blocked. I can't transfer money to the contractor, the card doesn't work at the supermarket, and it says something about a restriction. I didn't do anything wrong, it's my son's money, he's been working there in high-tech for ten years, and I even explained it to the clerk at the branch before he sent it.\nAgent: Hello Bracha, this is Eliezer from Karmim Bank. I understand this is stressful. I can see the account has indeed been restricted, and it's related to the transfer from abroad. It's a check the bank carries out.\nCustomer: But what do you mean, a check? Nobody called me, nobody sent a letter, nothing. And I have to pay the contractor a NIS 12,000 deposit by Thursday, otherwise he takes another job and I'm left with a wrecked bathroom. And I have standing orders, the electricity, the municipal tax, the car insurance, what will happen with them? I don't want them cutting off my electricity because of this. And another thing, my pension comes in on the 1st of the month, will that be blocked too?\nAgent: Yes, so like I said, it's a check the bank carries out when a transfer like this comes in. There's a check, and at the end of the check the account is released. I need to check what exactly is needed from you. And regarding the standing orders and the pension, I need to check that too, there's a procedure for it.\nCustomer: So check, please. And I also want to know how long this takes, because at the branch, when I went yesterday, they told me it could take a month. A month! I can't wait a month. And my son says he can send any document you need, pay slips, a letter from his bank in Canada, whatever you want. Just tell us what. And I also have a small deposit with you, I saved it for my granddaughter's wedding, I hope nothing happened to it.\nAgent: Okay. So there's a check, and there are documents that need to be sent. The faster you send the documents, the faster the check will be completed. I want to see exactly which documents.\nCustomer: And tell me something else, I hear all kinds of stories about scams, people calling older folks and saying they're from the bank. How do I know you're really from the bank? And how do I send the documents, I'm not very good with the computer, my granddaughter, Avigail, helps me sometimes, but she's in the army and only comes home on weekends.\nAgent: That's a very important question, and you're right to ask. I won't ask you for any password or code. I'm opening the procedure for checking transfers from abroad now and we'll go through everything together, the documents, the standing orders and the pension.",
+    "doc": "Procedure for Reviewing Incoming Transfers from Abroad – Karmim Bank. An incoming transfer from abroad exceeding NIS 50,000 may result in a temporary restriction on outgoing activity in the account, until the review of the source of funds has been completed. The bank will send the customer notice of the restriction within one business day, by mail and by text message. During the restriction, standing orders will continue to be executed, as will fixed charges set up before the transfer date, and incoming credits, including pensions and salaries, will be received in the account. Cash withdrawals, outgoing transfers and use of a debit card will not be permitted until the review is completed. To complete the review, the customer must provide a confirmation from the sending institution attesting to the identity of the sender, and a document explaining the purpose of the transfer. The review will be completed within 7 business days of receipt of all documents. Documents may be submitted at a branch, through the website, or through an attorney-in-fact authorized by the customer in writing. A customer may request an exceptional release of a limited amount for an urgent payment, up to NIS 15,000, subject to the branch manager's approval. Bank representatives do not ask the customer for a password, verification code or card details in a phone call. A customer who has not provided the documents within 30 days of the notice may be required to return the funds to the sender. The restriction does not affect existing deposits and savings, which will continue to earn interest as usual. A customer may file a complaint about the handling of the matter with the bank's Public Inquiries Officer.",
+    "questions": [
+      "Up to what amount can an exceptional release be requested for an urgent payment?",
+      "Will Bracha's standing orders continue to be executed during the restriction?",
+      "How much money did Bracha's son transfer?"
+    ],
+    "correct_answers": [
+      "up to NIS 15,000",
+      "standing orders will continue to be executed",
+      "NIS 85,000"
+    ],
+    "critical_facts": [
+      "Bracha Ohayon",
+      "Eliezer",
+      "Karmim Bank",
+      "NIS 85,000",
+      "NIS 12,000",
+      "Thursday",
+      "1st of the month",
+      "NIS 50,000",
+      "one business day",
+      "standing orders will continue to be executed",
+      "will not be permitted",
+      "7 business days",
+      "up to NIS 15,000",
+      "subject to the branch manager's approval",
+      "do not ask the customer for a password"
+    ]
+  },
+  {
+    "id": "bank_04",
+    "domain": "banking",
+    "history": "Customer: how much is a transfer abroad?\nAgent: Hello, this is Sapir from Eshkol Bank. To which country and for what amount?\nCustomer: Germany. 2,000 euros. to my brother's account, first time i'm sending him\nAgent: And through which channel? App or branch?\nCustomer: app. today\nAgent: You're on the Eshkol Basic track, right? One moment, checking the rate.\nCustomer: yes. and when does it arrive?\nAgent: One more moment, I'm checking that too. It's 15:20 now, which matters here.",
+    "doc": "Transfers Abroad – Eshkol Basic Track. A transfer abroad via the app or the website involves a fee of 0.2% of the transfer amount, no less than NIS 45 and no more than NIS 250. A transfer through a teller at a branch involves a double fee. Transfers to eurozone countries reach the beneficiary's account within one business day, and to other countries within 3 business days. The bank's fee does not include fees of intermediary banks abroad, which may be deducted from the amount reaching the beneficiary. A transfer exceeding NIS 50,000 in a single day via the app is not possible, and must be carried out at a branch. Currency conversion is made at the bank's transfer rate at the time of execution. A transfer made after 14:00 will be treated as if it was made on the next business day. A transfer may be cancelled only as long as it has not been sent to the beneficiary's bank. Confirmation of execution will be sent to the customer in the app as soon as the transfer is sent. A customer may set up regular beneficiaries abroad in the app, and transfers to them will not require additional verification. A transfer to a new beneficiary exceeding NIS 10,000 will require identity verification with a one-time code.",
+    "questions": [
+      "What is the minimum fee for a transfer abroad via the app?",
+      "Does the bank's fee include fees of intermediary banks?",
+      "What amount does the customer want to transfer?"
+    ],
+    "correct_answers": [
+      "NIS 45",
+      "does not include fees of intermediary banks",
+      "2,000 euros"
+    ],
+    "critical_facts": [
+      "Sapir",
+      "Eshkol Bank",
+      "Eshkol Basic",
+      "Germany",
+      "2,000 euros",
+      "15:20",
+      "0.2%",
+      "NIS 45",
+      "NIS 250",
+      "double fee",
+      "one business day",
+      "does not include fees of intermediary banks",
+      "14:00",
+      "is not possible"
+    ]
+  },
+  {
+    "id": "bank_05",
+    "domain": "banking",
+    "history": "Customer: I want to close my account. I'm moving to another bank, and I have no patience for runarounds.\nAgent: Hello, this is Hila from Rimon Bank. I'll help you with that. Whose name is the account under?\nCustomer: Nir Avraham. And just tell me straight what's needed, I'm not interested in retention offers.\nAgent: Fine. I can see the account has a balance of NIS 23,400, a NIS 40,000 deposit maturing on January 20, 4 active standing orders and a Rimon Business card.\nCustomer: I want to break the deposit now and transfer everything. And the standing orders, I don't want them coming out of here anymore, as of today. And I also have a checkbook, there are 10 checks left in it, what about those? And don't tell me to come to the branch, I don't have time for that, I work until seven in the evening.\nAgent: I understand. Just so you know, a few things happen with the deposit if it's closed before maturity, and the standing orders are transferred in a certain way, depending on how you close. If you choose the switching service at the new bank, some things happen automatically, and if you use the form with us, some of it is on you.\nCustomer: Come on, tell me what. And on what date is everything done? I want to have nothing to do with you by the end of the month. And my salary comes in here on the 10th of the month, what happens to it if the account is already closed?\nAgent: I'm opening the account closure procedure and I'll go through all the steps with you, briefly.",
+    "doc": "Closing an Account and Moving It to Another Bank – Rimon Bank. A customer may close their account at any time using a signed closure form or through the online switching service at the receiving bank. The account will be closed within 7 business days of receipt of the request, provided that it has no outstanding debts. Closing the account does not involve a fee. A deposit broken before its maturity date will be refunded in the principal amount only, without the accrued interest, and no early-withdrawal fee will be charged. Standing orders will be transferred to the receiving bank only if the customer chose the online switching service; when closing via a form, the customer is responsible for updating each beneficiary themselves. Unused checks must be returned to the bank or destroyed, and a check presented after the account is closed will not be honored. Credit cards linked to the account will be cancelled on the closing date, and future charges already approved will be collected from the balance before it is transferred. The credit balance will be transferred to the account at the receiving bank within one business day of the closing date. Written confirmation of closure will be sent to the customer within 10 days. A customer will not be able to continue receiving credits to the account number after it is closed. Credits arriving in the account within 90 days of its closure will be forwarded to the receiving bank, and later credits will be returned to the sender. Account documents and transaction statements will be available to the customer in the personal area for 12 months after the account is closed.",
+    "questions": [
+      "Within how long will the account be closed?",
+      "What will Nir receive if he breaks the deposit now?",
+      "How many checks are left in Nir's checkbook?"
+    ],
+    "correct_answers": [
+      "within 7 business days",
+      "the principal amount only, without the accrued interest",
+      "10 checks"
+    ],
+    "critical_facts": [
+      "Nir Avraham",
+      "Hila",
+      "Rimon Bank",
+      "NIS 23,400",
+      "NIS 40,000",
+      "January 20",
+      "4 active standing orders",
+      "10 checks",
+      "within 7 business days",
+      "provided that it has no outstanding debts",
+      "the principal amount only",
+      "without the accrued interest",
+      "and no early-withdrawal fee will be charged",
+      "only if the customer chose the online switching service",
+      "will not be honored"
+    ]
+  },
+  {
+    "id": "bank_06",
+    "domain": "banking",
+    "history": "Customer: hey the app locked me out after i got the password wrong 3 times and now it says blocked for 24 hours?? i need to pay my rent today\nAgent: Hey, this is Ofir from Arazim Bank. Let's check. Can I have your full name?\nCustomer: Bar Yosef. Arazim Young Account. help me out bro its urgent, my landlord is waiting till 18:00 and after that he starts making trouble\nAgent: I can see the lock, it kicked in at 11:40. What's the rent amount, and have you transferred to him before?\nCustomer: 3,900. yeah i pay him every month. and i cant come to the branch im at work all day. and is my card working right now or is that blocked too?\nAgent: One sec, checking what we can do according to the procedure",
+    "doc": "App Access Lock – Arazim Bank Customers. After 3 failed login attempts, access to the app and the website will be locked for a period of 24 hours. The lock does not block the account itself: debit cards and standing orders continue to operate as usual. The lock may be released before the end of the period by calling the service center and verifying identity with a one-time code sent to the phone number registered on the account. Release through the service center is not possible if the phone number was changed during the last 30 days. After the release, the customer will be required to choose a new password. During the lock, a transfer of up to NIS 5,000 per day can be made through an agent at the service center, without a fee, provided that the payee is already on the approved payees list. Issuing a new password does not involve any payment. A customer who has locked their access 3 times in one month will be asked to verify their identity at a branch. Releasing the lock through the service center does not involve a fee, and it is carried out during the service center's operating hours, until 22:00.",
+    "questions": [
+      "What is the maximum amount that can be transferred through an agent during the lock?",
+      "Has Bar's card been blocked because of the lock?",
+      "Until what time is the landlord waiting for Bar?"
+    ],
+    "correct_answers": [
+      "up to NIS 5,000 per day",
+      "does not block the account itself",
+      "till 18:00"
+    ],
+    "critical_facts": [
+      "Bar Yosef",
+      "Ofir",
+      "Arazim Bank",
+      "Arazim Young Account",
+      "3 times",
+      "24 hours",
+      "18:00",
+      "11:40",
+      "3,900",
+      "does not block the account itself",
+      "is not possible",
+      "the last 30 days",
+      "up to NIS 5,000 per day",
+      "provided that the payee is already on the approved payees list"
+    ]
+  },
+  {
+    "id": "bank_07",
+    "domain": "banking",
+    "history": "Customer: Hello and good day, my name is Tzvia Nahum. I'm 71, and every month I pay NIS 29 on the Tamar Plus track. My grandson told me there might be a cheaper track for me, because I hardly make any transactions. I'd be grateful if you could help me.\nAgent: Hello Tzvia, this is Shmuel from Tamar Bank. Gladly. Yes, there are different tracks, and there's a Basic track. There are several tracks, yes.\nCustomer: I see. And which track suits me? I do about 5 transactions a month with a teller, mostly withdrawals at the branch, because I don't use the internet. And I also get my account statements by mail, I like to see everything on paper.\nAgent: So there's the Basic track, which is a basic track. And there are also benefits for senior citizens, there are benefits like that, yes.\nCustomer: Oh, good. And what's the difference in practice? And from what date would it take effect if I switch? I don't want to pay twice in the same month.\nAgent: If you switch, it switches. The switch takes effect. I'm checking the exact date. There's a date when it takes effect, yes.\nCustomer: Thank you very much, you're very patient. Just one more small question: on Tamar Plus I have card insurance and I can withdraw cash from any ATM without a fee. If I switch, do I lose that?\nAgent: Good question. I'm opening the terms of the tracks now and I'll tell you everything in order.",
+    "doc": "Fee Tracks for Private Accounts – Tamar Bank. On the Tamar Plus track, with a management fee of NIS 29 per month, unlimited transactions in all channels, withdrawals from any ATM without a fee, and debit card insurance are included. On the Basic track, with a management fee of NIS 10 per month, 10 transactions in direct channels and 2 transactions through a teller are included; each additional transaction through a teller will be charged NIS 6. The Basic track does not include debit card insurance, and a withdrawal from another bank's ATM will be charged NIS 5. A customer aged 67 or over is eligible for the Vatik Tamar track, with a management fee of NIS 5 per month, which includes 6 transactions through a teller without a fee; eligibility requires presenting an identity document only. A switch between tracks will take effect on the 1st of the month following the request, and there will be no double charge for that month. A switch may be requested at a branch, through the service center or in writing. A customer may return to their previous track at any time, at no cost. A customer who does not use the direct channels may request to receive account statements by mail, at a cost of NIS 4 per month, except on the Vatik Tamar track, where mailing of account statements is included free of charge. The fees are shown in detail on the monthly account statement.",
+    "questions": [
+      "What is the management fee on the Vatik Tamar track?",
+      "Does the Basic track include debit card insurance?",
+      "How many transactions with a teller does Tzvia make per month?"
+    ],
+    "correct_answers": [
+      "NIS 5 per month",
+      "does not include debit card insurance",
+      "5 transactions a month"
+    ],
+    "critical_facts": [
+      "Tzvia Nahum",
+      "Shmuel",
+      "Tamar Bank",
+      "I'm 71",
+      "NIS 29",
+      "Tamar Plus",
+      "5 transactions a month",
+      "Basic track",
+      "NIS 10 per month",
+      "does not include debit card insurance",
+      "NIS 6",
+      "67",
+      "Vatik Tamar",
+      "NIS 5 per month",
+      "and there will be no double charge"
+    ]
+  },
+  {
+    "id": "bank_08",
+    "domain": "banking",
+    "history": "Customer: Good evening. I want to file a complaint, and I'm asking you to hear me out to the end, because this is already my third story with the bank this month. Two and a half weeks ago I was approved for a Green Car Loan, NIS 95,000, for an electric car I'm buying from a dealership in Ramat Gan. I signed all the documents at the branch on November 2, and the clerk told me the money would go to the dealership within a few days. Today is already the 15th, the money hasn't gone through, and the dealership is telling me that if they don't get the payment by Wednesday, they're releasing the car to another customer, and I lose the price I locked in, because since then the price has gone up by NIS 6,000. On top of that, someone from your side called me on Thursday and said a document was missing, but didn't say which one, and nobody has gotten back to me since.\nAgent: Good evening, this is Keren from Tzukim Bank, consumer credit department. I'm listening, and I'm sorry about this experience. Could I have your full name so I can open the file?\nCustomer: Avner Shalom. And please tell me what exactly is missing, because I sent everything: pay slips, a copy of my ID, the car order from the dealership. I emailed everything to the clerk, and I even got a read receipt. And at the branch they told me the file was complete and I just had to wait.\nAgent: I'm looking at the file. What's missing is an official sales invoice from the dealership, with the car's chassis number. The car order that was sent isn't enough, because it doesn't have a chassis number. I can also see you should have been notified about this on November 5, and I found no record that the notice was sent. That's a failure on our side, and I'm recording it as such in the file.\nCustomer: So basically the bank sat on the file for two weeks without telling me what was missing. I want to know how long it'll take from the moment I send the invoice, and whether it can be sped up somehow. Another question: if in the end, because of the delay, I lose the car and cancel the loan, do I pay a fee? Because I don't intend to pay for your delay. And also, from what day does the interest start running, from the signing date or from the day the money goes through?\nAgent: Those are important questions, and I'll answer each one according to the loan terms. I'm also recording your complaint about the lack of updates, and I'll forward it to the Public Inquiries Officer.\nCustomer: Thank you. And please also record that I'm demanding compensation for the price difference, the NIS 6,000, if it happens. I'm not saying it will happen, but if it does, I want it documented that I warned you. And the dealership said they can send the invoice directly to you as early as tomorrow morning, if you give them an address. And I also want to know if the first payment can be postponed, because with all this mess my cash flow got thrown off this month.\nAgent: I've recorded the demand in the file, and the complaint number is 20931. Now I'm opening the loan terms and we'll go over the timelines, the interest and cancellation, and I'll give you an address for sending the invoice.",
+    "doc": "Green Car Loan – Loan Disbursement, Interest and Cancellation. The loan is intended for the purchase of a new electric or hybrid vehicle, in an amount of up to NIS 150,000. Disbursement of the loan is conditional on providing an official sales invoice from the dealer that includes the vehicle's chassis number; a car order or price quote are not sufficient. The funds will be transferred directly to the dealer within 2 business days of receipt of all documents. An invoice sent directly by the dealer to the consumer credit department's email address will be handled with priority. Interest on the loan will begin to accrue only from the date the funds are transferred to the dealer, and not from the signing date. The bank will notify the borrower of a missing document within 3 business days of the signing date. A borrower may cancel the loan within 14 days of its disbursement without a fee; cancellation before the loan is disbursed does not involve any payment. The bank is not responsible for price changes at the dealer and does not compensate for price differences, unless it is clearly determined that the delay was caused by the bank's negligence. Complaints will be handled by the Public Inquiries Officer, who will respond in writing within 30 days. A borrower may request a one-month postponement of the first payment date, without a fee. A loan that has not been disbursed within 60 days of the signing date will be cancelled automatically, and all fees paid in respect of it will be refunded. The bank will provide the borrower with an updated repayment schedule within 5 business days of the loan's disbursement.",
+    "questions": [
+      "Within how long will the funds be transferred to the dealership after all documents are received?",
+      "Will Avner pay a fee if he cancels the loan before it is disbursed?",
+      "What is Avner's complaint number?"
+    ],
+    "correct_answers": [
+      "within 2 business days",
+      "does not involve any payment",
+      "20931"
+    ],
+    "critical_facts": [
+      "Avner Shalom",
+      "Keren",
+      "Tzukim Bank",
+      "Green Car Loan",
+      "NIS 95,000",
+      "November 2",
+      "NIS 6,000",
+      "November 5",
+      "20931",
+      "chassis number",
+      "are not sufficient",
+      "within 2 business days",
+      "and not from the signing date",
+      "does not involve any payment",
+      "unless it is clearly determined that the delay was caused by the bank's negligence"
+    ]
+  }
+]

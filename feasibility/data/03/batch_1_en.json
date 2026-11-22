@@ -1,0 +1,256 @@
+[
+  {
+    "id": "ins_01",
+    "domain": "insurance",
+    "history": "Customer: Hi, I filed a claim for a car accident three weeks ago and still haven't heard back. Could you check on it?\nAgent: Hi, this is Michal from the claims center, happy to help. Could I have the claim number?\nCustomer: Sure, 48213. The assessor came out on November 2.\nAgent: Thanks. I can see the assessor's report only reached us yesterday. Under your policy, the Nativ Plus plan, processing takes up to 21 business days from receipt of the report.\nCustomer: I see, thanks a lot. And what about a replacement car? The car's been off the road for two weeks and I'm taking taxis everywhere. Every ride to work costs me about 60 shekels, and it adds up.\nAgent: I'm checking that now in the plan terms and I'll update you. Just to confirm, is the car at a network garage or a private one?\nCustomer: At my brother's private garage, Galil Garage. Is that okay?",
+    "doc": "Nativ Plus Plan – Claims Handling and Replacement Vehicles. Ofek Insurance will complete its review of a claim and notify the policyholder of its decision within 21 business days of receiving the assessor's report. A replacement vehicle will be provided to the policyholder for a period of up to 12 days, provided that the insured vehicle is off the road due to covered damage and is located at a network garage. A replacement vehicle will not be provided when the vehicle is being repaired at a garage outside the network; in such a case, the policyholder will receive NIS 90 per day, up to 7 days. The deductible for own-damage claims under this plan is NIS 1,450 and does not apply to windshield claims. Coverage does not include damage caused while the vehicle was driven by a driver not listed on the policy. The policyholder may request a written update on the status of the claim at any time, and the company will respond within 3 business days. A request for a replacement vehicle must be submitted to the service center before the vehicle is collected from the garage, and the replacement vehicle will be delivered within 24 hours of the request. A replacement vehicle is not provided for windshield-only claims or for third-party claims.",
+    "questions": [
+      "For how many days at most is a replacement vehicle provided under the Nativ Plus plan?",
+      "What does the policyholder receive if the car is being repaired at a garage outside the network?",
+      "When did the assessor visit the customer?"
+    ],
+    "correct_answers": [
+      "up to 12 days",
+      "NIS 90 per day, up to 7 days",
+      "on November 2"
+    ],
+    "critical_facts": [
+      "48213",
+      "November 2",
+      "Michal",
+      "Nativ Plus",
+      "Ofek Insurance",
+      "21 business days",
+      "up to 12 days",
+      "will not be provided",
+      "outside the network",
+      "NIS 90 per day",
+      "up to 7 days",
+      "NIS 1,450",
+      "Galil Garage",
+      "24 hours",
+      "does not include"
+    ]
+  },
+  {
+    "id": "ins_02",
+    "domain": "insurance",
+    "history": "Customer: This is the third time I'm calling you this week!! I sent in physio receipts and nobody gets back to me\nAgent: Hello, this is Avi. I'm sorry to hear that. Could I have your full name, please?\nCustomer: Ronit Sagi. I've been insured with you under Briut Zahav for 4 years and I always pay on time, so don't tell me to wait. I paid the physiotherapist, Dr. Merav Alon, all by bank transfer, and I sent you photos of the receipts from my phone.\nAgent: Thank you, Ronit. I see you submitted 6 receipts of NIS 280 each. The request is being processed.\nCustomer: Being processed?? I submitted them on October 1! It's been 'being processed' for a month and a half. And then I got a message saying only part of the amount will be refunded, what's going on? I'm not rich, I'm a kindergarten teacher, and for me that's a lot of money sitting with you.\nAgent: Yes, there are all kinds of limits in the policy, it depends on all sorts of things. I see a note here in the system about something with the documents, but it's not clear to me exactly what. The referral from the orthopedist is in your file, so that's not the problem.\nCustomer: What limits? Nobody told me anything when I joined. I want to know exactly how much money I get per treatment and when, no stories. And last time the call center told me everything was fine and it would arrive by the end of October. So what, they lied to me? And if this isn't sorted out today, I'm filing a complaint.\nAgent: I completely understand. I really do, and I don't want you to have to call a fourth time. I'm opening the terms of the treatments section now and I'll get back to you with a proper answer.",
+    "doc": "Complementary Treatment Reimbursement Section – Briut Zahav Policy. The policyholder is entitled to reimbursement for physiotherapy treatments, up to 12 treatments per calendar year, at a rate of 70% of the treatment cost and no more than NIS 150 per treatment. A condition for reimbursement is a written referral from a specialist physician, issued before the first treatment began. Treatments performed before the referral date are not eligible for reimbursement. No reimbursement will be given for treatments performed by a therapist who does not hold a valid license. In addition, reimbursement does not include registration fees, assistive equipment or hydrotherapy treatments. A reimbursement request must be submitted within 90 days of the treatment date, and the company will transfer the reimbursement to the policyholder's account within 30 days of receiving all required documents. If a document is missing, a notice will be sent to the policyholder, and the count of days will restart once the document is provided. A policyholder who does not agree with the company's decision may file an appeal with the Ombudsman of Shaked Insurance within 60 days of receiving the decision. A policyholder who has used up the annual treatment quota may purchase a top-up package of 6 additional treatments for NIS 220, provided that the purchase is made before the end of the calendar year. Reimbursement is calculated on the basis of the original receipt only; a photo of a receipt or a bank transfer confirmation does not constitute sufficient proof. Reimbursements are transferred only to a bank account registered in the policyholder's name, and not to a third party's account. The status of the request can be tracked in the personal area, which also shows the approved amount for each treatment separately and the list of missing documents, if any.",
+    "questions": [
+      "What is the maximum amount refunded for a single physiotherapy treatment?",
+      "Are treatments performed before the referral date eligible for reimbursement?",
+      "How much did each treatment cost according to the receipts Ronit submitted?"
+    ],
+    "correct_answers": [
+      "NIS 150 per treatment",
+      "not eligible for reimbursement",
+      "NIS 280"
+    ],
+    "critical_facts": [
+      "Ronit Sagi",
+      "Briut Zahav",
+      "Shaked Insurance",
+      "6 receipts",
+      "NIS 280",
+      "October 1",
+      "12 treatments",
+      "70%",
+      "NIS 150 per treatment",
+      "not eligible for reimbursement",
+      "No reimbursement will be given",
+      "90 days",
+      "30 days",
+      "does not constitute sufficient proof"
+    ]
+  },
+  {
+    "id": "ins_03",
+    "domain": "insurance",
+    "history": "Customer: Hi, listen, I don't really know where to start, so I'll tell you from the beginning. I live in an apartment on HaDekalim Street, third floor, for 11 years now, and about ten days ago, on Tuesday night, my wife woke up because she heard dripping. We went to the living room and saw the whole ceiling by the kitchen was wet, and the parquet was already starting to swell. Turns out a pipe burst at the upstairs neighbor's. The neighbor, Moshe, nice guy, said he has insurance but doesn't remember with whom. Long story short, we called a plumber that same night and paid him NIS 1,200 just for coming out and finding the leak, and now the contractor says replacing the parquet will cost about NIS 18,000. I'm insured with you under Bayit Batuach Murhav, so I wanted to know what's covered here. We have two small kids, so I need this fast.\nAgent: Hi Shimon, this is Dana. I understand, it sounds really unpleasant. So, broadly speaking, water damage is covered under the policy, but we need to check the details.\nCustomer: Okay, but what does 'check the details' mean? I've had a fan running in the living room for a week and a half and my wife keeps asking when the repairs start. Another thing, I'm not sure whether I should claim from you or from the neighbor's insurance. Someone at work told me that if it came from the neighbor, it's not your business at all. And another thing, the contractor wants a NIS 5,000 deposit this week, so I need to know if I get that back. One more thing, we rented a drying machine from a private company called Yavesh-Tech, NIS 250 per day, for eight days already. Will you cover that too?\nAgent: Yes, so like I said, water damage is broadly covered. As for the neighbor, it depends. There are a few options here, and I need to see exactly what your policy says. About the drying machine, I also need to check, that's not something I can just tell you off the top of my head. And generally, in most cases, we try to cover as much as possible, so don't worry too much.\nCustomer: Okay. Another question: I called the plumber myself, not through your service, because it was two in the morning and it didn't even occur to me to call. Is that a problem? And what about the deductible, how much do I pay out of pocket? And something else I don't get, is there a deductible on both the structure and the contents? Because a wooden bookcase that stood by the wall got ruined too, and I'm not sure it can be saved. I saw a number on the policy page but I didn't understand whether it's per damage or per year.\nAgent: Good question. There is a deductible, yes. And about the plumber, that depends too. I want to give you an accurate answer, so I'm opening the water damage section now.\nCustomer: Fine, just please tell me something clear this time, because I already spoke with an agent on Thursday and he told me exactly the same thing, that it depends, and he didn't get back to me. I don't want to wait another week. And understand, I'm not trying to profit from this, I just want my home to be a home again.\nAgent: Of course, I completely understand. I'm looking at it now and in a moment we'll go through everything, clause by clause: first the neighbor, then the deductible, the plumber, the drying and the deposit.",
+    "doc": "Section 4 – Water and Liquid Damage, Bayit Batuach Murhav Policy. The policy covers direct damage to the structure of the apartment and its contents caused by a sudden burst or leak of pipes, including pipes of an adjacent apartment. Where the source of the damage is in another apartment, the policyholder may file the claim with Hof Mivtachim Insurance, and the company will act to recover the amount from the responsible party or its insurer; the policyholder is under no obligation to first contact a third party's insurer. The deductible under this section is NIS 950 per damage event and is not calculated on an annual basis. Locating and repairing the source of the damage will be carried out by a plumber on behalf of the company, available 24 hours a day. If the policyholder hired a private professional without prior coordination, they will be reimbursed up to NIS 600 only for locating and repairing the damage, provided that a tax invoice and the professional's report are presented. Coverage does not include replacing pipes that have deteriorated due to age or rust, and does not include gradual damage caused by continuous dripping. A deposit paid to a contractor is not refunded in advance, but will be factored into the insurance benefits after the claim is approved by an assessor. The company will send an assessor to the apartment within 5 business days of the claim being opened. Damage must be reported within 14 days of its discovery; late reporting does not void coverage, but may reduce benefits if additional damage was caused by the delay. Where temporary evacuation of the apartment is required due to the damage, the company will pay alternative accommodation costs of up to NIS 400 per night and no more than 10 nights. Reimbursement for drying the apartment with dedicated equipment will be made only if the drying was carried out by a supplier approved in advance by the company.",
+    "questions": [
+      "What is the most Shimon will be reimbursed for the plumber he hired himself?",
+      "Does Shimon have to contact the neighbor's insurer first?",
+      "How large a deposit is the contractor asking Shimon for?"
+    ],
+    "correct_answers": [
+      "up to NIS 600 only",
+      "the policyholder is under no obligation",
+      "NIS 5,000"
+    ],
+    "critical_facts": [
+      "Shimon",
+      "Bayit Batuach Murhav",
+      "Hof Mivtachim Insurance",
+      "ten days",
+      "NIS 1,200",
+      "NIS 5,000",
+      "NIS 250 per day",
+      "the policyholder is under no obligation",
+      "NIS 950 per damage event",
+      "is not calculated on an annual basis",
+      "without prior coordination",
+      "up to NIS 600 only",
+      "is not refunded in advance",
+      "14 days",
+      "only if the drying was carried out by a supplier approved in advance"
+    ]
+  },
+  {
+    "id": "ins_04",
+    "domain": "insurance",
+    "history": "Customer: hi\nAgent: Hi, this is Adi from Knafayim Travel Insurance. How can I help?\nCustomer: I have Globus Basic. flying to Austria\nAgent: Great! For how long?\nCustomer: 9 days, from December 20. is skiing covered? me and my wife, we both ski\nAgent: One sec, checking for you.\nCustomer: ok. quick pls\nAgent: So, I can see your policy was issued 3 days ago, and you haven't added any extensions yet. I'm sending you the winter sports terms now.",
+    "doc": "Globus Basic Policy – Winter Sports. The basic policy does not include coverage for injuries or damage sustained while skiing, snowboarding or engaging in any other winter sport. A policyholder wishing to obtain such coverage must purchase the Snow Add-on at a price of $11 per day, for all days of the trip and not only for skiing days. The add-on may be purchased up to 48 hours before departure from Israel only; after that time, including during the stay abroad, the coverage cannot be added. The add-on covers medical expenses, helicopter rescue from the slopes up to $50,000, and a refund for a ski-lift pass paid in advance and not used due to injury, up to $300. Coverage does not apply to skiing outside marked slopes and does not apply to policyholders over the age of 70. Private ski equipment is insured separately under the baggage coverage and is not included in the Snow Add-on. Policyholders traveling together must purchase the add-on for each of them separately. The Snow Add-on can be purchased via the app or the service center, with advance payment for the entire trip period. Cancelling the add-on after departure from Israel will not entitle the policyholder to a refund.",
+    "questions": [
+      "How much does the Snow Add-on cost per day?",
+      "Can the coverage be added once you are already in Austria?",
+      "From what date does the customer's trip start?"
+    ],
+    "correct_answers": [
+      "$11 per day",
+      "the coverage cannot be added",
+      "December 20"
+    ],
+    "critical_facts": [
+      "Knafayim Travel Insurance",
+      "Globus Basic",
+      "9 days",
+      "December 20",
+      "does not include coverage",
+      "Snow Add-on",
+      "$11 per day",
+      "48 hours",
+      "the coverage cannot be added",
+      "for each of them separately",
+      "does not apply to skiing outside marked slopes",
+      "will not entitle the policyholder to a refund"
+    ]
+  },
+  {
+    "id": "ins_05",
+    "domain": "insurance",
+    "history": "Customer: I want to cancel my life insurance. Now.\nAgent: Hello, this is Liat from Ogen Life. I can help with that. Whose name is the policy under?\nCustomer: Gilad Peretz. Ogen Family policy. And no retention pitch please, I don't have time for that.\nAgent: No problem, no retention. Just so you know: your policy has been active since March 2019, and the monthly premium is NIS 186. The coverage amount is NIS 1,200,000, and the sole beneficiary is Shira Peretz.\nCustomer: I know. I've switched to insurance through work, a group policy, so I have no reason to pay twice. What do I need to do to end this today? Also, I want this month's money back, it was already charged on the 10th of the month, and I'm not going to fund a whole month for nothing. And if I need to sign anything, email it to me, not by mail, I have no patience for branches.\nAgent: There are several ways to submit a cancellation request, and I'll tell you exactly when it takes effect and what happens with this month's charge. It's just important you know: a verbal request in this call isn't enough unless it's recorded as a declaration, so let's do it properly. I can record you now, it'll take about 2 minutes.\nCustomer: One more thing. A friend told me policies like this have a surrender value, like savings. After almost 8 years of payments it makes no sense that it all just vanishes, I'm owed something, right? Come on, just keep it short.\nAgent: I'll check that too in the policy terms and answer everything together, briefly, like you asked. One moment.",
+    "doc": "Cancellation at the Policyholder's Initiative – Ogen Family Policy. The policyholder may cancel the policy at any time by written notice sent by registered mail, through the personal area on the company's website, or by a recorded declaration at the service center. The cancellation will take effect 3 business days after the notice is received by the company, or on a later date specified by the policyholder. Premium paid for the month in which the cancellation takes effect will be refunded to the policyholder on a pro-rata basis, according to the number of days remaining in the month, within 14 days of the cancellation date. The Ogen Family policy is a pure risk policy, and therefore it has no surrender value and there is no refund of premiums paid in previous periods. Cancellation of the policy does not cancel coverage for an insured event that occurred before the cancellation took effect. A policyholder who cancelled the policy and wishes to renew it within 60 days may do so without new medical underwriting, provided that there has been no change in their health; after 60 days, rejoining under current terms will be required. The policyholder will receive written confirmation of cancellation within 7 days of the cancellation taking effect. A cancellation request made in a call that is not recorded as a formal declaration will not be considered a cancellation notice. If the policyholder holds an additional policy with the company, the cancellation will apply only to the policy specified in the notice and not to other policies. The pro-rata refund will be transferred to the payment method from which the last premium was collected.",
+    "questions": [
+      "How long after the notice is received will the cancellation take effect?",
+      "Will Gilad receive a surrender value for the years he paid?",
+      "What is Gilad's monthly premium?"
+    ],
+    "correct_answers": [
+      "3 business days",
+      "it has no surrender value",
+      "NIS 186"
+    ],
+    "critical_facts": [
+      "Gilad Peretz",
+      "Ogen Life",
+      "Ogen Family",
+      "March 2019",
+      "NIS 186",
+      "10th of the month",
+      "3 business days",
+      "14 days",
+      "it has no surrender value",
+      "there is no refund of premiums paid in previous periods",
+      "60 days",
+      "provided that there has been no change in their health",
+      "will not be considered a cancellation notice"
+    ]
+  },
+  {
+    "id": "ins_06",
+    "domain": "insurance",
+    "history": "Customer: bro whats going on with u, got charged twice 89 shek this month for the dog insurance\nAgent: Hey, this is Tomer from Parvati Insurance. Let's check. What's your pet's name?\nCustomer: Shoko. Kelavlav Mugan. check it cuz this is so not ok, two charges on nov 4\nAgent: I see it, there really are two charges on the same day. Looks like a payment processing glitch. Your regular payment is on the 4th of every month, and last month everything was fine, only one charge.\nCustomer: lol ok cool so when do i get the money back? and dont tell me another month cuz that happened to me once with another insurance and i waited forever, and meanwile im out those 89\nAgent: Checking it for you now according to the procedure.",
+    "doc": "Double Charges and Refunds – Kelavlav Mugan Policy. Where a policyholder has been charged more than once for the same insurance month, the excess charge will be cancelled and refunded to the original payment method within 10 business days of the inquiry. The refund will be made in full and is not subject to handling fees. If the double charge continues for two consecutive months or more, the policyholder will additionally receive a 15% discount on the following month's premium. The refund will not be made in cash or by transfer to an account other than the one from which the payment was collected. It should be emphasized that refunding the excess charge does not affect the continuity of coverage, and coverage for the pet continues without interruption. An inquiry regarding a double charge must be submitted within 6 months of the charge date; an inquiry submitted after that will be reviewed at the company's sole discretion. In the event of a general payment processing malfunction, the company will send a notice to all affected policyholders within 3 business days, and there is no need to contact the service center to receive the refund. Confirmation of the refund will be sent to the email address registered on the policy.",
+    "questions": [
+      "Within how long will the excess charge be refunded?",
+      "Will handling fees be deducted from the refund?",
+      "On what date were the two charges made?"
+    ],
+    "correct_answers": [
+      "10 business days",
+      "not subject to handling fees",
+      "nov 4"
+    ],
+    "critical_facts": [
+      "89 shek",
+      "Shoko",
+      "Kelavlav Mugan",
+      "Parvati Insurance",
+      "on nov 4",
+      "only one charge",
+      "10 business days",
+      "not subject to handling fees",
+      "two consecutive months",
+      "15%",
+      "will not be made in cash",
+      "6 months"
+    ]
+  },
+  {
+    "id": "ins_07",
+    "domain": "insurance",
+    "history": "Customer: Good evening, my son Noam got his license two weeks ago, and he's 18. I'd like him to be able to drive my car. What do I need to do? I don't really understand these things, my husband always handled the insurance, so sorry in advance if I ask simple questions.\nAgent: Good evening Hana, this is Roi from Derech HaMelech Insurance. Congratulations to Noam! For Noam to be able to drive, the policy needs to be updated. Right now you're on the Mekif Mishpachti plan, which is for drivers aged 24 and over only.\nCustomer: I see. And how do I update it? And how much will it cost me? Right now I pay NIS 3,840 per year. And last year I had one small claim for a headlight, if that matters.\nAgent: The policy needs to be updated. I mean, switching to a plan suited to a young driver. It's a policy update, yes. So basically it needs updating, and after the update everything's sorted.\nCustomer: Yes, I already understood that. My question is how much it costs, and whether he can drive as soon as tomorrow, because he has to get to work at seven in the morning, at a bakery on the edge of town, and there's no bus at that hour.\nAgent: It'll take effect after the update. Once the policy is updated, he's covered. So once it's updated, it's updated. I'll check the price for the Mekif Nahag Tzair plan.\nCustomer: Just one last question. He's a new driver, so at first he has to have an accompanying driver with him. Does that change anything for the insurance? I don't want surprises if, God forbid, something happens. My husband says that on our previous insurance it came at no extra charge, but I'm not sure that's right.\nAgent: I'll check all the details and get back to you with everything, don't worry, everything will be updated.",
+    "doc": "Mekif Nahag Tzair Plan – Policy Extension for a Driver Under 24. A policyholder on the Mekif Mishpachti plan may add a driver aged between 17 and 23 to the policy by switching to the Mekif Nahag Tzair plan. The switch involves an additional premium of 62% of the existing annual premium, calculated pro rata for the period remaining until the end of the insurance year. A driver with less than one year of driving experience will be considered a new driver, and an increased deductible of NIS 3,500 will apply to them on every own-damage claim. Coverage for the additional driver will take effect only after written confirmation is received from the company and the additional premium is paid, and not from the date of the telephone inquiry. Driving by a new driver without an accompanying driver during the accompaniment period required by law is not covered, and in such a case the company will not pay insurance benefits for damage to the insured vehicle. Third-party coverage is not affected by this restriction. The young driver extension may be cancelled at any time, and the excess premium will be refunded pro rata. An extension request may be submitted on the company's website or at the service center, and the company will send written confirmation within one business day. The policyholder must present a copy of the additional driver's license; confirmation of completed driving lessons is not required. A young driver cannot be added to a policy on which more than 2 claims were filed in the last three years, without special underwriting approval.",
+    "questions": [
+      "What deductible will apply to Noam on an own-damage claim?",
+      "Will damage to the car be covered if Noam drives without an accompanying driver during the accompaniment period?",
+      "How much does Hana currently pay per year for the insurance?"
+    ],
+    "correct_answers": [
+      "NIS 3,500",
+      "is not covered",
+      "NIS 3,840 per year"
+    ],
+    "critical_facts": [
+      "Noam",
+      "he's 18",
+      "Hana",
+      "Derech HaMelech Insurance",
+      "Mekif Mishpachti",
+      "Mekif Nahag Tzair",
+      "NIS 3,840 per year",
+      "62%",
+      "NIS 3,500",
+      "and not from the date of the telephone inquiry",
+      "without an accompanying driver",
+      "is not covered",
+      "more than 2 claims",
+      "without special underwriting approval"
+    ]
+  },
+  {
+    "id": "ins_08",
+    "domain": "insurance",
+    "history": "Customer: Hi, I've been trying for two days to file a claim through your app for my phone's cracked screen, and every time I get to the photo upload step it freezes at 99% and then an 'unsupported file' error pops up. I restarted the phone, deleted the app and reinstalled it, I also tried from my sister's computer and from the computer at work, and nothing works. By the way, I'm taking the photos with my sister's phone, because mine, with the broken screen, barely responds to touch. It's really frustrating, because I pay you every month for a digital service and in practice I can't submit anything.\nAgent: Hi Ori, this is Shiran from Rakia Digital Insurance. I'm sorry about the frustration, and I understand how annoying it is when you pay for a service that's supposed to be simple. I can see your device is insured under the Gadget Pro plan. So I can help, could you tell me what format the photos are saved in and how big they are?\nCustomer: No idea what format, my sister shoots in high-quality mode. Each photo comes out at about 14 MB. I uploaded 5 photos, from every angle, including one of the frame, which also has a small scratch from half a year ago. Some of the photos she sent me and then I moved them to the computer, and there they were saved with a HEIC extension, if that means anything to you.\nAgent: Thanks, that helps a lot. The problem may be the file size or the format. A HEIC extension is exactly what I suspected, but let's check before I say anything final. I'm checking the exact guidelines.\nCustomer: Fine. And while you're checking, I have a few more questions. The phone fell on November 6 on the bus, and I bought it a year and three months ago for NIS 4,290. How much will I pay as a deductible? And what about a replacement device during the repair, because I work with the phone all day? And another thing, I already went to a private repair lab near home and they gave me a quote of NIS 1,100. Can I just get it fixed there and send you the receipt? And also, what's the deadline to file this, because it's been more than a week already and I don't want to miss it. I work shifts as a courier, the phone is my work tool, without navigation I simply can't go out on deliveries.\nAgent: Those are important questions. We'll go through everything according to the terms: uploading the files, the deductible, and the repair at the lab. As for the filing deadline, you still have time, but it's better not to put it off.\nCustomer: And one last thing, and I'm saying this as a formal complaint: on Sunday I tried calling the call center and waited 40 minutes on the line until the call dropped. Nobody got back to me. And it's not the first time, last month I tried to update my address in the app and it crashed. I want this on record.\nAgent: I've logged your complaint in the file, and the reference number is 77340. Now let's sort out the claim itself. Just before we start, let me confirm: the device was purchased in Israel, right? And you have the original invoice? If so, you can email the photos today, and I'll add my note about the app malfunction to the file.",
+    "doc": "Digital Claim Submission and Repair Terms – Gadget Pro Plan. A claim for damage to a device must be submitted through the app or the personal area, together with at least 3 photos of the damaged device. The system supports JPG or PNG files only, up to 8 MB per file; files in other formats or exceeding the limit will not be accepted. A policyholder who is unable to upload the files may send them to the claims department's email address, and the claim will be deemed submitted on the date the email was sent. The claim must be submitted within 30 days of the incident. The deductible for screen damage is 15% of the device's purchase price, and no less than NIS 350. The device will be repaired at an authorized lab on behalf of the company only, within 4 business days of the device being handed over. A repair carried out at a private lab that is not authorized will not be reimbursed, and the policyholder may even lose coverage for that device going forward. During the repair, a replacement device will be made available to the policyholder, provided that the insured device was purchased less than 24 months ago. Coverage does not include cosmetic damage that does not affect the device's functionality, such as scratches on the frame. Complaints about service quality are handled by the Public Inquiries Department, which will respond in writing within 21 days. The policyholder may choose to hand over the device at one of the service centers or to have it picked up from home at no cost. If repair is not possible, the device will be replaced with an equivalent device, less depreciation of 1.5% per month from the purchase date. Coverage does not apply to devices purchased outside Israel, unless an original purchase invoice is attached.",
+    "questions": [
+      "What is the maximum file size the system accepts?",
+      "Will a repair at the private lab Ori went to be reimbursed?",
+      "What is the reference number of Ori's complaint?"
+    ],
+    "correct_answers": [
+      "up to 8 MB per file",
+      "will not be reimbursed",
+      "77340"
+    ],
+    "critical_facts": [
+      "Ori",
+      "Rakia Digital Insurance",
+      "Gadget Pro",
+      "14 MB",
+      "November 6",
+      "NIS 4,290",
+      "NIS 1,100",
+      "77340",
+      "JPG or PNG files only",
+      "up to 8 MB per file",
+      "30 days",
+      "15%",
+      "no less than NIS 350",
+      "that is not authorized",
+      "will not be reimbursed"
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+stage,provider,calls (all time),new this session,cached this session,tokens in,tokens out,cost $
+chatbot,openai,93,24,45,64834,3705,0.0834
+judge,anthropic,89,49,0,29067,8441,0.1425
+smoke,anthropic,2,0,0,28,8,0.0002
+smoke,openai,2,0,0,18,10,0.0001
+teacher_opus,anthropic,24,12,0,37420,228537,4.7204
+teacher_sol,openai,36,12,0,33630,260052,2.6678
