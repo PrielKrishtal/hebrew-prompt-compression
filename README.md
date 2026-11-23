@@ -1,8 +1,6 @@
 <div align="center">
 
-  <img src="assets/logo2.png" alt="Hebrew Prompt Compression" width="112" />
-
-  <h1>Hebrew Prompt Compression</h1>
+  <h1><img src="assets/logo2.png" alt="" width="72" align="center" /> Hebrew Prompt Compression</h1>
 
   <p>
     <strong>Cut LLM token costs for Hebrew chatbots with a small local model that deletes low-value words and prefixes, without losing the facts that matter.</strong>
