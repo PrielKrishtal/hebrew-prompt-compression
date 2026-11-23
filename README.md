@@ -1,20 +1,36 @@
 <div align="center">
 
-# Hebrew Prompt Compression
+  <img src="assets/logo2.png" alt="Hebrew Prompt Compression" width="112" />
 
-**Cut LLM token costs for Hebrew chatbots with a small local model that deletes low-value words and prefixes, without losing the facts that matter.**
+  <h1>Hebrew Prompt Compression</h1>
 
-![status](https://img.shields.io/badge/status-in%20development-orange)
-![python](https://img.shields.io/badge/python-3.11%2B-blue)
-![language](https://img.shields.io/badge/language-Hebrew-0038b8)
+  <p>
+    <strong>Cut LLM token costs for Hebrew chatbots with a small local model that deletes low-value words and prefixes, without losing the facts that matter.</strong>
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/status-in%20development-orange" alt="Status: In development" />
+    <img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="Python 3.11+" />
+    <img src="https://img.shields.io/badge/language-Hebrew-0038b8" alt="Language: Hebrew" />
+  </p>
+
+  <p>
+    <sub>
+      <strong>Developed by:</strong> Priel Krishtal & Liad Albocher
+      <br>
+      <strong>Academic Advisor:</strong> Dr. Yair Even-Zohar
+    </sub>
+  </p>
 
 </div>
 
----
+
 
 ## Why
 
 Hebrew costs about **1.5× more tokens than English** on current LLM tokenizers. Customer-service chatbots resend the conversation history and retrieved documents on every call, so Hebrew-speaking businesses pay that premium again and again. Existing compressors are trained on English. In our tests the standard tool, LLMLingua-2, loses accuracy in Hebrew, mostly on negations and conditions.
+
+![Hebrew/English token ratio by tokenizer](feasibility_test/results/01_tokenizer_ratios.png)
 
 ## What we're building
 
@@ -49,10 +65,6 @@ Before building, we tested whether the idea holds on 48 Hebrew and 48 English sy
 | Local proxy (FastAPI) | ⏳ Planned |
 
 
-## Team
-
-- **Priel Krishtal** and **Liad Albocher**, Computer Science, final degree project
-- Advisor: **Dr. Yair Even-Zohar**
 
 ## License
 
